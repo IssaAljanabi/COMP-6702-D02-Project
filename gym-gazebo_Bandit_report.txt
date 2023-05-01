@@ -1,0 +1,1702 @@
+Run started:2023-04-23 05:51:30.918694
+
+Test results:
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\erlecopter\erlecopter_hover_qlearn.py:31:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+30	
+31	    outdir = '/tmp/gazebo_gym_experiments'
+32	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlecopter\qlearn.py:29:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+28	
+29	        if random.random() < self.epsilon:
+30	            minQ = min(q); mag = max(abs(minQ), abs(maxQ))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlecopter\qlearn.py:32:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+31	            # add random values to all the actions, recalculate maxQ
+32	            q = [q[i] + random.random() * mag - .5 * mag for i in range(len(self.actions))] 
+33	            maxQ = max(q)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlecopter\qlearn.py:40:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+39	            best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+40	            i = random.choice(best)
+41	        else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlerover\maze_erlerover_lidar_qlearn.py:38:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+37	
+38	        if random.random() < self.epsilon:
+39	            minQ = min(q); mag = max(abs(minQ), abs(maxQ))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlerover\maze_erlerover_lidar_qlearn.py:41:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+40	            # add random values to all the actions, recalculate maxQ
+41	            q = [q[i] + random.random() * mag - .5 * mag for i in range(len(self.actions))] 
+42	            maxQ = max(q)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlerover\maze_erlerover_lidar_qlearn.py:49:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+48	            best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+49	            i = random.choice(best)
+50	        else:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\erlerover\maze_erlerover_lidar_qlearn.py:110:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+109	
+110	    outdir = '/tmp/gazebo_gym_experiments'
+111	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlerover\qlearn.py:29:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+28	
+29	        if random.random() < self.epsilon:
+30	            minQ = min(q); mag = max(abs(minQ), abs(maxQ))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlerover\qlearn.py:32:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+31	            # add random values to all the actions, recalculate maxQ
+32	            q = [q[i] + random.random() * mag - .5 * mag for i in range(len(self.actions))] 
+33	            maxQ = max(q)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\erlerover\qlearn.py:40:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+39	            best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+40	            i = random.choice(best)
+41	        else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\gazebo_cartpole\gazebo_cartpole_v1.py:99:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+98	        probs = sess.run(pl_calculated,feed_dict={pl_state: obs_vector})
+99	        action = 0 if random.uniform(0,1) < probs[0][0] else 1
+100	        # record the transition
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\gazebo_cartpole\gazebo_cartpole_v1.py:147:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+146	
+147	outdir = '/tmp/gazebo_gym_experiments'
+148	plotter = LivePlot(outdir)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\modular_scara\modular_scara_3dof_qlearn.py:98:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+97	# logs_path = "/tmp/modular_scara_3dof_qlearn/"
+98	logger = Logger("/tmp/rosrl/GazeboModularScara3DOF-v2/q-learn/")
+99	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\modular_scara\qlearn.py:35:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+34	
+35	        if random.random() < self.epsilon:
+36	            # print("RANDOM") ######
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\modular_scara\qlearn.py:37:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+36	            # print("RANDOM") ######
+37	            action = random.choice(self.actions)######
+38	            i = self.actions.index(action)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\modular_scara\qlearn.py:52:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+51	            best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+52	            i = random.choice(best)
+53	        else:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\circuit2_turtlebot_lidar_dqn.py:33:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+32	    env = gym.make('GazeboCircuit2TurtlebotLidarNn-v0')
+33	    outdir = '/tmp/gazebo_gym_experiments/'
+34	    path = '/tmp/turtle_c2_dqn_ep'
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\circuit2_turtlebot_lidar_dqn.py:34:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+33	    outdir = '/tmp/gazebo_gym_experiments/'
+34	    path = '/tmp/turtle_c2_dqn_ep'
+35	    plotter = liveplot.LivePlot(outdir)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\circuit2_turtlebot_lidar_qlearn.py:27:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+26	
+27	    outdir = '/tmp/gazebo_gym_experiments'
+28	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\circuit2_turtlebot_lidar_sarsa.py:18:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+17	
+18	    outdir = '/tmp/gazebo_gym_experiments'
+19	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\circuit_turtlebot_lidar_qlearn.py:27:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+26	
+27	    outdir = '/tmp/gazebo_gym_experiments'
+28	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\deepq.py:163:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+162	    def selectAction(self, qValues, explorationRate):
+163	        rand = random.random()
+164	        if rand < explorationRate :
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\deepq.py:189:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+188	
+189	        rand = random.random()
+190	        i = 0
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\maze_turtlebot_lidar_qlearn.py:26:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+25	
+26	    outdir = '/tmp/gazebo_gym_experiments'
+27	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\qlearn.py:29:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+28	
+29	        if random.random() < self.epsilon:
+30	            minQ = min(q); mag = max(abs(minQ), abs(maxQ))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\qlearn.py:32:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+31	            # add random values to all the actions, recalculate maxQ
+32	            q = [q[i] + random.random() * mag - .5 * mag for i in range(len(self.actions))] 
+33	            maxQ = max(q)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\qlearn.py:40:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+39	            best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+40	            i = random.choice(best)
+41	        else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\round_turtlebot_lidar_test.py:38:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+37	
+38	        if random.random() < self.epsilon:
+39	            minQ = min(q); mag = max(abs(minQ), abs(maxQ))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\round_turtlebot_lidar_test.py:41:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+40	            # add random values to all the actions, recalculate maxQ
+41	            q = [q[i] + random.random() * mag - .5 * mag for i in range(len(self.actions))]
+42	            maxQ = max(q)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\round_turtlebot_lidar_test.py:49:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+48	            best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+49	            i = random.choice(best)
+50	        else:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\turtlebot\round_turtlebot_lidar_test.py:76:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+75	
+76	    outdir = '/tmp/gazebo_gym_experiments'
+77	    env = gym.wrappers.Monitor(env, outdir, force=True)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\sarsa.py:23:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+22	    def chooseAction(self, state):
+23	        if random.random() < self.epsilon:
+24	            action = random.choice(self.actions)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\sarsa.py:24:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+23	        if random.random() < self.epsilon:
+24	            action = random.choice(self.actions)
+25	        else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\examples\turtlebot\sarsa.py:31:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+30	                best = [i for i in range(len(self.actions)) if q[i] == maxQ]
+31	                i = random.choice(best)
+32	            else:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\examples\utilities\display_plot.py:94:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+93	
+94	    outdir = '/tmp/gazebo_gym_experiments'
+95	    plotter = LivePlot(outdir)
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\ARIAC\ariac_pick_v0.py:184:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+183	                data_arm_state = rospy.wait_for_message('/ariac/arm/state', JointTrajectoryControllerState, timeout=5)
+184	            except:
+185	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\ARIAC\ariac_pick_v0.py:256:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+255	                data_vacuum_state = rospy.wait_for_message('/ariac/gripper/state', VacuumGripperState, timeout=5)
+256	            except:
+257	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\ARIAC\ariac_pick_v0.py:263:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+262	                data_camera = rospy.wait_for_message('/ariac/logical_camera_1', LogicalCameraImage, timeout=5)
+263	            except:
+264	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\ARIAC\ariac_pick_v0.py:282:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+281	                data_arm_state = rospy.wait_for_message('/ariac/arm/state', JointTrajectoryControllerState, timeout=5)
+282	            except:
+283	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\ARIAC\ariac_pick_v0.py:288:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+287	                data_camera = rospy.wait_for_message('/ariac/logical_camera_1', LogicalCameraImage, timeout=5)
+288	            except:
+289	                pass
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\gym_gazebo\envs\MARA\gazebo_mara_top_orient_collision_v0.py:854:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+853	            # print("self.reset_iter after reset: ", self.reset_iter)
+854	            with open("/tmp/rosrl/targets.txt", 'a') as out:
+855	                out.write( str(self.realgoal) + '\n' )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\MARA\gazebo_mara_top_orient_vision_v0.py:377:31
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+376	            pose.position.x = -0.5074649153217804#-0.5074649153217804#random.uniform(-0.3, -0.6);
+377	            pose.position.y =  random.uniform(-0.02, 0.01)#0.03617460539210797#random.uniform(-0.02, 0.01)
+378	            # stay put in Z!!!
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+5	import roslaunch
+6	import subprocess
+7	import time
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:31:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+30	                data = rospy.wait_for_message('/mavros/global_position/rel_alt', Float64, timeout=5)
+31	            except:
+32	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:84:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+83	                    alt_msg = rospy.wait_for_message('/gazebo/model_states', ModelStates, timeout=10)
+84	                except:
+85	                    pass
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:110:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+109	        sim_vehicle_sh = str(os.environ["ARDUPILOT_PATH"]) + "/Tools/autotest/sim_vehicle.sh"
+110	        subprocess.Popen(["xterm","-e",sim_vehicle_sh,"-j4","-f","Gazebo","-v","ArduCopter"])
+111	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:110:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+109	        sim_vehicle_sh = str(os.environ["ARDUPILOT_PATH"]) + "/Tools/autotest/sim_vehicle.sh"
+110	        subprocess.Popen(["xterm","-e",sim_vehicle_sh,"-j4","-f","Gazebo","-v","ArduCopter"])
+111	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:218:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+217	    def _killall(self, process_name):
+218	        pids = subprocess.check_output(["pidof",process_name]).split()
+219	        for pid in pids:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:218:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+217	    def _killall(self, process_name):
+218	        pids = subprocess.check_output(["pidof",process_name]).split()
+219	        for pid in pids:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:220:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+219	        for pid in pids:
+220	            os.system("kill -9 "+str(pid))
+221	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:223:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+222	    def _relaunch_apm(self):
+223	        pids = subprocess.check_output(["pidof","ArduCopter.elf"]).split()
+224	        for pid in pids:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:223:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+222	    def _relaunch_apm(self):
+223	        pids = subprocess.check_output(["pidof","ArduCopter.elf"]).split()
+224	        for pid in pids:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:225:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+224	        for pid in pids:
+225	            os.system("kill -9 "+str(pid))
+226	
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:228:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+227	        grep_cmd = "ps -ef | grep ardupilot"
+228	        result = subprocess.check_output([grep_cmd], shell=True).split()
+229	        pid = result[1]
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:230:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+229	        pid = result[1]
+230	        os.system("kill -9 "+str(pid))
+231	
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:233:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+232	        grep_cmd = "ps -af | grep sim_vehicle.sh"
+233	        result = subprocess.check_output([grep_cmd], shell=True).split()
+234	        pid = result[1]
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:235:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+234	        pid = result[1]
+235	        os.system("kill -9 "+str(pid))
+236	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlecopter\gazebo_erlecopter_hover.py:248:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+247	                data = rospy.wait_for_message('/mavros/global_position/global', NavSatFix, timeout=5)
+248	            except:
+249	                pass
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlerover\gazebo_maze_erlerover_lidar.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import roslaunch
+5	import subprocess
+6	import time
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlerover\gazebo_maze_erlerover_lidar.py:70:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+69	                data = rospy.wait_for_message('/mavros/global_position/rel_alt', Float64, timeout=5)
+70	            except:
+71	                pass
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlerover\gazebo_maze_erlerover_lidar.py:77:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+76	        sim_vehicle_sh = str(os.environ["ARDUPILOT_PATH"]) + "/Tools/autotest/sim_vehicle.sh"
+77	        subprocess.Popen(["xterm","-e",sim_vehicle_sh,"-j4","-f","Gazebo","-v","APMrover2"])
+78	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlerover\gazebo_maze_erlerover_lidar.py:77:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+76	        sim_vehicle_sh = str(os.environ["ARDUPILOT_PATH"]) + "/Tools/autotest/sim_vehicle.sh"
+77	        subprocess.Popen(["xterm","-e",sim_vehicle_sh,"-j4","-f","Gazebo","-v","APMrover2"])
+78	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlerover\gazebo_maze_erlerover_lidar.py:120:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+119	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+120	            except:
+121	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\erlerover\gazebo_maze_erlerover_lidar.py:178:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+177	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+178	            except:
+179	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_cartpole\gazebo_cartpole_v0.py:78:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+77	                    self.data = rospy.wait_for_message('/cart_pole/joint_states', JointState, timeout=5)
+78	                except:
+79	                    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_cartpole\gazebo_cartpole_v0.py:184:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+183	                self.data = rospy.wait_for_message('/cart_pole/joint_states', JointState, timeout=5)
+184	            except:
+185	                pass
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:7:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+6	import signal
+7	import subprocess
+8	import time
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:21:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+20	
+21	        random_number = random.randint(10000, 15000)
+22	        # self.port = "11311"#str(random_number) #os.environ["ROS_PORT_SIM"]
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:36:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+35	        # self.port = os.environ.get("ROS_PORT_SIM", "11311")
+36	        ros_path = os.path.dirname(subprocess.check_output(["which", "roscore"]))
+37	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:36:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+35	        # self.port = os.environ.get("ROS_PORT_SIM", "11311")
+36	        ros_path = os.path.dirname(subprocess.check_output(["which", "roscore"]))
+37	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:53:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+52	
+53	        self._roslaunch = subprocess.Popen([sys.executable, os.path.join(ros_path, b"roslaunch"), "-p", self.port, fullpath])
+54	        print ("Gazebo launched!")
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:103:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+102	        if close:
+103	            tmp = os.popen("ps -Af").read()
+104	            proccount = tmp.count('gzclient')
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:103:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+102	        if close:
+103	            tmp = os.popen("ps -Af").read()
+104	            proccount = tmp.count('gzclient')
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:111:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+110	
+111	        tmp = os.popen("ps -Af").read()
+112	        proccount = tmp.count('gzclient')
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:111:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+110	
+111	        tmp = os.popen("ps -Af").read()
+112	        proccount = tmp.count('gzclient')
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:114:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+113	        if proccount < 1:
+114	            subprocess.Popen("gzclient")
+115	            self.gzclient_pid = int(subprocess.check_output(["pidof","-s","gzclient"]))
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:114:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+113	        if proccount < 1:
+114	            subprocess.Popen("gzclient")
+115	            self.gzclient_pid = int(subprocess.check_output(["pidof","-s","gzclient"]))
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:115:36
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+114	            subprocess.Popen("gzclient")
+115	            self.gzclient_pid = int(subprocess.check_output(["pidof","-s","gzclient"]))
+116	        else:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:115:36
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+114	            subprocess.Popen("gzclient")
+115	            self.gzclient_pid = int(subprocess.check_output(["pidof","-s","gzclient"]))
+116	        else:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:122:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+121	        # Kill gzclient, gzserver and roscore
+122	        tmp = os.popen("ps -Af").read()
+123	        gzclient_count = tmp.count('gzclient')
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:122:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+121	        # Kill gzclient, gzserver and roscore
+122	        tmp = os.popen("ps -Af").read()
+123	        gzclient_count = tmp.count('gzclient')
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:129:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+128	        if gzclient_count > 0:
+129	            os.system("killall -9 gzclient")
+130	        if gzserver_count > 0:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:129:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+128	        if gzclient_count > 0:
+129	            os.system("killall -9 gzclient")
+130	        if gzserver_count > 0:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:131:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+130	        if gzserver_count > 0:
+131	            os.system("killall -9 gzserver")
+132	        if rosmaster_count > 0:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:131:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+130	        if gzserver_count > 0:
+131	            os.system("killall -9 gzserver")
+132	        if rosmaster_count > 0:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:133:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+132	        if rosmaster_count > 0:
+133	            os.system("killall -9 rosmaster")
+134	        if roscore_count > 0:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:133:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+132	        if rosmaster_count > 0:
+133	            os.system("killall -9 rosmaster")
+134	        if roscore_count > 0:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:135:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+134	        if roscore_count > 0:
+135	            os.system("killall -9 roscore")
+136	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\gazebo_env.py:135:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+134	        if roscore_count > 0:
+135	            os.system("killall -9 roscore")
+136	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\box_vision_v1.py:438:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+437	            pose = Pose()
+438	            number = random.randint(0, 4)
+439	            #pose.position.x = 0.15;#
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_obstacles_v0.py:673:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+672	            pose = Pose()
+673	            number = random.randint(0, 4)
+674	            if number == 1:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_static_obstacle_v0.py:781:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+780	                pose = Pose()
+781	                number = random.randint(0, 4)
+782	                # if number == 1:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_static_obstacle_v1.py:790:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+789	                pose = Pose()
+790	                number = random.randint(0, 4)
+791	                #pose.position.x = 0.15;#
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_v3.py:330:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+329	        all_targets = [target1,target2,target3,target4,target5,target6]
+330	        self.realgoal = random.choice(all_targets)
+331	        # self.realgoal = target1 if np.random.uniform() < 0.5 else target2
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_v4.py:302:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+301	        all_targets = [target1,target2,target3,target4,target5,target6]
+302	        self.realgoal = random.choice(all_targets)
+303	        # self.realgoal = target1 if np.random.uniform() < 0.5 else target2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_v4.py:503:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+502	    def goal_distance(self, goal_a, goal_b):
+503	        assert goal_a.shape == goal_b.shape
+504	        # print("goal_distance", np.linalg.norm(goal_a - goal_b, axis=-1))
+505	        return np.linalg.norm(goal_a - goal_b, axis=-1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\gazebo_modular_scara_3dof_vision_v2.py:311:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+310	        all_targets = [target1,target2,target3,target4,target5,target6]
+311	        self.realgoal = random.choice(all_targets)
+312	        # self.realgoal = target1 if np.random.uniform() < 0.5 else target2
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-gazebo\gym_gazebo\envs\modular_scara\real_modular_scara_3dof_v0.py:311:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+310	        all_targets = [target1,target2,target3,target4,target5,target6]
+311	        self.realgoal = random.choice(all_targets)
+312	        # self.realgoal = target1 if np.random.uniform() < 0.5 else target2
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import signal
+5	import subprocess
+6	import time
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:48:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+47	    def _close(self):
+48	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:48:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+47	    def _close(self):
+48	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:48:48
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+47	    def _close(self):
+48	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:49:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+48	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+50	        subprocess.Popen(["kill", "-INT", str(output1)])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:49:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+48	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+50	        subprocess.Popen(["kill", "-INT", str(output1)])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:50:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+50	        subprocess.Popen(["kill", "-INT", str(output1)])
+51	        subprocess.Popen(["kill", "-INT", str(output2)])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:50:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+49	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+50	        subprocess.Popen(["kill", "-INT", str(output1)])
+51	        subprocess.Popen(["kill", "-INT", str(output2)])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+50	        subprocess.Popen(["kill", "-INT", str(output1)])
+51	        subprocess.Popen(["kill", "-INT", str(output2)])
+52	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+50	        subprocess.Popen(["kill", "-INT", str(output1)])
+51	        subprocess.Popen(["kill", "-INT", str(output2)])
+52	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import signal
+5	import subprocess
+6	import time
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:39:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+38	    def _close(self):
+39	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:39:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+38	    def _close(self):
+39	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:39:48
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+38	    def _close(self):
+39	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:40:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+39	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+41	        subprocess.Popen(["kill", "-INT", str(output1)])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:40:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+39	        output1 = subprocess.check_call(["cat" ,"/tmp/myroslaunch_" + self.port + ".pid"])
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+41	        subprocess.Popen(["kill", "-INT", str(output1)])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+41	        subprocess.Popen(["kill", "-INT", str(output1)])
+42	        subprocess.Popen(["kill", "-INT", str(output2)])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+40	        output2 = subprocess.check_call(["cat" ,"/home/erle/.ros/roscore-" + self.port + ".pid"])
+41	        subprocess.Popen(["kill", "-INT", str(output1)])
+42	        subprocess.Popen(["kill", "-INT", str(output2)])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+41	        subprocess.Popen(["kill", "-INT", str(output1)])
+42	        subprocess.Popen(["kill", "-INT", str(output2)])
+43	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\envs\real_env_ros2.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+41	        subprocess.Popen(["kill", "-INT", str(output1)])
+42	        subprocess.Popen(["kill", "-INT", str(output2)])
+43	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2_turtlebot_lidar.py:80:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+79	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+80	            except:
+81	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2_turtlebot_lidar.py:125:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+124	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+125	            except:
+126	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2_turtlebot_lidar_nn.py:61:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+60	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+61	            except:
+62	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2_turtlebot_lidar_nn.py:103:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+102	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+103	            except:
+104	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2c_turtlebot_camera_nn.py:95:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+94	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+95	            except:
+96	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2c_turtlebot_camera_nn.py:115:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+114	                    #print("/camera/rgb/image_raw ERROR, retrying")
+115	            except:
+116	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit2c_turtlebot_camera_nn.py:222:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+221	                    #print("/camera/rgb/image_raw ERROR, retrying")
+222	            except:
+223	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit_turtlebot_lidar.py:80:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+79	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+80	            except:
+81	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_circuit_turtlebot_lidar.py:125:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+124	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+125	            except:
+126	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_maze_turtlebot_lidar.py:80:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+79	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+80	            except:
+81	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_maze_turtlebot_lidar.py:125:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+124	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+125	            except:
+126	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_round_turtlebot_lidar.py:80:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+79	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+80	            except:
+81	                pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\turtlebot\gazebo_round_turtlebot_lidar.py:125:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+124	                data = rospy.wait_for_message('/scan', LaserScan, timeout=5)
+125	            except:
+126	                pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\unittest\cube_crash.py:91:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	        elif action==2: self.cube_x += 1
+91	        else: assert 0, "Action %i is out of range" % action
+92	        self.cube_y += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\unittest\cube_crash.py:141:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	        else:
+141	            assert 0, "Render mode '%s' is not supported" % mode
+142	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\envs\unittest\memorize_digits.py:194:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+193	        else:
+194	            assert 0, "Render mode '%s' is not supported" % mode
+195	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\closer.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	        """
+51	        assert hasattr(closeable, 'close'), 'No close method for {}'.format(closeable)
+52	
+53	        next_id = self.generate_next_id()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\closer.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    def unregister(self, id):
+58	        assert id is not None
+59	        if id in self.closeables:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\play.py:9:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+8	    import matplotlib.pyplot as plt
+9	except Exception:
+10	    pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\play.py:84:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	    obs_s = env.observation_space
+84	    assert type(obs_s) == gym.spaces.box.Box
+85	    assert len(obs_s.shape) == 2 or (len(obs_s.shape) == 3 and obs_s.shape[2] in [1,3])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\play.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	    assert type(obs_s) == gym.spaces.box.Box
+85	    assert len(obs_s.shape) == 2 or (len(obs_s.shape) == 3 and obs_s.shape[2] in [1,3])
+86	
+87	    if keys_to_action is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\play.py:93:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	        else:
+93	            assert False, env.spec.id + " does not have explicit key to action mapping, " + \
+94	                          "please specify one manually"
+95	    relevant_keys = set(sum(map(list, keys_to_action.keys()),[]))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\tests\test_atexit.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	
+13	    assert not c1.close_called
+14	    assert not c2.close_called
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\tests\test_atexit.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    assert not c1.close_called
+14	    assert not c2.close_called
+15	    registry.register(c1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\tests\test_atexit.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    registry.close()
+20	    assert c1.close_called
+21	    assert not c2.close_called
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\tests\test_atexit.py:21:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	    assert c1.close_called
+21	    assert not c2.close_called
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\tests\test_seeding.py:11:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	        else:
+11	            assert False, 'Invalid seed {} passed validation'.format(seed)
+12	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\utils\tests\test_seeding.py:16:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	        random, seed1 = seeding.np_random(seed)
+16	        assert seed == seed1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\dict.py:24:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    def observation(self, observation):
+24	        assert isinstance(observation, dict)
+25	        obs = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitor.py:371:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+370	def collapse_env_infos(env_infos, training_dir):
+371	    assert len(env_infos) > 0
+372	
+373	    first = env_infos[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\stats_recorder.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    def before_step(self, action):
+43	        assert not self.closed
+44	
+45	        if self.done:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\stats_recorder.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    def before_reset(self):
+65	        assert not self.closed
+66	
+67	        if self.done is not None and not self.done and self.steps > 0:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    rec.close()
+28	    assert not rec.empty
+29	    assert not rec.broken
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    assert not rec.empty
+29	    assert not rec.broken
+30	    assert os.path.exists(rec.path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    assert not rec.broken
+30	    assert os.path.exists(rec.path)
+31	    f = open(rec.path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    f = open(rec.path)
+32	    assert os.fstat(f.fileno()).st_size > 100
+33	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    rec.close()
+38	    assert rec.empty
+39	    assert rec.functional
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    assert rec.empty
+39	    assert rec.functional
+40	    assert not os.path.exists(rec.path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    assert rec.functional
+40	    assert not os.path.exists(rec.path)
+41	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    rec = VideoRecorder(env)
+45	    assert not rec.enabled
+46	    rec.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	    rec.close()
+53	    assert rec.empty
+54	    assert rec.broken
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:54:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	    assert rec.empty
+54	    assert rec.broken
+55	    assert not os.path.exists(rec.path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\tests\test_video_recorder.py:55:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	    assert rec.broken
+55	    assert not os.path.exists(rec.path)
+56	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\video_recorder.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+2	import os
+3	import subprocess
+4	import tempfile
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\video_recorder.py:262:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+261	            'backend':self.backend,
+262	            'version':str(subprocess.check_output([self.backend, '-version'],
+263	                                                  stderr=subprocess.STDOUT)),
+264	            'cmdline':self.cmdline
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\video_recorder.py:288:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+287	        if hasattr(os,'setsid'): #setsid not present on Windows
+288	            self.proc = subprocess.Popen(self.cmdline, stdin=subprocess.PIPE, preexec_fn=os.setsid)
+289	        else:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\monitoring\video_recorder.py:290:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+289	        else:
+290	            self.proc = subprocess.Popen(self.cmdline, stdin=subprocess.PIPE)
+291	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-gazebo\gym_gazebo\wrappers\time_limit.py:30:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    def step(self, action):
+30	        assert self._episode_started_at is not None, "Cannot call env.step() before calling reset()"
+31	        observation, reward, done, info = self.env.step(action)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 17141
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 146
+		Medium: 15
+		High: 6
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 15
+		High: 152
+Files skipped (5):
+	gym-gazebo\examples\turtlebot\circuit2c_turtlebot_camera_dqn.py (syntax error while parsing AST from file)
+	gym-gazebo\examples\turtlebot\runtraining_dqn_circuit2_turtlebot_lidar.py (syntax error while parsing AST from file)
+	gym-gazebo\examples\utilities\averaged_table.py (syntax error while parsing AST from file)
+	gym-gazebo\gym_gazebo\utils\reraise_impl_py2.py (syntax error while parsing AST from file)
+	gym-gazebo\gym_gazebo\utils\ros_utils.py (syntax error while parsing AST from file)

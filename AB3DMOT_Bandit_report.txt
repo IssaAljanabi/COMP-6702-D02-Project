@@ -1,0 +1,616 @@
+Run started:2023-04-23 05:35:34.498207
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\dist_metrics.py:165:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+164		else:
+165			assert False, '%s is not supported' % space
+166	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\io.py:54:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53				data_dict[seq_id][frame_id] = dict()
+54			assert id_tmp not in data_dict[seq_id][frame_id], 'error, each ID should not be highlighted twice'
+55	
+56			# assign the err_type to the ID
+57			data_dict[seq_id][frame_id][id_tmp] = err_type
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\kitti_obj.py:83:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	
+83	        assert self.s is not None, 'error'    
+84	        return '%d,%d,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f' % \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\kitti_obj.py:91:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	
+91	        assert self.s is not None, 'error'    
+92	        assert self.id is not None, 'error'    
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\kitti_obj.py:92:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	        assert self.s is not None, 'error'    
+92	        assert self.id is not None, 'error'    
+93	        return '%d %d %s %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f' % \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\kitti_oxts.py:123:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+122	    num_frames = imu_poses.shape[0]
+123	    assert frame >= 0 and frame <= num_frames - 1, 'error'
+124	    if inverse:             # pre and fut are inverse, i.e., inverse ego motion compensation
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\kitti_trk.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	            self.data[frame] = dict()
+39	        assert obj_id not in self.data[frame], 'error! object ID %d already in the frame %d' % (obj_id, frame)
+40	        self.data[frame][obj_id] = obj
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\matching.py:19:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18				elif metric == 'dist_3d': dist_now = -dist3d(det, trk)              				
+19				else: assert False, 'error'
+20				aff_matrix[d, t] = dist_now
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\matching.py:71:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70		if metric == 'm_dis':
+71			assert trk_innovation_matrix is not None, 'error'
+72			trk_inv_inn_matrices = [np.linalg.inv(m) for m in trk_innovation_matrix]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\matching.py:86:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85				matched_indices = greedy_matching(-aff_matrix) 				# greedy matching
+86			else: assert False, 'error'
+87		else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:52:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51					elif cat == 'Cyclist': 		algm, metric, thres, min_hits, max_age = 'hungar', 'dist_3d', 2, 3, 4
+52					else: assert False, 'error'
+53				elif cfg.det_name == 'pointrcnn':			# tuned for PointRCNN detections
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:57:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56					elif cat == 'Cyclist': 		algm, metric, thres, min_hits, max_age = 'hungar', 'dist_3d', 2, 3, 4
+57					else: assert False, 'error'
+58				elif cfg.det_name == 'deprecated':			
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:62:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61					elif cat == 'Cyclist': 		algm, metric, thres, min_hits, max_age = 'hungar', 'dist_3d', 6, 3, 2
+62					else: assert False, 'error'
+63				else: assert False, 'error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:63:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62					else: assert False, 'error'
+63				else: assert False, 'error'
+64			elif cfg.dataset == 'nuScenes':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:73:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72					elif cat == 'Bicycle': 		algm, metric, thres, min_hits, max_age = 'greedy', 'dist_3d',    6, 3, 2
+73					else: assert False, 'error'
+74				elif cfg.det_name == 'megvii':			# tuned for Megvii detections
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:82:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81					elif cat == 'Bicycle': 		algm, metric, thres, min_hits, max_age = 'greedy', 'giou_3d', -0.6, 3, 2
+82					else: assert False, 'error'
+83				elif cfg.det_name == 'deprecated':		
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:91:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90					elif cat == 'Truck': 		metric, thres, min_hits, max_age = 'dist', 10, 3, 2
+91					else: assert False, 'error'
+92				else: assert False, 'error'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:92:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91					else: assert False, 'error'
+92				else: assert False, 'error'
+93			else: assert False, 'no such dataset'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:93:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92				else: assert False, 'error'
+93			else: assert False, 'no such dataset'
+94	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:157:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156			from AB3DMOT_libs.kitti_oxts import get_ego_traj, egomotion_compensation_ID
+157			assert len(self.trackers) == len(trks), 'error'
+158			ego_xyz_imu, ego_rot_imu, left, right = get_ego_traj(self.oxts, frame, 1, 1, only_fut=True, inverse=True) 
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:238:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+237					d = matched[np.where(matched[:, 1] == t)[0], 0]     # a list of index
+238					assert len(d) == 1, 'error'
+239	
+240					# update statistics
+241					trk.time_since_update = 0		# reset because just updated
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:329:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+328			count = 0
+329			assert len(unmatched_dets) == len(new_id_list), 'error'
+330			for unmatch_tmp in unmatched_dets:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:333:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+332				count += 1
+333			assert not (-1 in det_id), 'error, still have invalid ID in the detection list'
+334	
+335			############################ update the affinity matrix based on the ID matching
+336			
+337			# transpose so that now row is past trks, col is current dets	
+338			affi = affi.transpose() 			
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\model.py:346:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+345			affi = affi[permute_row, :]	
+346			assert affi.shape[0] == len(self.id_past_output), 'error'
+347	
+348			###### compute the permutation for columns (current tracklets), possible to delete and add new rows
+349			# addition can be because some tracklets propagated from previous frames with no detection matched
+350			# so they are not contained in the original detection columns of affinity matrix, deletion can happen
+351			# because some detections are not matched
+352	
+353			max_index = affi.shape[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\nuScenes2KITTI_helper.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    # Check that the rotation has the same format as in KITTI.
+71	    assert (velo_to_cam_rot.round(0) == np.array([[0, -1, 0], [0, 0, -1], [1, 0, 0]])).all()
+72	    assert (velo_to_cam_trans[1:3] < 0).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\nuScenes2KITTI_helper.py:72:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	    assert (velo_to_cam_rot.round(0) == np.array([[0, -1, 0], [0, 0, -1], [1, 0, 0]])).all()
+72	    assert (velo_to_cam_trans[1:3] < 0).all()
+73	
+74	    # Dummy values.    
+75	    r0_rect = Quaternion(axis=[1, 0, 0], angle=0) 
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\nuScenes2KITTI_helper.py:148:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+147	    dst_lid_path = os.path.join(lidar_dir, '%06d.bin' % count)
+148	    assert not dst_lid_path.endswith('.pcd.bin')
+149	    pcl = LidarPointCloud.from_file(src_lid_path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\nuScenes_utils.py:120:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+119	    if cs_record is None or pose_record is None:
+120	        assert nusc is not None and sample_token is not None, 'error, all data is none for transformation'
+121	        cs_record, pose_record = get_sensor_param(nusc, sample_token)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\nuScenes_utils.py:142:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	    if cs_record is None or pose_record is None:
+142	        assert nusc is not None and sample_token is not None, 'error, all data is none for transformation'
+143	        cs_record, pose_record = get_sensor_param(nusc, sample_token)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:34:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33			elif split == 'test': subfolder = 'testing' 
+34			else: assert False, 'error'
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:57:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	
+57		else: assert False, 'error, %s dataset is not supported' % dataset
+58			
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:68:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67			if det_name == 'pointrcnn': return {'Car': 3.240738, 'Pedestrian': 2.683133, 'Cyclist': 3.645319}
+68			else: assert False, 'error, detection method not supported for getting threshold' % det_name
+69		elif dataset == 'nuScenes':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:76:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75						'Bus': 0.430000, 'Motorcycle': 0.368667, 'Bicycle': 0.394146}
+76			else: assert False, 'error, detection method not supported for getting threshold' % det_name
+77		else: assert False, 'error, dataset %s not supported for getting threshold' % dataset
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:77:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76			else: assert False, 'error, detection method not supported for getting threshold' % det_name
+77		else: assert False, 'error, dataset %s not supported for getting threshold' % dataset
+78	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:104:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+103			tracker = AB3DMOT(cfg, cat, calib=calib, oxts=imu_poses, img_dir=img_seq, vis_dir=vis_dir, hw=hw, log=log_file, ID_init=ID_start) 
+104		else: assert False, 'error'
+105		
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\AB3DMOT_libs\utils.py:129:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+128					print('%s dir not exist' % data_dir)
+129					assert False, 'error'
+130	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\KITTI\evaluate.py:190:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+189	                self.min_overlap   = 0.25 # minimum bounding box overlap for 3rd party metrics
+190	            else: assert False
+191	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\KITTI\evaluate.py:549:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+548	                        else:
+549	                            assert False, 'error'
+550	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\KITTI\evaluate.py:1135:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1134	    else:
+1135	        assert False, 'error'
+1136	    classes = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\KITTI\munkres.py:793:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+792	        print('lowest cost=%d' % total_cost)
+793	        assert expected_total == total_cost
+794	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate.py:66:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	        # Check result file exists.
+66	        assert os.path.exists(result_path), 'Error: The result file does not exist!'
+67	
+68	        # Make dirs.
+69	        self.plot_dir = os.path.join(self.output_dir, 'plots')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate.py:86:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	
+86	        assert set(pred_boxes.sample_tokens) == set(gt_boxes.sample_tokens), \
+87	            "Samples in split don't match samples in predicted tracks."
+88	
+89	        # Add center distances.
+90	        pred_boxes = add_center_dist(nusc, pred_boxes)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate.py:161:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	                values = np.array(md.get_metric(AVG_METRIC_MAP[metric_name]))
+161	                assert len(values) == TrackingMetricData.nelem
+162	
+163	                if np.all(np.isnan(values)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate_quick.py:183:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+182	        elif eval_3diou: self.min_overlap = 0.25 
+183	        else: assert False
+184	        # print('min overlap creteria is %f' % self.min_overlap)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate_quick.py:542:32
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+541	                            elif eval_metrics == 'dist':
+542	                                assert False, 'error'
+543	                        elif eval_3diou:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate_quick.py:549:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+548	                        else:
+549	                            assert False, 'error'
+550	                        
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\evaluate_quick.py:640:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+639	                        else:
+640	                            assert False, 'error'
+641	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:162:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+161	            # Check that the rotation has the same format as in KITTI.
+162	            assert (velo_to_cam_rot.round(0) == np.array([[0, -1, 0], [0, 0, -1], [1, 0, 0]])).all()
+163	            assert (velo_to_cam_trans[1:3] < 0).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:163:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+162	            assert (velo_to_cam_rot.round(0) == np.array([[0, -1, 0], [0, 0, -1], [1, 0, 0]])).all()
+163	            assert (velo_to_cam_trans[1:3] < 0).all()
+164	
+165	            # Retrieve the token from the lidar.
+166	            # Note that this may be confusing as the filename of the camera will include the timestamp of the lidar,
+167	            # not the camera.
+168	            filename_cam_full = sd_record_cam['filename']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:184:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+183	            dst_lid_path = os.path.join(lidar_folder, '%06d.bin' % count)
+184	            assert not dst_lid_path.endswith('.pcd.bin')
+185	            pcl = LidarPointCloud.from_file(src_lid_path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:381:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+380	                    token_tmp = result_tmp['sample_token']
+381	                    assert token_tmp == sample_token, 'token is different'
+382	                    
+383	                    # create nuScenes box in world coordinate
+384	                    xyz = result_tmp['translation']                 # center_x, center_y, center_z
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:486:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+485	                # Check that the rotation has the same format as in KITTI.
+486	                assert (velo_to_cam_rot.round(0) == np.array([[0, -1, 0], [0, 0, -1], [1, 0, 0]])).all()
+487	                assert (velo_to_cam_trans[1:3] < 0).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:487:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+486	                assert (velo_to_cam_rot.round(0) == np.array([[0, -1, 0], [0, 0, -1], [1, 0, 0]])).all()
+487	                assert (velo_to_cam_trans[1:3] < 0).all()
+488	
+489	                # loop through result in a single frame
+490	                data_frame = data[sample_token]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\nuScenes\export_kitti.py:496:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+495	                    token_tmp = result_tmp['sample_token']
+496	                    assert token_tmp == sample_token, 'token is different'
+497	
+498	                    # print('%s, %s, %s' % (seq_name, frame_index, result_tmp['tracking_id']))
+499	
+500	                    center = result_tmp['translation']              # center_x, center_y, center_z
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\post_processing\visualization.py:48:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47			trk_root = os.path.join(file_path, '../../data/%s/mini' % args.dataset, subfolder)
+48			assert is_path_exists(trk_root), 'error, unfortunately mini data is missing at %s as well' % trk_root
+49	
+50			# assign sequence in mini data for evaluation on different dataset/split
+51			if args.dataset == 'KITTI':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: AB3DMOT\scripts\post_processing\visualization.py:55:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54			# elif args.dataset == 'nuScenes':
+55			else: assert False, 'mini data does not support for %s-%s' % (args.dataset, args.split)
+56	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 5286
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 56
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 56
+Files skipped (0):

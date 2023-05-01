@@ -1,0 +1,72 @@
+Run started:2023-04-23 06:05:21.729004
+
+Test results:
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-exploration-baselines\experimental\re3.py:25:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+24	        return H_step
+25	except:
+26	    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-exploration-baselines\experimental\rise.py:24:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+23	        return D_step
+24	except:
+25	    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-exploration-baselines\rlexplore\utils\envs.py:20:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+19	    import pybullet_envs
+20	except:
+21	    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-exploration-baselines\rlexplore\utils\envs.py:25:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+24	    import dmc2gym
+25	except:
+26	    pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-exploration-baselines\rlexplore\utils\state_process.py:49:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	        if range is not None:
+49	            assert isinstance(range, tuple), \
+50	                "range has to be a tuple (min, max) if specified. min and max are numbers"
+51	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1459
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 5
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 5
+Files skipped (0):

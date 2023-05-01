@@ -1,0 +1,132 @@
+Run started:2023-04-23 06:00:34.848869
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_errors.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	
+17	    assert str(PyboticsError()) == PyboticsError().message
+18	    assert str(PyboticsError("test")) == "test"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_errors.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    assert str(PyboticsError()) == PyboticsError().message
+18	    assert str(PyboticsError("test")) == "test"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_geometry.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    # hypothesis testing
+52	    assert -np.pi <= pybotics.geometry.wrap_2_pi(angle) < np.pi
+53	
+54	    # standard testing
+55	    angles = np.array(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_geometry.py:63:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	    actual_angles = np.array(list(map(pybotics.geometry.wrap_2_pi, test_angles)))
+63	    assert len(test_angles) == len(expected_angles)
+64	    assert len(actual_angles) == len(expected_angles)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_geometry.py:64:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	    assert len(test_angles) == len(expected_angles)
+64	    assert len(actual_angles) == len(expected_angles)
+65	    np.testing.assert_allclose(actual_angles, expected_angles)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_geometry.py:272:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+271	        name_order = e.name.split("_")[-1].lower()
+272	        assert name_order == e.value
+273	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_geometry.py:277:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+276	    counts = Counter(values).values()
+277	    assert all([v == 2 for v in counts])
+278	
+279	    # ensure only x,y,z are used
+280	    good_letters = set("xyz")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_geometry.py:283:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+282	    leftover_values = [x for x in values if set(x).difference(good_letters)]
+283	    assert not leftover_values
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_kinematic_chain.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    kc = MDHKinematicChain([link])
+24	    assert kc.num_parameters == MDHLink._size
+25	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_kinematic_chain.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    kc = MDHKinematicChain([link])
+59	    assert kc.ndof == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pybotics\tests\test_link.py:9:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+8	    """Test."""
+9	    assert len(RevoluteMDHLink()) == 4
+10	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1529
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 11
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 11
+Files skipped (0):

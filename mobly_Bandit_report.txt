@@ -1,0 +1,870 @@
+Run started:2023-04-23 05:57:10.414518
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'OK ('
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mobly\mobly\base_instrumentation_test.py:224:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+223	  FAIL = 'FAILURES!!!'
+224	  PASS = 'OK ('
+225	
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '[Test]'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mobly\mobly\base_test.py:32:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+31	# Macro strings for test result reporting.
+32	TEST_CASE_TOKEN = '[Test]'
+33	RESULT_LINE_TEMPLATE = TEST_CASE_TOKEN + ' %s %s'
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mobly\mobly\config_parser.py:28:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+27	ENV_MOBLY_LOGPATH = 'MOBLY_LOGPATH'
+28	_DEFAULT_LOG_PATH = '/tmp/logs/mobly/'
+29	
+30	
+31	class MoblyConfigError(Exception):
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '*'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mobly\mobly\controllers\android_device.py:39:32
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+38	
+39	ANDROID_DEVICE_PICK_ALL_TOKEN = '*'
+40	_DEBUG_PREFIX_TEMPLATE = '[AndroidDevice|%s] %s'
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mobly\mobly\controllers\android_device.py:496:65
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+495	    # logging.log_path only exists when this is used in an Mobly test run.
+496	    _log_path_base = utils.abs_path(getattr(logging, 'log_path', '/tmp/logs'))
+497	    self._log_path = os.path.join(_log_path_base,
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device.py:1038:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+1037	      # using shell redirection.
+1038	      self.adb.bugreport(' > "%s"' % full_out_path, shell=True, timeout=timeout)
+1039	    self.log.debug('Bugreport taken at %s.', full_out_path)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:17:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+16	import re
+17	import subprocess
+18	import threading
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:108:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+107	  """
+108	  ret, out, err = utils.run_command('which adb', shell=True)
+109	  clean_out = out.decode('utf-8').strip()
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:187:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+186	    try:
+187	      (ret, out, err) = utils.run_command(args, shell=shell, timeout=timeout)
+188	    except subprocess.TimeoutExpired:
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:223:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+222	                            stderr=subprocess.PIPE,
+223	                            shell=shell,
+224	                            bufsize=1)
+225	    out = '[elided, processed via handler]'
+226	    try:
+227	      # Even if the process dies, stdout.readline still works
+228	      # and will continue until it runs out of stdout to process.
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:290:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+289	  def _exec_adb_cmd(self, name, args, shell, timeout, stderr) -> bytes:
+290	    adb_cmd = self._construct_adb_cmd(name, args, shell=shell)
+291	    out = self._exec_cmd(adb_cmd, shell=shell, timeout=timeout, stderr=stderr)
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:291:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+290	    adb_cmd = self._construct_adb_cmd(name, args, shell=shell)
+291	    out = self._exec_cmd(adb_cmd, shell=shell, timeout=timeout, stderr=stderr)
+292	    return out
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:296:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+295	                                      handler) -> bytes:
+296	    adb_cmd = self._construct_adb_cmd(name, args, shell=shell)
+297	    err = self._execute_and_process_stdout(adb_cmd,
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:298:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+297	    err = self._execute_and_process_stdout(adb_cmd,
+298	                                           shell=shell,
+299	                                           handler=handler)
+300	    return err
+301	
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\adb.py:559:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+558	                                args,
+559	                                shell=shell,
+560	                                timeout=timeout,
+561	                                stderr=stderr)
+562	
+563	    return adb_call
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '::'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mobly\mobly\controllers\android_device_lib\errors.py:19:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+18	
+19	HIERARCHY_TOKEN = '::'
+20	
+21	
+22	class Error(signals.ControllerError):
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mobly\mobly\controllers\android_device_lib\event_dispatcher.py:295:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+294	            results.append(q.get(False))
+295	          except Exception:
+296	            pass
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\fastboot.py:16:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+15	import logging
+16	from subprocess import Popen, PIPE
+17	
+18	from mobly import utils
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\fastboot.py:37:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+36	  cmd = ' '.join(cmds)
+37	  proc = Popen(cmd, stdout=PIPE, stderr=PIPE, shell=True)
+38	  (out, err) = proc.communicate()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mobly\mobly\controllers\android_device_lib\jsonrpc_shell_base.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	    ads = android_device.get_instances([serial])
+67	    assert len(ads) == 1
+68	    self._ad = ads[0]
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\android_device_lib\services\logcat.py:228:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+227	        self.adb_logcat_file_path)
+228	    process = utils.start_standing_subprocess(cmd, shell=True)
+229	    self._adb_logcat_process = process
+
+--------------------------------------------------
+>> Issue: [B401:blacklist] A telnet-related module is being imported.  Telnet is considered insecure. Use SSH or some other encrypted protocol.
+   Severity: High   Confidence: High
+   CWE: CWE-319 (https://cwe.mitre.org/data/definitions/319.html)
+   Location: mobly\mobly\controllers\attenuator_lib\telnet_scpi_client.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b401-import-telnetlib
+20	
+21	import telnetlib
+22	from mobly.controllers import attenuator
+
+--------------------------------------------------
+>> Issue: [B312:blacklist] Telnet-related functions are being called. Telnet is considered insecure. Use SSH or some other encrypted protocol.
+   Severity: High   Confidence: High
+   CWE: CWE-319 (https://cwe.mitre.org/data/definitions/319.html)
+   Location: mobly\mobly\controllers\attenuator_lib\telnet_scpi_client.py:48:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b312-telnetlib
+47	    self.port = port
+48	    self._tn = telnetlib.Telnet()
+49	    self._tn.open(host, port, 10)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\iperf_server.py:19:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+18	import os
+19	import subprocess
+20	
+21	from mobly import utils
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mobly\mobly\controllers\iperf_server.py:31:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+30	      results.append(IPerfServer(c, logging.log_path))
+31	    except:
+32	      pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mobly\mobly\controllers\iperf_server.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+39	      ipf.stop()
+40	    except:
+41	      pass
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\iperf_server.py:144:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+143	    cmd = '%s %s > %s' % (self.iperf_str, extra_args, full_out_path)
+144	    self.iperf_process = utils.start_standing_subprocess(cmd, shell=True)
+145	    self.log_files.append(full_out_path)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:24:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+23	import signal
+24	import subprocess
+25	import tempfile
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:55:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+54	    try:
+55	      subprocess.check_call(['ifconfig', self._interface, 'down'])
+56	      subprocess.check_call(['iwconfig', self._interface, 'mode', 'monitor'])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:55:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+54	    try:
+55	      subprocess.check_call(['ifconfig', self._interface, 'down'])
+56	      subprocess.check_call(['iwconfig', self._interface, 'mode', 'monitor'])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:56:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+55	      subprocess.check_call(['ifconfig', self._interface, 'down'])
+56	      subprocess.check_call(['iwconfig', self._interface, 'mode', 'monitor'])
+57	      subprocess.check_call(['ifconfig', self._interface, 'up'])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:56:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+55	      subprocess.check_call(['ifconfig', self._interface, 'down'])
+56	      subprocess.check_call(['iwconfig', self._interface, 'mode', 'monitor'])
+57	      subprocess.check_call(['ifconfig', self._interface, 'up'])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:57:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+56	      subprocess.check_call(['iwconfig', self._interface, 'mode', 'monitor'])
+57	      subprocess.check_call(['ifconfig', self._interface, 'up'])
+58	    except Exception as err:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:57:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+56	      subprocess.check_call(['iwconfig', self._interface, 'mode', 'monitor'])
+57	      subprocess.check_call(['ifconfig', self._interface, 'up'])
+58	    except Exception as err:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:88:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+87	      try:
+88	        subprocess.check_call([
+89	            'iwconfig', self._interface, 'channel',
+90	            str(final_configs[sniffer.Sniffer.CONFIG_KEY_CHANNEL])
+91	        ])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\controllers\sniffer_lib\local\local_base.py:88:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+87	      try:
+88	        subprocess.check_call([
+89	            'iwconfig', self._interface, 'channel',
+90	            str(final_configs[sniffer.Sniffer.CONFIG_KEY_CHANNEL])
+91	        ])
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'PASS'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mobly\mobly\records.py:185:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+184	  RECORD_POSITION = 'Position'
+185	  TEST_RESULT_PASS = 'PASS'
+186	  TEST_RESULT_FAIL = 'FAIL'
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:29:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+28	import string
+29	import subprocess
+30	import threading
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mobly\mobly\utils.py:261:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+260	  """
+261	  letters = [random.choice(ascii_letters_and_digits) for _ in range(length)]
+262	  return ''.join(letters)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:283:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+282	    try:
+283	      ps_results = subprocess.check_output([
+284	          'ps',
+285	          '-o',
+286	          'pid',
+287	          '--ppid',
+288	          str(pid),
+289	          '--noheaders',
+290	      ]).decode().strip()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:283:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+282	    try:
+283	      ps_results = subprocess.check_output([
+284	          'ps',
+285	          '-o',
+286	          'pid',
+287	          '--ppid',
+288	          str(pid),
+289	          '--noheaders',
+290	      ]).decode().strip()
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:308:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+307	    # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill
+308	    subprocess.check_output([
+309	        'taskkill',
+310	        '/F',
+311	        '/T',
+312	        '/PID',
+313	        str(proc.pid),
+314	    ])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:308:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+307	    # https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/taskkill
+308	    subprocess.check_output([
+309	        'taskkill',
+310	        '/F',
+311	        '/T',
+312	        '/PID',
+313	        str(proc.pid),
+314	    ])
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:463:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+462	                             stderr=stderr,
+463	                             shell=shell,
+464	                             cwd=cwd,
+465	                             env=env,
+466	                             universal_newlines=universal_newlines)
+467	  timer = None
+468	  timer_triggered = threading.Event()
+469	  if timeout and timeout > 0:
+470	    # The wait method on process will hang when used with PIPEs with large
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\mobly\utils.py:517:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+516	                          stderr=subprocess.PIPE,
+517	                          shell=shell,
+518	                          env=env)
+519	  # Leaving stdin open causes problems for input, e.g. breaking the
+520	  # code.inspect() shell (http://stackoverflow.com/a/25512460/1612937), so
+521	  # explicitly close it assuming it is not needed for standing subprocesses.
+522	  proc.stdin.close()
+523	  proc.stdin = None
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mobly\tests\lib\jsonrpc_client_test_base.py:79:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+78	    chars = string.ascii_letters + string.digits
+79	    random_msg = ''.join(random.choice(chars) for i in range(length))
+80	    mock_response = self.MOCK_RESP_FLEXIABLE_RESULT_LENGTH % random_msg
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mobly\tests\mobly\base_test_test.py:621:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+620	      def on_fail(self, record):
+621	        assert self.current_test_info.name == 'test_something'
+622	        my_mock("on_fail")
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:17:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+16	import io
+17	import subprocess
+18	import unittest
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:341:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+340	                                                'arg1 arg2',
+341	                                                shell=True)
+342	    self.assertEqual(adb_cmd, '"adb" shell arg1 arg2')
+343	
+344	  def test_construct_adb_cmd_with_shell_true_with_one_command(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:346:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+345	    adb_cmd = adb.AdbProxy()._construct_adb_cmd(
+346	        'shell ls /asdafsfd/asdf-asfd/asa', [], shell=True)
+347	    self.assertEqual(adb_cmd, '"adb" shell ls /asdafsfd/asdf-asfd/asa ')
+348	
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:352:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+351	                                                'ls /asdafsfd/asdf-asfd/asa',
+352	                                                shell=True)
+353	    self.assertEqual(adb_cmd, '"adb" shell ls /asdafsfd/asdf-asfd/asa')
+354	
+355	  def test_construct_adb_cmd_with_shell_true_with_one_arg_command_list(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:358:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+357	                                                ['ls /asdafsfd/asdf-asfd/asa'],
+358	                                                shell=True)
+359	    self.assertEqual(adb_cmd, '"adb" shell \'ls /asdafsfd/asdf-asfd/asa\'')
+360	
+361	  def test_construct_adb_cmd_with_shell_true_with_auto_quotes(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:364:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+363	                                                ['a b', '"blah"', r'\/\/'],
+364	                                                shell=True)
+365	    self.assertEqual(adb_cmd, '"adb" shell \'a b\' \'"blah"\' \'\\/\\/\'')
+366	
+367	  def test_construct_adb_cmd_with_shell_true_with_serial(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:370:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+369	                                                       'arg1 arg2',
+370	                                                       shell=True)
+371	    self.assertEqual(adb_cmd, '"adb" -s "12345" shell arg1 arg2')
+372	
+373	  def test_construct_adb_cmd_with_shell_true_with_list(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:375:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+374	    adb_cmd = adb.AdbProxy()._construct_adb_cmd('shell', ['arg1', 'arg2'],
+375	                                                shell=True)
+376	    self.assertEqual(adb_cmd, '"adb" shell arg1 arg2')
+377	
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:381:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+380	                                                       ['arg1', 'arg2'],
+381	                                                       shell=True)
+382	    self.assertEqual(adb_cmd, '"adb" -s "12345" shell arg1 arg2')
+383	
+384	  def test_exec_adb_cmd(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:396:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+395	      mock_exec_cmd.return_value = MOCK_DEFAULT_COMMAND_OUTPUT
+396	      adb.AdbProxy().shell('arg1 arg2', shell=True)
+397	      mock_exec_cmd.assert_called_once_with('"adb" shell arg1 arg2',
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:398:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+397	      mock_exec_cmd.assert_called_once_with('"adb" shell arg1 arg2',
+398	                                            shell=True,
+399	                                            timeout=None,
+400	                                            stderr=None)
+401	
+402	  def test_exec_adb_cmd_formats_command(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:428:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+427	
+428	        adb.AdbProxy().shell(mock_adb_args, shell=True)
+429	        mock_construct_adb_cmd.assert_called_once_with('shell',
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:431:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+430	                                                       mock_adb_args,
+431	                                                       shell=True)
+432	        mock_exec_cmd.assert_called_once_with(mock_adb_cmd,
+433	                                              shell=True,
+434	                                              timeout=None,
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:433:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+432	        mock_exec_cmd.assert_called_once_with(mock_adb_cmd,
+433	                                              shell=True,
+434	                                              timeout=None,
+435	                                              stderr=None)
+436	
+437	  def test_execute_adb_and_process_stdout_formats_command(self):
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\adb_test.py:463:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+462	    stderr_redirect = io.BytesIO()
+463	    out = adb.AdbProxy().shell('arg1 arg2', shell=True, stderr=stderr_redirect)
+464	    self.assertEqual(MOCK_DEFAULT_STDOUT, out.decode('utf-8'))
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\services\logcat_test.py:70:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+69	    if not hasattr(logging, 'log_path'):
+70	      setattr(logging, 'log_path', '/tmp/logs')
+71	    # Creates a temp dir to be used by tests in this test class.
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\services\logcat_test.py:119:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+118	                                       (ad.serial, '"%s" ' % expected_log_path),
+119	                                       shell=True)
+120	    self.assertEqual(logcat_service.adb_logcat_file_path, expected_log_path)
+121	    expected_msg = ('Logcat thread is already running, cannot start another'
+122	                    ' one.')
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\services\logcat_test.py:158:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+157	                        '"some/path/log.txt" ')
+158	    start_proc_mock.assert_called_with(expected_adb_cmd, shell=True)
+159	    self.assertEqual(logcat_service.adb_logcat_file_path, 'some/path/log.txt')
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\controllers\android_device_lib\services\logcat_test.py:325:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+324	                                       (ad.serial, '"%s" ' % expected_log_path),
+325	                                       shell=True)
+326	    self.assertEqual(logcat_service.adb_logcat_file_path, expected_log_path)
+327	    logcat_service.stop()
+328	
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mobly\tests\mobly\controllers\android_device_test.py:47:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+46	    if not hasattr(logging, 'log_path'):
+47	      setattr(logging, 'log_path', '/tmp/logs')
+48	    # Creates a temp dir to be used by tests in this test class.
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mobly\tests\mobly\controllers\android_device_test.py:655:55
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+654	    mock_test_info = runtime_test_info.RuntimeTestInfo(mock_record.test_name,
+655	                                                       '/tmp/blah/',
+656	                                                       mock_record)
+657	    filename = ad.generate_filename('MagicLog', time_identifier=mock_test_info)
+658	    self.assertEqual(filename, 'MagicLog,1,fakemodel,test_xyz-1234567')
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mobly\tests\mobly\snippet\client_base_test.py:53:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+52	  chars = string.ascii_letters + string.digits
+53	  return template % ''.join(random.choice(chars) for _ in range(result_length))
+54	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\utils_test.py:24:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+23	import socket
+24	import subprocess
+25	import sys
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\utils_test.py:48:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+47	  if os.name == 'nt':
+48	    return str(pid) in subprocess.check_output([
+49	        'tasklist',
+50	        '/fi',
+51	        f'PID eq {pid}',
+52	    ]).decode()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\utils_test.py:48:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+47	  if os.name == 'nt':
+48	    return str(pid) in subprocess.check_output([
+49	        'tasklist',
+50	        '/fi',
+51	        f'PID eq {pid}',
+52	    ]).decode()
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\utils_test.py:268:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+267	                            stderr=mock_stderr,
+268	                            shell=mock_shell,
+269	                            timeout=mock_timeout,
+270	                            env=mock_env,
+271	                            universal_newlines=mock_universal_newlines)
+272	
+273	    self.assertEqual(out, (127, 'fake_out', 'fake_err'))
+274	    mock_popen.assert_called_with(
+275	        mock_command,
+
+--------------------------------------------------
+>> Issue: [B604:any_other_function_with_shell_equals_true] Function call with shell=True parameter identified, possible security issue.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\utils_test.py:278:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b604_any_other_function_with_shell_equals_true.html
+277	        stderr=mock_stderr,
+278	        shell=mock_shell,
+279	        cwd=None,
+280	        env=mock_env,
+281	        universal_newlines=mock_universal_newlines,
+282	    )
+283	    mock_timer.assert_called_with(1234, mock.ANY)
+284	
+285	  def test_run_command_with_universal_newlines_false(self):
+286	    _, out, _ = utils.run_command(self.sleep_cmd(0.01),
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mobly\tests\mobly\utils_test.py:340:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+339	  def test_stop_standing_subproc_without_pipe(self):
+340	    p = subprocess.Popen(self.sleep_cmd(4))
+341	    self.assertIsNone(p.stdout)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 21465
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 35
+		Medium: 34
+		High: 6
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 29
+		Medium: 10
+		High: 36
+Files skipped (0):

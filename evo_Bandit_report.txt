@@ -1,0 +1,320 @@
+Run started:2023-04-23 05:47:42.584514
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: evo\evo\core\trajectory.py:96:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	        if not hasattr(self, "_positions_xyz"):
+96	            assert hasattr(self, "_poses_se3")
+97	            self._positions_xyz = np.array([p[:3, 3] for p in self._poses_se3])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: evo\evo\core\trajectory.py:107:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	        if not hasattr(self, "_orientations_quat_wxyz"):
+107	            assert hasattr(self, "_poses_se3")
+108	            self._orientations_quat_wxyz \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: evo\evo\core\trajectory.py:118:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	                [tr.euler_from_matrix(p, axes=axes) for p in self._poses_se3])
+118	        assert hasattr(self, "_orientations_quat_wxyz")
+119	        return np.array([
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: evo\evo\core\trajectory.py:127:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	        if not hasattr(self, "_poses_se3"):
+127	            assert hasattr(self, "_positions_xyz")
+128	            assert hasattr(self, "_orientations_quat_wxyz")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: evo\evo\core\trajectory.py:128:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	            assert hasattr(self, "_positions_xyz")
+128	            assert hasattr(self, "_orientations_quat_wxyz")
+129	            self._poses_se3 \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: evo\evo\core\transformations.py:1489:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1488	    else:
+1489	        assert len(rand) == 3
+1490	    r1 = numpy.sqrt(1.0 - rand[0])
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\evo\main_ipython.py:27:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+26	import shutil
+27	import subprocess as sp
+28	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\evo\main_ipython.py:59:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+58	    try:
+59	        sp.check_call([ipython, "profile", "locate", "evo"], stdout=FNULL,
+60	                      stderr=FNULL)
+61	    except sp.CalledProcessError:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\evo\main_ipython.py:63:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+62	        print("IPython profile for evo is not installed", file=sys.stderr)
+63	        sp.call([ipython, "profile", "create", "evo"])
+64	        config = os.path.join(PACKAGE_BASE_PATH, "ipython_config.py")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\evo\main_ipython.py:65:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+64	        config = os.path.join(PACKAGE_BASE_PATH, "ipython_config.py")
+65	        profile_dir = sp.check_output([ipython, "profile", "locate",
+66	                                       "evo"]).decode("utf-8")
+67	        profile_dir = profile_dir.rstrip()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\evo\main_ipython.py:70:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+69	    try:
+70	        sp.check_call([python, "-m", "IPython", "--profile", "evo"] +
+71	                      other_args)
+72	    except sp.CalledProcessError as e:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: evo\evo\tools\plot.py:26:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+25	import logging
+26	import pickle
+27	import typing
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: evo\evo\tools\plot.py:99:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+98	                         "...")
+99	            self.figures = pickle.load(open(deserialize, 'rb'))
+100	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\setup.py:7:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+6	import shutil
+7	import subprocess as sp
+8	
+9	# monkey patch because setuptools entry_points are slow as fuck
+10	# https://github.com/ninjaaron/fast-entry_points
+11	import fastentrypoints  # pylint: disable=unused-import
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\setup.py:21:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+20	    try:
+21	        sp.check_call("activate-global-python-argcomplete", shell=True)
+22	        print("Done - argcomplete should work now.")
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\setup.py:21:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+20	    try:
+21	        sp.check_call("activate-global-python-argcomplete", shell=True)
+22	        print("Done - argcomplete should work now.")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\setup.py:56:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+55	        print("Building source distribution...")
+56	        sp.check_call([sys.executable, "setup.py", "sdist"])
+57	        print("Uploading package to PyPi...")
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\setup.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+57	        print("Uploading package to PyPi...")
+58	        sp.check_call(["twine", "upload", "dist/*"])
+59	        sys.exit()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\setup.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+57	        print("Uploading package to PyPi...")
+58	        sp.check_call(["twine", "upload", "dist/*"])
+59	        sys.exit()
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\test\ape_rpe_smoke_test.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import shutil
+5	import subprocess as sp
+6	
+7	tmp_dir = "tmp"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\test\ape_rpe_smoke_test.py:31:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+30	                print("[smoke test] {}".format(cmd))
+31	                output = sp.check_output(cmd.split(" "), cwd=here)
+32	                shutil.rmtree(tmp_dir)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\test\res_smoke_test.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import shutil
+5	import subprocess as sp
+6	
+7	tmp_dir = "tmp"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\test\res_smoke_test.py:27:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+26	            print("[smoke test] {}".format(cmd))
+27	            output = sp.check_output(cmd.split(" "), cwd=here)
+28	            shutil.rmtree(tmp_dir)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: evo\test\test_lie_algebra.py:118:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+117	        t = np.array([0, 0, 0])
+118	        s = random.random() * 10
+119	        x = np.array([1, 0, 0, 1]).T  # homogeneous vector
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: evo\test\test_lie_algebra.py:130:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+129	        t = np.array([1, 2, 3])
+130	        s = random.random() * 10
+131	        p = lie.sim3(r, t, s)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\test\traj_smoke_test.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+5	import shutil
+6	import subprocess as sp
+7	
+8	tmp_dir = "tmp"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: evo\test\traj_smoke_test.py:32:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+31	                print("[smoke test] {}".format(cmd))
+32	                output = sp.check_output(cmd.split(" "), cwd=here)
+33	                shutil.rmtree(tmp_dir)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: evo\test\tum_benchmark_tools\evaluate_rpe.py:260:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+259	        else:
+260	            pairs = [(random.randint(0,len(traj_est)-1),random.randint(0,len(traj_est)-1)) for i in range(param_max_pairs)]
+261	    else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: evo\test\tum_benchmark_tools\evaluate_rpe.py:260:56
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+259	        else:
+260	            pairs = [(random.randint(0,len(traj_est)-1),random.randint(0,len(traj_est)-1)) for i in range(param_max_pairs)]
+261	    else:
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 8765
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 28
+		Medium: 1
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 29
+Files skipped (0):

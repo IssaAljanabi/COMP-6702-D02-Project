@@ -1,0 +1,367 @@
+Run started:2023-04-23 05:49:52.695628
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\examples\policy.py:97:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	
+97	    assert not (fully_conv and depth_im_filename is not None
+98	                and segmask_filename is None
+99	                ), "Fully-Convolutional policy expects a segmask."
+100	
+101	    if depth_im_filename is None:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\grasping\grasp_quality_function.py:936:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+935	            self._gqcnn.close_session()
+936	        except Exception:
+937	            # TODO(vsatish): Except specific exception.
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\grasping\grasp_quality_function.py:1258:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+1257	            self._fcgqcnn.close_session()
+1258	        except Exception:
+1259	            # TODO(vsatish): Except specific exception.
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\grasping\policy\fc_policy.py:245:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+244	        if self._filter_grasps:
+245	            assert self._filters is not None, ("Trying to filter grasps but no"
+246	                                               " filters were provided!")
+247	            assert num_actions == 1, ("Filtering support is only implemented"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\grasping\policy\fc_policy.py:247:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+246	                                               " filters were provided!")
+247	            assert num_actions == 1, ("Filtering support is only implemented"
+248	                                      " for single actions!")
+249	            num_actions = self._max_grasps_to_filter
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gqcnn\gqcnn\grasping\policy\policy.py:33:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+32	import copy
+33	import pickle as pkl
+34	import math
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gqcnn\gqcnn\grasping\policy\policy.py:143:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+142	        if os.path.exists(state_filename):
+143	            fully_observed = pkl.load(open(state_filename, "rb"))
+144	        return RgbdImageState(RgbdImage.from_color_and_depth(color, depth),
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gqcnn\gqcnn\grasping\policy\policy.py:210:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+209	        image_filename = os.path.join(save_dir, "tf_image.npy")
+210	        grasp = pkl.load(open(grasp_filename, "rb"))
+211	        q_value = pkl.load(open(q_value_filename, "rb"))
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gqcnn\gqcnn\grasping\policy\policy.py:211:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+210	        grasp = pkl.load(open(grasp_filename, "rb"))
+211	        q_value = pkl.load(open(q_value_filename, "rb"))
+212	        image = None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\grasping\policy\policy.py:826:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+825	                                 " of segmask {}.")
+826	        assert pred_map.shape == segmask.shape, seg_pred_mismatch_msg.format(
+827	            pred_map.shape, segmask.shape)
+828	        preds_masked = np.zeros_like(pred_map)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\model\tf\fc_network_tf.py:78:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77	                                   " with padding: {}")
+78	                assert layer_config["pad"] == "VALID", invalid_pad_msg.format(
+79	                    layer_name, layer_config["pad"])
+80	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\model\tf\network_tf.py:486:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+485	                                " be 2x number of angular bins.")
+486	            assert final_out_size == 2 * self._angular_bins, ang_mismatch_msg
+487	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\model\tf\network_tf.py:1400:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1399	                                  " merge stream must be present!")
+1400	            assert "pose_stream" in self._architecture and \
+1401	                "merge_stream" in self._architecture, missing_stream_msg
+1402	            with tf.name_scope("im_stream"):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\model\tf\network_tf.py:1420:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1419	                                     " im stream is allowed!")
+1420	            assert not ("pose_stream" in self._architecture or "merge_stream"
+1421	                        in self._architecture), extraneous_stream_msg.format(
+1422	                            self._input_depth_mode)
+1423	            with tf.name_scope("im_stream"):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\search\search.py:98:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	                                       " base models!")
+98	            assert len(train_configs) == len(datasets) == len(
+99	                split_names) == len(base_models), inconsistent_inputs_msg
+100	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\search\search.py:103:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	                                       " configs, datasets, and split_names!")
+103	            assert len(train_configs) == len(datasets) == len(
+104	                split_names), inconsistent_inputs_msg
+105	        self._logger.info("Generating trial parameters...")
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\gqcnn\search\trial.py:100:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+99	        try:
+100	            os.system("taskset -pc {} {}".format(
+101	                ",".join(str(i) for i in cpu_cores_avail), os.getpid()))
+102	            os.environ["CUDA_VISIBLE_DEVICES"] = gpu_avail
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\search\utils.py:102:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+101	                                  " the same # of parameters to search over!")
+102	        assert max(num_params) == min(
+103	            num_params), invalid_anchor_tag_msg.format(anchor_tag)
+104	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\gqcnn\training\tf\trainer_tf.py:38:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+37	import signal
+38	import subprocess
+39	import sys
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\gqcnn\training\tf\trainer_tf.py:217:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+216	        self.logger.info(tensorboard_launch_msg.format(self._tensorboard_port))
+217	        self._tensorboard_proc = subprocess.Popen([
+218	            "tensorboard", "--port",
+219	            str(self._tensorboard_port), "--logdir", self.summary_dir
+220	        ],
+221	                                                  stdout=FNULL)
+222	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\gqcnn\training\tf\trainer_tf.py:217:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+216	        self.logger.info(tensorboard_launch_msg.format(self._tensorboard_port))
+217	        self._tensorboard_proc = subprocess.Popen([
+218	            "tensorboard", "--port",
+219	            str(self._tensorboard_port), "--logdir", self.summary_dir
+220	        ],
+221	                                                  stdout=FNULL)
+222	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\training\tf\trainer_tf.py:1140:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1139	                                  " during angular training.")
+1140	            assert not self.cfg["symmetrize"], symmetrization_msg
+1141	            self._bin_width = self._max_angle / self._angular_bins
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\gqcnn\utils\utils.py:215:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+214	                         " interpolation are no longer supported.")
+215	    assert interp in skt_interp_map, ("Interpolation '{}' not"
+216	                                      " supported.".format(interp))
+217	
+218	    if isinstance(size, (tuple, list)):
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\setup.py:36:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+35	from setuptools.command.install import install
+36	import subprocess
+37	import sys
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\setup.py:52:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+51	    try:
+52	        gpus = subprocess.check_output(
+53	            ["nvidia-smi", "--query-gpu=gpu_name",
+54	             "--format=csv"]).decode().strip().split("\n")[1:]
+55	        if len(gpus) > 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\setup.py:52:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+51	    try:
+52	        gpus = subprocess.check_output(
+53	            ["nvidia-smi", "--query-gpu=gpu_name",
+54	             "--format=csv"]).decode().strip().split("\n")[1:]
+55	        if len(gpus) > 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\setup.py:88:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+87	            tf_dep = get_tf_dep()
+88	            subprocess.Popen([sys.executable, "-m", "pip", "install",
+89	                              tf_dep]).wait()
+90	        else:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\setup.py:123:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+122	            tf_dep = get_tf_dep()
+123	            subprocess.Popen([sys.executable, "-m", "pip", "install",
+124	                              tf_dep]).wait()
+125	        else:
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gqcnn\setup.py:145:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+144	
+145	exec(
+146	    open(
+147	        os.path.join(os.path.dirname(os.path.realpath(__file__)),
+148	                     "gqcnn/version.py")).read())
+149	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\tools\hyperparam_search.py:90:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	
+90	    assert len(datasets) == len(
+91	        train_configs
+92	    ), "Must have same number of datasets as training configs!"
+93	    if len(base_model_dirs) > 0:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gqcnn\tools\hyperparam_search.py:97:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	                                        " training configs!")
+97	        assert len(base_model_dirs) == len(
+98	            datasets), models_datasets_mismatch_msg
+99	    if len(split_names) < len(datasets):
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 11289
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 26
+		Medium: 4
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 31
+Files skipped (0):

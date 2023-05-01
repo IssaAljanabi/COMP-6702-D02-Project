@@ -1,0 +1,1028 @@
+Run started:2023-04-23 06:05:42.183072
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\example\example_env.py:65:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	        if position:
+65	            assert len(position)==2
+66	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\mir100\mir100.py:84:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	        if start_pose:
+84	            assert len(start_pose)==3
+85	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\mir100\mir100.py:92:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	        if target_pose:
+92	            assert len(target_pose)==3
+93	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\mir100\mir100.py:128:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	        # Check if the action is within the action space
+128	        assert self.action_space.contains(action), "%r (%s) invalid" % (action, type(action))
+129	
+130	        # Convert environment action to Robot Server action
+131	        rs_action = copy.deepcopy(action)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\mir100\mir100.py:445:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+444	        if start_pose:
+445	            assert len(start_pose)==3
+446	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\mir100\mir100.py:453:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+452	        if target_pose:
+453	            assert len(target_pose)==3
+454	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\simulation_wrapper.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	
+39	        assert self.sm_client.kill_server(self.robot_server_ip)
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\ur\ur_base_avoidance_env.py:76:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	        if joint_positions: 
+76	            assert len(joint_positions) == 6
+77	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\ur\ur_base_env.py:84:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	        if joint_positions: 
+84	            assert len(joint_positions) == 6
+85	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\ur\ur_ee_positioning.py:199:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+198	        if joint_positions: 
+199	            assert len(joint_positions) == 6
+200	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\envs\ur\ur_ee_positioning.py:229:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+228	        if ee_target_pose:
+229	            assert len(ee_target_pose) == 6
+230	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\utils\ur_utils.py:27:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	
+27	        assert model in ["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e"]
+28	
+29	        self.model = model
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\utils\utils.py:122:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	
+122	    assert output_len > 0
+123	    assert output_len <= len(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\utils\utils.py:123:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+122	    assert output_len > 0
+123	    assert output_len <= len(data)
+124	
+125	    temp = np.linspace(0, len(data)-1, num=output_len)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\robo_gym\utils\utils.py:128:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	
+128	    assert len(temp) == len(set(temp))
+129	
+130	    ds_data = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\mir100\test_mir100_base_env.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	
+20	    assert env.observation_space.contains(observation)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\mir100\test_mir100_obstacle_avoidance.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	
+20	    assert env.observation_space.contains(observation)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	def test_initialization(env):
+25	    assert env.ur.model == env.request_param
+26	    env.reset()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert env.observation_space.contains(observation)
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:49:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	       i += 1
+49	   assert info['final_status'] == 'collision'
+50	  
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:56:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	   state = env.reset(joint_positions=joint_positions)
+56	   assert np.isclose(env.ur.normalize_joint_values(joint_positions), state[3:9], atol=0.1).all()
+57	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:75:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	   state = env.reset(joint_positions=params[env.ur.model]['joint_positions'], fixed_object_position=params[env.ur.model]['object_coords'])
+75	   assert np.isclose([params[env.ur.model]['polar_coords']['r']], state[0], atol=0.05).all()
+76	   assert np.isclose([params[env.ur.model]['polar_coords']['theta'], params[env.ur.model]['polar_coords']['phi']], state[1:3], atol=0.2).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:76:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	   assert np.isclose([params[env.ur.model]['polar_coords']['r']], state[0], atol=0.05).all()
+76	   assert np.isclose([params[env.ur.model]['polar_coords']['theta'], params[env.ur.model]['polar_coords']['phi']], state[1:3], atol=0.2).all()
+77	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:103:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	    if fix_base:
+103	        assert math.isclose(initial_joint_positions[0], joint_positions[0], abs_tol=0.05)
+104	    if fix_shoulder:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:105:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	    if fix_shoulder:
+105	        assert math.isclose(initial_joint_positions[1], joint_positions[1], abs_tol=0.05)
+106	    if fix_elbow:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:107:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	    if fix_elbow:
+107	        assert math.isclose(initial_joint_positions[2], joint_positions[2], abs_tol=0.05)
+108	    if fix_wrist_1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	    if fix_wrist_1:
+109	        assert math.isclose(initial_joint_positions[3], joint_positions[3], abs_tol=0.05)
+110	    if fix_wrist_2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:111:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	    if fix_wrist_2:
+111	        assert math.isclose(initial_joint_positions[4], joint_positions[4], abs_tol=0.05)
+112	    if fix_wrist_3:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_basic.py:113:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	    if fix_wrist_3:
+113	        assert math.isclose(initial_joint_positions[5], joint_positions[5], abs_tol=0.05)
+114	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	def test_initialization(env):
+32	    assert env.ur.model == env.request_param
+33	    env.reset()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:41:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	
+41	    assert env.observation_space.contains(observation)
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:56:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	       i += 1
+56	   assert info['final_status'] == 'collision'
+57	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:78:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77	        # check if robot follows the trajectory in all steps of trajectory segment 0
+78	        assert np.isclose(env.ur.normalize_joint_values(traj_joint_positions), ur_j_pos_norm, atol=0.1).all()
+79	        # check if calculation of delta joints is correct
+80	        assert np.isclose((ur_j_pos_norm - desired_joints), delta_joints, atol=0.01).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:80:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	        # check if calculation of delta joints is correct
+80	        assert np.isclose((ur_j_pos_norm - desired_joints), delta_joints, atol=0.01).all()
+81	    # check that the current trajectory point is a target point
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:82:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	    # check that the current trajectory point is a target point
+82	    assert state[24] == 1.0
+83	    # check that state machine has transitioned to segment 1 of trajectory 
+84	    traj_joint_positions = trajectory[1][0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:86:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	    state, _, _, _ = env.step(action)
+86	    assert np.isclose(env.ur.normalize_joint_values(traj_joint_positions), state[3:9], atol=0.1).all()
+87	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	    if fix_base:
+109	        assert math.isclose(initial_joint_positions[0], joint_positions[0], abs_tol=0.05)
+110	    if fix_shoulder:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:111:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	    if fix_shoulder:
+111	        assert math.isclose(initial_joint_positions[1], joint_positions[1], abs_tol=0.05)
+112	    if fix_elbow:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:113:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	    if fix_elbow:
+113	        assert math.isclose(initial_joint_positions[2], joint_positions[2], abs_tol=0.05)
+114	    if fix_wrist_1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:115:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+114	    if fix_wrist_1:
+115	        assert math.isclose(initial_joint_positions[3], joint_positions[3], abs_tol=0.05)
+116	    if fix_wrist_2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:117:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    if fix_wrist_2:
+117	        assert math.isclose(initial_joint_positions[4], joint_positions[4], abs_tol=0.05)
+118	    if fix_wrist_3:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_fixed_spline.py:119:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	    if fix_wrist_3:
+119	        assert math.isclose(initial_joint_positions[5], joint_positions[5], abs_tol=0.05)
+120	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	def test_initialization(env):
+30	    assert env.ur.model == env.request_param
+31	    env.reset()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	
+39	    assert env.observation_space.contains(observation)
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:54:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	       i += 1
+54	   assert info['final_status'] == 'collision'
+55	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:63:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	   state = env.reset(fixed_object_position=params[env.ur.model]['object_coords'])
+63	   assert np.isclose([params[env.ur.model]['polar_coords_ee']['r'], params[env.ur.model]['polar_coords_ee']['theta'], params[env.ur.model]['polar_coords_ee']['phi']], state[0:3], atol=0.1).all()
+64	   assert np.isclose([params[env.ur.model]['polar_coords_forearm']['r'], params[env.ur.model]['polar_coords_forearm']['theta'], params[env.ur.model]['polar_coords_forearm']['phi']], state[15:18], atol=0.1).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:64:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	   assert np.isclose([params[env.ur.model]['polar_coords_ee']['r'], params[env.ur.model]['polar_coords_ee']['theta'], params[env.ur.model]['polar_coords_ee']['phi']], state[0:3], atol=0.1).all()
+64	   assert np.isclose([params[env.ur.model]['polar_coords_forearm']['r'], params[env.ur.model]['polar_coords_forearm']['theta'], params[env.ur.model]['polar_coords_forearm']['phi']], state[15:18], atol=0.1).all()
+65	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:86:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	        # check if robot follows the trajectory in all steps of trajectory segment 0
+86	        assert np.isclose(env.ur.normalize_joint_values(traj_joint_positions), ur_j_pos_norm, atol=0.1).all()
+87	        # check if calculation of delta joints is correct
+88	        assert np.isclose((ur_j_pos_norm - desired_joints), delta_joints, atol=0.01).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:88:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	        # check if calculation of delta joints is correct
+88	        assert np.isclose((ur_j_pos_norm - desired_joints), delta_joints, atol=0.01).all()
+89	    # check that the current trajectory point is a target point
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:90:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	    # check that the current trajectory point is a target point
+90	    assert state[24] == 1.0
+91	    # check that state machine has transitioned to segment 1 of trajectory 
+92	    traj_joint_positions = trajectory[1][0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    state, _, _, _ = env.step(action)
+94	    assert np.isclose(env.ur.normalize_joint_values(traj_joint_positions), state[3:9], atol=0.1).all()
+95	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:117:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    if fix_base:
+117	        assert math.isclose(initial_joint_positions[0], joint_positions[0], abs_tol=0.05)
+118	    if fix_shoulder:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:119:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	    if fix_shoulder:
+119	        assert math.isclose(initial_joint_positions[1], joint_positions[1], abs_tol=0.05)
+120	    if fix_elbow:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:121:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	    if fix_elbow:
+121	        assert math.isclose(initial_joint_positions[2], joint_positions[2], abs_tol=0.05)
+122	    if fix_wrist_1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:123:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+122	    if fix_wrist_1:
+123	        assert math.isclose(initial_joint_positions[3], joint_positions[3], abs_tol=0.05)
+124	    if fix_wrist_2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	    if fix_wrist_2:
+125	        assert math.isclose(initial_joint_positions[4], joint_positions[4], abs_tol=0.05)
+126	    if fix_wrist_3:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_avoidance_raad_training.py:127:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	    if fix_wrist_3:
+127	        assert math.isclose(initial_joint_positions[5], joint_positions[5], abs_tol=0.05)
+128	    
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	def test_initialization(env):
+25	    assert env.ur.model == env.request_param
+26	    env.reset()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert env.observation_space.contains(observation)
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	        _, _, done, info = env.step(action)    
+51	    assert info['final_status'] == 'collision'
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:68:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	        _, _, done, info = env.step(action)    
+68	    assert info['final_status'] == 'collision'
+69	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:75:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	   state = env.reset(joint_positions = joint_positions)
+75	   assert np.isclose(env.ur.normalize_joint_values(joint_positions), state[0:6], atol=0.1).all()
+76	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:103:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	    if fix_base:
+103	        assert math.isclose(initial_joint_positions[0], joint_positions[0], abs_tol=0.05)
+104	    if fix_shoulder:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:105:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	    if fix_shoulder:
+105	        assert math.isclose(initial_joint_positions[1], joint_positions[1], abs_tol=0.05)
+106	    if fix_elbow:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:107:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	    if fix_elbow:
+107	        assert math.isclose(initial_joint_positions[2], joint_positions[2], abs_tol=0.05)
+108	    if fix_wrist_1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	    if fix_wrist_1:
+109	        assert math.isclose(initial_joint_positions[3], joint_positions[3], abs_tol=0.05)
+110	    if fix_wrist_2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:111:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	    if fix_wrist_2:
+111	        assert math.isclose(initial_joint_positions[4], joint_positions[4], abs_tol=0.05)
+112	    if fix_wrist_3:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_base_env.py:113:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	    if fix_wrist_3:
+113	        assert math.isclose(initial_joint_positions[5], joint_positions[5], abs_tol=0.05)
+114	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	def test_initialization(env):
+25	    assert env.ur.model == env.request_param
+26	    env.reset()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert env.observation_space.contains(observation)
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	        _, _, done, info = env.step(action)    
+51	    assert info['final_status'] == 'collision'
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:68:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	        _, _, done, info = env.step(action)    
+68	    assert info['final_status'] == 'collision'
+69	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:75:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	   state = env.reset(joint_positions=joint_positions)
+75	   assert np.isclose(env.ur.normalize_joint_values(joint_positions), state[3:9], atol=0.1).all()
+76	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:94:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	   state = env.reset(joint_positions=params[env.ur.model]['joint_positions'], ee_target_pose=params[env.ur.model]['object_coords'])
+94	   assert np.isclose([params[env.ur.model]['polar_coords']['r']], state[0], atol=0.05).all()
+95	   assert np.isclose([params[env.ur.model]['polar_coords']['theta'], params[env.ur.model]['polar_coords']['phi']], state[1:3], atol=0.2).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:95:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	   assert np.isclose([params[env.ur.model]['polar_coords']['r']], state[0], atol=0.05).all()
+95	   assert np.isclose([params[env.ur.model]['polar_coords']['theta'], params[env.ur.model]['polar_coords']['phi']], state[1:3], atol=0.2).all()
+96	   
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:123:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+122	    if fix_base:
+123	        assert math.isclose(initial_joint_positions[0], joint_positions[0], abs_tol=0.05)
+124	    if fix_shoulder:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	    if fix_shoulder:
+125	        assert math.isclose(initial_joint_positions[1], joint_positions[1], abs_tol=0.05)
+126	    if fix_elbow:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:127:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	    if fix_elbow:
+127	        assert math.isclose(initial_joint_positions[2], joint_positions[2], abs_tol=0.05)
+128	    if fix_wrist_1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:129:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+128	    if fix_wrist_1:
+129	        assert math.isclose(initial_joint_positions[3], joint_positions[3], abs_tol=0.05)
+130	    if fix_wrist_2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:131:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+130	    if fix_wrist_2:
+131	        assert math.isclose(initial_joint_positions[4], joint_positions[4], abs_tol=0.05)
+132	    if fix_wrist_3:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:133:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+132	    if fix_wrist_3:
+133	        assert math.isclose(initial_joint_positions[5], joint_positions[5], abs_tol=0.05)
+134	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:154:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+153	        _, _, done, info = env.step(action)    
+154	    assert info['final_status'] == 'success'
+155	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:173:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+172	        state, _, done, info = env.step(action) 
+173	    assert info['final_status'] == 'success'    
+174	    
+175	    joint_positions = state[3:9]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\envs\ur\test_ur_ee_positioning.py:177:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+176	    state = env.reset(continue_on_success=True)
+177	    assert np.isclose(joint_positions, state[3:9], atol=0.05).all()
+178	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    normalized_a = utils.normalize_angle_rad(a)
+18	    assert abs(expected_a - normalized_a) < 0.01
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    is_inside = utils.point_inside_circle(x, y, center_x, center_y, radius)
+30	    assert is_inside == expected_result
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	
+45	    assert abs(new_x - expected_x) < 0.01
+46	    assert abs(new_y - expected_y) < 0.01
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    assert abs(new_x - expected_x) < 0.01
+46	    assert abs(new_y - expected_y) < 0.01
+47	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:56:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	    
+56	    assert abs(polar_r - 5) < 0.01
+57	    assert abs(polar_theta - 0.927) < 0.01
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:57:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	    assert abs(polar_r - 5) < 0.01
+57	    assert abs(polar_theta - 0.927) < 0.01
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:68:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	    
+68	    assert abs(polar_r - 3.61) < 0.01
+69	    assert abs(polar_theta - 0.9827949) < 0.01
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:69:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	    assert abs(polar_r - 3.61) < 0.01
+69	    assert abs(polar_theta - 0.9827949) < 0.01
+70	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:82:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	    
+82	    assert abs(polar_r - expected_r) < 0.001
+83	    assert abs(polar_theta - expected_theta) < 0.001
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:83:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	    assert abs(polar_r - expected_r) < 0.001
+83	    assert abs(polar_theta - expected_theta) < 0.001
+84	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    
+92	    assert abs(r - 11.045361017187) < 0.01
+93	    assert abs(phi - 0.41822432957) < 0.01
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:93:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	    assert abs(r - 11.045361017187) < 0.01
+93	    assert abs(phi - 0.41822432957) < 0.01
+94	    assert abs(theta - 1.1010291108682) < 0.01
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    assert abs(phi - 0.41822432957) < 0.01
+94	    assert abs(theta - 1.1010291108682) < 0.01
+95	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:107:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	
+107	    assert len(downsampled_list) == target_length
+108	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:116:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    
+116	    assert (utils.change_reference_frame(point,translation,quaternion) == [-6,9,1]).all()
+117	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robo-gym\tests\robo-gym\utils\test_utils.py:124:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+123	    
+124	    assert np.allclose(a = utils.change_reference_frame(point,translation,quaternion),b =[0.250,-0.256,0.890], atol = 0.001)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2911
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 100
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 100
+Files skipped (0):

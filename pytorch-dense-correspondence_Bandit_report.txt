@@ -1,0 +1,189 @@
+Run started:2023-04-23 06:02:44.069495
+
+Test results:
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-dense-correspondence\dense_correspondence\correspondence_tools\correspondence_augmentation.py:49:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+48	
+49	    if random.random() < 0.5:
+50	        return images, uv_pixel_positions
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-dense-correspondence\dense_correspondence\correspondence_tools\correspondence_augmentation.py:90:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+89	    """
+90	    if random.random() < 0.5:
+91	        return image_rgb
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-dense-correspondence\dense_correspondence\correspondence_tools\correspondence_augmentation.py:135:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+134	    """
+135	    if random.random() < 0.5:
+136	        rand_image = get_random_solid_color_image(shape)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-dense-correspondence\dense_correspondence\correspondence_tools\correspondence_augmentation.py:143:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+142	
+143	    if random.random() < 0.5:
+144	        return rand_image
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-dense-correspondence\dense_correspondence\correspondence_tools\correspondence_augmentation.py:246:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+245	
+246	    if random.random() < 0.5:
+247	        foreground = "B"
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pytorch-dense-correspondence\docker\docker_build.py:49:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+48			print("executing shell command")
+49			os.system(cmd)
+50		else:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: pytorch-dense-correspondence\docker\docker_run.py:52:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+51	    # uncomment below to mount your data volume
+52	    config_yaml = yaml.load(file(config_file))
+53	    host_name = socket.gethostname()
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pytorch-dense-correspondence\docker\docker_run.py:85:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+84	        print("executing shell command")
+85	        code = os.system(cmd)
+86	        print("Executed with code ", code)
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pytorch-dense-correspondence\docker\docker_run.py:87:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+86	        print("Executed with code ", code)
+87	        os.system(cmd_endxhost)
+88	        # Squash return code to 0/1, as
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-dense-correspondence\modules\dense_correspondence_manipulation\utils\transformations.py:1490:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1489	    else:
+1490	        assert len(rand) == 3
+1491	    r1 = numpy.sqrt(1.0 - rand[0])
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: pytorch-dense-correspondence\modules\dense_correspondence_manipulation\utils\utils.py:27:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+26	    """
+27	    return yaml.load(open(filename), Loader=CLoader)
+28	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-dense-correspondence\modules\dense_correspondence_manipulation\utils\utils.py:392:59
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+391	
+392	    string = get_current_YYYY_MM_DD_hh_mm_ss() + "_" + str(random.randint(0,1000))
+393	    return string
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pytorch-dense-correspondence\start_notebook.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+3	
+4	os.system("jupyter notebook --ip='0.0.0.0'")
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pytorch-dense-correspondence\start_notebook.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+3	
+4	os.system("jupyter notebook --ip='0.0.0.0'")
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 13805
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 9
+		Medium: 2
+		High: 3
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 14
+Files skipped (30):
+	pytorch-dense-correspondence\config\download_pdc_data.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\correspondence_tools\correspondence_finder.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\dataset\dense_correspondence_dataset_masked.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\dataset\labelfusion_masked.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\dataset\spartan_dataset_masked.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\evaluation\evaluation.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\evaluation\utils.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\loss_functions\loss_composer.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\loss_functions\pixelwise_contrastive_loss.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\network\dense_correspondence_network.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\test\numpy_correspondence_finder.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\training\training.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\dense_correspondence\training\training_script.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\change_detection\change_detection.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\fusion\fusion_reconstruction.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\batch_run_change_detection_pipeline.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\compute_descriptor_images.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\convertPlyToVtp.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\convert_data_to_new_format.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\convert_ply_to_vtp.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\mesh_descriptor_color_app.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\mesh_processing_app.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\render_depth_images.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\run_change_detection.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\scripts\run_change_detection_pipeline.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\simple_pixel_correspondence_labeler\annotate_correspondences.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\simple_pixel_correspondence_labeler\visualize_saved_correspondences.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\utils\director_utils.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\dense_correspondence_manipulation\utils\segmentation.py (syntax error while parsing AST from file)
+	pytorch-dense-correspondence\modules\user-interaction-heatmap-visualization\live_heatmap_visualization.py (syntax error while parsing AST from file)

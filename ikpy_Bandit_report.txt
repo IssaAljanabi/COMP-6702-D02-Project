@@ -1,0 +1,128 @@
+Run started:2023-04-23 05:54:23.731132
+
+Test results:
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: ikpy\src\ikpy\urdf\URDF.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+5	
+6	import xml.etree.ElementTree as ET
+7	import json
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: ikpy\src\ikpy\urdf\URDF.py:141:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+140	    """
+141	    tree = ET.parse(urdf_file)
+142	    root = tree.getroot()
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: ikpy\src\ikpy\urdf\URDF.py:184:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+183	    """
+184	    tree = ET.parse(urdf_file)
+185	    root = tree.getroot()
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: ikpy\src\ikpy\urdf\utils.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+1	from xml.etree import ElementTree
+2	from graphviz import Digraph
+3	
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: ikpy\src\ikpy\urdf\utils.py:106:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+105	    """
+106	    tree = ElementTree.parse(urdf_path)
+107	    root = tree.getroot()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ikpy\tests\test_urdf.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	
+44	    assert len(links) == len(base_elements)
+45	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ikpy\tests\test_urdf.py:54:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	    elements_list = URDF.get_chain_from_joints(poppy_ergo_urdf, joints=joint_list)
+54	    assert len(elements_list) == 2 * len(joint_list)
+55	    assert elements_list[1::2] == joint_list
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ikpy\tests\test_urdf.py:55:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	    assert len(elements_list) == 2 * len(joint_list)
+55	    assert elements_list[1::2] == joint_list
+56	
+57	    # And also a manual test in the end, can be removed in the future
+58	    # Note: The last link is not included here, by design
+59	    assert elements_list == [
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ikpy\tests\test_urdf.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    # Note: The last link is not included here, by design
+59	    assert elements_list == [
+60	        "base_link",
+61	        "m1",
+62	        "U_shape",
+63	        "m2",
+64	        "module_1",
+65	        "m3",
+66	        "base_module_2",
+67	        "m4",
+68	        "tip_module_1",
+69	        "m5",
+70	        "tip_middle",
+71	        "m6",
+72	        "tip"
+73	    ][:-1]
+74	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1955
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 6
+		Medium: 3
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 9
+Files skipped (0):

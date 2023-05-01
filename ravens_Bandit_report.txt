@@ -1,0 +1,211 @@
+Run started:2023-04-23 06:03:58.463093
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\agents\gt_state.py:392:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+391	
+392	    assert False, 'this needs to have the ordering switched for act inference -- is now xytheta, rpz'  # pylint: disable=line-too-long
+393	    act = {'camera_config': self.camera_config, 'primitive': None}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\agents\transporter.py:61:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	                          hmap[Ellipsis, None]), axis=2)
+61	    assert img.shape == self.in_shape, img.shape
+62	    return img
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: ravens\ravens\dataset.py:19:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+18	import os
+19	import pickle
+20	
+21	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: ravens\ravens\dataset.py:121:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+120	      path = os.path.join(self.path, field)
+121	      data = pickle.load(open(os.path.join(path, fname), 'rb'))
+122	      if cache:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\environments\environment.py:124:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+123	    if use_egl:
+124	      assert sys.platform == 'linux', ('EGL rendering is only supported on '
+125	                                       'Linux.')
+126	      egl = pkgutil.get_loader('eglRenderer')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\models\transport_goal.py:78:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77	    """
+78	    assert in_img.shape == goal_img.shape, f'{in_img.shape}, {goal_img.shape}'
+79	
+80	    # input image --> TF tensor, shape (384,224,6) --> (1,384,224,6)
+81	    input_unproc = np.pad(in_img, self.padding, mode='constant')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\models\transport_goal.py:112:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+111	                  p[1]:(p[1] + self.crop_size), :]
+112	    assert kernel.shape == (self.num_rotations, self.crop_size, self.crop_size,
+113	                            self.odim)
+114	
+115	    # Cross-convolve `in_x_goal_logits`. Padding kernel: (24,64,64,3) -->
+116	    # (65,65,3,24).
+117	    kernel_paddings = tf.constant([[0, 0], [0, 1], [0, 1], [0, 0]])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\models\transport_goal.py:265:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+264	    ncols = 12
+265	    assert self.num_rotations == nrows * (ncols / 2)
+266	    idx = 0
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: ravens\ravens\plot.py:19:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+18	import os
+19	import pickle
+20	
+21	from absl import app
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: ravens\ravens\plot.py:47:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+46	      n_steps = int(fname[(fname.rfind('-') + 1):-4])
+47	      data = pickle.load(open(fname, 'rb'))
+48	      rewards = []
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\tasks\grippers.py:211:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+210	          self.contact_constraint = None
+211	        except:  # pylint: disable=bare-except
+212	          pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\tasks\planners.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	    self._preprocess_poses(*poses)
+85	    assert self.poses is not None
+86	    self.times = np.linspace(0, self.t_max, len(self.poses), endpoint=True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\tasks\planners.py:102:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+101	    """Plot xyz."""
+102	    assert self.pos_spline is not None, "[!] You must first call plan()."
+103	    names = ["x-coord", "y-coord", "z-coord"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\tasks\planners.py:122:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	    """Plot quaternion."""
+122	    assert self.rot_spline is not None, "[!] You must first call plan()."
+123	    _, axes = plt.subplots(1, 2, figsize=(12, 4))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: ravens\ravens\tasks\task.py:379:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+378	    alphabet = string.ascii_lowercase + string.digits
+379	    rname = ''.join(random.choices(alphabet, k=16))
+380	    tmpdir = tempfile.gettempdir()
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: ravens\ravens\test.py:19:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+18	import os
+19	import pickle
+20	
+21	from absl import app
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\utils\utils.py:311:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+310	  else:
+311	    assert len(transform_to_from.shape) == 3
+312	    batch_size = transform_to_from.shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: ravens\ravens\utils\utils.py:315:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+314	    points_from = np.concatenate((points_from, zeros), axis=1)
+315	    assert points_from.shape[1] == 4
+316	    points_to = transform_to_from @ points_from
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 5836
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 16
+		Medium: 2
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 18
+Files skipped (0):

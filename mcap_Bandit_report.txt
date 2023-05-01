@@ -1,0 +1,2165 @@
+Run started:2023-04-23 05:56:11.394765
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mcap\cpp\scripts\format.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+3	import os
+4	import subprocess
+5	import sys
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mcap\cpp\scripts\format.py:23:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+22	                    if fix:
+23	                        subprocess.check_call(["clang-format", "-i", path])
+24	                        continue
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mcap\cpp\scripts\format.py:23:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+22	                    if fix:
+23	                        subprocess.check_call(["clang-format", "-i", path])
+24	                        continue
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mcap\cpp\scripts\format.py:27:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+26	                    stdout = (
+27	                        subprocess.check_output(["clang-format", path])
+28	                        .decode("utf-8")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mcap\cpp\scripts\format.py:27:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+26	                    stdout = (
+27	                        subprocess.check_output(["clang-format", path])
+28	                        .decode("utf-8")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\jsonschema\pointcloud_csv_to_mcap.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	        points.extend(struct.pack("<ffff", x, y, z, intensity))
+67	    assert base_timestamp is not None, "found no points in input csv"
+68	    pointcloud["data"] = base64.b64encode(points).decode("utf-8")
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:51:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+50	                timestamp=timestamp(now),
+51	                position=Point2(x=random() * width, y=random() * height),
+52	                diameter=random() * (width / 2),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:51:54
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+50	                timestamp=timestamp(now),
+51	                position=Point2(x=random() * width, y=random() * height),
+52	                diameter=random() * (width / 2),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:52:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+51	                position=Point2(x=random() * width, y=random() * height),
+52	                diameter=random() * (width / 2),
+53	                thickness=random() * 2,
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:53:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+52	                diameter=random() * (width / 2),
+53	                thickness=random() * 2,
+54	                outline_color=Color(r=random(), g=random(), b=random(), a=1),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:54:38
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+53	                thickness=random() * 2,
+54	                outline_color=Color(r=random(), g=random(), b=random(), a=1),
+55	            )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:54:50
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+53	                thickness=random() * 2,
+54	                outline_color=Color(r=random(), g=random(), b=random(), a=1),
+55	            )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\image_example.py:54:62
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+53	                thickness=random() * 2,
+54	                outline_color=Color(r=random(), g=random(), b=random(), a=1),
+55	            )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\point_cloud_example.py:43:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+42	                    "<ffff",
+43	                    scale * random(),
+44	                    scale * random(),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\point_cloud_example.py:44:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+43	                    scale * random(),
+44	                    scale * random(),
+45	                    scale * random(),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\point_cloud_example.py:45:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+44	                    scale * random(),
+45	                    scale * random(),
+46	                    random(),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: mcap\python\examples\protobuf\point_cloud_example.py:46:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+45	                    scale * random(),
+46	                    random(),
+47	                )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:19:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        for schema, channel, _ in reader.iter_messages():
+19	            assert schema.encoding == "ros2msg"
+20	            assert schema.name == "std_msgs/msg/String"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:20:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	            assert schema.encoding == "ros2msg"
+20	            assert schema.name == "std_msgs/msg/String"
+21	            assert channel.message_encoding == "cdr"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:21:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	            assert schema.name == "std_msgs/msg/String"
+21	            assert channel.message_encoding == "cdr"
+22	            assert channel.topic == "/chatter"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:22:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	            assert channel.message_encoding == "cdr"
+22	            assert channel.topic == "/chatter"
+23	            mcap_reader_count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	
+25	    assert mcap_reader_count == 10
+26	
+27	    rosbag_reader_count = 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:29:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    for topic, msg, timestamp in read_messages(str(mcap_path)):
+29	        assert topic == "/chatter"
+30	        assert type(msg) == String
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:30:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	        assert topic == "/chatter"
+30	        assert type(msg) == String
+31	        assert msg.data.startswith("Chatter")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:31:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	        assert type(msg) == String
+31	        assert msg.data.startswith("Chatter")
+32	        rosbag_reader_count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\examples\ros2\py_mcap_demo\test\test_reader_writer.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert rosbag_reader_count == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_decoder.py:20:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	        if channel.topic == "/complex_message":
+20	            assert proto_msg.intermediate1.simple.data.startswith("Field A")
+21	            assert proto_msg.intermediate2.simple.data.startswith("Field B")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_decoder.py:21:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	            assert proto_msg.intermediate1.simple.data.startswith("Field A")
+21	            assert proto_msg.intermediate2.simple.data.startswith("Field B")
+22	        elif channel.topic == "/simple_message":
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_decoder.py:23:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	        elif channel.topic == "/simple_message":
+23	            assert proto_msg.data.startswith("Hello MCAP protobuf world")
+24	        else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_decoder.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	
+27	    assert count == 20
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_writer.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    messages = list(read_protobuf_messages(io))
+18	    assert len(messages) == 1
+19	    message = messages[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_writer.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    message = messages[0]
+20	    assert message.proto_msg.seconds == 5
+21	    assert message.proto_msg.nanos == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_writer.py:21:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	    assert message.proto_msg.seconds == 5
+21	    assert message.proto_msg.nanos == 10
+22	    assert message.log_time_ns == 15
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_writer.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    assert message.proto_msg.nanos == 10
+22	    assert message.log_time_ns == 15
+23	    assert message.topic == "timestamps"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-protobuf-support\tests\test_writer.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    assert message.log_time_ns == 15
+23	    assert message.topic == "timestamps"
+24	
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD4, MD5, or SHA1 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genmsg\gentools.py:118:44
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b324_hashlib.html
+117	    """
+118	    return _compute_hash(msg_context, spec, hashlib.md5())
+119	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genmsg\msg_loader.py:328:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+327	
+328	    assert spec.full_name, "MsgSpec must have a properly set full name"
+329	    msg_context.set_depends(spec.full_name, depends)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genmsg\msgs.py:254:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+253	        self.constants = constants
+254	        assert len(self.types) == len(self.names), "len(%s) != len(%s)"%(self.types, self.names)
+255	        #Header.msg support
+256	        if (len(self.types)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genmsg\template_tools.py:158:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    else:
+158	        assert False, "Uknown file extension for %s"%input_file
+159	
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genpy\dynamic.py:185:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+184	            text = f.read()
+185	            with open('/tmp/foo', 'w') as f2:
+186	                f2.write(text)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genpy\generator.py:342:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+341	        for t in iter_types:
+342	            assert t != full_msg_type, 'msg [%s] has circular self-dependencies' % (full_msg_type)
+343	            full_sub_type = '%s/%s' % (package, t)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\mcap_ros1\_vendor\genpy\message.py:179:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+178	            # newer versions of PyYaml return: - ''\n- ''\n
+179	            assert yaml_str[0] in ('[', '-')
+180	            if yaml_str[0] == '[':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\tests\test_ros_decoder.py:14:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	            ros_msg = decoder.decode(schema, message)
+14	            assert ros_msg.data == f"string message {index}"
+15	            count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\tests\test_ros_decoder.py:16:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	            count += 1
+16	        assert count == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\tests\test_ros_writer.py:17:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    for index, msg in enumerate(read_ros1_messages(output)):
+17	        assert msg.topic == "/chatter"
+18	        assert msg.ros_msg.data == f"string message {index}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\tests\test_ros_writer.py:18:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	        assert msg.topic == "/chatter"
+18	        assert msg.ros_msg.data == f"string message {index}"
+19	        assert msg.log_time_ns == index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros1-support\tests\test_ros_writer.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        assert msg.ros_msg.data == f"string message {index}"
+19	        assert msg.log_time_ns == index
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<='
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:30:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+29	CONSTANT_SEPARATOR = '='
+30	ARRAY_UPPER_BOUND_TOKEN = '<='
+31	STRING_UPPER_BOUND_TOKEN = '<='
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '<='
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:31:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b105_hardcoded_password_string.html
+30	ARRAY_UPPER_BOUND_TOKEN = '<='
+31	STRING_UPPER_BOUND_TOKEN = '<='
+32	
+33	SERVICE_REQUEST_RESPONSE_SEPARATOR = '---'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:805:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+804	
+805	    assert False, "unknown primitive type '%s'" % primitive_type
+806	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:822:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+821	    else:
+822	        assert False, 'Unknown specification type: %s' % type(spec)
+823	    for field in fields:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:838:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+837	        self.srv_name = srv_name
+838	        assert isinstance(request, MessageSpecification)
+839	        self.request = request
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:840:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+839	        self.request = request
+840	        assert isinstance(response, MessageSpecification)
+841	        self.response = response
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:889:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+888	        self.action_name = action_name
+889	        assert isinstance(goal, MessageSpecification)
+890	        self.goal = goal
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:891:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+890	        self.goal = goal
+891	        assert isinstance(result, MessageSpecification)
+892	        self.result = result
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\mcap_ros2\_vendor\rosidl_adapter\parser.py:893:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+892	        self.result = result
+893	        assert isinstance(feedback, MessageSpecification)
+894	        self.feedback = feedback
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    reader = CdrReader(data)
+22	    assert reader.byte_length() == len(data)
+23	    assert reader.decoded_bytes() == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    assert reader.byte_length() == len(data)
+23	    assert reader.decoded_bytes() == 4
+24	    assert reader.kind() == EncapsulationKind.CDR_LE
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    assert reader.decoded_bytes() == 4
+24	    assert reader.kind() == EncapsulationKind.CDR_LE
+25	
+26	    # geometry_msgs/TransformStamped[] transforms
+27	    assert reader.sequence_length() == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    # geometry_msgs/TransformStamped[] transforms
+27	    assert reader.sequence_length() == 1
+28	    # std_msgs/Header header
+29	    assert reader.uint32() == 1490149580  # uint32 sec
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    # std_msgs/Header header
+29	    assert reader.uint32() == 1490149580  # uint32 sec
+30	    assert reader.int32() == 117017840  # int32 nanosec
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    assert reader.uint32() == 1490149580  # uint32 sec
+30	    assert reader.int32() == 117017840  # int32 nanosec
+31	    assert reader.string() == "base_link"  # frame_id
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:31:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	    assert reader.int32() == 117017840  # int32 nanosec
+31	    assert reader.string() == "base_link"  # frame_id
+32	    assert reader.string() == "radar"  # child_frame_id
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    assert reader.string() == "base_link"  # frame_id
+32	    assert reader.string() == "radar"  # child_frame_id
+33	    # geometry_msgs/Transform transform
+34	    assert reader.float64() == 3.835  # float64 x
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    # geometry_msgs/Transform transform
+34	    assert reader.float64() == 3.835  # float64 x
+35	    assert reader.float64() == 0.0  # float64 y
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	    assert reader.float64() == 3.835  # float64 x
+35	    assert reader.float64() == 0.0  # float64 y
+36	    assert reader.float64() == 0.0  # float64 z
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	    assert reader.float64() == 0.0  # float64 y
+36	    assert reader.float64() == 0.0  # float64 z
+37	    assert reader.float64() == 0.0  # float64 x
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:37:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	    assert reader.float64() == 0.0  # float64 z
+37	    assert reader.float64() == 0.0  # float64 x
+38	    assert reader.float64() == 0.0  # float64 y
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    assert reader.float64() == 0.0  # float64 x
+38	    assert reader.float64() == 0.0  # float64 y
+39	    assert reader.float64() == 0.0  # float64 z
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    assert reader.float64() == 0.0  # float64 y
+39	    assert reader.float64() == 0.0  # float64 z
+40	    assert reader.float64() == 1.0  # float64 w
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    assert reader.float64() == 0.0  # float64 z
+40	    assert reader.float64() == 1.0  # float64 w
+41	
+42	    assert reader.offset == len(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	
+42	    assert reader.offset == len(data)
+43	    assert reader.decoded_bytes() == len(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    assert reader.offset == len(data)
+43	    assert reader.decoded_bytes() == len(data)
+44	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    # builtin_interfaces/Time stamp
+51	    assert reader.uint32() == 1628813225  # uint32 sec
+52	    assert reader.int32() == 32141477  # int32 nanosec
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    assert reader.uint32() == 1628813225  # uint32 sec
+52	    assert reader.int32() == 32141477  # int32 nanosec
+53	    # string node
+54	    assert reader.string() == "/_ros2cli_378363"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:54:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	    # string node
+54	    assert reader.string() == "/_ros2cli_378363"
+55	    # Parameter[] new_parameters
+56	    assert reader.sequence_length() == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:56:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	    # Parameter[] new_parameters
+56	    assert reader.sequence_length() == 1
+57	    assert reader.string() == "use_sim_time"  # string name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:57:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	    assert reader.sequence_length() == 1
+57	    assert reader.string() == "use_sim_time"  # string name
+58	    # ParameterValue value
+59	    assert reader.uint8() == 1  # uint8 type
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    # ParameterValue value
+59	    assert reader.uint8() == 1  # uint8 type
+60	    assert reader.int8() == 0  # bool bool_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    assert reader.uint8() == 1  # uint8 type
+60	    assert reader.int8() == 0  # bool bool_value
+61	    assert reader.int64() == 0  # int64 integer_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:61:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	    assert reader.int8() == 0  # bool bool_value
+61	    assert reader.int64() == 0  # int64 integer_value
+62	    assert reader.float64() == 0  # float64 double_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    assert reader.int64() == 0  # int64 integer_value
+62	    assert reader.float64() == 0  # float64 double_value
+63	    assert reader.string() == ""  # string string_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:63:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	    assert reader.float64() == 0  # float64 double_value
+63	    assert reader.string() == ""  # string string_value
+64	
+65	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:65:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	
+65	    assert reader.sequence_length() == 0
+66	    assert reader.int8_array(0) == []  # byte[] byte_array_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:66:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	    assert reader.sequence_length() == 0
+66	    assert reader.int8_array(0) == []  # byte[] byte_array_value
+67	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	    assert reader.int8_array(0) == []  # byte[] byte_array_value
+67	    assert reader.sequence_length() == 0
+68	    assert reader.uint8_array(0) == bytes()  # bool[] bool_array_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:68:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	    assert reader.sequence_length() == 0
+68	    assert reader.uint8_array(0) == bytes()  # bool[] bool_array_value
+69	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:69:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	    assert reader.uint8_array(0) == bytes()  # bool[] bool_array_value
+69	    assert reader.sequence_length() == 0
+70	    assert reader.int64_array(0) == []  # int64[] integer_array_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:70:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	    assert reader.sequence_length() == 0
+70	    assert reader.int64_array(0) == []  # int64[] integer_array_value
+71	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    assert reader.int64_array(0) == []  # int64[] integer_array_value
+71	    assert reader.sequence_length() == 0
+72	    assert reader.float64_array(0) == []  # float64[] double_array_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:72:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	    assert reader.sequence_length() == 0
+72	    assert reader.float64_array(0) == []  # float64[] double_array_value
+73	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:73:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	    assert reader.float64_array(0) == []  # float64[] double_array_value
+73	    assert reader.sequence_length() == 0
+74	    assert reader.string_array(0) == []  # string[] string_array_value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    assert reader.sequence_length() == 0
+74	    assert reader.string_array(0) == []  # string[] string_array_value
+75	
+76	    # Parameter[] changed_parameters
+77	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:77:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	    # Parameter[] changed_parameters
+77	    assert reader.sequence_length() == 0
+78	    # Parameter[] deleted_parameters
+79	    assert reader.sequence_length() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:79:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+78	    # Parameter[] deleted_parameters
+79	    assert reader.sequence_length() == 0
+80	
+81	    assert reader.decoded_bytes() == len(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	
+81	    assert reader.decoded_bytes() == len(data)
+82	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:87:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+86	    reader = CdrReader(data)
+87	    assert reader.uint16BE() == 0x1234
+88	    assert reader.uint32BE() == 0x56789ABC
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	    assert reader.uint16BE() == 0x1234
+88	    assert reader.uint32BE() == 0x56789ABC
+89	    assert reader.uint64BE() == 0xDEF0000000000000
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:89:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	    assert reader.uint32BE() == 0x56789ABC
+89	    assert reader.uint64BE() == 0xDEF0000000000000
+90	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:97:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	    reader.seek_to(4 + 4 + 4 + 4 + 4 + 10 + 4 + 6)
+97	    assert reader.float64() == 3.835
+98	
+99	    # This works due to aligned reads
+100	    reader.seek_to(4 + 4 + 4 + 4 + 4 + 10 + 4 + 3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:101:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+100	    reader.seek_to(4 + 4 + 4 + 4 + 4 + 10 + 4 + 3)
+101	    assert reader.float64() == 3.835
+102	
+103	    reader.seek(-8)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:104:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+103	    reader.seek(-8)
+104	    assert reader.float64() == 3.835
+105	    assert reader.float64() == 0.0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:105:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	    assert reader.float64() == 3.835
+105	    assert reader.float64() == 0.0
+106	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:139:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+138	    ):
+139	        assert isinstance(write_fn, str)
+140	        assert isinstance(read_fn, str)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:140:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+139	        assert isinstance(write_fn, str)
+140	        assert isinstance(read_fn, str)
+141	        assert isinstance(array, list)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:141:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	        assert isinstance(read_fn, str)
+141	        assert isinstance(array, list)
+142	
+143	        buffer = BytesIO()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:151:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+150	        output = output or array
+151	        assert reader.sequence_length() == len(array)
+152	        assert getattr(reader, read_fn)(len(array)) == output
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:152:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	        assert reader.sequence_length() == len(array)
+152	        assert getattr(reader, read_fn)(len(array)) == output
+153	        assert reader.decoded_bytes() == len(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_reader.py:153:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	        assert getattr(reader, read_fn)(len(array)) == output
+153	        assert reader.decoded_bytes() == len(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    write_example_message(writer)
+17	    assert writer.offset == 100
+18	    assert buffer.getvalue() == bytes.fromhex(tf2_msg__TFMessage)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    assert writer.offset == 100
+18	    assert buffer.getvalue() == bytes.fromhex(tf2_msg__TFMessage)
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    writer = CdrWriter(buffer)
+24	    assert bytes.hex(buffer.getvalue()) == "00010000"
+25	    writer.write_uint64(1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    writer.write_uint64(1)
+26	    assert bytes.hex(buffer.getvalue()) == "00010000" "0100000000000000"
+27	    writer.write_uint8(2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    writer.write_uint8(2)
+28	    assert bytes.hex(buffer.getvalue()) == "00010000" "0100000000000000" "02"
+29	    writer.write_uint16(3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    writer.write_uint16(3)
+30	    assert (
+31	        bytes.hex(buffer.getvalue()) == "00010000" "0100000000000000" "02" "00" "0300"
+32	    )
+33	    writer.write_uint32(4)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    writer.write_uint32(4)
+34	    assert (
+35	        bytes.hex(buffer.getvalue()) == "00010000"
+36	        "0100000000000000"
+37	        "02"
+38	        "00"
+39	        "0300"
+40	        "04000000"
+41	    )
+42	    writer.write_uint8(5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    writer.write_uint64(6)
+44	    assert (
+45	        bytes.hex(buffer.getvalue()) == "00010000"
+46	        "0100000000000000"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:76:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	    data = buffer.getvalue()
+76	    assert len(data) == 80
+77	
+78	    reader = CdrReader(data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:79:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+78	    reader = CdrReader(data)
+79	    assert reader.int8() == -1
+80	    assert reader.uint8() == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	    assert reader.int8() == -1
+80	    assert reader.uint8() == 2
+81	    assert reader.int16() == -300
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	    assert reader.uint8() == 2
+81	    assert reader.int16() == -300
+82	    assert reader.uint16() == 400
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:82:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	    assert reader.int16() == -300
+82	    assert reader.uint16() == 400
+83	    assert reader.int32() == -500_000
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:83:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	    assert reader.uint16() == 400
+83	    assert reader.int32() == -500_000
+84	    assert reader.uint32() == 600_000
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:84:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	    assert reader.int32() == -500_000
+84	    assert reader.uint32() == 600_000
+85	    assert reader.int64() == -7_000_000_001
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	    assert reader.uint32() == 600_000
+85	    assert reader.int64() == -7_000_000_001
+86	    assert reader.uint64() == 8_000_000_003
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:86:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	    assert reader.int64() == -7_000_000_001
+86	    assert reader.uint64() == 8_000_000_003
+87	    assert reader.uint16BE() == 0x1234
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:87:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+86	    assert reader.uint64() == 8_000_000_003
+87	    assert reader.uint16BE() == 0x1234
+88	    assert reader.uint32BE() == 0x12345678
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	    assert reader.uint16BE() == 0x1234
+88	    assert reader.uint32BE() == 0x12345678
+89	    assert reader.uint64BE() == 0x123456789ABCDEF0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:89:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	    assert reader.uint32BE() == 0x12345678
+89	    assert reader.uint64BE() == 0x123456789ABCDEF0
+90	    assert reader.float32() == -9.140000343322754
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:90:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	    assert reader.uint64BE() == 0x123456789ABCDEF0
+90	    assert reader.float32() == -9.140000343322754
+91	    assert reader.float64() == 1.7976931348623158e100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:91:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	    assert reader.float32() == -9.140000343322754
+91	    assert reader.float64() == 1.7976931348623158e100
+92	    assert reader.string() == "abc"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    assert reader.float64() == 1.7976931348623158e100
+92	    assert reader.string() == "abc"
+93	    assert reader.uint32() == 42
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_cdr_writer.py:93:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	    assert reader.string() == "abc"
+93	    assert reader.uint32() == 42
+94	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_decoder.py:13:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	        for index, (schema, _, message) in enumerate(reader.iter_messages()):
+13	            assert schema is not None
+14	            ros_msg = decoder.decode(schema, message)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_decoder.py:15:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	            ros_msg = decoder.decode(schema, message)
+15	            assert ros_msg.data == f"string message {index}"
+16	            assert ros_msg._type == "std_msgs/String"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_decoder.py:16:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	            assert ros_msg.data == f"string message {index}"
+16	            assert ros_msg._type == "std_msgs/String"
+17	            assert ros_msg._full_text == "# std_msgs/String\nstring data"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_decoder.py:17:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	            assert ros_msg._type == "std_msgs/String"
+17	            assert ros_msg._full_text == "# std_msgs/String\nstring data"
+18	            count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_decoder.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	            count += 1
+19	        assert count == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:25:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	        print(msg.ros_msg)
+25	        assert msg.channel.topic == "/test"
+26	        assert msg.schema.name == "test_msgs/TestData"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:26:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	        assert msg.channel.topic == "/test"
+26	        assert msg.schema.name == "test_msgs/TestData"
+27	        assert msg.ros_msg.a == f"string message {index}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:27:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	        assert msg.schema.name == "test_msgs/TestData"
+27	        assert msg.ros_msg.a == f"string message {index}"
+28	        assert msg.ros_msg.b == index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:28:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	        assert msg.ros_msg.a == f"string message {index}"
+28	        assert msg.ros_msg.b == index
+29	        assert msg.log_time_ns == index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:29:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	        assert msg.ros_msg.b == index
+29	        assert msg.log_time_ns == index
+30	        assert msg.publish_time_ns == index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:30:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	        assert msg.log_time_ns == index
+30	        assert msg.publish_time_ns == index
+31	        assert msg.sequence_count == index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap-ros2-support\tests\test_ros2_writer.py:31:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	        assert msg.publish_time_ns == index
+31	        assert msg.sequence_count == index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_chunk_log_time.py:64:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	
+64	    assert chunk_index.message_start_time == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:69:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	
+69	    assert isinstance(results[0], ChunkIndex)
+70	    assert results[0].message_start_time == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:70:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	    assert isinstance(results[0], ChunkIndex)
+70	    assert results[0].message_start_time == 1
+71	    assert isinstance(results[1], ChunkIndex)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    assert results[0].message_start_time == 1
+71	    assert isinstance(results[1], ChunkIndex)
+72	    assert results[1].message_start_time == 3
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:72:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	    assert isinstance(results[1], ChunkIndex)
+72	    assert results[1].message_start_time == 3
+73	    assert isinstance(results[2], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:73:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	    assert results[1].message_start_time == 3
+73	    assert isinstance(results[2], tuple)
+74	    assert results[2][2] == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    assert isinstance(results[2], tuple)
+74	    assert results[2][2] == 10
+75	    assert isinstance(results[3], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:75:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	    assert results[2][2] == 10
+75	    assert isinstance(results[3], tuple)
+76	    assert results[3][2] == 20
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:76:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	    assert isinstance(results[3], tuple)
+76	    assert results[3][2] == 20
+77	    assert isinstance(results[4], ChunkIndex)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:77:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	    assert results[3][2] == 20
+77	    assert isinstance(results[4], ChunkIndex)
+78	    assert results[4].message_start_time == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:78:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77	    assert isinstance(results[4], ChunkIndex)
+78	    assert results[4].message_start_time == 4
+79	    assert isinstance(results[5], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:79:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+78	    assert results[4].message_start_time == 4
+79	    assert isinstance(results[5], tuple)
+80	    assert results[5][2] == 30
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	    assert isinstance(results[5], tuple)
+80	    assert results[5][2] == 30
+81	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:91:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	
+91	    assert isinstance(results[0], ChunkIndex)
+92	    assert results[0].message_end_time == 6
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    assert isinstance(results[0], ChunkIndex)
+92	    assert results[0].message_end_time == 6
+93	    assert isinstance(results[1], ChunkIndex)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:93:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	    assert results[0].message_end_time == 6
+93	    assert isinstance(results[1], ChunkIndex)
+94	    assert results[1].message_end_time == 5
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    assert isinstance(results[1], ChunkIndex)
+94	    assert results[1].message_end_time == 5
+95	    assert isinstance(results[2], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:95:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	    assert results[1].message_end_time == 5
+95	    assert isinstance(results[2], tuple)
+96	    assert results[2][2] == 30
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:96:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	    assert isinstance(results[2], tuple)
+96	    assert results[2][2] == 30
+97	    assert isinstance(results[3], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:97:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	    assert results[2][2] == 30
+97	    assert isinstance(results[3], tuple)
+98	    assert results[3][2] == 20
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:98:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	    assert isinstance(results[3], tuple)
+98	    assert results[3][2] == 20
+99	    assert isinstance(results[4], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:99:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+98	    assert results[3][2] == 20
+99	    assert isinstance(results[4], tuple)
+100	    assert results[4][2] == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:100:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+99	    assert isinstance(results[4], tuple)
+100	    assert results[4][2] == 10
+101	    assert isinstance(results[5], ChunkIndex)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:101:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+100	    assert results[4][2] == 10
+101	    assert isinstance(results[5], ChunkIndex)
+102	    assert results[5].message_end_time == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:102:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+101	    assert isinstance(results[5], ChunkIndex)
+102	    assert results[5].message_end_time == 2
+103	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:113:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	
+113	    assert isinstance(results[0], ChunkIndex)
+114	    assert results[0].chunk_start_offset == 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:114:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	    assert isinstance(results[0], ChunkIndex)
+114	    assert results[0].chunk_start_offset == 100
+115	    assert isinstance(results[1], ChunkIndex)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:115:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+114	    assert results[0].chunk_start_offset == 100
+115	    assert isinstance(results[1], ChunkIndex)
+116	    assert results[1].chunk_start_offset == 400
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:116:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    assert isinstance(results[1], ChunkIndex)
+116	    assert results[1].chunk_start_offset == 400
+117	    assert isinstance(results[2], ChunkIndex)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:117:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    assert results[1].chunk_start_offset == 400
+117	    assert isinstance(results[2], ChunkIndex)
+118	    assert results[2].chunk_start_offset == 500
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:118:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	    assert isinstance(results[2], ChunkIndex)
+118	    assert results[2].chunk_start_offset == 500
+119	    assert isinstance(results[3], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:119:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	    assert results[2].chunk_start_offset == 500
+119	    assert isinstance(results[3], tuple)
+120	    assert results[3][2] == 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:120:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+119	    assert isinstance(results[3], tuple)
+120	    assert results[3][2] == 10
+121	    assert isinstance(results[4], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:121:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	    assert results[3][2] == 10
+121	    assert isinstance(results[4], tuple)
+122	    assert results[4][2] == 20
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:122:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	    assert isinstance(results[4], tuple)
+122	    assert results[4][2] == 20
+123	    assert isinstance(results[5], tuple)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:123:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+122	    assert results[4][2] == 20
+123	    assert isinstance(results[5], tuple)
+124	    assert results[5][2] == 30
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_message_queue.py:124:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+123	    assert isinstance(results[5], tuple)
+124	    assert results[5][2] == 30
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:29:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	        reader = make_reader(f)
+29	        assert isinstance(reader, SeekingReader)
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	    reader: McapReader = make_reader(r)
+36	    assert isinstance(reader, NonSeekingReader)
+37	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:46:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	        for schema, channel, message in reader.iter_messages():
+46	            assert isinstance(schema, Schema)
+47	            assert isinstance(channel, Channel)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:47:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	            assert isinstance(schema, Schema)
+47	            assert isinstance(channel, Channel)
+48	            assert isinstance(message, Message)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:48:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	            assert isinstance(channel, Channel)
+48	            assert isinstance(message, Message)
+49	            count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	
+51	        assert count == 1606
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:65:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	        ):
+65	            assert isinstance(schema, Schema)
+66	            assert isinstance(channel, Channel)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:66:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	            assert isinstance(schema, Schema)
+66	            assert isinstance(channel, Channel)
+67	            assert isinstance(message, Message)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:67:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	            assert isinstance(channel, Channel)
+67	            assert isinstance(message, Message)
+68	            assert message.log_time < end
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:68:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	            assert isinstance(message, Message)
+68	            assert message.log_time < end
+69	            assert message.log_time >= start
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:69:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	            assert message.log_time < end
+69	            assert message.log_time >= start
+70	            count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:72:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	
+72	        assert count == 825
+73	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:82:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	        for schema, channel, message in reader.iter_messages(topics=["/diagnostics"]):
+82	            assert isinstance(schema, Schema)
+83	            assert isinstance(channel, Channel)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:83:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	            assert isinstance(schema, Schema)
+83	            assert isinstance(channel, Channel)
+84	            assert channel.topic == "/diagnostics"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:84:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	            assert isinstance(channel, Channel)
+84	            assert channel.topic == "/diagnostics"
+85	            assert isinstance(message, Message)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:85:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	            assert channel.topic == "/diagnostics"
+85	            assert isinstance(message, Message)
+86	            count += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_reader.py:88:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	
+88	        assert count == 52
+89	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_records.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    buf = builder.end()
+26	    assert len(buf) > 0
+27	
+28	    reader = StreamReader(input=BytesIO(buf), skip_magic=True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_records.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    new_s = next(reader.records)
+30	    assert s == new_s
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:66:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	
+66	    assert len(chunks) == 1
+67	    assert len(chunk_indexes) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	    assert len(chunks) == 1
+67	    assert len(chunk_indexes) == 1
+68	
+69	    for chunk, index in zip(chunks, chunk_indexes):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:70:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	    for chunk, index in zip(chunks, chunk_indexes):
+70	        assert index.compressed_size == len(chunk.data)
+71	        assert index.uncompressed_size == chunk.uncompressed_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:71:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	        assert index.compressed_size == len(chunk.data)
+71	        assert index.uncompressed_size == chunk.uncompressed_size
+72	        uncompressed_data: bytes = lz4.frame.decompress(chunk.data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:73:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	        uncompressed_data: bytes = lz4.frame.decompress(chunk.data)
+73	        assert chunk.uncompressed_size == len(uncompressed_data)
+74	        assert chunk.uncompressed_crc == zlib.crc32(uncompressed_data)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:74:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	        assert chunk.uncompressed_size == len(uncompressed_data)
+74	        assert chunk.uncompressed_crc == zlib.crc32(uncompressed_data)
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:84:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	        data = t.read()
+84	        assert len(data) == length
+85	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:103:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	    statistics = next(r for r in records if isinstance(r, Statistics))
+103	    assert statistics == Statistics(
+104	        attachment_count=0,
+105	        channel_count=1,
+106	        channel_message_counts={channel_id: 3},
+107	        chunk_count=1,
+108	        message_count=3,
+109	        schema_count=1,
+110	        metadata_count=0,
+111	        message_start_time=0,
+112	        message_end_time=100,
+113	    )
+114	
+115	    chunk_index = next(r for r in records if isinstance(r, ChunkIndex))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:116:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    chunk_index = next(r for r in records if isinstance(r, ChunkIndex))
+116	    assert chunk_index.message_start_time == 0
+117	    assert chunk_index.message_end_time == 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mcap\python\mcap\tests\test_writer.py:117:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    assert chunk_index.message_start_time == 0
+117	    assert chunk_index.message_end_time == 100
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 8948
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 209
+		Medium: 1
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 3
+		High: 208
+Files skipped (0):

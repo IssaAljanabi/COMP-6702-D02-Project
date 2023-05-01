@@ -1,0 +1,1048 @@
+Run started:2023-04-23 06:04:18.012698
+
+Test results:
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\examples\classifier_rl\main.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+3	import glob
+4	import pickle
+5	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\examples\classifier_rl\main.py:71:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    def _restore(self, checkpoint_dir):
+71	        assert isinstance(checkpoint_dir, str), checkpoint_dir
+72	
+73	        checkpoint_dir = checkpoint_dir.rstrip('/')
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\examples\classifier_rl\main.py:78:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+77	            with open(pickle_path, 'rb') as f:
+78	                picklable = pickle.load(f)
+79	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\examples\development\main.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+3	import glob
+4	import pickle
+5	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\examples\development\main.py:158:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    def _restore(self, checkpoint_dir):
+158	        assert isinstance(checkpoint_dir, str), checkpoint_dir
+159	
+160	        checkpoint_dir = checkpoint_dir.rstrip('/')
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\examples\development\main.py:165:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+164	            with open(pickle_path, 'rb') as f:
+165	                picklable = pickle.load(f)
+166	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\examples\development\simulate_policy.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+4	import os
+5	import pickle
+6	
+7	import tensorflow as tf
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\examples\development\simulate_policy.py:50:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+49	        with open(pickle_path, 'rb') as f:
+50	            picklable = pickle.load(f)
+51	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\examples\instrument.py:94:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    if command_line_args.video_save_frequency is not None:
+94	        assert 'algorithm_params' in variant_spec
+95	        variant_spec['algorithm_params']['kwargs']['video_save_frequency'] = (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\examples\instrument.py:99:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+98	    if command_line_args.path_save_frequency is not None:
+99	        assert 'algorithm_params' in variant_spec
+100	        variant_spec['algorithm_params']['kwargs']['path_save_frequency'] = (
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\archive_gs.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import os
+5	import subprocess
+6	
+7	
+8	def parse_args():
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\archive_gs.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+48	
+49	    subprocess.call(command, shell=True)
+50	
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\install_mujoco.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+46	    mujoco_zip_url = f"https://www.roboti.us/download/{mujoco_zip_name}"
+47	    os.system(f"wget -N -P {mujoco_path} {mujoco_zip_url}")
+48	    os.system(f"unzip -n {mujoco_path}/{mujoco_zip_name} -d {mujoco_path}")
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\install_mujoco.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+47	    os.system(f"wget -N -P {mujoco_path} {mujoco_zip_url}")
+48	    os.system(f"unzip -n {mujoco_path}/{mujoco_zip_name} -d {mujoco_path}")
+49	    os.system(f"rm {mujoco_path}/{mujoco_zip_name}")
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\install_mujoco.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+48	    os.system(f"unzip -n {mujoco_path}/{mujoco_zip_name} -d {mujoco_path}")
+49	    os.system(f"rm {mujoco_path}/{mujoco_zip_name}")
+50	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\scripts\install_mujoco.py:61:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	    platform = sys.platform
+61	    assert platform in KNOWN_PLATFORMS, (platform, KNOWN_PLATFORMS)
+62	
+63	    for version in args.versions:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\sync_gs.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+5	import shlex
+6	import subprocess
+7	
+8	
+9	def parse_args():
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: reward-learning-rl\scripts\sync_gs.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+59	
+60	    subprocess.call(command, shell=True)
+61	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\raq.py:46:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    def _add_randomly_collected_negatives(self):
+46	        assert(self._pool._pointer == self._pool._size)
+47	        self._negative_examples = self._pool.fields['observations'][:self._pool._pointer]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\rl_algorithm.py:71:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	        if self._video_save_frequency > 0:
+71	            assert eval_render_mode != 'human', (
+72	                "RlAlgorithm cannot render and save videos at the same time")
+73	            self._eval_render_mode = 'rgb_array'
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\algorithms\rl_algorithm.py:214:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+213	            if should_save_path:
+214	                import pickle
+215	                for i, path in enumerate(training_paths):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sac.py:104:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+103	
+104	        assert len(observation_shape) == 1, observation_shape
+105	        self._observation_shape = observation_shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sac.py:106:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	        self._observation_shape = observation_shape
+106	        assert len(action_shape) == 1, action_shape
+107	        self._action_shape = action_shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sac.py:206:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+205	
+206	        assert Q_target.shape.as_list() == [None, 1]
+207	
+208	        Q_values = self._Q_values = tuple(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sac.py:244:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+243	
+244	        assert log_pis.shape.as_list() == [None, 1]
+245	
+246	        log_alpha = self._log_alpha = tf.get_variable(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sac.py:288:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+287	
+288	        assert policy_kl_losses.shape.as_list() == [None, 1]
+289	
+290	        self._policy_losses = policy_kl_losses
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sql.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    tensor_shape = tensor.shape.as_list()
+16	    assert len(tensor_shape) == len(expected_shape)
+17	    assert all([a == b for a, b in zip(tensor_shape, expected_shape)])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sql.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    assert len(tensor_shape) == len(expected_shape)
+17	    assert all([a == b for a, b in zip(tensor_shape, expected_shape)])
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sql.py:123:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+122	
+123	        assert len(observation_shape) == 1, observation_shape
+124	        self._observation_shape = observation_shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sql.py:125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	        self._observation_shape = observation_shape
+125	        assert len(action_shape) == 1, action_shape
+126	        self._action_shape = action_shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\algorithms\sql.py:310:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+309	        # Target log-density. Q_soft in Equation 13:
+310	        assert self._policy._squash
+311	        squash_correction = tf.reduce_sum(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\distributions\real_nvp_flow.py:62:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	
+62	        assert event_dims is not None, event_dims
+63	        self._event_dims = event_dims
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\dm_control_adapter.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	        # that it's been implicitly set correctly.
+41	        assert gym_box.shape == dm_control_space.shape, (
+42	            (gym_box.shape, dm_control_space.shape))
+43	        return gym_box
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\dm_control_adapter.py:73:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	                 **kwargs):
+73	        assert not args, (
+74	            "Gym environments don't support args. Use kwargs instead.")
+75	
+76	        self.normalize = normalize
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\dm_control_adapter.py:82:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	        if env is None:
+82	            assert (domain is not None and task is not None), (domain, task)
+83	            env = suite.load(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\dm_control_adapter.py:93:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	        else:
+93	            assert domain is None and task is None, (domain, task)
+94	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\dm_control_adapter.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	
+95	        assert isinstance(env.observation_spec(), OrderedDict)
+96	        self.observation_keys = (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\gym_adapter.py:55:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	                 **kwargs):
+55	        assert not args, (
+56	            "Gym environments don't support args. Use kwargs instead.")
+57	
+58	        # self._Serializable__initialize(locals())
+59	
+60	        self.normalize = normalize
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\gym_adapter.py:66:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	        if env is None:
+66	            assert (domain is not None and task is not None), (domain, task)
+67	            env_id = f"{domain}-{task}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\gym_adapter.py:70:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	        else:
+70	            assert domain is None and task is None, (domain, task)
+71	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	def convert_robosuite_to_gym_obs_space(robosuite_observation_space):
+16	    assert isinstance(robosuite_observation_space, OrderedDict), type(
+17	        robosuite_observation_space)
+18	    list_dict = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	def convert_robosuite_to_gym_action_space(robosuite_action_space):
+29	    assert isinstance(robosuite_action_space, tuple), type(robosuite_action_space)
+30	    return spaces.Box(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:47:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	                 **kwargs):
+47	        assert not args, (
+48	            "Robosuite environments don't support args. Use kwargs instead.")
+49	
+50	        self._Serializable__initialize(locals())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:57:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	        if env is None:
+57	            assert (domain is not None and task is not None), (domain, task)
+58	            env_id = f"{domain}{task}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:61:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	        else:
+61	            assert domain is None and task is None, (domain, task)
+62	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:67:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	        observation_spec = env.observation_spec()
+67	        assert isinstance(observation_spec, OrderedDict), observation_spec
+68	        self.observation_keys = (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\environments\adapters\robosuite_adapter.py:70:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	            observation_keys or tuple(observation_spec.keys()))
+70	        assert set(self.observation_keys).issubset(
+71	            set(observation_spec.keys())
+72	        ), (self.observation_keys, observation_spec.keys())
+73	
+74	        if normalize:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\generate_goal_examples.py:121:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	
+121	    assert len(goal_examples) == total_goal_examples, f'Could not generate enough goal examples: {len(goal_examples)}'
+122	    goal_examples = np.asarray(goal_examples)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\generate_goal_examples.py:161:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	
+161	    assert len(goal_examples) == total_goal_examples, 'Could not generate enough goal examples'
+162	    goal_examples = np.asarray(goal_examples)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\generate_goal_examples.py:215:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+214	
+215	    assert len(goal_examples) == total_goal_examples, 'Could not generate enough goal examples'
+216	    goal_examples = np.asarray(goal_examples)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\kernel.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    Ky, D2 = ys.get_shape().as_list()[-2:]
+34	    assert D == D2
+35	
+36	    leading_shape = tf.shape(xs)[:-2]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\plotter.py:15:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	        self._var_inds = np.where(np.isnan(default_action))[0]
+15	        assert len(self._var_inds) == 2
+16	
+17	        n_plots = len(obs_lst)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\utils.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	    """Concatenates the observation to a one-hot encoding of Z."""
+67	    assert np.isscalar(z)
+68	    z_one_hot = np.zeros(num_skills)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\misc\utils.py:166:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+165	    def unison_shuffled_copies(a, b):
+166	        assert len(a) == len(b)
+167	        p = np.random.permutation(len(a))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\models\autoencoder_models.py:64:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	    """
+64	    assert latent_dim%2 == 0, latent_dim
+65	    input_image = tf.keras.layers.Input(shape=(84, 84, 3))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\policies\base_policy.py:71:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	
+71	        assert smoothing_coefficient is None or 0 <= smoothing_coefficient <= 1
+72	        self._smoothing_alpha = smoothing_coefficient or 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\policies\gaussian_policy.py:179:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+178	    def log_pis(self, conditions, actions):
+179	        assert not self._deterministic, self._deterministic
+180	        return self.log_pis_model([*conditions, actions])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\policies\gaussian_policy.py:186:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+185	    def log_pis_np(self, conditions, actions):
+186	        assert not self._deterministic, self._deterministic
+187	        return self.log_pis_model.predict([*conditions, actions])
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\replay_pools\flexible_replay_pool.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import gzip
+2	import pickle
+3	
+4	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\replay_pools\flexible_replay_pool.py:65:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	            values = samples.get(field_name, default_value)
+65	            assert values.shape[0] == num_samples
+66	            self.fields[field_name][index] = values
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\replay_pools\flexible_replay_pool.py:132:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+131	        with gzip.open(experience_path, 'rb') as f:
+132	            latest_samples = pickle.load(f)
+133	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\replay_pools\flexible_replay_pool.py:137:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+136	        for field_name, data in latest_samples.items():
+137	            assert data.shape[0] == num_samples, data.shape
+138	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\replay_pools\trajectory_replay_pool.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+2	import gzip
+3	import pickle
+4	from itertools import islice
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\replay_pools\trajectory_replay_pool.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	                         field_name_filter=None):
+69	        assert len(episode_indices) == len(step_indices)
+70	
+71	        batch_size = len(episode_indices)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\replay_pools\trajectory_replay_pool.py:163:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+162	        with gzip.open(experience_path, 'rb') as f:
+163	            latest_trajectories = pickle.load(f)
+164	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\samplers\remote_sampler.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	from collections import OrderedDict
+3	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\samplers\remote_sampler.py:35:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	        initialized = ray.get(self._remote_environment.initialized.remote())
+35	        assert initialized, initialized
+36	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\samplers\remote_sampler.py:101:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+100	
+101	        self._env = pickle.loads(env_pkl)
+102	        self._policy = pickle.loads(policy_pkl)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\softlearning\samplers\remote_sampler.py:102:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+101	        self._env = pickle.loads(env_pkl)
+102	        self._policy = pickle.loads(policy_pkl)
+103	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\samplers\utils.py:86:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	
+86	    assert pool._size == t + 1
+87	
+88	    path = pool.batch_by_indices(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\value_functions\value_function.py:16:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	
+16	        assert len(observation_shape) == 1, observation_shape
+17	        self._Do = observation_shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\softlearning\value_functions\value_function.py:18:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	        self._Do = observation_shape[0]
+18	        assert len(action_shape) == 1, action_shape
+19	        self._Da = action_shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\tests\softlearning\distributions\real_nvp_flow_test.py:89:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	
+89	        assert not tf.trainable_variables()
+90	
+91	        forward_x = flow.forward(x)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\tests\softlearning\examples\development\main_test.py:82:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	    for weight1, weight2 in zip(weights1, weights2):
+82	        assert not np.all(np.equal(weight1, weight2))
+83	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\tests\softlearning\examples\development\main_test.py:151:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+150	
+151	        assert set(
+152	            variable
+153	            for _, variables in trainable_variables_1.items()
+154	            for variable in variables
+155	        ) == set(
+156	            variable for variable in tf.trainable_variables()
+157	            if 'save_counter' not in variable.name)
+158	
+159	        optimizer_variables_1 = {
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\tests\softlearning\examples\development\main_test.py:197:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+196	
+197	        assert set(
+198	            variable
+199	            for _, variables in trainable_variables_2.items()
+200	            for variable in variables
+201	        ) == set(
+202	            variable for variable in tf.trainable_variables()
+203	            if 'save_counter' not in variable.name)
+204	
+205	        optimizer_variables_2 = {
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\policies\gaussian_policy_test.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	from collections import OrderedDict
+3	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\policies\gaussian_policy_test.py:101:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+100	        serialized = pickle.dumps(self.policy)
+101	        deserialized = pickle.loads(serialized)
+102	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\policies\uniform_policy_test.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	from collections import OrderedDict
+2	import pickle
+3	
+4	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\policies\uniform_policy_test.py:73:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+72	
+73	        deserialized = pickle.loads(pickle.dumps(self.policy))
+74	        np.testing.assert_equal(
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\preprocessors\convnet_test.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	
+3	import numpy as np
+4	import tensorflow as tf
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\preprocessors\convnet_test.py:33:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+32	        serialized = pickle.dumps(preprocessor)
+33	        deserialized = pickle.loads(serialized)
+34	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import unittest
+3	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:37:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+36	        serialized = pickle.dumps(pool)
+37	        deserialized = pickle.loads(serialized)
+38	        for key in deserialized.__dict__:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:138:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+137	        with gzip.open('./tmp/pool_1.pkl', 'rb') as f:
+138	            latest_samples = pickle.load(f)
+139	            for field_name, data in latest_samples.items():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:143:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	                    *self.pool.fields_attrs[field_name]['shape'])
+143	                assert data.shape == expected_shape, data.shape
+144	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:174:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+173	        serialized = pickle.dumps(self.pool)
+174	        deserialized = pickle.loads(serialized)
+175	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:207:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+206	        serialized = pickle.dumps(self.pool)
+207	        deserialized = pickle.loads(serialized)
+208	        for key in deserialized.__dict__:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\flexible_replay_pool_test.py:235:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+234	        serialized = pickle.dumps(self.pool)
+235	        deserialized = pickle.loads(serialized)
+236	        for key in deserialized.__dict__:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\trajectory_replay_pool_test.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import unittest
+3	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\trajectory_replay_pool_test.py:24:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	                    zip(pool1_trajectories, pool2_trajectories)):
+24	                assert pool1_trajectory.keys() == pool2_trajectory.keys()
+25	                for field_name in pool1_trajectory.keys():
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\trajectory_replay_pool_test.py:139:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+138	        with gzip.open('./tmp/pool_1.pkl', 'rb') as f:
+139	            latest_trajectories = pickle.load(f)
+140	            self.assertEqual(len(latest_trajectories), self.pool._max_size)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\trajectory_replay_pool_test.py:172:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+171	        serialized = pickle.dumps(self.pool)
+172	        deserialized = pickle.loads(serialized)
+173	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\trajectory_replay_pool_test.py:198:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+197	        serialized = pickle.dumps(self.pool)
+198	        deserialized = pickle.loads(serialized)
+199	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\replay_pools\trajectory_replay_pool_test.py:213:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+212	        serialized = pickle.dumps(self.pool)
+213	        deserialized = pickle.loads(serialized)
+214	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\samplers\remote_sampler_test.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import unittest
+3	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\samplers\remote_sampler_test.py:37:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+36	        self.remote_sampler.sample()
+37	        deserialized = pickle.loads(pickle.dumps(self.remote_sampler))
+38	        self.assertEqual(self.pool.size, 10)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: reward-learning-rl\tests\softlearning\samplers\remote_sampler_test.py:43:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+42	
+43	        deserialized = pickle.loads(pickle.dumps(self.remote_sampler))
+44	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 8825
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 72
+		Medium: 21
+		High: 5
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 98
+Files skipped (0):

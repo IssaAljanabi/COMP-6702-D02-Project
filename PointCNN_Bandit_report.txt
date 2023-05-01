@@ -1,0 +1,326 @@
+Run started:2023-04-23 05:59:24.283321
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_conversions\extract_scannet_objs.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    n = len(vertex)
+50	    assert len(vertex_color) == n
+51	
+52	    vertex_all = np.empty(n, dtype=vertex.dtype.descr + vertex_color.dtype.descr)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\data_conversions\prepare_cifar10_data.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+21	def unpickle(file):
+22	    import pickle
+23	    with open(file, 'rb') as fo:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\data_conversions\prepare_cifar10_data.py:24:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+23	    with open(file, 'rb') as fo:
+24	        batch = pickle.load(fo, encoding='bytes')
+25	    return batch
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\prepare_cifar10_data.py:63:42
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+62	                    for z in range(32):
+63	                        points.append((x, random.random() * 1e-6, z))
+64	                        pixels.append((image[0, x, z], image[1, x, z], image[2, x, z]))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\prepare_mnist_data.py:52:38
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+51	                    z = idx_pixel % 28
+52	                    points.append((x, random.random() * 1e-6, z))
+53	                    pixels.append(pixel)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_conversions\prepare_partseg_data.py:49:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	                    label_seg_this = np.loadtxt(label_filepath).astype(np.int32)
+49	                    assert (len(coordinates) == len(label_seg_this))
+50	                    category_label_seg_max = max(category_label_seg_max, max(label_seg_this))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_conversions\prepare_partseg_data.py:105:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	                        label_seg_this = np.loadtxt(label_filepath).astype(np.int32) - label_seg_min
+105	                        assert (len(coordinates) == label_seg_this.shape[0])
+106	                        label_seg[idx_in_batch, 0:len(coordinates)] = label_seg_this + category_offset[category]
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\data_conversions\prepare_scannet_seg_data.py:12:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+11	import h5py
+12	import pickle
+13	import argparse
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\data_conversions\prepare_scannet_seg_data.py:48:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+47	        file_pickle = open(filename, 'rb')
+48	        xyz_all = pickle.load(file_pickle, encoding='latin1')
+49	        labels_all = pickle.load(file_pickle, encoding='latin1')
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\data_conversions\prepare_scannet_seg_data.py:49:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+48	        xyz_all = pickle.load(file_pickle, encoding='latin1')
+49	        labels_all = pickle.load(file_pickle, encoding='latin1')
+50	        file_pickle.close()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\prepare_tu_berlin_data.py:180:57
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+179	                    for sample_idx in range(args.point_num):
+180	                        sample_idx_float = (sample_idx + random.random()) / (args.point_num - 1)
+181	                        while True:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\prepare_tu_berlin_data.py:187:51
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+186	                            except:
+187	                                sample_idx_float = random.random()
+188	                                continue
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\prepare_tu_berlin_data.py:190:66
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+189	                        points_array[sample_idx] = (point.real, sample_idx_float, point.imag)
+190	                        normals_array[sample_idx] = (normal.real, random.random() * 1e-6, normal.imag)
+191	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_conversions\quick_draw_utils.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	            sample_nums[ii] = sample_nums[ii] - 1
+65	        assert (sum(sample_nums) == point_num)
+66	
+67	        sample_idx = 0
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\quick_draw_utils.py:81:49
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+80	                points_array[sample_idx] = ((x0 + x1) / 2, sample_idx_float, (y0 + y1) / 2)
+81	                normals_array[sample_idx] = (nx, random.random() * 1e-6, ny)
+82	                sample_idx += 1
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\data_conversions\quick_draw_utils.py:89:53
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+88	                    points_array[sample_idx] = (x0 + alpha * x_diff, sample_idx_float, y0 + alpha * y_diff)
+89	                    normals_array[sample_idx] = (nx, random.random() * 1e-6, ny)
+90	                    sample_idx += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_utils.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        vertex_normal = np.core.records.fromarrays(normals.transpose(), names='nx, ny, nz', formats='f4, f4, f4')
+19	        assert len(vertex_normal) == n
+20	        desc = desc + vertex_normal.dtype.descr
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_utils.py:25:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	                                                  formats='u1, u1, u1')
+25	        assert len(vertex_color) == n
+26	        desc = desc + vertex_color.dtype.descr
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\data_utils.py:111:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	    for idx in range(len(inputs) - 1):
+111	        assert (len(inputs[idx]) == len(inputs[idx + 1]))
+112	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\evaluation\eval_s3dis.py:49:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	num_preds = len(pred_label_filenames)
+49	assert num_room == num_preds
+50	
+51	print("Found {} predictions".format(num_room))
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\evaluation\eval_scannet.py:13:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+12	import h5py
+13	import pickle
+14	
+15	def main():
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\evaluation\eval_scannet.py:30:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+29	    file_pickle = open(args.picklefile, 'rb')
+30	    xyz_all = pickle.load(file_pickle, encoding='latin1') # encoding keyword for python3
+31	    labels_all = pickle.load(file_pickle, encoding='latin1')
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\evaluation\eval_scannet.py:31:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+30	    xyz_all = pickle.load(file_pickle, encoding='latin1') # encoding keyword for python3
+31	    labels_all = pickle.load(file_pickle, encoding='latin1')
+32	    file_pickle.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\evaluation\eval_shapenet_seg.py:77:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	                               for xyz in open(filepath_data, 'r') if len(xyz.split(' ')) == 3]
+77	                assert (label_gt.shape[0] == len(coordinates))
+78	                data_utils.save_ply_property(np.array(coordinates), (label_gt == label_pred), 6, filepath_err)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\pointfly.py:28:32
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+27	            elif isinstance(pool_setting, tuple):
+28	                pool_size = min(random.randrange(pool_setting[0], pool_setting[1]+1), pt_num)
+29	        if pool_size > sample_num:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\pointfly.py:50:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+49	def uniform(bound):
+50	    return bound * (2 * random.random() - 1)
+51	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\pointfly.py:56:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+55	        scaling_list = list(scaling_param)
+56	        return random.choice(scaling_list)
+57	    except:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PointCNN\pointfly.py:67:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+66	        rotation_list = list(rotation_param)
+67	        return random.choice(rotation_list)
+68	    except:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: PointCNN\sampling\tf_sampling.py:11:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+10	import numpy as np
+11	import pickle as pickle
+12	
+13	BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PointCNN\test_shapenet_seg.py:145:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+144	                           for xyz in open(input_filelist[batch_idx], 'r') if len(xyz.split(' ')) == 3]
+145	            assert (point_num == len(coordinates))
+146	            if args.save_ply:
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 5421
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 25
+		Medium: 5
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 30
+Files skipped (0):

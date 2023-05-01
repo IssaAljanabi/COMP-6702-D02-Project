@@ -1,0 +1,75 @@
+Run started:2023-04-23 06:10:40.436436
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: vector-python-sdk\docs\source\conf.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+20	import os
+21	import subprocess
+22	import sys
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: vector-python-sdk\docs\source\conf.py:32:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+31	        ns = {}
+32	        exec(f.read(), ns)
+33	        return ns
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: vector-python-sdk\docs\source\conf.py:43:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+42	    try:
+43	        git_branch = subprocess.check_output(
+44	                ('git', 'symbolic-ref', '--short', 'HEAD'),
+45	                universal_newlines=True)
+46	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: vector-python-sdk\docs\source\conf.py:47:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+46	
+47	        git_commit = subprocess.check_output(
+48	                ('git', 'rev-parse', 'HEAD'),
+49	                universal_newlines=True)
+50	
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: vector-python-sdk\setup.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+40	        versions = {}
+41	        exec(version_file.read(), versions)
+42	        return versions
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 25630
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 3
+		Medium: 2
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 5
+Files skipped (0):

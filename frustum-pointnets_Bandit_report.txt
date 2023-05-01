@@ -1,0 +1,493 @@
+Run started:2023-04-23 05:48:13.451881
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\kitti\kitti_object.py:50:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    def get_image(self, idx):
+50	        assert(idx<self.num_samples) 
+51	        img_filename = os.path.join(self.image_dir, '%06d.png'%(idx))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\kitti\kitti_object.py:55:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	    def get_lidar(self, idx): 
+55	        assert(idx<self.num_samples) 
+56	        lidar_filename = os.path.join(self.lidar_dir, '%06d.bin'%(idx))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\kitti\kitti_object.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    def get_calibration(self, idx):
+60	        assert(idx<self.num_samples) 
+61	        calib_filename = os.path.join(self.calib_dir, '%06d.txt'%(idx))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\kitti\kitti_object.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    def get_label_objects(self, idx):
+65	        assert(idx<self.num_samples and self.split=='training') 
+66	        label_filename = os.path.join(self.label_dir, '%06d.txt'%(idx))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\kitti\kitti_object.py:94:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    def get_image(self, idx):
+94	        assert(idx<self.num_samples) 
+95	        img_filename = self.img_filenames[idx]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\kitti\kitti_object.py:99:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+98	    def get_lidar(self, idx): 
+99	        assert(idx<self.num_samples) 
+100	        lidar_filename = self.lidar_filenames[idx]
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\kitti\prepare_data.py:18:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+17	import kitti_util as utils
+18	import cPickle as pickle
+19	from kitti_object import *
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\models\tf_ops\sampling\tf_sampling.py:89:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+88	    print(ret.shape,ret.dtype)
+89	    import cPickle as pickle
+90	    pickle.dump(ret,open('1.pkl','wb'),-1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\models\tf_util.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	  with tf.variable_scope(scope) as sc:
+88	    assert(data_format=='NHWC' or data_format=='NCHW')
+89	    if data_format == 'NHWC':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\models\tf_util.py:157:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	      kernel_h, kernel_w = kernel_size
+157	      assert(data_format=='NHWC' or data_format=='NCHW')
+158	      if data_format == 'NHWC':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_data\sunrgbd_data.py:62:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    def get_label_objects(self, idx):
+62	        assert(self.split=='training') 
+63	        label_filename = os.path.join(self.label_dir, '%06d.txt'%(idx))
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_data\sunrgbd_data.py:265:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+264	                        raw_input()
+265	                except:
+266	                    pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_data\sunrgbd_data.py:292:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+291	
+292	    import cPickle as pickle
+293	    with open('box3d_dimensions.pickle','wb') as fp:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_data\utils.py:285:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+284	
+285	import cPickle
+286	import gzip
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_data\utils.py:294:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+293	    with gzip.open(filename, 'rb') as f:
+294	        loaded_object = cPickle.load(f)
+295	        return loaded_object
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_detection\roi_seg_box3d_dataset.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	''' Provider class for RoI binary segmentation task '''
+2	import cPickle as pickle
+3	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_detection\roi_seg_box3d_dataset.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    angle = angle%(2*np.pi)
+50	    assert(angle>=0 and angle<=2*np.pi)
+51	    angle_per_class = 2*np.pi/float(num_class)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_detection\roi_seg_box3d_dataset.py:212:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+211	            cls_type = self.type_list[index]
+212	            assert(cls_type in ['bed','table','sofa','chair','toilet','desk','dresser','night_stand','bookshelf','bathtub'])
+213	            one_hot_vec = np.zeros((NUM_CLASS))
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_detection\train_one_hot.py:55:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+54	if not os.path.exists(LOG_DIR): os.mkdir(LOG_DIR)
+55	os.system('cp %s %s' % (MODEL_FILE, LOG_DIR)) # bkp of model def
+56	os.system('cp train.py %s' % (LOG_DIR)) # bkp of train procedure
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: frustum-pointnets\sunrgbd\sunrgbd_detection\train_one_hot.py:56:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+55	os.system('cp %s %s' % (MODEL_FILE, LOG_DIR)) # bkp of model def
+56	os.system('cp train.py %s' % (LOG_DIR)) # bkp of train procedure
+57	LOG_FOUT = open(os.path.join(LOG_DIR, 'log_train.txt'), 'w')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\box_util.py:135:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+134	    """
+135	    assert bb1['x1'] < bb1['x2']
+136	    assert bb1['y1'] < bb1['y2']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\box_util.py:136:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+135	    assert bb1['x1'] < bb1['x2']
+136	    assert bb1['y1'] < bb1['y2']
+137	    assert bb2['x1'] < bb2['x2']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\box_util.py:137:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+136	    assert bb1['y1'] < bb1['y2']
+137	    assert bb2['x1'] < bb2['x2']
+138	    assert bb2['y1'] < bb2['y2']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\box_util.py:138:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	    assert bb2['x1'] < bb2['x2']
+138	    assert bb2['y1'] < bb2['y2']
+139	
+140	    # determine the coordinates of the intersection rectangle
+141	    x_left = max(bb1['x1'], bb2['x1'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\box_util.py:161:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	    iou = intersection_area / float(bb1_area + bb2_area - intersection_area)
+161	    assert iou >= 0.0
+162	    assert iou <= 1.0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\box_util.py:162:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+161	    assert iou >= 0.0
+162	    assert iou <= 1.0
+163	    return iou
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:8:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+7	
+8	import cPickle as pickle
+9	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\provider.py:55:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	    angle = angle%(2*np.pi)
+55	    assert(angle>=0 and angle<=2*np.pi)
+56	    angle_per_class = 2*np.pi/float(num_class)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:130:31
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+129	            with open(overwritten_data_path,'rb') as fp:
+130	                self.id_list = pickle.load(fp)
+131	                self.box2d_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:131:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+130	                self.id_list = pickle.load(fp)
+131	                self.box2d_list = pickle.load(fp)
+132	                self.input_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:132:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+131	                self.box2d_list = pickle.load(fp)
+132	                self.input_list = pickle.load(fp)
+133	                self.type_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:133:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+132	                self.input_list = pickle.load(fp)
+133	                self.type_list = pickle.load(fp)
+134	                # frustum_angle is clockwise angle from positive x-axis
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:135:42
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+134	                # frustum_angle is clockwise angle from positive x-axis
+135	                self.frustum_angle_list = pickle.load(fp) 
+136	                self.prob_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:136:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+135	                self.frustum_angle_list = pickle.load(fp) 
+136	                self.prob_list = pickle.load(fp)
+137	        else:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:139:31
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+138	            with open(overwritten_data_path,'rb') as fp:
+139	                self.id_list = pickle.load(fp)
+140	                self.box2d_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:140:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+139	                self.id_list = pickle.load(fp)
+140	                self.box2d_list = pickle.load(fp)
+141	                self.box3d_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:141:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+140	                self.box2d_list = pickle.load(fp)
+141	                self.box3d_list = pickle.load(fp)
+142	                self.input_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:142:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+141	                self.box3d_list = pickle.load(fp)
+142	                self.input_list = pickle.load(fp)
+143	                self.label_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:143:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+142	                self.input_list = pickle.load(fp)
+143	                self.label_list = pickle.load(fp)
+144	                self.type_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:144:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+143	                self.label_list = pickle.load(fp)
+144	                self.type_list = pickle.load(fp)
+145	                self.heading_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:145:36
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+144	                self.type_list = pickle.load(fp)
+145	                self.heading_list = pickle.load(fp)
+146	                self.size_list = pickle.load(fp)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:146:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+145	                self.heading_list = pickle.load(fp)
+146	                self.size_list = pickle.load(fp)
+147	                # frustum_angle is clockwise angle from positive x-axis
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: frustum-pointnets\train\provider.py:148:42
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+147	                # frustum_angle is clockwise angle from positive x-axis
+148	                self.frustum_angle_list = pickle.load(fp) 
+149	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: frustum-pointnets\train\provider.py:161:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	            cls_type = self.type_list[index]
+161	            assert(cls_type in ['Car', 'Pedestrian', 'Cyclist'])
+162	            one_hot_vec = np.zeros((3))
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: frustum-pointnets\train\train.py:56:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+55	if not os.path.exists(LOG_DIR): os.mkdir(LOG_DIR)
+56	os.system('cp %s %s' % (MODEL_FILE, LOG_DIR)) # bkp of model def
+57	os.system('cp %s %s' % (os.path.join(BASE_DIR, 'train.py'), LOG_DIR))
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: frustum-pointnets\train\train.py:57:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+56	os.system('cp %s %s' % (MODEL_FILE, LOG_DIR)) # bkp of model def
+57	os.system('cp %s %s' % (os.path.join(BASE_DIR, 'train.py'), LOG_DIR))
+58	LOG_FOUT = open(os.path.join(LOG_DIR, 'log_train.txt'), 'w')
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 6289
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 26
+		Medium: 16
+		High: 4
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 46
+Files skipped (10):
+	frustum-pointnets\sunrgbd\sunrgbd_data\cluster_box3d.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\compare_matlab_and_python_eval.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\eval_det.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\evaluate.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\frustum_pointnets_v1_sunrgbd.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\model_util_sunrgbd.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\test_one_hot.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\viz.py (syntax error while parsing AST from file)
+	frustum-pointnets\sunrgbd\sunrgbd_detection\viz_eval.py (syntax error while parsing AST from file)
+	frustum-pointnets\train\test.py (syntax error while parsing AST from file)

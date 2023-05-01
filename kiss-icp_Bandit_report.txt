@@ -1,0 +1,129 @@
+Run started:2023-04-23 05:55:45.789845
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\__init__.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	    module = importlib.import_module(f".{dataloader}", __name__)
+81	    assert hasattr(module, dataloader_type), f"{dataloader_type} is not defined in {module}"
+82	    dataset = getattr(module, dataloader_type)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\boreas.py:37:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	        self.sequence_id = os.path.basename(data_dir)
+37	        assert len(self.scan_files) == self.gt_poses.shape[0]
+38	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\generic.py:89:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+88	            return lambda file: np.asarray(trimesh.load(file).vertices)
+89	        except:
+90	            pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\generic.py:98:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+97	            return lambda file: PyntCloud.from_file(file).points[["x", "y", "z"]].to_numpy()
+98	        except:
+99	            pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\mcap.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	        # we expect `data_dir` param to be a path to the .mcap file, so rename for clarity
+41	        assert os.path.isfile(data_dir), "mcap dataloader expects an existing MCAP file"
+42	        self.sequence_id = os.path.basename(data_dir).split(".")[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\ouster.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	
+95	        assert os.path.isfile(data_dir), "Ouster pcap dataloader expects an existing PCAP file"
+96	
+97	        # we expect `data_dir` param to be a path to the .pcap file, so rename for clarity
+98	        pcap_file = data_dir
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\datasets\ouster.py:135:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+134	        # pass idx as for a random access collection
+135	        assert self._next_idx == idx, (
+136	            "Ouster pcap dataloader supports only sequential reads. "
+137	            f"Expected idx: {self._next_idx}, but got {idx}"
+138	        )
+139	        scan = next(self._scans_iter)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\tools\point_cloud2.py:116:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    if field_names is not None:
+116	        assert all(
+117	            field_name in points.dtype.names for field_name in field_names
+118	        ), "Requests field is not in the fields of the PointCloud!"
+119	        # Mask fields
+120	        points = points[list(field_names)]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\tools\point_cloud2.py:164:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+163	        # of "_" followed by the subfield counter [0 -> (count - 1)]
+164	        assert field.count > 0, "Can't process fields with count = 0."
+165	        for a in range(field.count):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: kiss-icp\python\kiss_icp\tools\point_cloud2.py:171:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+170	                subfield_name = name
+171	            assert subfield_name not in field_names, "Duplicate field names are not allowed!"
+172	            field_names.append(subfield_name)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2305
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 10
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 10
+Files skipped (0):

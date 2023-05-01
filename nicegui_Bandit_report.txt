@@ -1,0 +1,1907 @@
+Run started:2023-04-23 05:58:16.709978
+
+Test results:
+>> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: 'some_random_string'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: nicegui\examples\authentication\main.py:19:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b106_hardcoded_password_funcarg.html
+18	
+19	app.add_middleware(SessionMiddleware, secret_key='some_random_string')  # use your own secret key here
+20	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: nicegui\examples\ffmpeg_extract_images\main.py:7:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+6	import shutil
+7	import subprocess
+8	
+9	from nicegui import app, events, ui
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: nicegui\examples\ffmpeg_extract_images\main.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+12	def extract(source: str):
+13	    subprocess.call(shlex.split(f'ffmpeg -i "{source}" -vf fps=1 out_%04d.jpg'))
+14	
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: nicegui\fetch_dependencies.py:11:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+10	USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+11	PATH = Path('/tmp/nicegui_dependencies')
+12	PATH.mkdir(exist_ok=True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\fetch_dependencies.py:142:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	    else:
+142	        assert version == v
+143	for dependency in highcharts.optional_dependencies:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\fetch_dependencies.py:149:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+148	    v = re.search(r'JS v(\d+\.\d+\.\d+)', js).group(1)
+149	    assert version == v
+150	
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: nicegui\fetch_tailwind.py:54:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+53	def get_soup(url: str) -> BeautifulSoup:
+54	    path = Path('/tmp') / url.split('/')[-1]
+55	    if path.exists():
+
+--------------------------------------------------
+>> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: 'NiceGUI is awesome!'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   Location: nicegui\main.py:31:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b106_hardcoded_password_funcarg.html
+30	# session middleware is required for demo in documentation and prometheus
+31	app.add_middleware(SessionMiddleware, secret_key='NiceGUI is awesome!')
+32	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\dependencies.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    suffix = Path(component_filepath).suffix.lower()
+43	    assert suffix in {'.vue', '.js'}, 'Only VUE and JS components are supported.'
+44	    if suffix == '.vue':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\dependencies.py:45:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    if suffix == '.vue':
+45	        assert name not in vue_components, f'Duplicate VUE component name {name}'
+46	        vue_components[name] = Component(name=name, path=Path(py_filepath).parent / component_filepath)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\dependencies.py:48:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	    elif suffix == '.js':
+48	        assert name not in js_components, f'Duplicate JS component name {name}'
+49	        js_components[name] = Component(name=name, path=Path(py_filepath).parent / component_filepath)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\dependencies.py:52:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	        path = Path(py_filepath).parent / dependency
+52	        assert path.suffix == '.js', 'Only JS dependencies are supported.'
+53	        id = dependency_ids.get(str(path.resolve()))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\elements\menu.py:47:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	            if auto_close:
+47	                assert isinstance(self.menu, Menu)
+48	                self.menu.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\events.py:279:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+278	        sender = arguments.sender if isinstance(arguments, EventArguments) else sender
+279	        assert sender.parent_slot is not None
+280	        with sender.parent_slot:
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   Location: nicegui\nicegui\helpers.py:80:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b104_hardcoded_bind_all_interfaces.html
+79	
+80	    host = host if host != '0.0.0.0' else '127.0.0.1'
+81	    thread = threading.Thread(target=in_thread, args=(host, port), daemon=True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\nicegui\json\orjson_wrapper.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    # internal calls, which match Python's default `json.dumps` API.
+20	    assert separators is None or separators == (',', ':'), \
+21	        f'NiceGUI JSON serializer only supports Python''s default ' +\
+22	        f'JSON separators "," and ":", but got {separators} instead.'
+23	
+24	    opts = ORJSON_OPTS
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   Location: nicegui\nicegui\run.py:89:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b104_hardcoded_bind_all_interfaces.html
+88	    else:
+89	        host = host or '0.0.0.0'
+90	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\conftest.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    logs = screen.caplog.get_records('call')
+62	    assert not logs, f'There were unexpected logs:\n-------\n{logs}\n-------'
+63	    screen.stop_server()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\screen.py:94:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    def should_not_contain(self, text: str, wait: float = 0.5) -> None:
+94	        assert self.selenium.title != text
+95	        self.selenium.implicitly_wait(wait)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\screen.py:168:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+167	        try:
+168	            assert self.caplog.records, 'Expected a log message'
+169	            record = self.caplog.records[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\screen.py:171:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+170	            print(record.levelname, record.message)
+171	            assert record.levelname.strip() == level, f'Expected "{level}" but got "{record.levelname}"'
+172	            assert record.message.strip() == message, f'Expected "{message}" but got "{record.message}"'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\screen.py:172:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+171	            assert record.levelname.strip() == level, f'Expected "{level}" but got "{record.levelname}"'
+172	            assert record.message.strip() == message, f'Expected "{message}" but got "{record.message}"'
+173	        finally:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_aggrid.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    screen.should_not_contain('<span')
+71	    assert 'text-bold' in screen.find('Alice').get_attribute('class')
+72	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_audio.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    screen.open('/')
+17	    assert screen.find_by_tag('audio').get_attribute('src').endswith('SoundHelix-Song-1.mp3')
+18	    screen.click('Replace')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_audio.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    screen.wait(0.5)
+20	    assert screen.find_by_tag('audio').get_attribute('src').endswith('SoundHelix-Song-2.mp3')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_binding.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    screen.should_not_contain('option A')
+27	    assert data.selection == (1, 2)
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_binding.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    screen.should_not_contain('1,1')
+45	    assert data.selection == (2, 2)
+46	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_binding.py:63:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	    screen.should_not_contain('1,1')
+63	    assert data.selection == [2, 2]
+64	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_binding.py:77:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	    screen.should_contain_input('two')
+77	    assert data.text == 'two'
+78	    data.text = 'three'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_binding.py:82:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	    screen.should_contain_input('four')
+82	    assert data.text == 'four'
+83	    element.value = 'five'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_binding.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	    screen.should_contain_input('five')
+85	    assert data.text == 'five'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    screen.open('/')
+14	    assert screen.find_by_id(b1.id).value_of_css_property('background-color') == 'rgba(88, 152, 212, 1)'
+15	    assert screen.find_by_id(b2.id).value_of_css_property('background-color') == 'rgba(0, 0, 0, 0)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    assert screen.find_by_id(b1.id).value_of_css_property('background-color') == 'rgba(88, 152, 212, 1)'
+15	    assert screen.find_by_id(b2.id).value_of_css_property('background-color') == 'rgba(0, 0, 0, 0)'
+16	    assert screen.find_by_id(b3.id).value_of_css_property('background-color') == 'rgba(239, 83, 80, 1)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    assert screen.find_by_id(b2.id).value_of_css_property('background-color') == 'rgba(0, 0, 0, 0)'
+16	    assert screen.find_by_id(b3.id).value_of_css_property('background-color') == 'rgba(239, 83, 80, 1)'
+17	    assert screen.find_by_id(b4.id).value_of_css_property('background-color') == 'rgba(239, 68, 68, 1)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    assert screen.find_by_id(b3.id).value_of_css_property('background-color') == 'rgba(239, 83, 80, 1)'
+17	    assert screen.find_by_id(b4.id).value_of_css_property('background-color') == 'rgba(239, 68, 68, 1)'
+18	    assert screen.find_by_id(b5.id).value_of_css_property('background-color') == 'rgba(255, 0, 0, 1)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    assert screen.find_by_id(b4.id).value_of_css_property('background-color') == 'rgba(239, 68, 68, 1)'
+18	    assert screen.find_by_id(b5.id).value_of_css_property('background-color') == 'rgba(255, 0, 0, 1)'
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    screen.click('Button')
+29	    assert events == [1]
+30	    screen.click('Disable')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    screen.click('Button')
+32	    assert events == [1]
+33	    screen.click('Enable')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_button.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	    screen.click('Button')
+35	    assert events == [1, 1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    after = [bar.size['width'] for bar in get_series_0()]
+33	    assert before[0] < after[0]
+34	    assert before[1] < after[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    assert before[0] < after[0]
+34	    assert before[1] < after[1]
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    screen.wait(0.5)
+52	    assert len(screen.selenium.find_elements(By.CSS_SELECTOR, '.highcharts-point')) == 3
+53	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:73:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	    screen.wait(0.5)
+73	    assert len(screen.selenium.find_elements(By.CSS_SELECTOR, '.highcharts-point')) == 3
+74	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	    screen.open('/')
+80	    assert screen.selenium.find_elements(By.CSS_SELECTOR, '.highcharts-pane')
+81	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:87:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+86	    screen.open('/')
+87	    assert not screen.selenium.find_elements(By.CSS_SELECTOR, '.highcharts-pane')
+88	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_chart.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    screen.open('/')
+94	    assert screen.selenium.find_elements(By.CSS_SELECTOR, '.highcharts-range-selector-buttons')
+95	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_color_input.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    content = screen.selenium.find_element(By.CLASS_NAME, 'q-color-picker__header-content')
+26	    assert content.value_of_css_property('background-color') in {'rgba(245, 186, 186, 1)', 'rgba(245, 184, 184, 1)'}
+27	    assert output.text in {'#f5baba', '#f5b8b8'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_color_input.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert content.value_of_css_property('background-color') in {'rgba(245, 186, 186, 1)', 'rgba(245, 184, 184, 1)'}
+27	    assert output.text in {'#f5baba', '#f5b8b8'}
+28	
+29	    screen.type(Keys.ESCAPE)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_color_input.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	    content = screen.selenium.find_element(By.CLASS_NAME, 'q-color-picker__header-content')
+35	    assert content.value_of_css_property('background-color') in {'rgba(245, 186, 186, 1)', 'rgba(245, 184, 184, 1)'}
+36	    assert output.text in {'#f5baba', '#f5b8b8'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_color_input.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	    assert content.value_of_css_property('background-color') in {'rgba(245, 186, 186, 1)', 'rgba(245, 184, 184, 1)'}
+36	    assert output.text in {'#f5baba', '#f5b8b8'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_colors.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    screen.open('/')
+17	    assert screen.find_by_tag('button').value_of_css_property('background-color') == 'rgba(0, 0, 255, 1)'
+18	    screen.click('Replace')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_colors.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    screen.wait(0.5)
+20	    assert screen.find_by_tag('button').value_of_css_property('background-color') == 'rgba(255, 0, 0, 1)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_dark_mode.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    screen.should_contain('Hello')
+16	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--light'
+17	
+18	    screen.click('Dark')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_dark_mode.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    screen.wait(0.5)
+20	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--dark dark'
+21	
+22	    screen.click('Auto')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_dark_mode.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    screen.wait(0.5)
+24	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--light'
+25	
+26	    screen.click('Toggle')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_dark_mode.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    screen.wait(0.5)
+32	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--light'
+33	
+34	    screen.click('Toggle')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_dark_mode.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	    screen.wait(0.5)
+36	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--dark dark'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_dialog.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    screen.wait(0.5)
+46	    assert results == ['Yes', 'No', None]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_download.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    screen.wait(0.5)
+22	    assert success
+23	    screen.assert_py_logger('WARNING', f'http://localhost:{PORT}/static/test.py not found')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:13:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    def assert_classes(classes: str) -> None:
+13	        assert screen.selenium.find_element(By.XPATH,
+14	                                            f'//*[normalize-space(@class)="{classes}" and text()="Some label"]')
+15	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:37:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	def test_style_parsing():
+37	    assert Element._parse_style(None) == {}
+38	    assert Element._parse_style('color: red; background-color: green') == {'color': 'red', 'background-color': 'green'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    assert Element._parse_style(None) == {}
+38	    assert Element._parse_style('color: red; background-color: green') == {'color': 'red', 'background-color': 'green'}
+39	    assert Element._parse_style('width:12em;height:34.5em') == {'width': '12em', 'height': '34.5em'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    assert Element._parse_style('color: red; background-color: green') == {'color': 'red', 'background-color': 'green'}
+39	    assert Element._parse_style('width:12em;height:34.5em') == {'width': '12em', 'height': '34.5em'}
+40	    assert Element._parse_style('transform: translate(120.0px, 50%)') == {'transform': 'translate(120.0px, 50%)'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    assert Element._parse_style('width:12em;height:34.5em') == {'width': '12em', 'height': '34.5em'}
+40	    assert Element._parse_style('transform: translate(120.0px, 50%)') == {'transform': 'translate(120.0px, 50%)'}
+41	    assert Element._parse_style('box-shadow: 0 0 0.5em #1976d2') == {'box-shadow': '0 0 0.5em #1976d2'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:41:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	    assert Element._parse_style('transform: translate(120.0px, 50%)') == {'transform': 'translate(120.0px, 50%)'}
+41	    assert Element._parse_style('box-shadow: 0 0 0.5em #1976d2') == {'box-shadow': '0 0 0.5em #1976d2'}
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	def test_props_parsing():
+45	    assert Element._parse_props(None) == {}
+46	    assert Element._parse_props('one two=1 three="abc def"') == {'one': True, 'two': '1', 'three': 'abc def'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    assert Element._parse_props(None) == {}
+46	    assert Element._parse_props('one two=1 three="abc def"') == {'one': True, 'two': '1', 'three': 'abc def'}
+47	    assert Element._parse_props('loading percentage=12.5') == {'loading': True, 'percentage': '12.5'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	    assert Element._parse_props('one two=1 three="abc def"') == {'one': True, 'two': '1', 'three': 'abc def'}
+47	    assert Element._parse_props('loading percentage=12.5') == {'loading': True, 'percentage': '12.5'}
+48	    assert Element._parse_props('size=50%') == {'size': '50%'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	    assert Element._parse_props('loading percentage=12.5') == {'loading': True, 'percentage': '12.5'}
+48	    assert Element._parse_props('size=50%') == {'size': '50%'}
+49	    assert Element._parse_props('href=http://192.168.42.100/') == {'href': 'http://192.168.42.100/'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	    assert Element._parse_props('size=50%') == {'size': '50%'}
+49	    assert Element._parse_props('href=http://192.168.42.100/') == {'href': 'http://192.168.42.100/'}
+50	    assert Element._parse_props('hint="Your \\"given\\" name"') == {'hint': 'Your "given" name'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    assert Element._parse_props('href=http://192.168.42.100/') == {'href': 'http://192.168.42.100/'}
+50	    assert Element._parse_props('hint="Your \\"given\\" name"') == {'hint': 'Your "given" name'}
+51	    assert Element._parse_props('input-style="{ color: #ff0000 }"') == {'input-style': '{ color: #ff0000 }'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    assert Element._parse_props('hint="Your \\"given\\" name"') == {'hint': 'Your "given" name'}
+51	    assert Element._parse_props('input-style="{ color: #ff0000 }"') == {'input-style': '{ color: #ff0000 }'}
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    def assert_style(style: str) -> None:
+58	        assert screen.selenium.find_element(By.XPATH, f'//*[normalize-space(@style)="{style}" and text()="Some label"]')
+59	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_element.py:91:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	        class_conditions = [f'contains(@class, "q-field--{prop}")' for prop in props]
+91	        assert screen.selenium.find_element(By.XPATH, f'//label[{" and ".join(class_conditions)}]')
+92	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    screen.selenium.find_element(By.XPATH, '//*[@aria-label="D"]').send_keys('Xx')
+92	    assert events == ['A', 'B', 'C', 'D']
+93	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:103:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	    screen.click('Test')
+103	    assert events == [1, 2, 1, 1]
+104	
+105	    screen.wait(1.1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:106:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	    screen.wait(1.1)
+106	    assert events == [1, 2, 1, 1, 2]
+107	
+108	    screen.click('Test')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:111:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	    screen.click('Test')
+111	    assert events == [1, 2, 1, 1, 2, 1, 2, 1, 1]
+112	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:128:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	    screen.click('Both')
+128	    assert events == [1]
+129	    screen.wait(1.1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:130:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+129	    screen.wait(1.1)
+130	    assert events == [1, 3]
+131	
+132	    events = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:139:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+138	    screen.click('Leading')
+139	    assert events == [1]
+140	    screen.wait(1.1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:141:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	    screen.wait(1.1)
+141	    assert events == [1]
+142	
+143	    events = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:150:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+149	    screen.click('Trailing')
+150	    assert events == []
+151	    screen.wait(1.1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_events.py:152:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	    screen.wait(1.1)
+152	    assert events == [3]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	        host, port = sock.getsockname()
+14	    assert not helpers.is_port_open(host, port), 'after closing the socket, the port should be free'
+15	
+16	    with contextlib.closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        sock.listen(1)
+19	        assert helpers.is_port_open(host, port), 'after opening the socket, the port should be detected'
+20	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	def test_is_port_open_on_bad_ip():
+23	    assert not helpers.is_port_open('1.2', 0), 'should not be able to connect to a bad IP'
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:45:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	            # port bound, but not opened yet
+45	            assert called_with_url is None
+46	
+47	            sock.listen()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:50:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	            time.sleep(1)
+50	            assert called_with_url == f'http://{host}:{port}/'
+51	        finally:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:77:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	    time.sleep(0.2)
+77	    assert not thread.is_alive()
+78	    assert called_with_url is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_helpers.py:78:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77	    assert not thread.is_alive()
+78	    assert called_with_url is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_image.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    image = screen.selenium.find_element(By.CLASS_NAME, 'q-img__image')
+34	    assert 'data:image/png;base64,iVB' in image.get_attribute('src')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    element = screen.selenium.find_element(By.XPATH, '//*[@aria-label="Your name"]')
+14	    assert element.get_attribute('type') == 'text'
+15	    assert element.get_attribute('value') == 'John Doe'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    assert element.get_attribute('type') == 'text'
+15	    assert element.get_attribute('value') == 'John Doe'
+16	
+17	    element.send_keys(' Jr.')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    element.send_keys(' Jr.')
+18	    assert element.get_attribute('value') == 'John Doe Jr.'
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    element = screen.selenium.find_element(By.XPATH, '//*[@aria-label="Your password"]')
+28	    assert element.get_attribute('type') == 'password'
+29	    assert element.get_attribute('value') == '123456'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    assert element.get_attribute('type') == 'password'
+29	    assert element.get_attribute('value') == '123456'
+30	
+31	    element.send_keys('789')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    screen.wait(0.5)
+33	    assert element.get_attribute('value') == '123456789'
+34	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    element = screen.selenium.find_element(By.XPATH, '//*[@aria-label="Your password"]')
+44	    assert element.get_attribute('type') == 'password'
+45	    assert element.get_attribute('value') == '123456'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    assert element.get_attribute('type') == 'password'
+45	    assert element.get_attribute('value') == '123456'
+46	
+47	    screen.click('visibility_off')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	    screen.wait(0.5)
+49	    assert element.get_attribute('type') == 'text'
+50	
+51	    screen.click('visibility')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_input.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	    screen.wait(0.5)
+53	    assert element.get_attribute('type') == 'password'
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_interactive_image.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    screen.wait(0.5)
+26	    assert screen.find_by_tag('img').get_attribute('src') == 'https://nicegui.io/logo.png'
+27	    screen.click('B')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_interactive_image.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    screen.click('A')
+30	    assert screen.find_by_tag('img').get_attribute('src') == 'https://nicegui.io/logo.png'
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_interactive_image.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	    with screen.implicitly_wait(0.5):
+41	        assert len(screen.find_all_by_tag('line')) == number_of_lines
+42	        assert len(screen.find_all_by_tag('circle')) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_interactive_image.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	        assert len(screen.find_all_by_tag('line')) == number_of_lines
+42	        assert len(screen.find_all_by_tag('circle')) == 1
+43	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_interactive_image.py:56:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	    screen.open('/')
+56	    assert screen.find_by_tag('img').get_attribute('src').endswith('id/29/640/360')
+57	    screen.click('Replace')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_interactive_image.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    screen.wait(0.5)
+59	    assert screen.find_by_tag('img').get_attribute('src').endswith('id/30/640/360')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_javascript.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    screen.open('/')
+15	    assert screen.selenium.title == 'NiceGUI'
+16	    screen.click('change title')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_javascript.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    screen.open('/')
+50	    assert screen.selenium.title == 'NiceGUI'
+51	    screen.should_contain('before js')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_joystick.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    joystick = screen.find_by_id(j.id)
+15	    assert joystick
+16	    screen.should_contain('start 0, 0')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_joystick.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    joystick = screen.find_by_id(j.id)
+39	    assert 'background-color: gray;' in joystick.get_attribute('style')
+40	    assert 'shadow-lg' in joystick.get_attribute('class')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_joystick.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    assert 'background-color: gray;' in joystick.get_attribute('style')
+40	    assert 'shadow-lg' in joystick.get_attribute('class')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_json.py:52:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	        builtin_str = builtin_dumps(test)
+52	        assert orjson_str == builtin_str, f'json serializer implementations do not match: orjson={orjson_str}, built-in={builtin_str}'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_lifecycle.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	    screen.wait(0.5)
+49	    assert events == ['connect', 'disconnect', 'connect', 'disconnect', 'connect']
+50	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_lifecycle.py:76:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	    screen.wait(0.5)
+76	    assert events == ['startup', 'startup_async', 'startup_async']
+77	
+78	    app.shutdown()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_lifecycle.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	    screen.wait(0.5)
+80	    assert events == ['startup', 'startup_async', 'startup_async', 'shutdown', 'shutdown_async', 'shutdown_async']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_link.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    screen.open('/')
+50	    assert screen.find('nicegui.io').get_attribute('href') == 'https://nicegui.io/'
+51	    screen.click('Replace')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_link.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    screen.click('Replace')
+52	    assert screen.find('zauberzeug').get_attribute('href') == 'https://zauberzeug.com/'
+53	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_link.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    screen.open('/')
+60	    assert screen.find('nicegui.io').get_attribute('href') == 'https://nicegui.io/'
+61	    screen.click('change href')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_link.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    screen.click('change href')
+62	    assert screen.find('nicegui.io').get_attribute('href') == 'https://github.com/zauberzeug/nicegui'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_log.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    screen.open('/')
+14	    assert screen.find_by_id(log.id).text == 'B\nC\nD'
+15	
+16	    log.clear()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_log.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    screen.wait(0.5)
+18	    assert screen.find_by_id(log.id).text == ''
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_log.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    screen.open('/')
+28	    assert screen.find_by_id(log.id).text == 'B\nC\nD'
+29	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	    element = screen.find('This is')
+11	    assert element.text == 'This is Markdown'
+12	    assert element.get_attribute('innerHTML') == 'This is <strong>Markdown</strong>'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:12:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+11	    assert element.text == 'This is Markdown'
+12	    assert element.get_attribute('innerHTML') == 'This is <strong>Markdown</strong>'
+13	
+14	    m.set_content('New **content**')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    element = screen.find('New')
+16	    assert element.text == 'New content'
+17	    assert element.get_attribute('innerHTML') == 'New <strong>content</strong>'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    assert element.text == 'New content'
+17	    assert element.get_attribute('innerHTML') == 'New <strong>content</strong>'
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    screen.should_contain('Mermaid')
+32	    assert screen.find_by_tag('svg').get_attribute('id') == f'mermaid_{m.id}_0'
+33	    assert screen.find('Node_A').get_attribute('class') == 'nodeLabel'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    assert screen.find_by_tag('svg').get_attribute('id') == f'mermaid_{m.id}_0'
+33	    assert screen.find('Node_A').get_attribute('class') == 'nodeLabel'
+34	
+35	    m.set_content('''
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_markdown.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    screen.should_contain('New')
+44	    assert screen.find('Node_C').get_attribute('class') == 'nodeLabel'
+45	    screen.should_not_contain('Node_A')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_mermaid.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    screen.open('/')
+13	    assert screen.find('Node_A').get_attribute('class') == 'nodeLabel'
+14	
+15	    m.set_content('''
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_mermaid.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	''')
+19	    assert screen.find('Node_C').get_attribute('class') == 'nodeLabel'
+20	    screen.should_not_contain('Node_A')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    uuid2 = screen.find('private page').text.split()[-1]
+94	    assert uuid1 != uuid2
+95	
+96	    screen.open('/')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:100:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+99	    uuid2 = screen.find('shared page').text.split()[-1]
+100	    assert uuid1 == uuid2
+101	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:138:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	    screen.wait(0.5)
+138	    assert events == ['connected', 'disconnected', 'connected']
+139	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:226:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+225	    screen.open('/auto')
+226	    assert screen.find('A').value_of_css_property('color') == blue
+227	    assert screen.find_by_tag('body').value_of_css_property('background-color') == white
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:227:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+226	    assert screen.find('A').value_of_css_property('color') == blue
+227	    assert screen.find_by_tag('body').value_of_css_property('background-color') == white
+228	
+229	    screen.open('/light')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:230:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+229	    screen.open('/light')
+230	    assert screen.find('B').value_of_css_property('color') == blue
+231	    assert screen.find_by_tag('body').value_of_css_property('background-color') == white
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:231:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+230	    assert screen.find('B').value_of_css_property('color') == blue
+231	    assert screen.find_by_tag('body').value_of_css_property('background-color') == white
+232	
+233	    screen.open('/dark')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:234:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+233	    screen.open('/dark')
+234	    assert screen.find('C').value_of_css_property('color') == red
+235	    assert screen.find_by_tag('body').value_of_css_property('background-color') == black
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_page.py:235:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+234	    assert screen.find('C').value_of_css_property('color') == red
+235	    assert screen.find_by_tag('body').value_of_css_property('background-color') == black
+236	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_plotly.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    screen.open('/')
+39	    assert screen.find_by_tag('text').text == 'A'
+40	    screen.click('Replace')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_plotly.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    screen.wait(0.5)
+42	    assert screen.find_by_tag('text').text == 'B'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    screen.should_contain('Hello')
+18	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--light bg-orange-100'
+19	
+20	    screen.click('Red background')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    screen.wait(0.5)
+22	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--light bg-red-100'
+23	
+24	    screen.click('Blue background')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    screen.wait(0.5)
+26	    assert screen.find_by_tag('body').get_attribute('class') == 'desktop no-touch body--light bg-blue-100'
+27	
+28	    screen.click('Small padding')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    screen.wait(0.5)
+30	    assert screen.find_by_tag('body').value_of_css_property('padding') == '1px'
+31	
+32	    screen.click('Large padding')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    screen.wait(0.5)
+34	    assert screen.find_by_tag('body').value_of_css_property('padding') == '10px'
+35	
+36	    screen.click('Data X = 1')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    screen.wait(0.5)
+38	    assert screen.find_by_tag('body').get_attribute('data-x') == '1'
+39	
+40	    screen.click('Data X = 2')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    screen.wait(0.5)
+42	    assert screen.find_by_tag('body').get_attribute('data-x') == '2'
+43	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	    screen.wait(0.5)
+53	    assert screen.find('A').value_of_css_property('border') == '1px solid rgb(0, 0, 0)'
+54	    assert screen.find('B').value_of_css_property('border') == '1px solid rgb(0, 0, 0)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_query.py:54:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	    assert screen.find('A').value_of_css_property('border') == '1px solid rgb(0, 0, 0)'
+54	    assert screen.find('B').value_of_css_property('border') == '1px solid rgb(0, 0, 0)'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    screen.wait(0.2)
+27	    assert position() > 0
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:41:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	    screen.wait(0.2)
+41	    assert screen.selenium.execute_script(f'return scene_{scene.id}.children.length') == 5
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:58:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    screen.wait(0.2)
+58	    assert screen.selenium.execute_script(f'return scene_{scene.id}.children.length') == 5
+59	    screen.switch_to(1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    screen.switch_to(1)
+60	    assert screen.selenium.execute_script(f'return scene_{scene.id}.children.length') == 5
+61	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    screen.wait(0.5)
+71	    assert len(scene.objects) == 2
+72	    screen.click('Delete group')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    screen.wait(0.5)
+74	    assert len(scene.objects) == 0
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    screen.wait(0.5)
+92	    assert screen.selenium.execute_script(f'return scene_{scene.id}.children[4].name') == 'sphere'
+93	    screen.click('Replace scene')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_scene.py:95:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	    screen.wait(0.5)
+95	    assert screen.selenium.execute_script(f'return scene_{scene.id}.children[4].name') == 'box'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_spinner.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    element = screen.find_by_tag('svg')
+13	    assert element.get_attribute('width') == '3em'
+14	    assert element.get_attribute('height') == '3em'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_spinner.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    assert element.get_attribute('width') == '3em'
+14	    assert element.get_attribute('height') == '3em'
+15	    assert element.find_element(By.TAG_NAME, 'circle').get_attribute('stroke-width') == '10'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_spinner.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    assert element.get_attribute('height') == '3em'
+15	    assert element.find_element(By.TAG_NAME, 'circle').get_attribute('stroke-width') == '10'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_tailwind.py:10:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+9	    screen.open('/')
+10	    assert screen.find('A').get_attribute('class') == 'bg-red-500 text-white'
+11	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_tailwind.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    screen.open('/')
+17	    assert screen.find('A').get_attribute('class') == 'bg-red-500 text-white'
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_tailwind.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    screen.open('/')
+28	    assert screen.find('A').get_attribute('class') == 'bg-red-500 text-white'
+29	    assert screen.find('B').get_attribute('class') == 'bg-red-500 text-white'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_tailwind.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    assert screen.find('A').get_attribute('class') == 'bg-red-500 text-white'
+29	    assert screen.find('B').get_attribute('class') == 'bg-red-500 text-white'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	
+19	    assert counter.value == 0, 'count is initially zero'
+20	    screen.wait(0.5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:21:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	    screen.wait(0.5)
+21	    assert counter.value == 0, 'timer is not running'
+22	
+23	    screen.start_server()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	    screen.wait(0.5)
+25	    assert counter.value > 0, 'timer is running after starting the server'
+26	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	
+35	    assert counter.value == 0, 'count is initially zero'
+36	    screen.start_server()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    screen.wait(0.5)
+38	    assert counter.value == 0, 'timer is not running even after starting the server'
+39	
+40	    screen.open('/')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    screen.wait(0.5)
+42	    assert counter.value > 0, 'timer is running after opening the page'
+43	
+44	    screen.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_timer.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	    screen.wait(0.5)
+47	    assert counter.value == count, 'timer is not running anymore after closing the page'
+48	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    screen.wait(0.1)
+24	    assert len(results) == 1
+25	    assert results[0].name == test_path1.name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	    assert len(results) == 1
+25	    assert results[0].name == test_path1.name
+26	    assert results[0].type in {'text/x-python', 'text/x-python-script'}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    assert results[0].name == test_path1.name
+26	    assert results[0].type in {'text/x-python', 'text/x-python-script'}
+27	    assert results[0].content.read() == test_path1.read_bytes()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert results[0].type in {'text/x-python', 'text/x-python-script'}
+27	    assert results[0].content.read() == test_path1.read_bytes()
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:41:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	    screen.wait(0.1)
+41	    assert len(results) == 2
+42	    assert results[0].name == test_path1.name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    assert len(results) == 2
+42	    assert results[0].name == test_path1.name
+43	    assert results[1].name == test_path2.name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_upload.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    assert results[0].name == test_path1.name
+43	    assert results[1].name == test_path2.name
+44	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_video.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    screen.open('/')
+17	    assert screen.find_by_tag('video').get_attribute('src').endswith('BigBuckBunny.mp4')
+18	    screen.click('Replace')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: nicegui\tests\test_video.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    screen.wait(0.5)
+20	    assert screen.find_by_tag('video').get_attribute('src').endswith('ElephantsDream.mp4')
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: nicegui\website\documentation.py:353:54
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+352	        def add():
+353	            chart.options['series'][0]['data'].append(randint(0, 100))
+354	            chart.update()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: nicegui\website\documentation.py:532:51
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+531	        def generate_random_number(max: int):
+532	            return {'min': 0, 'max': max, 'value': random.randint(0, max)}
+533	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: nicegui\website\more_documentation\refreshable_documentation.py:14:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+13	    def add_number() -> None:
+14	        numbers.append(random.randint(0, 100))
+15	        number_ui.refresh()
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 21020
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 183
+		Medium: 4
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 6
+		High: 181
+Files skipped (0):

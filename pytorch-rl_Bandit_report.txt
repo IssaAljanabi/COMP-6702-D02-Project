@@ -1,0 +1,312 @@
+Run started:2023-04-23 06:03:05.225952
+
+Test results:
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: pytorch-rl\Environments\env_wrappers.py:97:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+96	    def __setstate__(self, ob):
+97	        import pickle
+98	        self.x = pickle.loads(ob)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: pytorch-rl\Environments\env_wrappers.py:98:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+97	        import pickle
+98	        self.x = pickle.loads(ob)
+99	    
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Environments\env_wrappers.py:401:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+400	    def _get_ob(self):
+401	        assert len(self.frames) == self.k
+402	        return LazyFrames(list(self.frames))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Memory\rollout_storage.py:121:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	        total_batch_size = num_processes*num_steps
+121	        assert total_batch_size >= mini_batches, (
+122	            f"PPO requires the number processes ({num_processes}) "
+123	            f"* number of steps ({num_steps}) = {num_processes * num_steps} "
+124	            f"to be greater than or equal to the number of PPO mini batches ({mini_batches}).")
+125	
+126	        mini_batch_size = total_batch_size // mini_batches
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Training\trainer.py:134:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+133	                    action = self.ddpg.get_action(state=state, noise=True)
+134	                    assert action.shape == self.env.get_action_shape
+135	
+136	                    # Execute next action
+137	                    new_state, reward, done, success = self.env.step(action)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Training\trainer.py:453:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+452	                    # The following has to hold
+453	                    assert reward == self.env.compute_reward(
+454	                        new_state['achieved_goal'], new_state['desired_goal'],
+455	                        info=success
+456	                    )
+457	
+458	                    new_observation = new_state['observation']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Training\trainer_infogan.py:59:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    def __init__(self, output_size):
+59	        assert isinstance(output_size, (int, tuple))
+60	        self.output_size = output_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Training\trainer_vae.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    def __init__(self, output_size):
+65	        assert isinstance(output_size, (int, tuple))
+66	        self.output_size = output_size
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\Training\trainer_vae.py:290:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+289	            images = batch['image']
+290	            index = random.randint(0, self.batch-1)
+291	            i = images[index]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Training\trainer_vaegan.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    def __init__(self, output_size):
+58	        assert isinstance(output_size, (int, tuple))
+59	        self.output_size = output_size
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: pytorch-rl\Utils\parallel_process.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	from torch.multiprocessing import Process, Pipe
+2	import pickle
+3	import cloudpickle
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: pytorch-rl\Utils\parallel_process.py:41:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+40	    def __setstate__(self, ob):
+41	        self.x = pickle.loads(ob)
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Utils\parameter_perturbations.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	        """
+39	        assert len(self.actor.parameters()) == len(model.parameters())
+40	        actor_perturbable_parameters = self.get_perturbable_parameters(self.actor)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Utils\parameter_perturbations.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	        perturbed_actor_perturbable_parameters = self.get_perturbable_parameters(model)
+42	        assert len(actor_perturbable_parameters) == len(perturbed_actor_perturbable_parameters)
+43	
+44	        for params, perturbed_params in zip(actor_perturbable_parameters, perturbed_actor_perturbable_parameters):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Utils\parameter_perturbations.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	
+51	        assert self.param_noise_stddev is not None
+52	        # Configure perturbed actor
+53	        self.perturbed_actor = copy(self.actor)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\Utils\tensorboard_writer.py:21:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	    def write_scalars(self, scalars, scalar_grp_name, epoch):
+21	        assert type(scalars) == 'dict'
+22	        self.writer.add_scalars(scalar_grp_name, scalars, epoch)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: pytorch-rl\Utils\visualize.py:142:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+141	    viz = Visdom()
+142	    visdom_plot(viz, None, '/tmp/gym/', 'BreakOut', 'a2c', bin_size=100, smooth=1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\DQN.py:334:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+333	    def act(self, state, epsilon):
+334	        if random.random() > epsilon:
+335	            state = Variable(torch.FloatTensor(state), volatile=True)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\DQN.py:341:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+340	        else:
+341	            action = torch.tensor([random.randrange(self.env.action_space.n)], dtype=torch.long)
+342	        return action
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: pytorch-rl\models\RandomExplorationPolicy.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import gym
+2	import pickle
+3	import os
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: pytorch-rl\models\RandomExplorationPolicy.py:38:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+37	            with open(self.demonstrations, 'rb') as f:
+38	                dat = pickle.load(f)
+39	            self.demonstrated_actions = dat['actions']
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\RandomExplorationPolicy.py:80:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+79	            for i in range(self.num_states_to_save):
+80	                action = randint(0, self.num_actions-1)
+81	                state, reward, done, success  = self.env.step(action=action)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\empowerment_models.py:384:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+383	    def act(self, state, epsilon):
+384	        if random.random() > epsilon:
+385	            state = Variable(torch.FloatTensor(state), requires_grad=False)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\empowerment_models.py:391:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+390	        else:
+391	            action = torch.tensor([random.randrange(self.env.action_space.n)], dtype=torch.long)
+392	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\empowerment_models.py:442:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+441	    def act(self, state, epsilon):
+442	        if random.random() > epsilon:
+443	            state = Variable(torch.FloatTensor(state), requires_grad=False)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\models\empowerment_models.py:449:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+448	        else:
+449	            action = torch.tensor([random.randrange(self.env.action_space.n)], dtype=torch.long)
+450	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pytorch-rl\train_dqn.py:160:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+159	            # Choose a random action
+160	            if random.random() < epsilon:
+161	                action = env.action_space.sample()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pytorch-rl\train_infogan.py:59:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    def __init__(self, output_size):
+59	        assert isinstance(output_size, (int, tuple))
+60	        self.output_size = output_size
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 7487
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 24
+		Medium: 4
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 27
+Files skipped (0):

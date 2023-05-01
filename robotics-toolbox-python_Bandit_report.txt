@@ -1,0 +1,652 @@
+Run started:2023-04-23 06:07:03.542162
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:142:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	            else:
+142	                assert len(on) == len(id), 'incorrect enable flags'
+143	                for i in id:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:144:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+143	                for i in id:
+144	                    assert id in self.idlist, 'invalid id'
+145	                    self.register_write(id, 'torque_enable', on[i])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:147:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+146	        else:
+147	            assert id in self.idlist, 'invalid id'
+148	            self.register_write(id, 'torque_enable', on)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:157:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	            # TODO allow numpy array, use argcheck.getvector
+157	            assert isinstance(pos, (int, float)) or instance(pos, list) and len(pos) == self.n, 'incorrect position value'
+158	            for id in self.idlist:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:161:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	        else:
+161	            assert id in self.idlist, 'invalid id'
+162	            self.register_write(id, 'goal_position', pos)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:219:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+218	            for i in id:
+219	                assert i in self.idlist, 'invalid id'
+220	                value.append(reader(i, register))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:223:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+222	        else:
+223	            assert id in self.idlist, 'invalid id'
+224	            return reader(id, register)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:238:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+237	            if isinstance(value, list):
+238	                assert len(value) == len(id), 'length of value list must match number of servos'
+239	                for i, v in zip(id, value):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:240:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+239	                for i, v in zip(id, value):
+240	                    assert i in self.idlist, 'invalid id'
+241	                    writer(i, register, v)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dynamixel_io.py:246:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+245	        else:
+246	            assert id in self.idlist, 'invalid id %d' % (id,)
+247	            writer(id, register, value)
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dyndata.py:41:5
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
+40	
+41	with urllib.request.urlopen(url) as response:
+42	    html = response.read()
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\Dynamixel\dyndata.py:58:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
+57	    print('MODEL', model)
+58	    with urllib.request.urlopen(url) as response:
+59	        motor = {}
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\ROS\ROS.py:12:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+11	import time
+12	import subprocess
+13	import os
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\ROS\ROS.py:54:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+53	            print('Launching ROS core\n')
+54	            self.roscore = subprocess.Popen('roscore')
+55	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\ROS\ROS.py:54:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+53	            print('Launching ROS core\n')
+54	            self.roscore = subprocess.Popen('roscore')
+55	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\backends\VPython\graphicalrobot.py:544:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+543	                    self.append_link("s", all_poses[0], robot.basemesh, [0, 0], 0)
+544	            except:
+545	                pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:561:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+560	        n = self.robot.n
+561	        assert len(Q) == n, "torque vector wrong size"
+562	
+563	        q = self._x[:n]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:986:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+985	        w = self.inputs[0]
+986	        assert len(w) == 6, "wrench vector wrong size"
+987	        Q = self.robot.jacob0_analytical(q, self.representation).T @ w
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:1137:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1136	        yf = base.getvector(yf)
+1137	        assert len(y0) == len(yf), "y0 and yf must have same length"
+1138	
+1139	        self.y0 = y0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:1149:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1148	        if self.time:
+1149	            assert self.x[0] <= 0, "interpolation not defined for t=0"
+1150	            assert self.x[-1] >= self.bd.T, "interpolation not defined for t=T"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:1150:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1149	            assert self.x[0] <= 0, "interpolation not defined for t=0"
+1150	            assert self.x[-1] >= self.bd.T, "interpolation not defined for t=T"
+1151	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:1564:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1563	        self.radius = radius
+1564	        assert len(centre) == 3, "centre must be a 3 vector"
+1565	        self.centre = centre
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\arm.py:1589:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+1588	
+1589	    exec(
+1590	        open(
+1591	            os.path.join(pathlib.Path(__file__).parent.absolute(), "test_robots.py")
+1592	        ).read()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\mobile.py:83:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	        else:
+83	            assert len(x0) == self.nstates, "x0 is {:d} long, should be {:d}".format(len(x0), self.nstates)
+84	            self._x0 = x0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\mobile.py:156:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	        else:
+156	            assert len(x0) == self.nstates, "x0 is {:d} long, should be {:d}".format(len(x0), self.nstates)
+157	            self._x0 = x0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\mobile.py:253:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+252	        else:
+253	            assert len(x0) == self.nstates, "x0 is {:d} long, should be {:d}".format(len(x0), self.nstates)
+254	            self._x0 = x0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\mobile.py:340:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+339	        if init is not None:
+340	            assert callable(init), 'graphics init function must be callable'
+341	        self.init = init
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\blocks\uav.py:169:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+168	            raise RuntimeError('vehicle model does not contain nrotors')
+169	        assert nrotors % 2 == 0, 'Must have an even number of rotors'
+170	        
+171	        self.nstates = 12
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\mobile\Bug2.py:419:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+418	                return p
+419	        except:
+420	            pass 
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\mobile\DistanceTransformPlanner.py:183:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+182	                    min_dist = self._distancemap[y + d[0], x + d[1]]
+183	            except:
+184	                # come here if the neighbouring cell is outside the map bounds
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robotics-toolbox-python\roboticstoolbox\mobile\landmarkmap.py:75:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+74	            random = np.random.default_rng(seed)
+75	            x = random.uniform(self._workspace[0], self._workspace[1], self._nlandmarks)
+76	            y = random.uniform(self._workspace[2], self._workspace[3], self._nlandmarks)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robotics-toolbox-python\roboticstoolbox\mobile\landmarkmap.py:76:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+75	            x = random.uniform(self._workspace[0], self._workspace[1], self._nlandmarks)
+76	            y = random.uniform(self._workspace[2], self._workspace[3], self._nlandmarks)
+77	            self._map = np.c_[x, y].T
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\robot\ERobot.py:9:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+8	import tempfile
+9	import subprocess
+10	import webbrowser
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\robot\ERobot.py:920:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+919	        pdffile = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+920	        subprocess.run("dot -Tpdf", shell=True, stdin=dotfile, stdout=pdffile)
+921	
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\robot\ERobot.py:920:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+919	        pdffile = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+920	        subprocess.run("dot -Tpdf", shell=True, stdin=dotfile, stdout=pdffile)
+921	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\DHFactor.py:203:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+202	    def merge(self, e):
+203	        assert type(e) == Element, "merge(Element e)"
+204	        """
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\DHFactor.py:225:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+224	    def swap(self, next, dhWhich):
+225	        assert type(next) == Element, "type(next) == Element"
+226	
+227	        # don't swap if both are joint variables
+228	        if self.isjoint() and next.isjoint():
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:12:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+11	import os
+12	import xml.etree.ElementTree as ETT
+13	from spatialmath import SE3
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1628:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+1627	            self._validate_transmissions()
+1628	        except Exception:
+1629	            pass
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.XMLParser to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.XMLParser with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1900:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1899	            if os.path.isfile(file_obj):
+1900	                parser = ETT.XMLParser()
+1901	                tree = ETT.parse(file_obj, parser=parser)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1901:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1900	                parser = ETT.XMLParser()
+1901	                tree = ETT.parse(file_obj, parser=parser)
+1902	                path, _ = os.path.split(file_obj)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.XMLParser to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.XMLParser with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1906:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1905	        else:
+1906	            parser = ETT.XMLParser()
+1907	            tree = ETT.parse(file_obj, parser=parser)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1907:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1906	            parser = ETT.XMLParser()
+1907	            tree = ETT.parse(file_obj, parser=parser)
+1908	            path, _ = os.path.split(file_obj.name)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.XMLParser to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.XMLParser with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1935:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1934	            if os.path.isfile(file_obj):
+1935	                parser = ETT.XMLParser()
+1936	                bytes_obj = BytesIO(bytes(str_obj, "utf-8"))
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1937:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1936	                bytes_obj = BytesIO(bytes(str_obj, "utf-8"))
+1937	                tree = ETT.parse(bytes_obj, parser=parser)
+1938	                path, _ = os.path.split(file_obj)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.XMLParser to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.XMLParser with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1941:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1940	        else:  # pragma nocover
+1941	            parser = ETT.XMLParser()
+1942	            tree = ETT.parse(file_obj, parser=parser)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\urdf\urdf.py:1942:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+1941	            parser = ETT.XMLParser()
+1942	            tree = ETT.parse(file_obj, parser=parser)
+1943	            path, _ = os.path.split(file_obj.name)
+
+--------------------------------------------------
+>> Issue: [B408:blacklist] Using xml.dom.minidom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:41:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b408-import-xml-minidom
+40	import sys
+41	import xml.dom.minidom
+42	
+43	from copy import deepcopy
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:256:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+255	                    return f(value)
+256	                except Exception:
+257	                    pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:521:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+520	def grab_macro(elt, macros):
+521	    assert(elt.tagName == 'xacro:macro')
+522	    remove_previous_comments(elt)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:555:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+554	def grab_property(elt, table):
+555	    assert(elt.tagName == 'xacro:property')
+556	    remove_previous_comments(elt)
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:617:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+616	        try:
+617	            return eval(eval_text(s, symbols), global_symbols, symbols)
+618	        except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:956:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+955	        if isinstance(inp, _basestr):
+956	            return xml.dom.minidom.parseString(inp)
+957	        elif hasattr(inp, 'read'):
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\__init__.py:958:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+957	        elif hasattr(inp, 'read'):
+958	            return xml.dom.minidom.parse(inp)
+959	        return inp   # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:42:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+41	import re
+42	import subprocess
+43	import sys
+
+--------------------------------------------------
+>> Issue: [B408:blacklist] Using parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace parseString with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:48:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b408-import-xml-minidom
+47	import xml.dom
+48	from xml.dom.minidom import parseString
+49	
+50	try:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:72:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+71	            return True
+72	    except Exception:  # Attribute values aren't dicts
+73	        pass
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:177:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+176	    if isinstance(a, str):
+177	        return xml_matches(parseString(a).documentElement, b, ignore_nodes)
+178	    if isinstance(b, str):
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:179:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+178	    if isinstance(b, str):
+179	        return xml_matches(a, parseString(b).documentElement, ignore_nodes)
+180	    if a.nodeType == xml.dom.Node.DOCUMENT_NODE:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:336:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+335	        args = list(args)
+336	        subprocess.call(['xacro', input_path] + args)
+337	
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\tests\test_xacro.py:354:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+353	        self.assert_matches(
+354	            xml.dom.minidom.parse(pr2_golden_parse_path),
+355	            self.quick_xacro(open(pr2_xacro_path)))
+
+--------------------------------------------------
+>> Issue: [B408:blacklist] Using xml.dom.minidom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-toolbox-python\roboticstoolbox\tools\xacro\xmlutils.py:33:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b408-import-xml-minidom
+32	
+33	import xml.dom.minidom
+34	
+35	
+36	def first_child_element(elt):
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 43358
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 45
+		Medium: 17
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 62
+Files skipped (0):

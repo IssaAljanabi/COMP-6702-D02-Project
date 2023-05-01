@@ -1,0 +1,2099 @@
+Run started:2023-04-23 06:06:09.189368
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\controller_factory.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	
+69	        assert (
+70	            default_controller in ALL_CONTROLLERS
+71	        ), "Error: Unknown default controller specified. Requested {}, " "available controllers: {}".format(
+72	            default_controller, list(ALL_CONTROLLERS)
+73	        )
+74	
+75	        # Store the default controller config fpath associated with the requested controller
+76	        custom_fpath = os.path.join(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\controller_factory.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	    # Assert that the fpath to load the controller is not empty
+81	    assert custom_fpath is not None, "Error: Either custom_fpath or default_controller must be specified!"
+82	
+83	    # Attempt to load the controller
+84	    try:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\ik.py:161:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	        # Verify robot is supported by IK
+161	        assert robot_name in SUPPORTED_IK_ROBOTS, (
+162	            "Error: Tried to instantiate IK controller for unsupported robot! "
+163	            "Inputted robot: {}, Supported robots: {}".format(robot_name, SUPPORTED_IK_ROBOTS)
+164	        )
+165	
+166	        # Initialize ik-specific attributes
+167	        self.robot_name = robot_name  # Name of robot (e.g.: "Panda", "Sawyer", etc.)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\joint_pos.py:137:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+136	        # Verify the proposed impedance mode is supported
+137	        assert impedance_mode in IMPEDANCE_MODES, (
+138	            "Error: Tried to instantiate OSC controller for unsupported "
+139	            "impedance mode! Inputted impedance mode: {}, Supported modes: {}".format(impedance_mode, IMPEDANCE_MODES)
+140	        )
+141	
+142	        # Impedance mode
+143	        self.impedance_mode = impedance_mode
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\joint_pos.py:196:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+195	        # Check to make sure delta is size self.joint_dim
+196	        assert len(delta) == jnt_dim, "Delta qpos must be equal to the robot's joint dimension space!"
+197	
+198	        if delta is not None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\joint_tor.py:119:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	        # Check to make sure torques is size self.joint_dim
+119	        assert len(torques) == self.control_dim, "Delta torque must be equal to the robot's joint dimension space!"
+120	
+121	        self.goal_torque = np.clip(self.scale_action(torques), self.torque_limits[0], self.torque_limits[1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\joint_vel.py:136:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+135	        # Otherwise, check to make sure velocities is size self.joint_dim
+136	        assert (
+137	            len(velocities) == self.joint_dim
+138	        ), "Goal action must be equal to the robot's joint dimension space! Expected {}, got {}".format(
+139	            self.joint_dim, len(velocities)
+140	        )
+141	
+142	        self.goal_vel = self.scale_action(velocities)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\controllers\osc.py:167:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+166	        # Verify the proposed impedance mode is supported
+167	        assert impedance_mode in IMPEDANCE_MODES, (
+168	            "Error: Tried to instantiate OSC controller for unsupported "
+169	            "impedance mode! Inputted impedance mode: {}, Supported modes: {}".format(impedance_mode, IMPEDANCE_MODES)
+170	        )
+171	
+172	        # Impedance mode
+173	        self.impedance_mode = impedance_mode
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\demos\demo_collect_and_playback_data.py:75:57
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+74	    parser.add_argument("--robots", nargs="+", type=str, default="Panda", help="Which robot(s) to use in the env")
+75	    parser.add_argument("--directory", type=str, default="/tmp/")
+76	    parser.add_argument("--timesteps", type=int, default=1000)
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\demos\demo_gripper_interaction.py:11:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+10	
+11	import xml.etree.ElementTree as ET
+12	
+13	from robosuite.models import MujocoWorldBase
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\demos\demo_segmentation.py:58:58
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+57	    parser = argparse.ArgumentParser()
+58	    parser.add_argument("--video-path", type=str, default="/tmp/video.mp4", help="Path to video file")
+59	    parser.add_argument("--random-colors", action="store_true", help="Radnomize segmentation colors")
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\demos\demo_segmentation.py:108:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+107	        video_img = obs[f"{camera}_segmentation_{segmentation_level}"].squeeze(-1)[::-1]
+108	        np.savetxt("/tmp/seg_{}.txt".format(i), video_img, fmt="%.2f")
+109	        video_img = segmentation_to_rgb(video_img, args.random_colors)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\demos\demo_segmentation.py:113:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+112	        image = Image.fromarray(video_img)
+113	        image.save("/tmp/seg_{}.png".format(i))
+114	        if i % 5 == 0:
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\environments\base.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+1	import os
+2	import xml.etree.ElementTree as ET
+3	from collections import OrderedDict
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\environments\base.py:520:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+519	        # replace mesh and texture file paths
+520	        tree = ET.fromstring(xml_str)
+521	        root = tree
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\base.py:606:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+605	        # Make sure model is MujocoModel type
+606	        assert isinstance(
+607	            model, MujocoModel
+608	        ), "Inputted model must be of type MujocoModel; got type {} instead!".format(type(model))
+609	        contact_set = set()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\base.py:625:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+624	        """
+625	        assert observable.name not in self._observables, (
+626	            "Observable name {} is already associated with an existing observable! Use modify_observable(...) "
+627	            "to modify a pre-existing observable.".format(observable.name)
+628	        )
+629	        self._observables[observable.name] = observable
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\base.py:643:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+642	        # Find the observable
+643	        assert observable_name in self._observables, "No valid observable with name {} found. Options are: {}".format(
+644	            observable_name, self.observation_names
+645	        )
+646	        obs = self._observables[observable_name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\manipulation_env.py:318:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+317	        for robot in robots:
+318	            assert issubclass(
+319	                ROBOT_CLASS_MAPPING[robot], Manipulator
+320	            ), "Only manipulator robots supported for manipulation environment!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\nut_assembly.py:192:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+191	        if nut_type is not None:
+192	            assert nut_type in self.nut_to_id.keys(), "invalid @nut_type argument - choose one of {}".format(
+193	                list(self.nut_to_id.keys())
+194	            )
+195	            self.nut_id = self.nut_to_id[nut_type]  # use for convenient indexing
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\environments\manipulation\nut_assembly.py:607:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+606	        if self.single_object_mode == 1:
+607	            self.obj_to_use = random.choice(list(nut_names))
+608	            for nut_type, i in self.nut_to_id.items():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\nut_assembly.py:687:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+686	    def __init__(self, **kwargs):
+687	        assert "single_object_mode" not in kwargs, "invalid set of arguments"
+688	        super().__init__(single_object_mode=1, **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\nut_assembly.py:697:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+696	    def __init__(self, **kwargs):
+697	        assert "single_object_mode" not in kwargs and "nut_type" not in kwargs, "invalid set of arguments"
+698	        super().__init__(single_object_mode=2, nut_type="square", **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\nut_assembly.py:707:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+706	    def __init__(self, **kwargs):
+707	        assert "single_object_mode" not in kwargs and "nut_type" not in kwargs, "invalid set of arguments"
+708	        super().__init__(single_object_mode=2, nut_type="round", **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:203:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+202	        if object_type is not None:
+203	            assert object_type in self.object_to_id.keys(), "invalid @object_type argument - choose one of {}".format(
+204	                list(self.object_to_id.keys())
+205	            )
+206	            self.object_id = self.object_to_id[object_type]  # use for convenient indexing
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:694:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+693	        if self.single_object_mode == 1:
+694	            self.obj_to_use = random.choice(list(obj_names))
+695	            for obj_type, i in self.object_to_id.items():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:776:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+775	    def __init__(self, **kwargs):
+776	        assert "single_object_mode" not in kwargs, "invalid set of arguments"
+777	        super().__init__(single_object_mode=1, **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:786:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+785	    def __init__(self, **kwargs):
+786	        assert "single_object_mode" not in kwargs and "object_type" not in kwargs, "invalid set of arguments"
+787	        super().__init__(single_object_mode=2, object_type="milk", **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:796:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+795	    def __init__(self, **kwargs):
+796	        assert "single_object_mode" not in kwargs and "object_type" not in kwargs, "invalid set of arguments"
+797	        super().__init__(single_object_mode=2, object_type="bread", **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:806:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+805	    def __init__(self, **kwargs):
+806	        assert "single_object_mode" not in kwargs and "object_type" not in kwargs, "invalid set of arguments"
+807	        super().__init__(single_object_mode=2, object_type="cereal", **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\pick_place.py:816:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+815	    def __init__(self, **kwargs):
+816	        assert "single_object_mode" not in kwargs and "object_type" not in kwargs, "invalid set of arguments"
+817	        super().__init__(single_object_mode=2, object_type="can", **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\single_arm_env.py:20:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	        # Verify the correct robot has been loaded
+20	        assert isinstance(
+21	            self.robots[0], SingleArm
+22	        ), "Error: Expected one single-armed robot! Got {} type instead.".format(type(self.robots[0]))
+23	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\single_arm_env.py:33:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	        if type(robots) is list:
+33	            assert len(robots) == 1, "Error: Only one robot should be inputted for this task!"
+34	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\two_arm_peg_in_hole.py:173:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+172	        # Assert that the gripper type is None
+173	        assert gripper_types is None, "Tried to specify gripper other than None in TwoArmPegInHole environment!"
+174	
+175	        # reward configuration
+176	        self.reward_scale = reward_scale
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\wipe.py:194:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+193	        # Assert that the gripper type is None
+194	        assert (
+195	            gripper_types == "WipingGripper"
+196	        ), "Tried to specify gripper other than WipingGripper in Wipe environment!"
+197	
+198	        # Get config
+199	        self.task_config = task_config if task_config is not None else DEFAULT_WIPE_CONFIG
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\manipulation\wipe.py:218:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+217	        # Verify that the distance multiplier is not greater than the task complete reward
+218	        assert (
+219	            self.task_complete_reward > self.distance_multiplier
+220	        ), "Distance multiplier cannot be greater than task complete reward!"
+221	
+222	        # settings for table top
+223	        self.table_full_size = self.task_config["table_full_size"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\environments\robot_env.py:575:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+574	        # Verify that the action is the correct dimension
+575	        assert len(action) == self.action_dim, "environment got invalid action dimension -- expected {}, got {}".format(
+576	            self.action_dim, len(action)
+577	        )
+578	
+579	        # Update robot joints based on controller actions
+580	        cutoff = 0
+
+--------------------------------------------------
+>> Issue: [B408:blacklist] Using xml.dom.minidom to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\models\base.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b408-import-xml-minidom
+2	import os
+3	import xml.dom.minidom
+4	import xml.etree.ElementTree as ET
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\models\base.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+3	import xml.dom.minidom
+4	import xml.etree.ElementTree as ET
+5	
+6	import robosuite.macros as macros
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\models\base.py:34:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+33	        self.folder = os.path.dirname(fname)
+34	        self.tree = ET.parse(fname)
+35	        self.root = self.tree.getroot()
+
+--------------------------------------------------
+>> Issue: [B318:blacklist] Using xml.dom.minidom.parseString to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.dom.minidom.parseString with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\models\base.py:171:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-minidom
+170	            if pretty:
+171	                parsed_xml = xml.dom.minidom.parseString(xml_str)
+172	                xml_str = parsed_xml.toprettyxml(newl="")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\base.py:528:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+527	        self._elements = sort_elements(root=self.root, element_filter=_add_default_name_filter)
+528	        assert (
+529	            len(self._elements["root_body"]) == 1
+530	        ), "Invalid number of root bodies found for robot model. Expected 1," "got {}".format(
+531	            len(self._elements["root_body"])
+532	        )
+533	        self._elements["root_body"] = self._elements["root_body"][0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\gripper_factory.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    # Make sure gripper is valid
+26	    assert name in GRIPPER_MAPPING, f"Unknown gripper name: {name}. Valid options are: {ALL_GRIPPERS}"
+27	
+28	    # Generate gripper
+29	    return GRIPPER_MAPPING[name](idn=idn)
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\models\grippers\gripper_tester.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+3	"""
+4	import xml.etree.ElementTree as ET
+5	
+6	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\jaco_three_finger_gripper.py:68:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	        """
+68	        assert len(action) == self.dof
+69	        self.current_action = np.clip(self.current_action - self.speed * np.sign(action), -1.0, 1.0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\jaco_three_finger_gripper.py:97:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	        """
+97	        assert len(action) == self.dof
+98	        self.current_action = np.clip(self.current_action - self.speed * np.sign(action), -1.0, 1.0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\panda_gripper.py:54:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	        """
+54	        assert len(action) == self.dof
+55	        self.current_action = np.clip(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\rethink_gripper.py:54:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	        """
+54	        assert len(action) == 1
+55	        self.current_action = np.clip(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\robotiq_140_gripper.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	        """
+65	        assert len(action) == 1
+66	        self.current_action = np.clip(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\robotiq_85_gripper.py:64:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	        """
+64	        assert len(action) == 1
+65	        self.current_action = np.clip(self.current_action + self.speed * np.sign(action), -1.0, 1.0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\robotiq_three_finger_gripper.py:74:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	        """
+74	        assert len(action) == self.dof
+75	        self.current_action = np.clip(self.current_action + self.speed * np.array(action), -1.0, 1.0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\grippers\robotiq_three_finger_gripper.py:105:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	        """
+105	        assert len(action) == self.dof
+106	        self.current_action = np.clip(self.current_action + self.speed * np.sign(action), -1.0, 1.0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\composite\hammer.py:140:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+139	        # Add handle component
+140	        assert self.handle_shape in {
+141	            "cylinder",
+142	            "box",
+143	        }, "Error loading hammer: Handle type must either be 'box' or 'cylinder', got {}.".format(self.handle_shape)
+144	        add_to_dict(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\generated_objects.py:195:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+194	        parent = find_elements(root=root, tags="body", attribs={"name": parent_name}, return_first=True)
+195	        assert parent is not None, "Could not find parent body with name: {}".format(parent_name)
+196	        # Get the object xml element tree, remove its top-level joints, and modify its top-level pos / quat
+197	        child = obj.get_obj()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\generated_objects.py:232:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+231	        body = find_elements(root=root, tags="body", attribs={"name": body_name}, return_first=True)
+232	        assert body is not None, "Could not find body with name: {}".format(body_name)
+233	        # Add joint(s) to this body
+234	        for joint_spec in joint_specs:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\generated_objects.py:643:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+642	            rgba = [1, 0, 0, 1]
+643	        assert len(rgba) == 4, "rgba must be a length 4 array"
+644	        self.rgba = list(rgba)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\generated_objects.py:654:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+653	            friction = [friction, 0.005, 0.0001]
+654	        assert len(friction) == 3, "friction must be a length 3 array or a single number"
+655	        self.friction = list(friction)
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\models\objects\objects.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+1	import copy
+2	import xml.etree.ElementTree as ET
+3	from copy import deepcopy
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\objects.py:55:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	        self.asset = ET.Element("asset")
+55	        assert obj_type in GEOM_GROUPS, "object type must be one in {}, got: {} instead.".format(GEOM_GROUPS, obj_type)
+56	        self.obj_type = obj_type
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\objects.py:93:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	        """
+93	        assert self._obj is not None, "Object XML tree has not been generated yet!"
+94	        return self._obj
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\objects.py:131:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+130	        _elements = sort_elements(root=self.get_obj())
+131	        assert (
+132	            len(_elements["root_body"]) == 1
+133	        ), "Invalid number of root bodies found for robot model. Expected 1," "got {}".format(
+134	            len(_elements["root_body"])
+135	        )
+136	        _elements["root_body"] = _elements["root_body"][0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\objects.py:320:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+319	        # Set obj type and duplicate args
+320	        assert obj_type in GEOM_GROUPS, "object type must be one in {}, got: {} instead.".format(GEOM_GROUPS, obj_type)
+321	        self.obj_type = obj_type
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\primitive\ball.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        """
+53	        assert len(self.size) == 1, "ball size should have length 1"
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\primitive\box.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        """
+53	        assert len(self.size) == 3, "box size should have length 3"
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\primitive\capsule.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        """
+53	        assert len(self.size) == 2, "capsule size should have length 2"
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\objects\primitive\cylinder.py:62:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	        """
+62	        assert len(self.size) == 2, "cylinder size should have length 2"
+63	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\robots\robot_model.py:110:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+109	        """
+110	        assert values.size == len(self._elements["joints"]), (
+111	            "Error setting joint attributes: "
+112	            + "Values must be same size as joint dimension. Got {}, expected {}!".format(values.size, self.dof)
+113	        )
+114	        for i, joint in enumerate(self._elements["joints"]):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\tasks\task.py:84:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	            # Make sure we actually got a MujocoObject
+84	            assert isinstance(mujoco_obj, MujocoObject), "Tried to merge non-MujocoObject! Got type: {}".format(
+85	                type(mujoco_obj)
+86	            )
+87	            # Merge this object
+88	            self.merge_assets(mujoco_obj)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\tasks\task.py:125:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	            # Instances should be unique
+125	            assert inst not in self._instances_to_ids, f"Instance {inst} already registered; should be unique"
+126	            self._instances_to_ids[inst] = {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\models\tasks\task.py:141:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	                for idn in ids:
+141	                    assert idn not in ids_to_inst, f"ID {idn} already registered; should be unique"
+142	                    ids_to_inst[idn] = inst
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\renderers\base_parser.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+1	import abc
+2	import xml.etree.ElementTree as ET
+3	
+4	
+5	class BaseParser(object):
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\renderers\base_parser.py:21:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+20	        self.env = env
+21	        self.xml_root = ET.fromstring(self.env.sim.model.get_xml())
+22	        self.parent_map = {c: p for p in self.xml_root.iter() for c in p}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\renderers\context\egl_context.py:56:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	            else:
+56	                assert device_id in device_inds, "specified device id is not made visible in environment variables."
+57	                device_idx = device_id
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\renderers\nvisii\parser.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+1	import xml.etree.ElementTree as ET
+2	from collections import namedtuple
+3	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\robots\bimanual.py:127:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	            #                                           OSC_POSITION, OSC_POSE, IK_POSE}
+127	            assert (
+128	                type(self.controller_config[arm]) == dict
+129	            ), "Inputted controller config must be a dict! Instead, got type: {}".format(
+130	                type(self.controller_config[arm])
+131	            )
+132	
+133	            # Add to the controller dict additional relevant params:
+134	            #   the robot name, mujoco sim, eef_name, actuator_range, joint_indexes, timestep (model) freq,
+135	            #   policy (control) freq, and ndim (# joints)
+136	            self.controller_config[arm]["robot_name"] = self.name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\robots\bimanual.py:271:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+270	        # clip actions into valid range
+271	        assert len(action) == self.action_dim, "environment got invalid action dimension -- expected {}, got {}".format(
+272	            self.action_dim, len(action)
+273	        )
+274	
+275	        self.torques = np.array([])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\robots\single_arm.py:114:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	        #                                           OSC_POSITION, OSC_POSE, IK_POSE}
+114	        assert (
+115	            type(self.controller_config) == dict
+116	        ), "Inputted controller config must be a dict! Instead, got type: {}".format(type(self.controller_config))
+117	
+118	        # Add to the controller dict additional relevant params:
+119	        #   the robot name, mujoco sim, eef_name, joint_indexes, timestep (model) freq,
+120	        #   policy (control) freq, and ndim (# joints)
+121	        self.controller_config["robot_name"] = self.name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\robots\single_arm.py:234:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+233	        # clip actions into valid range
+234	        assert len(action) == self.action_dim, "environment got invalid action dimension -- expected {}, got {}".format(
+235	            self.action_dim, len(action)
+236	        )
+237	
+238	        gripper_action = None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\scripts\collect_human_demonstrations.py:146:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+145	            del states[-1]
+146	            assert len(states) == len(actions)
+147	
+148	            num_eps += 1
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\scripts\collect_human_demonstrations.py:230:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+229	    # wrap the environment with data collection wrapper
+230	    tmp_directory = "/tmp/{}".format(str(time.time()).replace(".", "_"))
+231	    env = DataCollectionWrapper(env, tmp_directory)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\scripts\playback_demonstrations_from_hdf5.py:63:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+62	        # select an episode randomly
+63	        ep = random.choice(demos)
+64	
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\scripts\tune_camera.py:10:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+9	import time
+10	import xml.etree.ElementTree as ET
+11	
+12	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\scripts\tune_camera.py:159:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+158	
+159	    cam_tree = ET.fromstring(inp) if from_tag else ET.Element("camera", attrib={"name": inp})
+160	    CAMERA_NAME = cam_tree.get("name")
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+20	import platform
+21	import subprocess
+22	
+23	import robosuite.macros as macros
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:33:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    if MUJOCO_EGL_DEVICE_ID is not None:
+33	        assert MUJOCO_EGL_DEVICE_ID.isdigit() and (
+34	            MUJOCO_EGL_DEVICE_ID in CUDA_VISIBLE_DEVICES
+35	        ), "MUJOCO_EGL_DEVICE_ID needs to be set to one of the device id specified in CUDA_VISIBLE_DEVICES"
+36	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:72:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	    def __init__(self, sim, offscreen=True, device_id=-1, max_width=640, max_height=480):
+72	        assert offscreen, "only offscreen supported for now"
+73	        self.sim = sim
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:236:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+235	        qvel = array[idx_qvel : idx_qvel + sim.model.nv]
+236	        assert sim.model.na == 0
+237	
+238	        return cls(time=time, qpos=qpos, qvel=qvel)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:521:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+520	        else:
+521	            assert joint_type in (mujoco.mjtJoint.mjJNT_HINGE, mujoco.mjtJoint.mjJNT_SLIDE)
+522	            ndim = 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:546:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+545	        else:
+546	            assert joint_type in (mujoco.mjtJoint.mjJNT_HINGE, mujoco.mjtJoint.mjJNT_SLIDE)
+547	            ndim = 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:1014:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1013	            value = np.array(value)
+1014	            assert value.shape == (end_i - start_i,), "Value has incorrect shape %s: %s" % (name, value)
+1015	            self.qpos[start_i:end_i] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:1048:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1047	            value = np.array(value)
+1048	            assert value.shape == (end_i - start_i,), "Value has incorrect shape %s: %s" % (name, value)
+1049	            self.qvel[start_i:end_i] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:1125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1124	
+1125	        assert mode == "offscreen", "only offscreen supported for now"
+1126	        assert self._render_context_offscreen is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:1126:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1125	        assert mode == "offscreen", "only offscreen supported for now"
+1126	        assert self._render_context_offscreen is not None
+1127	        with _MjSim_render_lock:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\binding_utils.py:1134:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1133	    def add_render_context(self, render_context):
+1134	        assert render_context.offscreen
+1135	        if self._render_context_offscreen is not None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\buffers.py:171:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+170	        # First make sure that the delay is valid
+171	        assert delay < self.length, "Requested delay must be less than buffer's length!"
+172	        # Grab delayed value
+173	        return self.buf[(self.ptr - delay) % self.length]
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:10:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+9	import json
+10	import xml.etree.ElementTree as ET
+11	
+12	import h5py
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:121:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	    # Make sure that depth values are normalized
+121	    assert np.all(depth_map >= 0.0) and np.all(depth_map <= 1.0)
+122	    extent = sim.model.stat.extent
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:144:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+143	    """
+144	    assert points.shape[-1] == 3  # last dimension must be 3D
+145	    assert len(world_to_camera_transform.shape) == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:145:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+144	    assert points.shape[-1] == 3  # last dimension must be 3D
+145	    assert len(world_to_camera_transform.shape) == 2
+146	    assert world_to_camera_transform.shape[0] == 4 and world_to_camera_transform.shape[1] == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:146:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+145	    assert len(world_to_camera_transform.shape) == 2
+146	    assert world_to_camera_transform.shape[0] == 4 and world_to_camera_transform.shape[1] == 4
+147	
+148	    # convert points to homogenous coordinates -> (px, py, pz, 1)
+149	    ones_pad = np.ones(points.shape[:-1] + (1,))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:193:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+192	    depth_map_leading_shape = depth_map.shape[:-3]
+193	    assert depth_map_leading_shape == pixels_leading_shape
+194	
+195	    # sample from the depth map using the pixel locations with bilinear sampling
+196	    pixels = pixels.astype(float)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:340:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+339	        """
+340	        tree = ET.fromstring(xml)
+341	        wb = tree.find("worldbody")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:350:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+349	                break
+350	        assert camera_elem is not None
+351	
+352	        # add mocap body
+353	        mocap = ET.SubElement(wb, "body")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\camera_utils.py:490:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+489	            for k in env_config.keys():
+490	                assert k not in default_args, f"Key {k} cannot be specified in env_config!"
+491	            env_info.update(env_config)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\utils\log_utils.py:74:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+73	            time_str = str(time.time()).replace(".", "_")
+74	            log_file_path = "/tmp/robosuite_{}_{}.log".format(time_str, os.getpid())
+75	            fh = logging.FileHandler(log_file_path)
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\utils\mjcf_utils.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+3	import os
+4	import xml.etree.ElementTree as ET
+5	from collections.abc import Iterable
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjcf_utils.py:180:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+179	            # Verify that requested texture is valid
+180	            assert texture in ALL_TEXTURES, "Error: Requested invalid texture. Got {}. Valid options are:\n{}".format(
+181	                texture, ALL_TEXTURES
+182	            )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjcf_utils.py:187:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+186	            if texture is not None:
+187	                assert len(texture) == 4, (
+188	                    "Error: Requested default texture. Got array of length {}."
+189	                    "Expected rgba array of length 4.".format(len(texture))
+190	                )
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robosuite\robosuite\utils\mjcf_utils.py:221:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+220	                # Create temp directory if it does not exist
+221	                save_dir = "/tmp/robosuite_temp_tex"
+222	                Path(save_dir).mkdir(parents=True, exist_ok=True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjcf_utils.py:836:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+835	        # We simply return the value of this single element
+836	        assert element_type in {
+837	            "geom",
+838	            "body",
+839	            "site",
+840	        }, f"element_type must be either geom, body, or site. Got: {element_type}"
+841	        if element_type == "geom":
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjcf_utils.py:852:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+851	    else:  # We assume this is an iterable array
+852	        assert isinstance(elements, Iterable), "Elements must be iterable for get_id!"
+853	        elements = [get_ids(sim=sim, elements=ele, element_type=element_type, inplace=True) for ele in elements]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:295:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+294	        lightid = self.get_lightid(name)
+295	        assert lightid > -1, "Unkwnown light %s" % name
+296	
+297	        return self.model.light_pos[lightid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:312:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+311	        lightid = self.get_lightid(name)
+312	        assert lightid > -1, "Unkwnown light %s" % name
+313	
+314	        value = list(value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:315:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+314	        value = list(value)
+315	        assert len(value) == 3, "Expected 3-dim value, got %s" % value
+316	
+317	        self.model.light_pos[lightid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:333:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+332	        lightid = self.get_lightid(name)
+333	        assert lightid > -1, "Unkwnown light %s" % name
+334	
+335	        return self.model.light_dir[lightid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:350:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+349	        lightid = self.get_lightid(name)
+350	        assert lightid > -1, "Unkwnown light %s" % name
+351	
+352	        value = list(value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:353:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+352	        value = list(value)
+353	        assert len(value) == 3, "Expected 3-dim value, got %s" % value
+354	
+355	        self.model.light_dir[lightid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:371:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+370	        lightid = self.get_lightid(name)
+371	        assert lightid > -1, "Unkwnown light %s" % name
+372	
+373	        return self.model.light_active[lightid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:387:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+386	        lightid = self.get_lightid(name)
+387	        assert lightid > -1, "Unkwnown light %s" % name
+388	
+389	        self.model.light_active[lightid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:405:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+404	        lightid = self.get_lightid(name)
+405	        assert lightid > -1, "Unkwnown light %s" % name
+406	
+407	        return self.model.light_specular[lightid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:422:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+421	        lightid = self.get_lightid(name)
+422	        assert lightid > -1, "Unkwnown light %s" % name
+423	
+424	        value = list(value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:425:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+424	        value = list(value)
+425	        assert len(value) == 3, "Expected 3-dim value, got %s" % value
+426	
+427	        self.model.light_specular[lightid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:443:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+442	        lightid = self.get_lightid(name)
+443	        assert lightid > -1, "Unkwnown light %s" % name
+444	
+445	        return self.model.light_ambient[lightid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:460:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+459	        lightid = self.get_lightid(name)
+460	        assert lightid > -1, "Unkwnown light %s" % name
+461	
+462	        value = list(value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:463:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+462	        value = list(value)
+463	        assert len(value) == 3, "Expected 3-dim value, got %s" % value
+464	
+465	        self.model.light_ambient[lightid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:481:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+480	        lightid = self.get_lightid(name)
+481	        assert lightid > -1, "Unkwnown light %s" % name
+482	
+483	        return self.model.light_diffuse[lightid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:498:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+497	        lightid = self.get_lightid(name)
+498	        assert lightid > -1, "Unkwnown light %s" % name
+499	
+500	        value = list(value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:501:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+500	        value = list(value)
+501	        assert len(value) == 3, "Expected 3-dim value, got %s" % value
+502	
+503	        self.model.light_diffuse[lightid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:561:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+560	
+561	        assert randomize_position or randomize_rotation or randomize_fovy
+562	
+563	        if camera_names is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:679:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+678	        camid = self.get_camid(name)
+679	        assert camid > -1, "Unknown camera %s" % name
+680	        return self.model.cam_fovy[camid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:695:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+694	        camid = self.get_camid(name)
+695	        assert 0 < value < 180
+696	        assert camid > -1, "Unknown camera %s" % name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:696:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+695	        assert 0 < value < 180
+696	        assert camid > -1, "Unknown camera %s" % name
+697	        self.model.cam_fovy[camid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:713:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+712	        camid = self.get_camid(name)
+713	        assert camid > -1, "Unknown camera %s" % name
+714	        return self.model.cam_quat[camid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:729:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+728	        value = list(value)
+729	        assert len(value) == 4, "Expectd value of length 4, instead got %s" % value
+730	        camid = self.get_camid(name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:731:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+730	        camid = self.get_camid(name)
+731	        assert camid > -1, "Unknown camera %s" % name
+732	        self.model.cam_quat[camid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:748:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+747	        camid = self.get_camid(name)
+748	        assert camid > -1, "Unknown camera %s" % name
+749	        return self.model.cam_pos[camid]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:764:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+763	        value = list(value)
+764	        assert len(value) == 3, "Expected value of length 3, instead got %s" % value
+765	        camid = self.get_camid(name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:766:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+765	        camid = self.get_camid(name)
+766	        assert camid > -1
+767	        self.model.cam_pos[camid] = value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:1299:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1298	                    skybox_tex_id = tex_id
+1299	            assert skybox_tex_id >= 0
+1300	            return skybox_tex_id
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:1302:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1301	
+1302	        assert self._check_geom_for_texture(name)
+1303	        geom_id = self.model.geom_name2id(name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:1327:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1326	
+1327	        assert self._check_geom_for_texture(name)
+1328	        geom_id = self.model.geom_name2id(name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:1760:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1759	        # Make sure specified parameter is valid, and then modify it
+1760	        assert (
+1761	            attr in self.dynamics_parameters
+1762	        ), "Invalid dynamics parameter specified! Supported parameters are: {};" " requested: {}".format(
+1763	            self.dynamics_parameters, attr
+1764	        )
+1765	        # Modify the requested parameter (uses a clean way to programmatically call the appropriate method)
+1766	        getattr(self, f"mod_{attr}")(name, val)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:1778:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1777	        # Make sure inputs are of correct form
+1778	        assert name is None, "No name should be specified if modding density!"
+1779	
+1780	        # Modify this value
+1781	        self.sim.model.opt.density = val
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\mjmod.py:1793:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1792	        # Make sure inputs are of correct form
+1793	        assert name is None, "No name should be specified if modding density!"
+1794	
+1795	        # Modify this value
+1796	        self.sim.model.opt.viscosity = val
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\observables.py:117:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    """
+117	    assert delay >= 0, "Inputted delay must be non-negative!"
+118	    return lambda: delay
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\observables.py:132:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+131	    """
+132	    assert min(min_delay, max_delay) >= 0, "Inputted delay must be non-negative!"
+133	    return lambda: min_delay + (max_delay - min_delay) * np.random.random()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\observables.py:147:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+146	    """
+147	    assert mean >= 0, "Inputted mean delay must be non-negative!"
+148	    return lambda: max(0.0, int(np.round(mean + std * np.random.randn())))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:61:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	        for obj in mujoco_objects:
+61	            assert obj not in self.mujoco_objects, "Object '{}' already in sampler!".format(obj.name)
+62	            self.mujoco_objects.append(obj)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:245:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+244	        elif type(reference) is str:
+245	            assert (
+246	                reference in placed_objects
+247	            ), "Invalid reference received. Current options are: {}, requested: {}".format(
+248	                placed_objects.keys(), reference
+249	            )
+250	            ref_pos, _, ref_obj = placed_objects[reference]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:256:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+255	            base_offset = np.array(reference)
+256	            assert (
+257	                base_offset.shape[0] == 3
+258	            ), "Invalid reference received. Should be (x,y,z) 3-tuple, but got: {}".format(base_offset)
+259	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:263:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+262	            # First make sure the currently sampled object hasn't already been sampled
+263	            assert obj.name not in placed_objects, "Object '{}' has already been sampled!".format(obj.name)
+264	
+265	            horizontal_radius = obj.horizontal_radius
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:337:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+336	        for obj in sampler.mujoco_objects:
+337	            assert obj not in self.mujoco_objects, f"Object '{obj.name}' already has sampler associated with it!"
+338	            self.mujoco_objects.append(obj)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:379:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+378	        for obj in mujoco_objects:
+379	            assert obj not in self.mujoco_objects, f"Object '{obj.name}' already has sampler associated with it!"
+380	            self.mujoco_objects.append(obj)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\placement_samplers.py:382:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+381	        # Make sure sampler_name exists
+382	        assert (
+383	            sampler_name in self.samplers.keys()
+384	        ), "Invalid sub-sampler specified, valid options are: {}, " "requested: {}".format(
+385	            self.samplers.keys(), sampler_name
+386	        )
+387	        # Add the mujoco objects to the requested sub-sampler
+388	        self.samplers[sampler_name].add_objects(mujoco_objects)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\transform_utils.py:226:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+225	    else:
+226	        assert len(rand) == 3
+227	    r1 = np.sqrt(1.0 - rand[0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\transform_utils.py:258:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+257	    if random_state is not None:
+258	        assert isinstance(random_state, np.random.RandomState)
+259	        npr = random_state
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\utils\transform_utils.py:373:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+372	    euler = np.asarray(euler, dtype=np.float64)
+373	    assert euler.shape[-1] == 3, "Invalid shaped euler {}".format(euler)
+374	
+375	    ai, aj, ak = -euler[..., 2], -euler[..., 1], -euler[..., 0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\data_collection_wrapper.py:96:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	        self.ep_directory = os.path.join(self.directory, "ep_{}_{}".format(t1, t2))
+96	        assert not os.path.exists(self.ep_directory)
+97	        print("DataCollectionWrapper: making folder at {}".format(self.ep_directory))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\data_collection_wrapper.py:106:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	        # save initial state and action
+106	        assert len(self.states) == 0
+107	        self.states.append(self._current_task_instance_state)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:98:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	        env_name = self.demo_file["data"].attrs["env"]
+98	        assert (
+99	            env_name == self.unwrapped.__class__.__name__
+100	        ), "Wrapped env {} does not match env on which demos were collected ({})".format(
+101	            env.__class__.__name__, env_name
+102	        )
+103	
+104	        # list of all demonstrations episodes
+105	        self.demo_list = list(self.demo_file["data"].keys())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:127:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	        schemes = self.sample_method_dict.keys()
+127	        assert np.all([(s in schemes) for s in self.sampling_schemes])
+128	
+129	        # make sure the distribution is the correct size
+130	        assert len(self.sampling_schemes) == len(self.scheme_ratios)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:130:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+129	        # make sure the distribution is the correct size
+130	        assert len(self.sampling_schemes) == len(self.scheme_ratios)
+131	
+132	        # make sure the distribution lies in the probability simplex
+133	        assert np.all(self.scheme_ratios > 0.0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:133:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+132	        # make sure the distribution lies in the probability simplex
+133	        assert np.all(self.scheme_ratios > 0.0)
+134	        assert sum(self.scheme_ratios) == 1.0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:134:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+133	        assert np.all(self.scheme_ratios > 0.0)
+134	        assert sum(self.scheme_ratios) == 1.0
+135	
+136	        # open loop configuration
+137	        self.open_loop_increment_freq = open_loop_increment_freq
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:181:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+180	        # chooses a sampling scheme randomly based on the mixing ratios
+181	        seed = random.uniform(0, 1)
+182	        ratio = np.cumsum(self.scheme_ratios)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:213:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+212	        # get a random episode index
+213	        ep_ind = random.choice(self.demo_list)
+214	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:217:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+216	        states = self.demo_file["data/{}/states".format(ep_ind)][()]
+217	        state = random.choice(states)
+218	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:240:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+239	        # get a random episode index
+240	        ep_ind = random.choice(self.demo_list)
+241	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: robosuite\robosuite\wrappers\demo_sampler_wrapper.py:277:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+276	        # get a random episode index
+277	        ep_ind = random.choice(self.demo_list)
+278	
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\wrappers\visualization_wrapper.py:8:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+7	"""
+8	import xml.etree.ElementTree as ET
+9	from copy import deepcopy
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\visualization_wrapper.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	        # with visualization sites simultaneously
+51	        assert all(
+52	            seg is None for seg in env.camera_segmentations
+53	        ), "Cannot use camera segmentations with visualization wrapper!"
+54	
+55	        # Standardize indicator configs
+56	        self.indicator_configs = None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\visualization_wrapper.py:66:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	                # Make sure name attribute is specified
+66	                assert "name" in indicator_config, "Name must be specified for all indicator object configurations!"
+67	                # Add this configuration to the internal array
+68	                self.indicator_configs.append(indicator_config)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\visualization_wrapper.py:103:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	        indicator_names = set(self.get_indicator_names())
+103	        assert indicator in indicator_names, "Invalid indicator name specified. Valid options are {}, got {}".format(
+104	            indicator_names, indicator
+105	        )
+106	        # Set the specified indicator
+107	        self.env.sim.model.body_pos[self.env.sim.model.body_name2id(indicator + "_body")] = np.array(pos)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\robosuite\wrappers\visualization_wrapper.py:126:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+125	        """
+126	        assert (
+127	            setting in self._vis_settings
+128	        ), "Invalid visualization setting specified. Valid options are {}, got {}".format(
+129	            self._vis_settings.keys(), setting
+130	        )
+131	        self._vis_settings[setting] = visible
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robosuite\robosuite\wrappers\visualization_wrapper.py:175:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+174	        if self.indicator_configs is not None:
+175	            root = ET.fromstring(xml)
+176	            worldbody = root.find("worldbody")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_controllers\test_all_controllers.py:121:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	        action_min, action_max = env.action_spec
+121	        assert action_min.shape == action_max.shape
+122	        assert action_min.shape[0] == action_dim, "Expected {}, got {}".format(action_dim, action_min.shape[0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_controllers\test_all_controllers.py:122:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	        assert action_min.shape == action_max.shape
+122	        assert action_min.shape[0] == action_dim, "Expected {}, got {}".format(action_dim, action_min.shape[0])
+123	
+124	        # Keep track of done variable to know when to break loop
+125	        count = 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_action_playback.py:68:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	        state_playback = env.sim.get_state().flatten()
+68	        assert np.all(np.equal(states[i + 1], state_playback))
+69	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_all_environments.py:61:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	            action_min, action_max = env.action_spec
+61	            assert action_min.shape == action_max.shape
+62	
+63	            # Get robot prefix
+64	            pr = env.robots[0].robot_model.naming_prefix
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_all_environments.py:69:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	
+69	                assert pr + "proprio-state" in obs
+70	                assert obs[pr + "proprio-state"].ndim == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_all_environments.py:70:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	                assert pr + "proprio-state" in obs
+70	                assert obs[pr + "proprio-state"].ndim == 1
+71	
+72	                assert "agentview_image" in obs
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_all_environments.py:72:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	
+72	                assert "agentview_image" in obs
+73	                assert obs["agentview_image"].shape == (84, 84, 3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_all_environments.py:73:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	                assert "agentview_image" in obs
+73	                assert obs["agentview_image"].shape == (84, 84, 3)
+74	
+75	                assert "object-state" not in obs
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_all_environments.py:75:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	
+75	                assert "object-state" not in obs
+76	
+77	                action = np.random.uniform(action_min, action_max)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_environments\test_camera_transforms.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	    z_err = np.abs(obj_pos[2] - estimated_obj_pos[2])
+81	    assert z_err < max_z_err
+82	
+83	    print("pixel: {}".format(obj_pixel))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_grippers\test_all_grippers.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    action = gripper.format_action([1] * gripper.dof)
+22	    assert action is not None
+23	
+24	    assert gripper.init_qpos is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_grippers\test_all_grippers.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	
+24	    assert gripper.init_qpos is not None
+25	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robosuite\tests\test_robots\test_all_robots.py:23:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    for geom in contact_geoms:
+23	        assert isinstance(geom, str), f"The geom {geom} is of type {type(geom)}, but should be {type('placeholder')}"
+24	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 23633
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 174
+		Medium: 14
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 7
+		High: 181
+Files skipped (0):

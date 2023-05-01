@@ -1,0 +1,155 @@
+Run started:2023-04-23 06:01:52.312400
+
+Test results:
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   Location: pyswip\examples\sudoku\sudoku_daily.py:77:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
+76	    puzzle = DailySudokuPuzzle()
+77	    f = urllib_request.urlopen(url)
+78	    puzzle.feed(f.read().decode("latin-1"))
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:34:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+33	from ctypes.util import find_library
+34	from subprocess import Popen, PIPE
+35	
+36	
+37	# To initialize the SWI-Prolog environment, two things need to be done: the
+38	# first is to find where the SO/DLL is located and the second is to find the
+39	# SWI-Prolog home, to get the saved state.
+40	#
+41	# The goal of the (entangled) process below is to make the library installation
+42	# independent.
+43	
+44	
+45	def _findSwiplPathFromFindLib():
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:85:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+84	        try:
+85	            cmd = Popen(['swipl', '--dump-runtime-variables'], stdout=PIPE)
+86	        except OSError:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:85:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+84	        try:
+85	            cmd = Popen(['swipl', '--dump-runtime-variables'], stdout=PIPE)
+86	        except OSError:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:87:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+86	        except OSError:
+87	            cmd = Popen(['pl', '--dump-runtime-variables'], stdout=PIPE)
+88	        ret = cmd.communicate()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:87:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+86	        except OSError:
+87	            cmd = Popen(['pl', '--dump-runtime-variables'], stdout=PIPE)
+88	        ret = cmd.communicate()
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:198:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+197	    try:
+198	        cmd = Popen(['reg', 'query',
+199	            r'HKEY_LOCAL_MACHINE\Software\SWI\Prolog',
+200	            '/v', 'home'], stdout=PIPE)
+201	        ret = cmd.communicate()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\pyswip\core.py:198:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+197	    try:
+198	        cmd = Popen(['reg', 'query',
+199	            r'HKEY_LOCAL_MACHINE\Software\SWI\Prolog',
+200	            '/v', 'home'], stdout=PIPE)
+201	        ret = cmd.communicate()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pyswip\pyswip\easy.py:299:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+298	    def __call__(self, *args):
+299	        assert self.arity == len(args)   # FIXME: Put a decent error message
+300	        a = PL_new_term_refs(len(args))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pyswip\pyswip\easy.py:330:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+329	def _unifier(arity, *args):
+330	    assert arity == 2
+331	    try:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\tests\test_issues.py:28:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+27	
+28	import subprocess
+29	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pyswip\tests\test_issues.py:112:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+111	                          'import sys; import pyswip; sys.exit(%d)' % code,]
+112	            result = subprocess.call(parameters)
+113	            self.assertEqual(result, code)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2460
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 11
+		Medium: 1
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 12
+Files skipped (0):

@@ -1,0 +1,1385 @@
+Run started:2023-04-23 06:04:56.558362
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\benchmark.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import shutil
+5	import subprocess
+6	from typing import Dict, List
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\benchmark.py:103:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+102	    else:
+103	        return_code = subprocess.call(["python", "enjoy.py", *arguments])
+104	        if return_code != 0:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\benchmark.py:103:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+102	    else:
+103	        return_code = subprocess.call(["python", "enjoy.py", *arguments])
+104	        if return_code != 0:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\callbacks.py:83:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	        # make mypy happy
+83	        assert self.model is not None
+84	
+85	        if self.n_calls % self.save_freq == 0:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\callbacks.py:134:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+133	        # make mypy happy
+134	        assert isinstance(self.model, (SAC, TQC)), f"{self.model} is not supported for parallel training"
+135	
+136	        self.model.save(temp_file)  # type: ignore[arg-type]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\callbacks.py:144:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+143	
+144	        assert self.model_class is not None, f"{self.model} is not supported for parallel training"
+145	        self._model = self.model_class.load(temp_file)  # type: ignore[arg-type]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\callbacks.py:188:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+187	        # Make mypy happy
+188	        assert isinstance(self.model, (SAC, TQC))
+189	
+190	        if self._model_ready:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\callbacks.py:220:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+219	    def _init_callback(self) -> None:
+220	        assert self.logger is not None
+221	        # Retrieve tensorboard writer to not flood the logger output
+222	        for out_format in self.logger.output_formats:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\callbacks.py:225:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+224	                self._tensorboard_writer = out_format
+225	        assert self._tensorboard_writer is not None, "You must activate tensorboard logging when using RawStatisticsCallback"
+226	
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: rl-baselines3-zoo\rl_zoo3\enjoy.py:150:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+149	        with open(args_path) as f:
+150	            loaded_args = yaml.load(f, Loader=yaml.UnsafeLoader)  # pytype: disable=module-attr
+151	            if loaded_args["env_kwargs"] is not None:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\rl_zoo3\exp_manager.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+3	import os
+4	import pickle as pkl
+5	import time
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\exp_manager.py:296:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+295	            # Load hyperparameters from python file
+296	            exec(Path(self.config).read_text(), global_variables)
+297	            hyperparams_dict = global_variables["hyperparams"]
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\exp_manager.py:351:40
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+350	            if isinstance(self.normalize, str):
+351	                self.normalize_kwargs = eval(self.normalize)
+352	                self.normalize = True
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\exp_manager.py:402:42
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+401	            if kwargs_key in hyperparams.keys() and isinstance(hyperparams[kwargs_key], str):
+402	                hyperparams[kwargs_key] = eval(hyperparams[kwargs_key])
+403	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\exp_manager.py:409:38
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+408	            if isinstance(self.monitor_kwargs, str):
+409	                self.monitor_kwargs = eval(self.monitor_kwargs)
+410	            del hyperparams["monitor_kwargs"]
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\rl_zoo3\plots\all_plots.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+2	import os
+3	import pickle
+4	from copy import deepcopy
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\rl_zoo3\plots\plot_from_file.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+2	import itertools
+3	import pickle
+4	import warnings
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\rl_zoo3\plots\plot_from_file.py:80:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+79	    with open(filename, "rb") as file_handler:
+80	        results = pickle.load(file_handler)
+81	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\rl_zoo3\plots\plot_from_file.py:94:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+93	        with open(filename, "rb") as file_handler:
+94	            results_2 = pickle.load(file_handler)
+95	            del results_2["results_table"]
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: rl-baselines3-zoo\rl_zoo3\push_to_hub.py:357:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+356	        with open(args_path) as f:
+357	            loaded_args = yaml.load(f, Loader=yaml.UnsafeLoader)  # pytype: disable=module-attr
+358	            if loaded_args["env_kwargs"] is not None:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import shutil
+5	import subprocess
+6	from copy import deepcopy
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	
+45	    assert os.path.isdir(log_path), f"The {log_path} folder was not found"
+46	
+47	    if video_folder is None:
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:82:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+81	    if os.path.exists(os.path.join(log_path, f"{env_name}.zip")):
+82	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_final_model])
+83	        assert return_code == 0, "Failed to record the final model"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:82:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+81	    if os.path.exists(os.path.join(log_path, f"{env_name}.zip")):
+82	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_final_model])
+83	        assert return_code == 0, "Failed to record the final model"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:83:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_final_model])
+83	        assert return_code == 0, "Failed to record the final model"
+84	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:87:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+86	        args_best_model = [*args_final_model, "--load-best"]
+87	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_best_model])
+88	        assert return_code == 0, "Failed to record the best model"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:87:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+86	        args_best_model = [*args_final_model, "--load-best"]
+87	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_best_model])
+88	        assert return_code == 0, "Failed to record the best model"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:88:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_best_model])
+88	        assert return_code == 0, "Failed to record the best model"
+89	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:94:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+93	        args_checkpoint[-1] = str(checkpoint)
+94	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_checkpoint])
+95	        assert return_code == 0, f"Failed to record the {checkpoint} checkpoint model"
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:94:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+93	        args_checkpoint[-1] = str(checkpoint)
+94	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_checkpoint])
+95	        assert return_code == 0, f"Failed to record the {checkpoint} checkpoint model"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	        return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args_checkpoint])
+95	        assert return_code == 0, f"Failed to record the {checkpoint} checkpoint model"
+96	
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:141:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+140	        )
+141	        os.system(ffmpeg_command_to_add_text)
+142	
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:150:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+149	    final_video_path = os.path.abspath(os.path.join(video_folder, "training.mp4"))
+150	    os.system(f"ffmpeg -f concat -safe 0 -i {ffmpeg_text_file} -c copy {final_video_path} -hide_banner -loglevel error")
+151	    os.remove(ffmpeg_text_file)
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_training.py:156:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+155	        final_gif_path = os.path.abspath(os.path.join(video_folder, "training.gif"))
+156	        os.system(f"ffmpeg -i {final_video_path} -vf fps=10 {final_gif_path} -hide_banner -loglevel error")
+157	        print(f"Saving gif to {final_gif_path}")
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: rl-baselines3-zoo\rl_zoo3\record_video.py:86:26
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+85	        with open(args_path) as f:
+86	            loaded_args = yaml.load(f, Loader=yaml.UnsafeLoader)  # pytype: disable=module-attr
+87	            if loaded_args["env_kwargs"] is not None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\train.py:188:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+187	    if args.trained_agent != "":
+188	        assert args.trained_agent.endswith(".zip") and os.path.isfile(
+189	            args.trained_agent
+190	        ), "The trained_agent must be a valid path to a .zip file"
+191	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\train.py:262:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+261	            args.saved_hyperparams = saved_hyperparams
+262	            assert run is not None  # make mypy happy
+263	            run.config.setdefaults(vars(args))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	def flatten_dict_observations(env: gym.Env) -> gym.Env:
+44	    assert isinstance(env.observation_space, spaces.Dict)
+45	    return gym.wrappers.FlattenObservation(env)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:92:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	            if isinstance(wrapper_name, dict):
+92	                assert len(wrapper_name) == 1, (
+93	                    "You have an error in the formatting "
+94	                    f"of your YAML file near {wrapper_name}. "
+95	                    "You should check the indentation."
+96	                )
+97	                wrapper_dict = wrapper_name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:175:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+174	            if isinstance(callback_name, dict):
+175	                assert len(callback_name) == 1, (
+176	                    "You have an error in the formatting "
+177	                    f"of your YAML file near {callback_name}. "
+178	                    "You should check the indentation."
+179	                )
+180	                callback_dict = callback_name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:219:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+218	    # Create the environment and wrap it if necessary
+219	    assert hyperparams is not None
+220	    env_wrapper = get_wrapper_class(hyperparams)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:272:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+271	        vec_env_wrapper = get_wrapper_class(hyperparams, "vec_env_wrapper")
+272	        assert vec_env_wrapper is not None
+273	        env = vec_env_wrapper(env)  # type: ignore[assignment, arg-type]
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:333:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+332	            with open(args_files[0]) as fh:
+333	                env_id = yaml.load(fh, Loader=yaml.UnsafeLoader)["env"]
+334	
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:420:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+419	            with open(os.path.join(stats_path, "config.yml")) as f:
+420	                hyperparams = yaml.load(f, Loader=yaml.UnsafeLoader)  # pytype: disable=module-attr
+421	            hyperparams["normalize"] = hyperparams.get("normalize", False)
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:429:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+428	            if isinstance(hyperparams["normalize"], str):
+429	                normalize_kwargs = eval(hyperparams["normalize"])
+430	                if test_mode:
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:456:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+455	            # Evaluate the string as python code
+456	            arg_dict[key] = eval(value)
+457	        setattr(namespace, self.dest, arg_dict)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\utils.py:478:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+477	
+478	    assert os.path.isdir(log_path), f"The {log_path} folder was not found"
+479	
+480	    model_name = ModelName(algo, env_name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:25:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	        self.current_successes = 0
+25	        assert options is None, "Options not supported for now"
+26	        return self.env.reset(seed=seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    def step(self, action: np.ndarray) -> Tuple[ObsType, SupportsFloat, bool, bool, Dict[str, Any]]:
+58	        assert isinstance(self.action_space, spaces.Box)
+59	        noise = np.random.normal(np.zeros_like(action), np.ones_like(action) * self.noise_std)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:83:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	        self.smoothed_action = None
+83	        assert options is None, "Options not supported for now"
+84	        return self.env.reset(seed=seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:89:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	            self.smoothed_action = np.zeros_like(action)
+89	        assert self.smoothed_action is not None
+90	        self.smoothed_action = self.smoothing_coef * self.smoothed_action + (1 - self.smoothing_coef) * action
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:112:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+111	        self.accumulated_reward = 0.0
+112	        assert options is None, "Options not supported for now"
+113	        return self.env.reset(seed=seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:138:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	    def __init__(self, env: gym.Env, horizon: int = 2):
+138	        assert isinstance(env.observation_space, spaces.Box)
+139	        assert isinstance(env.action_space, spaces.Box)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:139:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+138	        assert isinstance(env.observation_space, spaces.Box)
+139	        assert isinstance(env.action_space, spaces.Box)
+140	
+141	        wrapped_obs_space = env.observation_space
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:172:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+171	        self.action_history[...] = 0
+172	        assert options is None, "Options not supported for now"
+173	        obs, info = self.env.reset(seed=seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:198:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+197	    def __init__(self, env: gym.Env, horizon: int = 2):
+198	        assert isinstance(env.observation_space, spaces.Dict)
+199	        assert isinstance(env.observation_space.spaces["observation"], spaces.Box)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:199:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+198	        assert isinstance(env.observation_space, spaces.Dict)
+199	        assert isinstance(env.observation_space.spaces["observation"], spaces.Box)
+200	        assert isinstance(env.action_space, spaces.Box)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:200:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+199	        assert isinstance(env.observation_space.spaces["observation"], spaces.Box)
+200	        assert isinstance(env.action_space, spaces.Box)
+201	
+202	        wrapped_obs_space = env.observation_space.spaces["observation"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:237:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+236	        self.action_history[...] = 0
+237	        assert options is None, "Options not supported for now"
+238	        obs_dict, info = self.env.reset(seed=seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\rl_zoo3\wrappers.py:314:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+313	
+314	        assert env.unwrapped.spec is not None
+315	        env_id: str = env.unwrapped.spec.id
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\create_cluster_jobs.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import os
+5	import subprocess
+6	import time
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\create_cluster_jobs.py:41:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+40	
+41	                ok = subprocess.call(["sbatch", "cluster_torchy.sh", algo, env_id, "ablation", command])
+42	                time.sleep(0.05)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\create_cluster_jobs.py:41:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+40	
+41	                ok = subprocess.call(["sbatch", "cluster_torchy.sh", algo, env_id, "ablation", command])
+42	                time.sleep(0.05)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\create_mujoco_jobs.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import os
+2	import subprocess
+3	import time
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\create_mujoco_jobs.py:54:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+53	
+54	            ok = subprocess.call(["sbatch", "cluster_torchy.sh", algo, env_id, "ablation", command])
+55	            time.sleep(0.05)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\create_mujoco_jobs.py:54:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+53	
+54	            ok = subprocess.call(["sbatch", "cluster_torchy.sh", algo, env_id, "ablation", command])
+55	            time.sleep(0.05)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\migrate_to_hub.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import subprocess
+2	
+3	from rl_zoo3.utils import get_hf_trained_models, get_trained_models
+4	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\migrate_to_hub.py:19:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+18	
+19	    return_code = subprocess.call(["python", "-m", "rl_zoo3.push_to_hub", *args])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\migrate_to_hub.py:19:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+18	
+19	    return_code = subprocess.call(["python", "-m", "rl_zoo3.push_to_hub", *args])
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\scripts\parse_study.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+3	import os
+4	import pickle
+5	from pprint import pprint
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\scripts\parse_study.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	if args.study_name is None:
+40	    assert args.study_file is not None, "No --study-file, nor --study-name were provided."
+41	    with open(args.study_file, "rb") as f:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rl-baselines3-zoo\scripts\parse_study.py:42:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+41	    with open(args.study_file, "rb") as f:
+42	        study = pickle.load(f)
+43	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\scripts\parse_study.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	else:
+45	    assert args.storage is not None, "No storage was specified."
+46	
+47	    study = optuna.create_study(
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\run_jobs.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+3	"""
+4	import subprocess
+5	from typing import List
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\run_jobs.py:37:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+36	
+37	                ok = subprocess.call(["python", "train.py", *arg_str_list])
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\scripts\run_jobs.py:37:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+36	
+37	                ok = subprocess.call(["python", "train.py", *arg_str_list])
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_callbacks.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import subprocess
+2	
+3	
+4	def _assert_eq(left, right):
+5	    assert left == right, f"{left} != {right}"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_callbacks.py:5:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+4	def _assert_eq(left, right):
+5	    assert left == right, f"{left} != {right}"
+6	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_callbacks.py:22:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+21	
+22	    return_code = subprocess.call(["python", "train.py", *args])
+23	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_callbacks.py:22:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+21	
+22	    return_code = subprocess.call(["python", "train.py", *args])
+23	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import os
+2	import subprocess
+3	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	def _assert_eq(left, right):
+11	    assert left == right, f"{left} != {right}"
+12	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:53:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+52	
+53	    return_code = subprocess.call(["python", "enjoy.py", *args])
+54	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:53:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+52	
+53	    return_code = subprocess.call(["python", "enjoy.py", *args])
+54	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:60:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+59	
+60	    return_code = subprocess.call(["python", "-m", "rl_zoo3.benchmark", *args])
+61	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:60:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+59	
+60	    return_code = subprocess.call(["python", "-m", "rl_zoo3.benchmark", *args])
+61	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:84:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+83	    # Train and save checkpoints and best model
+84	    return_code = subprocess.call(["python", "train.py", *args])
+85	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:84:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+83	    # Train and save checkpoints and best model
+84	    return_code = subprocess.call(["python", "train.py", *args])
+85	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:90:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+89	    # Test with progress bar
+90	    return_code = subprocess.call(["python", "enjoy.py", *args] + ["--load-best", "-P"])
+91	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:94:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+93	    # Load checkpoint
+94	    return_code = subprocess.call(["python", "enjoy.py", *args] + ["--load-checkpoint", str(500)])
+95	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:98:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+97	    # Load last checkpoint
+98	    return_code = subprocess.call(["python", "enjoy.py", *args] + ["--load-last-checkpoint"])
+99	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:109:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+108	
+109	    return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args])
+110	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:109:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+108	
+109	    return_code = subprocess.call(["python", "-m", "rl_zoo3.record_video", *args])
+110	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:113:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	    # File is not empty
+113	    assert os.stat(video_path).st_size != 0, "Recorded video is empty"
+114	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:148:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+147	
+148	    return_code = subprocess.call(["python", "train.py", *args_training])
+149	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:148:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+147	
+148	    return_code = subprocess.call(["python", "train.py", *args_training])
+149	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:151:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+150	
+151	    return_code = subprocess.call(["python", "-m", "rl_zoo3.record_training", *args_recording])
+152	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:151:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+150	
+151	    return_code = subprocess.call(["python", "-m", "rl_zoo3.record_training", *args_recording])
+152	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:156:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	    # File is not empty
+156	    assert os.stat(mp4_path).st_size != 0, "Recorded mp4 video is empty"
+157	    assert os.stat(gif_path).st_size != 0, "Converted gif video is empty"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_enjoy.py:157:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	    assert os.stat(mp4_path).st_size != 0, "Recorded mp4 video is empty"
+157	    assert os.stat(gif_path).st_size != 0, "Converted gif video is empty"
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+2	import os
+3	import subprocess
+4	
+5	import optuna
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	def _assert_eq(left, right):
+11	    assert left == right, f"{left} != {right}"
+12	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:70:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+69	
+70	    return_code = subprocess.call(["python", "train.py", *args])
+71	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:70:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+69	
+70	    return_code = subprocess.call(["python", "train.py", *args])
+71	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:103:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+102	
+103	    return_code = subprocess.call(["python", "train.py", *args])
+104	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:103:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+102	
+103	    return_code = subprocess.call(["python", "train.py", *args])
+104	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:106:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	    print(optimization_log_path)
+106	    assert os.path.isdir(optimization_log_path)
+107	    # Log folder of the first trial
+108	    assert os.path.isdir(os.path.join(optimization_log_path, "trial_1"))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:108:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	    # Log folder of the first trial
+108	    assert os.path.isdir(os.path.join(optimization_log_path, "trial_1"))
+109	    assert os.path.isfile(os.path.join(optimization_log_path, "trial_1", "evaluations.npz"))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:109:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	    assert os.path.isdir(os.path.join(optimization_log_path, "trial_1"))
+109	    assert os.path.isfile(os.path.join(optimization_log_path, "trial_1", "evaluations.npz"))
+110	
+111	    study_path = list(glob.glob(str(tmp_path / algo / "report_*.pkl")))[0]
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:124:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+123	    ]
+124	    return_code = subprocess.call(["python", "scripts/parse_study.py", *args])
+125	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:124:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+123	    ]
+124	    return_code = subprocess.call(["python", "scripts/parse_study.py", *args])
+125	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:169:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+168	    for _ in range(n_workers):
+169	        worker = subprocess.Popen(
+170	            ["python", "train.py", *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True
+171	        )
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:169:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+168	    for _ in range(n_workers):
+169	        worker = subprocess.Popen(
+170	            ["python", "train.py", *args], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True
+171	        )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:176:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+175	    study = optuna.load_study(study_name=study_name, storage=storage)
+176	    assert len(study.get_trials(states=(TrialState.COMPLETE, TrialState.PRUNED))) == max_trials
+177	
+178	    for worker in workers:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_hyperparams_opt.py:179:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+178	    for worker in workers:
+179	        assert worker.returncode == 0, "STDOUT:\n{}\nSTDERR:\n{}\n".format(*worker.communicate())
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import os
+2	import subprocess
+3	
+4	import pytest
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:8:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+7	def _assert_eq(left, right):
+8	    assert left == right, f"{left} != {right}"
+9	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:38:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+37	
+38	    return_code = subprocess.call(["python", "train.py", *args])
+39	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:38:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+37	
+38	    return_code = subprocess.call(["python", "train.py", *args])
+39	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:57:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+56	
+57	    return_code = subprocess.call(["python", "train.py", *args])
+58	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:57:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+56	
+57	    return_code = subprocess.call(["python", "train.py", *args])
+58	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:77:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+76	
+77	    return_code = subprocess.call(["python", "train.py", *args])
+78	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:77:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+76	
+77	    return_code = subprocess.call(["python", "train.py", *args])
+78	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	
+80	    assert os.path.isfile(os.path.join(tmp_path, "sac/Pendulum-v1_1/replay_buffer.pkl"))
+81	
+82	    args = [*args, "-i", os.path.join(tmp_path, "sac/Pendulum-v1_1/Pendulum-v1.zip")]
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:84:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+83	
+84	    return_code = subprocess.call(["python", "train.py", *args])
+85	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:84:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+83	
+84	    return_code = subprocess.call(["python", "train.py", *args])
+85	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:104:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+103	
+104	    return_code = subprocess.call(["python", "train.py", *args])
+105	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:104:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+103	
+104	    return_code = subprocess.call(["python", "train.py", *args])
+105	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:130:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+129	
+130	    return_code = subprocess.call(["python", "train.py", *args])
+131	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:130:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+129	
+130	    return_code = subprocess.call(["python", "train.py", *args])
+131	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:150:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+149	
+150	    return_code = subprocess.call(["python", "train.py", *args])
+151	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:150:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+149	
+150	    return_code = subprocess.call(["python", "train.py", *args])
+151	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:176:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+175	
+176	    return_code = subprocess.call(["python", "train.py", *args], env=env_variables)
+177	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rl-baselines3-zoo\tests\test_train.py:176:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+175	
+176	    return_code = subprocess.call(["python", "train.py", *args], env=env_variables)
+177	    _assert_eq(return_code, 0)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 4688
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 117
+		Medium: 14
+		High: 3
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 134
+Files skipped (0):

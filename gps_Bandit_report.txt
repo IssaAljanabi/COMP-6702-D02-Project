@@ -1,0 +1,382 @@
+Run started:2023-04-23 05:49:30.218755
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\agent\agent_utils.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	            return [value for _ in range(n)]
+42	    assert len(value) == n, \
+43	            'Number of elements must match number of conditions or 1.'
+44	    return value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\agent\box2d\framework.py:104:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+103	        """
+104	        assert action is None,\
+105	            'action should only be used in subclass'
+106	
+107	        self.stepCount += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\algorithm\dynamics\dynamics_prior_gmm.py:108:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	        # in reference.
+108	        assert pts.shape[1] == Dx + Du + Dx
+109	
+110	        # Perform query and fix mean.
+111	        mu0, Phi, m, n0 = self.gmm.inference(pts)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gps\python\gps\algorithm\policy\tf_policy.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import os
+3	import uuid
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gps\python\gps\algorithm\policy\tf_policy.py:115:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+114	        ops.reset_default_graph()  # we need to destroy the default graph before re_init or checkpoint won't restore.
+115	        pol_dict = pickle.load(open(policy_dict_path, "rb"))
+116	        tf_map = tf_generator(dim_input=pol_dict['deg_obs'], dim_output=pol_dict['deg_action'],
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\gui\action_panel.py:55:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	        """
+55	        assert len(actions_arr) <= rows*cols, 'Too many actions to put into gridspec.'
+56	
+57	        self._fig = fig
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\gui\mean_plotter.py:68:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	
+68	        assert x.shape[0] == self._data_len
+69	        t = np.array([t]).reshape((1, 1))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\gui\plotter_3d.py:21:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	            rows = int(np.ceil(float(num_plots)/cols))
+21	        assert num_plots <= rows*cols, 'Too many plots to put into gridspec.'
+22	
+23	        self._fig = fig
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\gui\realtime_plotter.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	
+65	        assert x.shape[0] == self._data_len
+66	        x = x.reshape((1, self._data_len))
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:20:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+19	import os
+20	import subprocess
+21	import signal
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:279:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+278	            self.set_action_status_message('mannequin_mode', 'requested')
+279	            subprocess.Popen(['rosrun', 'pr2_controller_manager', 
+280	                    'pr2_controller_manager', 'stop', 'GPSPR2Plugin'], stdout=DEVNULL)
+281	            self._mm_process = subprocess.Popen(['roslaunch',
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:279:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+278	            self.set_action_status_message('mannequin_mode', 'requested')
+279	            subprocess.Popen(['rosrun', 'pr2_controller_manager', 
+280	                    'pr2_controller_manager', 'stop', 'GPSPR2Plugin'], stdout=DEVNULL)
+281	            self._mm_process = subprocess.Popen(['roslaunch',
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:281:31
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+280	                    'pr2_controller_manager', 'stop', 'GPSPR2Plugin'], stdout=DEVNULL)
+281	            self._mm_process = subprocess.Popen(['roslaunch',
+282	                    'pr2_mannequin_mode', 'pr2_mannequin_mode.launch'], stdout=DEVNULL)
+283	            self._mannequin_mode = True
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:281:31
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+280	                    'pr2_controller_manager', 'stop', 'GPSPR2Plugin'], stdout=DEVNULL)
+281	            self._mm_process = subprocess.Popen(['roslaunch',
+282	                    'pr2_mannequin_mode', 'pr2_mannequin_mode.launch'], stdout=DEVNULL)
+283	            self._mannequin_mode = True
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:289:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+288	            self._mm_process.send_signal(signal.SIGINT)
+289	            subprocess.Popen(['rosrun', 'pr2_controller_manager',
+290	                    'pr2_controller_manager', 'start', 'GPSPR2Plugin'], stdout=DEVNULL)
+291	            self._mannequin_mode = False
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gps\python\gps\gui\target_setup_gui.py:289:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+288	            self._mm_process.send_signal(signal.SIGINT)
+289	            subprocess.Popen(['rosrun', 'pr2_controller_manager',
+290	                    'pr2_controller_manager', 'start', 'GPSPR2Plugin'], stdout=DEVNULL)
+291	            self._mannequin_mode = False
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gps\python\gps\sample\sample_list.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	""" This file defines the sample list wrapper and sample writers. """
+2	import cPickle
+3	import logging
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gps\python\gps\utility\data_logger.py:4:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+3	try:
+4	   import cPickle as pickle
+5	except:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gps\python\gps\utility\data_logger.py:6:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+5	except:
+6	   import pickle
+7	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gps\python\gps\utility\data_logger.py:30:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+29	        try:
+30	            return pickle.load(open(filename, 'rb'))
+31	        except IOError:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\utility\general_utils.py:54:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	        obj_d1 = func(test_input)
+54	        assert obj_d1.shape == func_output_shape
+55	        test_input = np.copy(inputs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\utility\general_utils.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	        obj_d2 = func(test_input)
+58	        assert obj_d2.shape == func_output_shape
+59	        diff = (obj_d1 - obj_d2) / (2 * epsilon)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\utility\gmm.py:175:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+174	            logw = logobs - logsum(logobs, axis=1)
+175	            assert logw.shape == (N, K)
+176	
+177	            # Renormalize again to get weights for refitting clusters.
+178	            logwn = logw - logsum(logw, axis=0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\utility\gmm.py:179:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+178	            logwn = logw - logsum(logw, axis=0)
+179	            assert logwn.shape == (N, K)
+180	            w = np.exp(logwn)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\utility\gmm.py:186:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+185	            self.logmass = self.logmass - logsum(self.logmass, axis=0)
+186	            assert self.logmass.shape == (K, 1)
+187	            self.mass = np.exp(self.logmass)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gps\python\gps\utility\gmm.py:196:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+195	            wdata = data_expand * np.sqrt(w_expand)
+196	            assert wdata.shape == (N, K, Do)
+197	            for i in range(K):
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:67:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+66	    while True:
+67	        i = random.randint(0, im.shape[0] - 1)
+68	        j = random.randint(0, im.shape[1] - 1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:68:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+67	        i = random.randint(0, im.shape[0] - 1)
+68	        j = random.randint(0, im.shape[1] - 1)
+69	        k = random.randint(0, im.shape[2] - 1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:69:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+68	        j = random.randint(0, im.shape[1] - 1)
+69	        k = random.randint(0, im.shape[2] - 1)
+70	        im[i, j, k] = (im[i, j, k] + random.randint(0, 255)) % 256
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:70:37
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+69	        k = random.randint(0, im.shape[2] - 1)
+70	        im[i, j, k] = (im[i, j, k] + random.randint(0, 255)) % 256
+71	        image_visualizer.update(im)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:81:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+80	    while True:
+81	        i += random.randint(-10, 10)
+82	        j += random.randint(-10, 10)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:82:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+81	        i += random.randint(-10, 10)
+82	        j += random.randint(-10, 10)
+83	        data = [i, j, i + j, i - j]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:97:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+96	    while True:
+97	        i += random.randint(-10, 10)
+98	        j += random.randint(-10, 10)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gps\python\tests\tests_gui\gui_demos.py:98:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+97	        i += random.randint(-10, 10)
+98	        j += random.randint(-10, 10)
+99	        data = [i, j, i + j, i - j]
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 11506
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 32
+		Medium: 2
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 34
+Files skipped (6):
+	gps\python\tests\tests_tensorflow\test_policy_opt_tf.py (syntax error while parsing AST from file)
+	gps\src\3rdparty\Boost.NumPy\libs\numpy\example\demo_gaussian.py (syntax error while parsing AST from file)
+	gps\src\3rdparty\mjcpy2\mj_struct_codegen.py (syntax error while parsing AST from file)
+	gps\src\gps_agent_pkg\test\check_jac.py (syntax error while parsing AST from file)
+	gps\src\gps_agent_pkg\test\issue_pos.py (syntax error while parsing AST from file)
+	gps\src\gps_agent_pkg\test\run_train.py (syntax error while parsing AST from file)

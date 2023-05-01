@@ -1,0 +1,273 @@
+Run started:2023-04-23 05:46:46.342469
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\dreamer.py:404:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+403	      tf.config.experimental.set_memory_growth(gpu, True)
+404	  assert config.precision in (16, 32), config.precision
+405	  if config.precision == 16:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\models.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	      state = self.initial(tf.shape(action)[0])
+45	    assert isinstance(state, dict), state
+46	    action = tf.transpose(action, [1, 0, 2])
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamer\plotting.py:8:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+7	import re
+8	import subprocess
+9	
+10	import matplotlib.pyplot as plt
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\plotting.py:205:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+204	def baseline(index, method, ax, runs, args):
+205	  assert len(runs) == 1 and runs[0].xs is None
+206	  y = np.mean(runs[0].ys)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamer\plotting.py:249:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+248	  try:
+249	    subprocess.call(['pdfcrop', str(filename), str(filename)])
+250	  except FileNotFoundError:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamer\plotting.py:249:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+248	  try:
+249	    subprocess.call(['pdfcrop', str(filename), str(filename)])
+250	  except FileNotFoundError:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\plotting.py:296:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+295	  if args.labels:
+296	    assert len(args.labels) % 2 == 0
+297	    args.labels = {k: v for k, v in zip(args.labels[:-1], args.labels[1:])}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\plotting.py:299:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+298	  if args.colors:
+299	    assert len(args.colors) % 2 == 0
+300	    args.colors = {k: v for k, v in zip(args.colors[:-1], args.colors[1:])}
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: dreamer\tools.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+3	import pathlib
+4	import pickle
+5	import re
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: dreamer\tools.py:32:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+31	    with pathlib.Path(filename).open('rb') as f:
+32	      values = pickle.load(f)
+33	    tf.nest.map_structure(lambda x, y: x.assign(y), self.variables, values)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamer\tools.py:82:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+81	def encode_gif(frames, fps):
+82	  from subprocess import Popen, PIPE
+83	  h, w, c = frames[0].shape
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamer\tools.py:90:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+89	      f'-r {fps:.02f} -f gif -'])
+90	  proc = Popen(cmd.split(' '), stdin=PIPE, stdout=PIPE, stderr=PIPE)
+91	  for image in frames:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\tools.py:121:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	    action = np.array(action)
+121	    assert len(action) == len(envs)
+122	    # Step envs.
+123	    promises = [e.step(a, blocking=False) for e, a in zip(envs, action)]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: dreamer\tools.py:173:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+172	    keys = list(cache.keys())
+173	    for index in random.choice(len(keys), rescan):
+174	      episode = cache[keys[index]]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: dreamer\tools.py:182:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+181	        if balance:
+182	          index = min(random.randint(0, total), available)
+183	        else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: dreamer\tools.py:184:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+183	        else:
+184	          index = int(random.randint(0, available))
+185	        episode = {k: v[index: index + length] for k, v in episode.items()}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\tools.py:320:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+319	  # Setting lambda=0 gives a fixed 1-step return.
+320	  assert reward.shape.ndims == value.shape.ndims, (reward.shape, value.shape)
+321	  if isinstance(pcont, (int, float)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\tools.py:363:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+362	      print(f'Found {count} {self._name} parameters.')
+363	    assert len(loss.shape) == 0, loss.shape
+364	    with tape:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\tools.py:421:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+420	def _cat_sample(self, sample_shape=(), seed=None, name='sample'):
+421	  assert len(sample_shape) in (0, 1), sample_shape
+422	  assert len(self.logits_parameter().shape) == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\tools.py:422:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+421	  assert len(sample_shape) in (0, 1), sample_shape
+422	  assert len(self.logits_parameter().shape) == 2
+423	  indices = tf.random.categorical(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\wrappers.py:22:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    else:
+22	      assert task is None
+23	      self._env = domain()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\wrappers.py:210:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+209	  def step(self, action):
+210	    assert self._step is not None, 'Must reset environment.'
+211	    obs, reward, done, info = self._env.step(action)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\wrappers.py:302:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+301	  def __init__(self, env):
+302	    assert isinstance(env.action_space, gym.spaces.Discrete)
+303	    self._env = env
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\wrappers.py:345:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+344	    spaces = self._env.observation_space.spaces
+345	    assert 'reward' not in spaces
+346	    spaces['reward'] = gym.spaces.Box(-np.inf, np.inf, dtype=np.float32)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamer\wrappers.py:469:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+468	        if message == self._CLOSE:
+469	          assert payload is None
+470	          break
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1583
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 24
+		Medium: 1
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 25
+Files skipped (0):

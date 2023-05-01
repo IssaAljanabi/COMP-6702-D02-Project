@@ -1,0 +1,139 @@
+Run started:2023-04-23 05:56:22.115649
+
+Test results:
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mil\evaluation\eval_push.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+4	import joblib
+5	import pickle
+6	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mil\evaluation\eval_push.py:87:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+86	def load_demo(task_id, demo_dir, demo_inds):
+87	    demo_info = pickle.load(open(demo_dir+task_id+'.pkl', 'rb'))
+88	    demoX = demo_info['demoX'][demo_inds,:,:]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\evaluation\eval_push.py:131:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+130	            demo_inds += range(2, 2+int((num_input_demos-1) / 2))
+131	        assert len(demo_inds) == num_input_demos
+132	
+133	        demoX, demoU, demo_gifs, demo_info = load_demo(str(task_id), demo_dir, demo_inds)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:118:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	        """
+118	        assert isinstance(epsilon, float)
+119	
+120	        shape = x.get_shape().as_list()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:127:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	            self.batch_size = int(x.get_shape()[0])
+127	            assert x is not None
+128	            assert self.mean is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:128:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	            assert x is not None
+128	            assert self.mean is not None
+129	            assert self.mean_sq is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:129:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+128	            assert self.mean is not None
+129	            assert self.mean_sq is not None
+130	            out = tf.nn.relu(self._normalize(x, self.mean, self.mean_sq, "reference"))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:153:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	        shape = x.get_shape().as_list()
+153	        assert len(shape) == 4
+154	        self.gamma = safe_get("gamma", [shape[-1]],
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:160:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+159	        beta = tf.reshape(self.beta, [1, 1, 1, -1])
+160	        assert self.epsilon is not None
+161	        assert mean_sq is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:161:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	        assert self.epsilon is not None
+161	        assert mean_sq is not None
+162	        assert mean is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mil\tf_utils.py:162:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+161	        assert mean_sq is not None
+162	        assert mean is not None
+163	        std = tf.sqrt(self.epsilon + mean_sq - tf.square(mean))
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1825
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 10
+		Medium: 1
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 11
+Files skipped (6):
+	mil\color_print.py (syntax error while parsing AST from file)
+	mil\data_generator.py (syntax error while parsing AST from file)
+	mil\evaluation\eval_reach.py (syntax error while parsing AST from file)
+	mil\main.py (syntax error while parsing AST from file)
+	mil\mil.py (syntax error while parsing AST from file)
+	mil\utils.py (syntax error while parsing AST from file)

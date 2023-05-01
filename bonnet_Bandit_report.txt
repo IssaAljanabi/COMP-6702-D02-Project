@@ -1,0 +1,629 @@
+Run started:2023-04-23 05:37:51.207784
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\arch\abstract_net.py:812:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+811	    steps_per_epoch = dataset.num_examples // batch_size
+812	    assert(steps_per_epoch > 0 and "Dataset length should be more than batchsize")
+813	    num_examples = steps_per_epoch * batch_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\arch\abstract_net.py:908:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+907	    steps_per_epoch = dataset.num_examples // batch_size
+908	    assert(steps_per_epoch > 0 and "Dataset length should be more than batchsize")
+909	    num_examples = steps_per_epoch * batch_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\arch\abstract_net.py:1019:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1018	    print("Number of GPU's available is %d" % self.n_gpus_avail)
+1019	    assert(self.n_gpus == self.n_gpus_avail)
+1020	
+1021	    # calculate batch size per gpu
+1022	    self.batch_size_gpu = int(self.batch_size / self.n_gpus_avail)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\arch\abstract_net.py:1023:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1022	    self.batch_size_gpu = int(self.batch_size / self.n_gpus_avail)
+1023	    assert(self.batch_size % self.n_gpus == 0)
+1024	    assert(self.batch_size_gpu > 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\arch\abstract_net.py:1024:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1023	    assert(self.batch_size % self.n_gpus == 0)
+1024	    assert(self.batch_size_gpu > 0)
+1025	    print("This means %d images per GPU" % self.batch_size_gpu)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\arch\msg.py:184:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+183	    # at this point automatic selection happened and checkpoints is list of nodes
+184	    assert isinstance(checkpoints, list)
+185	
+186	    debug_print("Checkpoint nodes used: %s", checkpoints)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_dataset_performance.py:52:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+51	      type=str,
+52	      default='/tmp/net_predict_log',
+53	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_dataset_performance.py:107:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+106	      f = open(FLAGS.path + '/data.yaml', 'r')
+107	    DATA = yaml.load(f)
+108	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_dataset_performance.py:120:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+119	      f = open(FLAGS.path + '/net.yaml', 'r')
+120	    NET = yaml.load(f)
+121	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_dataset_performance.py:133:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+132	      f = open(FLAGS.path + '/train.yaml', 'r')
+133	    TRAIN = yaml.load(f)
+134	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_freeze.py:53:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+52	      type=str,
+53	      default='/tmp/frozen_model',
+54	      help='Directory to save the frozen graph. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_freeze.py:102:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+101	      datafile = FLAGS.path + '/data.yaml'
+102	    DATA = yaml.load(f)
+103	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_freeze.py:117:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+116	      netfile = FLAGS.path + '/net.yaml'
+117	    NET = yaml.load(f)
+118	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_freeze.py:132:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+131	      trainfile = FLAGS.path + '/train.yaml'
+132	    TRAIN = yaml.load(f)
+133	  except:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: bonnet\train_py\cnn_train.py:31:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+30	from shutil import copyfile
+31	import subprocess
+32	
+33	# tensorflow stuff
+34	os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # shut up TF!
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: bonnet\train_py\cnn_train.py:93:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+92	  print("Commit hash (training version): ", str(
+93	      subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip()))
+94	  print("----------\n")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: bonnet\train_py\cnn_train.py:93:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+92	  print("Commit hash (training version): ", str(
+93	      subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).strip()))
+94	  print("----------\n")
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_train.py:106:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+105	      datafile = FLAGS.path + '/data.yaml'
+106	    DATA = yaml.load(f)
+107	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_train.py:121:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+120	      netfile = FLAGS.path + '/net.yaml'
+121	    NET = yaml.load(f)
+122	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_train.py:136:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+135	      trainfile = FLAGS.path + '/train.yaml'
+136	    TRAIN = yaml.load(f)
+137	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_use.py:142:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+141	      type=str,
+142	      default='/tmp/net_predict_log',
+143	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use.py:221:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+220	      f = open(FLAGS.path + '/data.yaml', 'r')
+221	    DATA = yaml.load(f)
+222	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use.py:234:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+233	      f = open(FLAGS.path + '/net.yaml', 'r')
+234	    NET = yaml.load(f)
+235	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use.py:247:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+246	      f = open(FLAGS.path + '/train.yaml', 'r')
+247	    TRAIN = yaml.load(f)
+248	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_use_pb.py:104:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+103	      type=str,
+104	      default='/tmp/pb_predictions/',
+105	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb.py:152:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+151	    f = open(FLAGS.path + '/data.yaml', 'r')
+152	    DATA = yaml.load(f)
+153	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb.py:161:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+160	    f = open(FLAGS.path + '/net.yaml', 'r')
+161	    NET = yaml.load(f)
+162	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb.py:170:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+169	    f = open(FLAGS.path + '/train.yaml', 'r')
+170	    TRAIN = yaml.load(f)
+171	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb.py:179:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+178	    f = open(FLAGS.path + '/nodes.yaml', 'r')
+179	    NODES = yaml.load(f)
+180	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_use_pb_tensorRT.py:111:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+110	      type=str,
+111	      default='/tmp/pb_tRT_predictions/',
+112	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb_tensorRT.py:151:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+150	    f = open(FLAGS.path + '/data.yaml', 'r')
+151	    DATA = yaml.load(f)
+152	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb_tensorRT.py:160:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+159	    f = open(FLAGS.path + '/net.yaml', 'r')
+160	    NET = yaml.load(f)
+161	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb_tensorRT.py:169:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+168	    f = open(FLAGS.path + '/train.yaml', 'r')
+169	    TRAIN = yaml.load(f)
+170	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_use_pb_tensorRT.py:178:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+177	    f = open(FLAGS.path + '/nodes.yaml', 'r')
+178	    NODES = yaml.load(f)
+179	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_video.py:88:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+87	      type=str,
+88	      default='/tmp/net_predict_log',
+89	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video.py:150:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+149	      f = open(FLAGS.path + '/data.yaml', 'r')
+150	    DATA = yaml.load(f)
+151	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video.py:163:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+162	      f = open(FLAGS.path + '/net.yaml', 'r')
+163	    NET = yaml.load(f)
+164	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video.py:176:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+175	      f = open(FLAGS.path + '/train.yaml', 'r')
+176	    TRAIN = yaml.load(f)
+177	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_video_pb.py:87:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+86	      type=str,
+87	      default='/tmp/pb_predictions/',
+88	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb.py:127:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+126	    f = open(FLAGS.path + '/data.yaml', 'r')
+127	    DATA = yaml.load(f)
+128	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb.py:136:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+135	    f = open(FLAGS.path + '/net.yaml', 'r')
+136	    NET = yaml.load(f)
+137	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb.py:145:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+144	    f = open(FLAGS.path + '/train.yaml', 'r')
+145	    TRAIN = yaml.load(f)
+146	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb.py:154:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+153	    f = open(FLAGS.path + '/nodes.yaml', 'r')
+154	    NODES = yaml.load(f)
+155	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\cnn_video_pb_tensorRT.py:120:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+119	      type=str,
+120	      default='/tmp/pb_tRT_predictions/',
+121	      help='Directory to log output of predictions. Defaults to %(default)s',
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb_tensorRT.py:152:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+151	    f = open(FLAGS.path + '/data.yaml', 'r')
+152	    DATA = yaml.load(f)
+153	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb_tensorRT.py:161:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+160	    f = open(FLAGS.path + '/net.yaml', 'r')
+161	    NET = yaml.load(f)
+162	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb_tensorRT.py:170:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+169	    f = open(FLAGS.path + '/train.yaml', 'r')
+170	    TRAIN = yaml.load(f)
+171	  except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\cnn_video_pb_tensorRT.py:179:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+178	    f = open(FLAGS.path + '/nodes.yaml', 'r')
+179	    NODES = yaml.load(f)
+180	  except:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: bonnet\train_py\dataset\abstract_dataset.py:66:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+65	    if blur:
+66	      ksize = random.randint(3, 7)
+67	      img = cv2.blur(img,(ksize,ksize))
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess.py:130:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+129	    f = open(FLAGS.cfg, 'r')
+130	    CFG = yaml.load(f)
+131	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess.py:156:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+155	  # create temporary output directory to put all the images and labels
+156	  tmpdir = FLAGS.out + "/tmp/"
+157	  try:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess.py:185:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+184	      f.readline()  # eat a line first, libyaml cannot handle "%YAML:1.0"
+185	      times = yaml.load(f)
+186	    except:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess_newstruct.py:122:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+121	    f = open(FLAGS.cfg, 'r')
+122	    CFG = yaml.load(f)
+123	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess_newstruct.py:150:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+149	  # create temporary output directory to put all the images and labels
+150	  tmpdir = "/tmp/cwctmp"
+151	  # try to remove
+152	  try:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess_newstruct_nir.py:126:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+125	    f = open(FLAGS.cfg, 'r')
+126	    CFG = yaml.load(f)
+127	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\dataset\aux_scripts\cwc_preprocess_newstruct_nir.py:156:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+155	  # create temporary output directory to put all the images and labels
+156	  tmpdir = "/tmp/cwctmp"
+157	  # try to remove
+158	  try:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\dataset\aux_scripts\persons_preprocess.py:175:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+174	  labels.sort()
+175	  assert(len(images) == len(labels))
+176	  duples = list(zip(images, labels))
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: bonnet\train_py\dataset\aux_scripts\synthia_preprocess.py:115:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+114	    f = open(FLAGS.cfg, 'r')
+115	    CFG = yaml.load(f)
+116	  except:
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: bonnet\train_py\dataset\aux_scripts\synthia_preprocess.py:143:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+142	  # create temporary output directory to put all the images and labels
+143	  tmpdir = "/tmp/synthiatmp"
+144	  # try to remove
+145	  try:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: bonnet\train_py\dataset\general.py:177:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+176	  # order to ensure matching (necessary?)
+177	  assert(len(new_images) == len(labels))
+178	  new_images.sort()
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 6509
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 12
+		Medium: 48
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 12
+		High: 48
+Files skipped (0):

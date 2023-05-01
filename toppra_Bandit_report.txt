@@ -1,0 +1,1577 @@
+Run started:2023-04-23 06:10:15.857444
+
+Test results:
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: toppra\tasks.py:48:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+47	    """Install backend solvers, e.g, qpoases."""
+48	    install_dir = "/tmp/tox-qpoases"
+49	    path = pathlib.Path(install_dir)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: toppra\tasks.py:72:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+71	    if not python3:
+72	        venv_path = "/tmp/venv"
+73	        flag = ""
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: toppra\tasks.py:76:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+75	    else:
+76	        venv_path = "/tmp/venv3"
+77	        flag = "--python python3"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\integration_tests\test_with_pinocchio.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    jt.discretizationType = Interpolation
+39	    assert scale == 1.0
+40	    return jt
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_create_rave_torque.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	
+26	    assert a.shape[1] == dof
+27	    assert b.shape[1] == dof
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_create_rave_torque.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert a.shape[1] == dof
+27	    assert b.shape[1] == dof
+28	    assert c.shape[1] == dof
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_create_rave_torque.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    assert b.shape[1] == dof
+28	    assert c.shape[1] == dof
+29	    assert F.shape[1:] == (2 * dof, dof)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_create_rave_torque.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    assert c.shape[1] == dof
+29	    assert F.shape[1:] == (2 * dof, dof)
+30	    assert g.shape[1] == 2 * dof
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_create_rave_torque.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    assert F.shape[1:] == (2 * dof, dof)
+30	    assert g.shape[1] == 2 * dof
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_acceleration.py:65:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    data, pc = accel_constraint_setup
+65	    assert pc.get_constraint_type() == constraint.ConstraintType.CanonicalLinear
+66	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_acceleration.py:75:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	    a, b, c, F, g, ubound, xbound = accel_const.compute_constraint_params(path, ss)
+75	    assert xbound is None
+76	
+77	    N = ss.shape[0] - 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_acceleration.py:92:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	        npt.assert_allclose(c[i], np.zeros_like(ps[i]))
+92	        assert ubound is None
+93	        assert xbound is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_acceleration.py:93:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	        assert ubound is None
+93	        assert xbound is None
+94	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_acceleration.py:101:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+100	        path_constraint.compute_constraint_params(path_wrongdim, np.r_[0, 0.5, 1], 1.0)
+101	    assert e_info.value.args[0] == "Wrong dimension: constraint dof ({:d}) not equal to path dof ({:d})".format(
+102	        path_constraint.get_dof(), 10
+103	    )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_velocity.py:48:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	        data, pc = velocity_pc_data
+48	        assert pc.get_constraint_type() == constraint.ConstraintType.CanonicalLinear
+49	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_velocity.py:84:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	            # Assert non-negativity
+84	            assert xlimit[i, 0] >= 0
+85	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_velocity.py:91:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	            pc.compute_constraint_params(path_wrongdim, [0, 0.5, 1])
+91	        assert e_info.value.args[0] == "Wrong dimension: constraint dof ({:d}) not equal to path dof ({:d})".format(
+92	            pc.dof, 10
+93	        )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_velocity.py:136:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+135	        # assert non-negativity
+136	        assert xlimit[i, 0] >= 0
+137	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_velocity.py:151:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+150	        c = ta.constraint.JointVelocityConstraint([1, -1.2, 2])
+151	        assert 'velocity' in err.value
+152	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_joint_velocity.py:159:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+158	        constraint = ta.constraint.JointVelocityConstraint(vlim)
+159	        assert e_info.value.args[0][:19] == "Bad velocity limits"
+160	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_robust_can_linear.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	
+27	    assert ro_cnst.get_constraint_type() == toppra.constraint.ConstraintType.CanonicalConic
+28	    assert ro_cnst.get_dof() == 5
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_robust_can_linear.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    assert ro_cnst.get_constraint_type() == toppra.constraint.ConstraintType.CanonicalConic
+28	    assert ro_cnst.get_dof() == 5
+29	
+30	    a, b, c, P, _, _ = ro_cnst.compute_constraint_params(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_robust_can_linear.py:57:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	        ro_cnst = toppra.constraint.RobustLinearConstraint(cnst, [-0.1, 2, .3])
+57	    assert e_info.value.args[0] == "Perturbation must be non-negative. Input {:}".format([-0.1, 2, .3])
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\constraint\test_second_order.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	        constraint.compute_constraint_params(path_wrongdim, np.r_[0, 0.5, 1])
+46	    assert e_info.value.args[0] == "Wrong dimension: constraint dof ({:d}) not equal to path dof ({:d})".format(
+47	        constraint.dof, 10)
+48	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	
+27	    assert not c.hasUbounds
+28	    assert c.hasXbounds
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    assert not c.hasUbounds
+28	    assert c.hasXbounds
+29	    assert not c.hasLinearInequalities
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    assert c.hasXbounds
+29	    assert not c.hasLinearInequalities
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	
+36	    assert not c.hasUbounds
+37	    assert not c.hasXbounds
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:37:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	    assert not c.hasUbounds
+37	    assert not c.hasXbounds
+38	    assert c.hasLinearInequalities
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    assert not c.hasXbounds
+38	    assert c.hasLinearInequalities
+39	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    a0, b0, c0, F0, g0, u0, x0 = jt.computeParams(path, [ path.path_interval[0], ])
+51	    assert u0 is None
+52	    assert x0 is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    assert u0 is None
+52	    assert x0 is None
+53	
+54	    # Check that Python will keep value the model.
+55	    del model
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:58:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    a1, b1, c1, F1, g1, u1, x1 = jt.computeParams(path, [ path.path_interval[0], ])
+58	    assert u1 is None
+59	    assert x1 is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	    assert u1 is None
+59	    assert x1 is None
+60	
+61	    assert all([ (e0 == e1).all() for e0,e1 in zip(a0,a1) ])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:61:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	
+61	    assert all([ (e0 == e1).all() for e0,e1 in zip(a0,a1) ])
+62	    assert all([ (e0 == e1).all() for e0,e1 in zip(b0,b1) ])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    assert all([ (e0 == e1).all() for e0,e1 in zip(a0,a1) ])
+62	    assert all([ (e0 == e1).all() for e0,e1 in zip(b0,b1) ])
+63	    assert all([ (e0 == e1).all() for e0,e1 in zip(c0,c1) ])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:63:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	    assert all([ (e0 == e1).all() for e0,e1 in zip(b0,b1) ])
+63	    assert all([ (e0 == e1).all() for e0,e1 in zip(c0,c1) ])
+64	    assert all([ (e0 == e1).all() for e0,e1 in zip(F0,F1) ])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:64:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	    assert all([ (e0 == e1).all() for e0,e1 in zip(c0,c1) ])
+64	    assert all([ (e0 == e1).all() for e0,e1 in zip(F0,F1) ])
+65	    assert all([ (e0 == e1).all() for e0,e1 in zip(g0,g1) ])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_constraints.py:65:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    assert all([ (e0 == e1).all() for e0,e1 in zip(F0,F1) ])
+65	    assert all([ (e0 == e1).all() for e0,e1 in zip(g0,g1) ])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_piecewise_poly_path.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	def test_load_cpp_bindings_ok():
+13	    assert tac.bindings_loaded()
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_piecewise_poly_path.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	def test_dof(path):
+34	    assert path.dof == 2
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_piecewise_poly_path.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    )
+51	    assert path.dof == 2
+52	    np.testing.assert_allclose(path([1, 2, 3]), [[0, 0], [1, 1], [0, 0]])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\cpp\test_toppra.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    ret = prob.computePathParametrization()
+27	    assert ret == tac.ReturnCode.OK
+28	    data = prob.parametrizationData
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_find_gridpoints.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    gridpoints_ept = toppra.interpolator.propose_gridpoints(path, 1e-2)
+20	    assert gridpoints_ept[0] == path.path_interval[0]
+21	    assert gridpoints_ept[-1] == path.path_interval[1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_find_gridpoints.py:21:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	    assert gridpoints_ept[0] == path.path_interval[0]
+21	    assert gridpoints_ept[-1] == path.path_interval[1]
+22	
+23	    # The longest segment should be smaller than 0.1. This is to
+24	    # ensure a reasonable response.
+25	    assert np.max(np.diff(gridpoints_ept)) < 0.05
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_find_gridpoints.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	    # ensure a reasonable response.
+25	    assert np.max(np.diff(gridpoints_ept)) < 0.05
+26	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_find_gridpoints.py:38:5
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	     gridpoints_ept = toppra.interpolator.propose_gridpoints(path, 1.0, min_nb_points=100)  # large bounds
+38	     assert len(gridpoints_ept) > 100
+39	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_poly_interpolator.py:10:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+9	    pi = PolynomialPath([1, 2, 3], s_start=0, s_end=2)  # 1 + 2s + 3s^2
+10	    assert pi.dof == 1
+11	    npt.assert_allclose(pi.eval([0, 0.5, 1]), [1, 2.75, 6])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_poly_interpolator.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	    # [-2 + 3s + 4s^2 + 5s^3]
+22	    assert pi.dof == 2
+23	    npt.assert_allclose(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    d1 = f_2dof(np.linspace(0, 2, 200), 1)
+13	    assert d1.shape == (200, 2)
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	def test_check_scalar_value_same_as_endpoint(f_scalar):
+22	    assert f_scalar(1) == 1.0
+23	    assert f_scalar(2) == 1.0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    assert f_scalar(1) == 1.0
+23	    assert f_scalar(2) == 1.0
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    max_d1 = np.max(np.abs(np.diff(d1, axis=0)))
+29	    assert max_d1 < 0.1
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	def test_path_interpolate_are_correct(fm):
+59	    assert fm(0.5).shape == (2,)
+60	    assert isinstance(fm(0.5)[0], float)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    assert fm(0.5).shape == (2,)
+60	    assert isinstance(fm(0.5)[0], float)
+61	    assert_allclose(fm(0), [0, 0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_simple_path.py:66:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	def test_dof_is_correct(fm):
+66	    assert fm.dof == 2
+67	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    pi, _ = scalar_pi
+17	    assert isinstance(pi(0), np.ndarray)
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    pi = SplineInterpolator(sswp, wp)  # 1 + 2s + 3s^2
+30	    assert pi.dof == 1
+31	
+32	    assert pi(ss).shape == (len(ss),)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	
+32	    assert pi(ss).shape == (len(ss),)
+33	    assert pi(ss, 1).shape == (len(ss),)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    assert pi(ss).shape == (len(ss),)
+33	    assert pi(ss, 1).shape == (len(ss),)
+34	    assert pi(ss, 2).shape == (len(ss),)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    assert pi(ss, 1).shape == (len(ss),)
+34	    assert pi(ss, 2).shape == (len(ss),)
+35	    assert pi(0).shape == ()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	    assert pi(ss, 2).shape == (len(ss),)
+35	    assert pi(0).shape == ()
+36	    npt.assert_allclose(pi.path_interval, path_interval)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    ss = np.linspace(0, 1, 10)
+45	    assert pi.dof == 5
+46	    assert pi(ss).shape == (10, 5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    assert pi.dof == 5
+46	    assert pi(ss).shape == (10, 5)
+47	    assert pi(ss, 1).shape == (10, 5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	    assert pi(ss).shape == (10, 5)
+47	    assert pi(ss, 1).shape == (10, 5)
+48	    assert pi(ss, 2).shape == (10, 5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	    assert pi(ss, 1).shape == (10, 5)
+48	    assert pi(ss, 2).shape == (10, 5)
+49	    npt.assert_allclose(pi.path_interval, np.r_[0, 1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\interpolators\test_spline_interpolator.py:55:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	    pi = SplineInterpolator([0], [[1, 2, 3]])
+55	    assert pi.dof == 3
+56	    npt.assert_allclose(pi.path_interval, np.r_[0, 0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp1d.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert res == res_expected
+35	    assert optval == optval_expected
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp1d.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	    assert res == res_expected
+35	    assert optval == optval_expected
+36	    assert optvar == optvar_expected
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp1d.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	    assert optval == optval_expected
+36	    assert optvar == optvar_expected
+37	    assert active_c == active_c_expected
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp1d.py:37:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	    assert optvar == optvar_expected
+37	    assert active_c == active_c_expected
+38	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp1d.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	
+48	    assert res == 0
+49	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:66:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	    if res_expected == 1:
+66	        assert res == res_expected
+67	        np.testing.assert_allclose(optval, optval_expected)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	        np.testing.assert_allclose(optvar, optvar_expected)
+69	        assert set(active_c) == set(active_c_expected)
+70	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:71:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    else:
+71	        assert res == res_expected
+72	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:108:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	    if prob.status == "optimal":
+108	        assert res == 1
+109	        np.testing.assert_allclose(optval, prob.value, atol=1e-6)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:112:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+111	    elif prob.status == "infeasible":
+112	        assert res == 0
+113	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:114:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	    else:
+114	        assert False, "Solve this LP with cvxpy returns status: {:}".format(
+115	            prob.status)
+116	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:143:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	    if prob.status == "optimal":
+143	        assert res == 1
+144	        np.testing.assert_allclose(optval, prob.value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:147:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+146	    elif prob.status == "infeasible":
+147	        assert res == 0
+148	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:149:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+148	    else:
+149	        assert False, "Solve this LP with cvxpy returns status: {:}".format(
+150	            prob.status)
+151	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:195:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+194	    if prob.status == "optimal":
+195	        assert res == 1
+196	        np.testing.assert_allclose(optval, prob.value)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:199:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+198	    elif prob.status == "infeasible":
+199	        assert res == 0
+200	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\lpsolvers\seidel\test_lp2d.py:201:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+200	    else:
+201	        assert False, "Solve this LP with cvxpy returns status: {:}".format(
+202	            prob.status)
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_const_accel.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+19	        path_new.plot_parametrization(show=False)
+20	    except Exception:
+21	        # when run on CI, this fails because of some tkinter error
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_const_accel.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	
+24	    assert path_new(0).shape == (2,)
+25	    assert path_new([0]).shape == (1, 2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_const_accel.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	    assert path_new(0).shape == (2,)
+25	    assert path_new([0]).shape == (1, 2)
+26	    assert path_new.path_interval[1] > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_const_accel.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    assert path_new([0]).shape == (1, 2)
+26	    assert path_new.path_interval[1] > 0
+27	    assert path_new.duration > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_const_accel.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert path_new.path_interval[1] > 0
+27	    assert path_new.duration > 0
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_spline.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    path_new = toppra.ParametrizeSpline(path, gridpoints, velocities)
+17	    assert path_new.path_interval[0] == 0
+18	    assert path_new.path_interval[-1] > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\parametrize\test_spline.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    assert path_new.path_interval[0] == 0
+18	    assert path_new.path_interval[-1] > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\robustness\test_robustness_main.py:117:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    print(tabulate.tabulate(result_df, result_df.columns))
+117	    assert all_success, "Unable to solve some problems in the test suite"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_correct_velocity.py:66:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	        jnt_traj = instance.compute_trajectory(*velocities)
+66	    assert "Negative" in err.value.args[0]
+67	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_desired_duration_algorithm.py:57:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	    outtraj = instance.compute_trajectory()
+57	    assert outtraj is not None
+58	    np.testing.assert_allclose(outtraj.path_interval[1], 50, atol=1e-2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    X = instance.compute_feasible_sets()
+26	    assert np.all(X >= 0)
+27	    assert not np.any(np.isnan(X))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert np.all(X >= 0)
+27	    assert not np.any(np.isnan(X))
+28	
+29	    K = instance.compute_controllable_sets(0, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    K = instance.compute_controllable_sets(0, 0)
+30	    assert np.all(K >= 0)
+31	    assert not np.any(np.isnan(K))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:31:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	    assert np.all(K >= 0)
+31	    assert not np.any(np.isnan(K))
+32	
+33	    traj = instance.compute_trajectory(0, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    traj = instance.compute_trajectory(0, 0)
+34	    assert traj is not None
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	
+49	    assert instance.problem_data.return_code == toppra.algorithm.ParameterizationReturnCode.Ok
+50	    assert instance.problem_data.sd_vec.shape[0] == instance.problem_data.gridpoints.shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	    assert instance.problem_data.return_code == toppra.algorithm.ParameterizationReturnCode.Ok
+50	    assert instance.problem_data.sd_vec.shape[0] == instance.problem_data.gridpoints.shape[0]
+51	    assert instance.problem_data.sd_vec[0] == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_basic.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    assert instance.problem_data.sd_vec.shape[0] == instance.problem_data.gridpoints.shape[0]
+51	    assert instance.problem_data.sd_vec[0] == 0
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_wconic_constraints.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    X = ro_instance.compute_feasible_sets()
+39	    assert np.all(X >= 0)
+40	    assert not np.any(np.isnan(X))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_wconic_constraints.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    assert np.all(X >= 0)
+40	    assert not np.any(np.isnan(X))
+41	
+42	    K = ro_instance.compute_controllable_sets(0, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_wconic_constraints.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    K = ro_instance.compute_controllable_sets(0, 0)
+43	    assert np.all(K >= 0)
+44	    assert not np.any(np.isnan(K))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_wconic_constraints.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    assert np.all(K >= 0)
+44	    assert not np.any(np.isnan(K))
+45	
+46	    traj = ro_instance.compute_trajectory(0, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_wconic_constraints.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	    traj = ro_instance.compute_trajectory(0, 0)
+47	    assert traj is not None
+48	    assert traj.duration < 20 and traj.duration > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_wconic_constraints.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	    assert traj is not None
+48	    assert traj.duration < 20 and traj.duration > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_with_openrave.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	            break
+51	    assert len(qsel) == 2
+52	
+53	    # Plan a path
+54	    robot_fixture.SetActiveDOFValues(qsel[0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_with_openrave.py:56:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	    traj = basemanip.MoveActiveJoints(goal=qsel[1], execute=False, outputtrajobj=True)
+56	    assert traj is not None
+57	
+58	    # Rave traj
+59	    traj_new, interpolator = toppra.retime_active_joints_kinematics(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_with_openrave.py:61:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	        traj, robot_fixture, output_interpolator=True, vmult=1.0, solver_wrapper=solver_wrapper)
+61	    assert traj_new is not None
+62	    assert traj_new.GetDuration() < traj.GetDuration() + 1  # Should not be too far from the optimal value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_with_openrave.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    assert traj_new is not None
+62	    assert traj_new.GetDuration() < traj.GetDuration() + 1  # Should not be too far from the optimal value
+63	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_with_openrave.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	        waypoints, robot_fixture, output_interpolator=True, solver_wrapper=solver_wrapper)
+81	    assert traj_new is not None
+82	    assert traj_new.GetDuration() < 30 and traj_new.GetDuration() > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_retime_with_openrave.py:82:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	    assert traj_new is not None
+82	    assert traj_new.GetDuration() < 30 and traj_new.GetDuration() > 0
+83	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_zero_motions.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    # Simply assert success
+44	    assert jnt_traj is not None
+45	    assert jnt_traj.duration < 9e-4  # less than 1ms
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_zero_motions.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    assert jnt_traj is not None
+45	    assert jnt_traj.duration < 9e-4  # less than 1ms
+46	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_zero_motions.py:73:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	    # Simply assert success
+73	    assert jnt_traj is not None
+74	    assert jnt_traj.duration < 9e-4  # less than 1 ms
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\retime\test_zero_motions.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    assert jnt_traj is not None
+74	    assert jnt_traj.duration < 9e-4  # less than 1 ms
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_can_linear.py:164:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+163	    else:
+164	        assert np.all(np.isnan(solverwrapper_result))
+165	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_can_linear.py:193:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+192	    result = solver.solve_stagewise_optim(0, None, g, 1.1, 1.0, np.nan, np.nan)
+193	    assert np.all(np.isnan(result))
+194	
+195	    result = solver.solve_stagewise_optim(0, None, g, 1.1, 1.0, 0, -0.5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_can_linear.py:196:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+195	    result = solver.solve_stagewise_optim(0, None, g, 1.1, 1.0, 0, -0.5)
+196	    assert np.all(np.isnan(result))
+197	
+198	    result = solver.solve_stagewise_optim(0, None, g, np.nan, np.nan, 0, -0.5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_can_linear.py:199:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+198	    result = solver.solve_stagewise_optim(0, None, g, np.nan, np.nan, 0, -0.5)
+199	    assert np.all(np.isnan(result))
+200	    solver.close_solver()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_conic_can_linear.py:31:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	    else:
+31	        assert False
+32	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_conic_can_linear.py:75:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	        # X must be non-negative, always
+75	        assert result[1] >= 0 
+76	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_conic_can_linear.py:77:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	    else:
+77	        assert np.all(np.isnan(result))
+78	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\tests\tests\solverwrapper\test_basic_conic_can_linear.py:106:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	    else:
+106	        assert False
+107	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\algorithm\reachabilitybased\desired_duration_algorithm.py:72:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	        """
+72	        assert sd_end >= 0 and sd_start >= 0, "Path velocities must be positive"
+73	        K = self.compute_controllable_sets(sd_end, sd_end)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\algorithm\reachabilitybased\reachability_algorithm.py:79:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+78	        if has_conic:
+79	            assert solver_wrapper.lower() in [
+80	                "cvxpy",
+81	                "ecos",
+82	            ], "Problem has conic constraints, solver {:} is not suitable".format(
+83	                solver_wrapper
+84	            )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\algorithm\reachabilitybased\reachability_algorithm.py:86:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	        else:
+86	            assert solver_wrapper.lower() in [
+87	                "cvxpy",
+88	                "qpoases",
+89	                "ecos",
+90	                "hotqpoases",
+91	                "seidel",
+92	            ], "Solver {:} not found".format(solver_wrapper)
+93	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\algorithm\reachabilitybased\reachability_algorithm.py:183:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+182	        """
+183	        assert sdmin <= sdmax and 0 <= sdmin
+184	        K = np.zeros((self._N + 1, 2))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\algorithm\reachabilitybased\reachability_algorithm.py:410:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+409	    def compute_reachable_sets(self, sdmin, sdmax):
+410	        assert sdmin <= sdmax and 0 <= sdmin
+411	        feasible_sets = self.compute_feasible_sets()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\constraint\conic_constraint.py:81:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	        self.dof = cnst.get_dof()
+81	        assert cnst.get_constraint_type() == ConstraintType.CanonicalLinear
+82	        self.set_discretization_type(discretization_scheme)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\constraint\joint_torque.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	        self.set_discretization_type(discretization_scheme)
+69	        assert self.tau_lim.shape[1] == 2, "Wrong input shape."
+70	        self._format_string = "    Torque limit: \n"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\constraint\linear_joint_acceleration.py:57:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	
+57	        assert self.alim.shape[1] == 2, "Wrong input shape."
+58	        self._format_string = "    Acceleration limit: \n"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\constraint\linear_joint_velocity.py:33:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	        """Check that the velocity limits is valid."""
+33	        assert self.vlim.shape[1] == 2, "Wrong input shape."
+34	        for i in range(self.dof):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\interpolator.py:394:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+393	        self._q_waypoints = np.array(waypoints)  # type: np.ndarray
+394	        assert self.ss_waypoints.shape[0] == self._q_waypoints.shape[0]
+395	
+396	        self.cspl: T.Union[T.Callable[[T.Any], T.Any], CubicSpline]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\interpolator.py:524:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+523	        super(UnivariateSplineInterpolator, self).__init__()
+524	        assert ss_waypoints[0] == 0, "First index must equals zero."
+525	        self.ss_waypoints = np.array(ss_waypoints)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\interpolator.py:531:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+530	            self._dof = waypoints[0].shape[0]
+531	        assert self.ss_waypoints.shape[0] == self._q_waypoints.shape[0]
+532	        self.uspl = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\parametrizer.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	        # preconditions
+41	        assert self._ss.shape[0] == self._velocities.shape[0]
+42	        assert len(self._ss.shape) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\parametrizer.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	        assert self._ss.shape[0] == self._velocities.shape[0]
+42	        assert len(self._ss.shape) == 1
+43	        assert np.all(self._velocities >= 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\parametrizer.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	        assert len(self._ss.shape) == 1
+43	        assert np.all(self._velocities >= 0)
+44	
+45	        self._process_parametrization()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\parametrizer.py:112:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+111	        """
+112	        assert self._us is not None
+113	        assert self._ts is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\parametrizer.py:113:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	        assert self._us is not None
+113	        assert self._ts is not None
+114	        indices = np.searchsorted(self._ts, ts, side="right") - 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\cvxpy_solverwrapper.py:55:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	    def solve_stagewise_optim(self, i, H, g, x_min, x_max, x_next_min, x_next_max):
+55	        assert i <= self.N and 0 <= i
+56	
+57	        ux = cvxpy.Variable(2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\ecos_solverwrapper.py:80:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	                )
+80	        assert self._conic_dim % 4 == 0
+81	        logger.debug("Indices of linear constraints: {:}".format(self._linear_idx))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\ecos_solverwrapper.py:91:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	    def solve_stagewise_optim(self, i, H, g, x_min, x_max, x_next_min, x_next_max):
+91	        assert i <= self.N and 0 <= i
+92	        assert H is None or np.allclose(H, np.zeros(2))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\ecos_solverwrapper.py:92:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	        assert i <= self.N and 0 <= i
+92	        assert H is None or np.allclose(H, np.zeros(2))
+93	
+94	        # Total number of rows in matrix G, h. Descriptions of terms
+95	        # 1) x_min <= x <= x_max
+96	        # 2) xnext_min <= x + 2 ds u <= xnext_max
+97	        # 3) linear constraints
+98	        # 4) conic constraints
+99	        if i < self.N:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\hot_qpoases_solverwrapper.py:118:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	    def solve_stagewise_optim(self, i, H, g, x_min, x_max, x_next_min, x_next_max):
+118	        assert i <= self.N and 0 <= i
+119	
+120	        # solve the scaled optimization problem
+121	        #  min    0.5 y^T scale H scale y + g^T scale y
+122	        #  s.t    lA <= A scale y <= hA
+123	        #         l  <=  scale y <= h
+124	
+125	        self._l[:] = -QPOASES_INFTY
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\qpoases_solverwrapper.py:35:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	    def __init__(self, constraint_list, path, path_discretization):
+35	        assert qpoases_FOUND, "toppra is unable to find any installation of qpoases!"
+36	        super(qpOASESSolverWrapper, self).__init__(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\qpoases_solverwrapper.py:66:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	        #         l  <=  y <= h
+66	        assert i <= self.N and 0 <= i
+67	
+68	        l = -np.ones(2) * INF
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: toppra\toppra\solverwrapper\solverwrapper.py:94:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	        for i in range(self.N):
+94	            assert path_discretization[i + 1] > path_discretization[i]
+95	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 6504
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 148
+		Medium: 3
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 3
+		High: 148
+Files skipped (1):
+	toppra\examples-old\tune_path.py (syntax error while parsing AST from file)

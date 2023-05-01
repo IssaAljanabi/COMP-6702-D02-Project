@@ -1,0 +1,905 @@
+Run started:2023-04-23 05:56:45.446353
+
+Test results:
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\examples\behavior_clone.py:11:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+10	import time as timer
+11	import pickle
+12	SEED = 500
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\examples\behavior_clone.py:47:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+46	print("========================================")
+47	expert_pol = pickle.load(open('swimmer_exp1/iterations/best_policy.pickle', 'rb'))
+48	demo_paths = sample_paths(num_traj=5, policy=expert_pol, env=e.env_id)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\examples\policy_opt_job_script.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+20	import time as timer
+21	import pickle
+22	import argparse
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\examples\policy_opt_job_script.py:36:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+35	with open(args.config, 'r') as f:
+36	    job_data = eval(f.read())
+37	assert 'algorithm' in job_data.keys()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\examples\policy_opt_job_script.py:37:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	    job_data = eval(f.read())
+37	assert 'algorithm' in job_data.keys()
+38	assert any([job_data['algorithm'] == a for a in ['NPG', 'NVPG', 'VPG', 'PPO']])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\examples\policy_opt_job_script.py:38:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	assert 'algorithm' in job_data.keys()
+38	assert any([job_data['algorithm'] == a for a in ['NPG', 'NVPG', 'VPG', 'PPO']])
+39	assert 'sample_mode' in job_data.keys()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\examples\policy_opt_job_script.py:39:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	assert any([job_data['algorithm'] == a for a in ['NPG', 'NVPG', 'VPG', 'PPO']])
+39	assert 'sample_mode' in job_data.keys()
+40	job_data['alg_hyper_params'] = dict() if 'alg_hyper_params' not in job_data.keys() else job_data['alg_hyper_params']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\examples\policy_opt_job_script.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	if job_data['sample_mode'] == 'trajectories':
+47	    assert 'rl_num_traj' in job_data.keys()
+48	    job_data['rl_num_samples'] = 0 # will be ignored
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\examples\policy_opt_job_script.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	elif job_data['sample_mode'] == 'samples':
+50	    assert 'rl_num_samples' in job_data.keys()
+51	    job_data['rl_num_traj'] = 0    # will be ignored
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\batch_reinforce.py:172:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+171	                    self.logger.log_kv('success_rate', success_rate)
+172	                except:
+173	                    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\batch_reinforce.py:213:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+212	            self.logger.log_kv('rollout_success', success_rate)
+213	        except:
+214	            pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\behavior_cloning.py:111:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	        validate_keys = all([k in data.keys() for k in ["observations", "expert_actions"]])
+111	        assert validate_keys is True
+112	        ts = timer.time()
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\dapg.py:139:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+138	                    self.logger.log_kv('success_rate', success_rate)
+139	                except:
+140	                    pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\model_accel_npg.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+4	import torch.nn as nn
+5	import pickle
+6	import mjrl.envs
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\model_accel_npg.py:49:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+48	        try:    self.baseline.model.to(device)
+49	        except: pass
+50	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\model_accel_npg.py:92:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	        termination_function = self.termination_function if termination_function is None else termination_function
+92	        if reward_function: assert callable(reward_function)
+93	        if termination_function: assert callable(termination_function)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\model_accel_npg.py:93:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	        if reward_function: assert callable(reward_function)
+93	        if termination_function: assert callable(termination_function)
+94	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\model_accel_npg.py:102:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+101	        init_states = np.array([env.reset() for _ in range(N)]) if init_states is None else init_states
+102	        assert type(init_states) == list
+103	        assert len(init_states) == N
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\model_accel_npg.py:103:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	        assert type(init_states) == list
+103	        assert len(init_states) == N
+104	
+105	        for model in self.learned_model:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:90:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	        # move data to correct devices
+90	        assert type(s) == type(a) == type(sp)
+91	        assert s.shape[0] == a.shape[0] == sp.shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:91:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	        assert type(s) == type(a) == type(sp)
+91	        assert s.shape[0] == a.shape[0] == sp.shape[0]
+92	        if type(s) == np.ndarray:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	        # move data to correct devices
+125	        assert type(s) == type(a) == type(r)
+126	        assert len(r.shape) == 2 and r.shape[1] == 1  # r should be a 2D tensor, i.e. shape (N, 1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:126:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+125	        assert type(s) == type(a) == type(r)
+126	        assert len(r.shape) == 2 and r.shape[1] == 1  # r should be a 2D tensor, i.e. shape (N, 1)
+127	        assert s.shape[0] == a.shape[0] == r.shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:127:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	        assert len(r.shape) == 2 and r.shape[1] == 1  # r should be a 2D tensor, i.e. shape (N, 1)
+127	        assert s.shape[0] == a.shape[0] == r.shape[0]
+128	        if type(s) == np.ndarray:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:357:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+356	
+357	    assert type(X) == tuple
+358	    for d in X: assert type(d) == torch.Tensor
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:358:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+357	    assert type(X) == tuple
+358	    for d in X: assert type(d) == torch.Tensor
+359	    assert type(Y) == torch.Tensor
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:359:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+358	    for d in X: assert type(d) == torch.Tensor
+359	    assert type(Y) == torch.Tensor
+360	    device = Y.device
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\nn_dynamics.py:361:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+360	    device = Y.device
+361	    for d in X: assert d.device == device
+362	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:12:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+11	import torch.nn as nn
+12	import pickle
+13	import mjrl.envs
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:46:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+45	with open(args.config, 'r') as f:
+46	    job_data = eval(f.read())
+47	if args.include: exec("import "+args.include)
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:47:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+46	    job_data = eval(f.read())
+47	if args.include: exec("import "+args.include)
+48	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:66:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	
+66	assert job_data['start_state'] in ['init', 'buffer']
+67	with open(EXP_FILE, 'w') as f:  json.dump(job_data, f, indent=4)
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:105:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b102_exec_used.html
+104	    # import ipdb; ipdb.set_trace()
+105	    exec("from "+filename+" import *")
+106	if 'reward_function' not in globals():
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:118:49
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+117	if 'init_policy' in job_data.keys():
+118	    if job_data['init_policy'] != None: policy = pickle.load(open(job_data['init_policy'], 'rb'))
+119	baseline = MLPBaseline(e.spec, reg_coef=1e-3, batch_size=256, epochs=1,  learn_rate=1e-3,
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:160:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+159	        logger.log_kv('rollout_metric', rollout_metric)
+160	    except:
+161	        pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\run_model_accel_npg.py:235:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+234	            logger.log_kv('eval_metric', eval_metric)
+235	        except:
+236	            pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\sandbox\run_model_learning_mpc.py:9:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+8	import torch.nn as nn
+9	import pickle
+10	import mjrl.envs
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\sandbox\run_model_learning_mpc.py:42:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+41	with open(args.config, 'r') as f:
+42	    job_data = eval(f.read())
+43	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\sandbox\run_model_learning_mpc.py:129:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+128	        logger.log_kv('rollout_metric', rollout_metric)
+129	    except:
+130	        pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\sandbox\run_model_learning_mpc.py:153:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+152	            logger.log_kv('eval_metric', eval_metric)
+153	        except:
+154	            pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\utils\visualize_policy.py:9:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+8	import numpy as np
+9	import pickle
+10	import torch
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\utils\visualize_policy.py:42:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+41	    if policy is not None:
+42	        policy = pickle.load(open(policy, 'rb'))
+43	    else:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\utils\visualize_trajectories.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import click
+3	import json
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\utils\visualize_trajectories.py:27:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+26	def main(file, seed, noise_level, num_episodes, config, device_path):
+27	    exp_data = pickle.load(open(file, 'rb'))
+28	    policy = exp_data['policy']
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\mjrl\algos\model_accel\run_experiments\utils\visualize_trajectories.py:46:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+45	            with open(config, 'r') as f:
+46	                config = eval(f.read())
+47	        except:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\sampling.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    elif type(init_state) == torch.Tensor:
+60	        assert init_state.device == 'cpu'
+61	        pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\sampling.py:278:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+277	                path = e.env.env.truncate_paths([path])[0]
+278	            except:
+279	                pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\sampling.py:299:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+298	
+299	    assert type(min_val) == float or type(min_val) == torch.Tensor
+300	    assert type(max_val) == float or type(max_val) == torch.Tensor
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\sampling.py:300:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+299	    assert type(min_val) == float or type(min_val) == torch.Tensor
+300	    assert type(max_val) == float or type(max_val) == torch.Tensor
+301	    
+302	    if type(min_val) == torch.Tensor:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\sampling.py:303:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+302	    if type(min_val) == torch.Tensor:
+303	        if len(min_val.shape) > 0: assert min_val.shape[-1] == torch_tensor.shape[-1]
+304	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\model_accel\sampling.py:308:35
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+307	    if type(max_val) == torch.Tensor:
+308	        if len(max_val.shape) > 0: assert max_val.shape[-1] == torch_tensor.shape[-1]
+309	    else:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\npg_cg.py:160:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+159	                    self.logger.log_kv('success_rate', success_rate)
+160	                except:
+161	                    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\ppo_clip.py:118:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+117	                    self.logger.log_kv('success_rate', success_rate)
+118	                except:
+119	                    pass
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\algos\trpo.py:144:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+143	                    self.logger.log_kv('success_rate', success_rate)
+144	                except:
+145	                    pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\baselines\mlp_baseline.py:8:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+7	
+8	import pickle
+9	
+10	class MLPBaseline:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\envs\mujoco_env.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	            observation, _reward, done, _info = self._step(np.zeros(self.model.nu))
+53	        assert not done
+54	        self.obs_dim = np.sum([o.size for o in observation]) if type(observation) is tuple else observation.size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\envs\mujoco_env.py:109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	    def set_state(self, qpos, qvel):
+109	        assert qpos.shape == (self.model.nq,) and qvel.shape == (self.model.nv,)
+110	        old_state = self.sim.get_state()
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: mjrl\mjrl\envs\mujoco_env.py:171:44
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+170	                                   mode='exploration',
+171	                                   save_loc='/tmp/',
+172	                                   filename='newvid',
+173	                                   camera_name=None):
+174	        import skvideo.io
+175	        for ep in range(num_episodes):
+176	            print("Episode %d: rendering offline " % ep, end='', flush=True)
+177	            o = self.reset()
+178	            d = False
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\envs\peg_insertion_sawyer.py:72:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+71	            self.sim.forward()
+72	        except:
+73	            pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\samplers\core.py:115:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+114	    num_cpu = mp.cpu_count() if num_cpu == 'max' else num_cpu
+115	    assert type(num_cpu) == int
+116	
+117	    if num_cpu == 1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\samplers\core.py:165:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+164	    num_cpu = mp.cpu_count() if num_cpu == 'max' else num_cpu
+165	    assert type(num_cpu) == int
+166	
+167	    start_time = timer.time()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\fc_network.py:18:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	        self.act_dim = act_dim
+18	        assert type(hidden_sizes) == tuple
+19	        self.layer_sizes = (obs_dim, ) + hidden_sizes + (act_dim, )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\gym_env.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	
+41	        assert self._horizon % act_repeat == 0
+42	        self._horizon = self._horizon // self.act_repeat
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\logger.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+5	import scipy
+6	import pickle
+7	import os
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\logger.py:56:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	        self.max_len = num_entries
+56	        assert min([len(series) for series in self.log.values()]) == \
+57	            max([len(series) for series in self.log.values()])
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\logger.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    def read_log(self, log_path):
+60	        assert log_path.endswith('log.csv')
+61	
+62	        with open(log_path) as csv_file:
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\mjrl\utils\logger.py:72:41
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+71	                    try:
+72	                        data[key].append(eval(row_dict[key]))
+73	                    except:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\plot_from_logs.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+2	import argparse
+3	import pickle
+4	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\plot_from_logs.py:22:7
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+21	    OUT_FILE = args.output + '/plot.png'
+22	data = pickle.load(open(args.data, 'rb'))
+23	xscale = 1 if args.xscale is None else args.xscale
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\plot_from_logs.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+50	        plt.plot(xdata[start_idx:last_idx], data[key][start_idx:last_idx], color=colors[idx%7], linewidth=3)
+51	    except:
+52	        pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\train_agent.py:9:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+8	import numpy as np
+9	import pickle
+10	import time as timer
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\train_agent.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	    """
+19	    assert os.path.isdir(policy_dir), str(policy_dir)
+20	    assert os.path.isdir(logs_dir), str(logs_dir)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\train_agent.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    assert os.path.isdir(policy_dir), str(policy_dir)
+20	    assert os.path.isdir(logs_dir), str(logs_dir)
+21	
+22	    log_csv_path = os.path.join(logs_dir, 'log.csv')
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\train_agent.py:46:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+45	        with open(policy_path, 'rb') as fp:
+46	            agent.policy = pickle.load(fp)
+47	        with open(baseline_path, 'rb') as fp:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\train_agent.py:48:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+47	        with open(baseline_path, 'rb') as fp:
+48	            agent.baseline = pickle.load(fp)
+49	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\train_agent.py:56:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	        agent.logger.shrink_to(i + 1)
+56	        assert agent.logger.max_len == i + 1
+57	        return agent.logger.max_len
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\mjrl\utils\train_agent.py:120:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+119	                    agent.logger.log_kv('eval_success', eval_success)
+120	                except:
+121	                    pass
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\visualize_policy.py:7:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+6	import numpy as np
+7	import pickle
+8	from mjrl.utils.gym_env import GymEnv
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\mjrl\utils\visualize_policy.py:31:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+30	    if policy is not None:
+31	        pi = pickle.load(open(policy, 'rb'))
+32	    else:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:22:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+21	import time as timer
+22	import pickle
+23	import hydra
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	        os.mkdir(job_data.job_name)
+32	    assert 'algorithm' in job_data.keys()
+33	    assert any([job_data.algorithm == a for a in ['NPG', 'NVPG', 'VPG', 'PPO']])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    assert 'algorithm' in job_data.keys()
+33	    assert any([job_data.algorithm == a for a in ['NPG', 'NVPG', 'VPG', 'PPO']])
+34	    assert 'sample_mode' in job_data.keys()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    assert any([job_data.algorithm == a for a in ['NPG', 'NVPG', 'VPG', 'PPO']])
+34	    assert 'sample_mode' in job_data.keys()
+35	    job_data.alg_hyper_params = dict() if 'alg_hyper_params' not in job_data.keys() else job_data.alg_hyper_params
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    if job_data.sample_mode == 'trajectories':
+43	        assert 'rl_num_traj' in job_data.keys()
+44	        job_data.rl_num_samples = 0 # will be ignored
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:46:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    elif job_data.sample_mode == 'samples':
+46	        assert 'rl_num_samples' in job_data.keys()
+47	        job_data.rl_num_traj = 0    # will be ignored
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:64:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+63	    e = GymEnv(job_data.env)
+64	    policy_size = tuple(eval(job_data.policy_size))
+65	    vf_hidden_size = tuple(eval(job_data.vf_hidden_size))
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: mjrl\tests\hydra\hydra_policy_opt_job_script.py:65:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+64	    policy_size = tuple(eval(job_data.policy_size))
+65	    vf_hidden_size = tuple(eval(job_data.vf_hidden_size))
+66	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 4289
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 69
+		Medium: 18
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 86
+Files skipped (0):

@@ -1,0 +1,1276 @@
+Run started:2023-04-23 05:53:58.734185
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: holodeck\src\holodeck\environments.py:12:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+11	import signal
+12	import subprocess
+13	import sys
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\src\holodeck\environments.py:294:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+293	
+294	            agent_location[0] += random.uniform(-d_x, d_x)
+295	            agent_location[1] += random.uniform(-d_y, d_y)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\src\holodeck\environments.py:295:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+294	            agent_location[0] += random.uniform(-d_x, d_x)
+295	            agent_location[1] += random.uniform(-d_y, d_y)
+296	            agent_location[2] += random.uniform(-d_z, d_z)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\src\holodeck\environments.py:296:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+295	            agent_location[1] += random.uniform(-d_y, d_y)
+296	            agent_location[2] += random.uniform(-d_z, d_z)
+297	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\src\holodeck\environments.py:303:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+302	
+303	            agent_rotation[0] += random.uniform(-d_pitch, d_pitch)
+304	            agent_rotation[1] += random.uniform(-d_roll, d_roll)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\src\holodeck\environments.py:304:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+303	            agent_rotation[0] += random.uniform(-d_pitch, d_pitch)
+304	            agent_rotation[1] += random.uniform(-d_roll, d_roll)
+305	            agent_rotation[2] += random.uniform(-d_yaw, d_yaw)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\src\holodeck\environments.py:305:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+304	            agent_rotation[1] += random.uniform(-d_roll, d_roll)
+305	            agent_rotation[2] += random.uniform(-d_yaw, d_yaw)
+306	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: holodeck\src\holodeck\environments.py:723:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+722	            del environment["DISPLAY"]
+723	        self._world_process = subprocess.Popen(
+724	            [
+725	                binary_path,
+726	                task_key,
+727	                "-HolodeckOn",
+728	                "-opengl" + str(gl_version),
+729	                "-LOG=HolodeckLog.txt",
+730	                "-ForceRes",
+731	                "-ResX=" + str(self._window_size[1]),
+732	                "-ResY=" + str(self._window_size[0]),
+733	                "--HolodeckUUID=" + self._uuid,
+734	                "-TicksPerSec=" + str(self._ticks_per_sec),
+735	            ],
+736	            stdout=out_stream,
+737	            stderr=out_stream,
+738	            env=environment,
+739	        )
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: holodeck\src\holodeck\environments.py:760:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+759	        )
+760	        self._world_process = subprocess.Popen(
+761	            [
+762	                binary_path,
+763	                task_key,
+764	                "-HolodeckOn",
+765	                "-LOG=HolodeckLog.txt",
+766	                "-ForceRes",
+767	                "-ResX=" + str(self._window_size[1]),
+768	                "-ResY=" + str(self._window_size[0]),
+769	                "-TicksPerSec=" + str(self._ticks_per_sec),
+770	                "--HolodeckUUID=" + self._uuid,
+771	            ],
+772	            stdout=out_stream,
+773	            stderr=out_stream,
+774	        )
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   Location: holodeck\src\holodeck\packagemanager.py:31:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
+30	    """
+31	    req = urllib.request.urlopen(BACKEND_URL + rel_url)
+32	    data = req.read()
+
+--------------------------------------------------
+>> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
+   Location: holodeck\src\holodeck\packagemanager.py:463:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
+462	    tmp_fd = tempfile.TemporaryFile(suffix=".zip")
+463	    with urllib.request.urlopen(binary_location) as conn:
+464	        file_size = int(conn.headers["Content-Length"])
+
+--------------------------------------------------
+>> Issue: [B103:set_bad_file_permissions] Chmod setting a permissive mask 0o777 on file (NOT PARSED).
+   Severity: High   Confidence: High
+   CWE: CWE-732 (https://cwe.mitre.org/data/definitions/732.html)
+   Location: holodeck\src\holodeck\packagemanager.py:494:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b103_set_bad_file_permissions.html
+493	        for f in files:
+494	            os.chmod(os.path.join(path, f), 0o777)
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: holodeck\src\holodeck\shmem.py:42:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+41	        elif os.name == "posix":
+42	            self._mem_path = "/dev/shm/HOLODECK_MEM" + uuid + "_" + name
+43	            f = os.open(self._mem_path, os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\androidagent\test_androidagent_joint_constraints.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	        not_exist = env.get_joint_constraints("android0", "does_not_exist")
+43	        assert not_exist is None
+44	
+45	        for joint_name in known_constraints.keys():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\androidagent\test_androidagent_joint_constraints.py:47:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	            constraint = env.get_joint_constraints("android0", joint_name)
+47	            assert constraint == known_constraints[joint_name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\handagent\test_handagent_floating.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	
+19	    assert abs(d_x - expected_movement) < 0.001
+20	
+21	    last_location = new_location
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\handagent\test_handagent_floating.py:31:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	
+31	    assert (d_y - expected_movement) < 0.001
+32	
+33	    last_location = new_location
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\handagent\test_handagent_floating.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	
+43	    assert abs(d_z - expected_movement) < 0.001
+44	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\handagent\test_handagent_joint_constraints.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	        not_exist = env.get_joint_constraints("hand_agent0", "does_not_exist")
+43	        assert not_exist is None
+44	
+45	        for joint_name in known_constraints.keys():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\handagent\test_handagent_joint_constraints.py:47:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	            constraint = env.get_joint_constraints("hand_agent0", joint_name)
+47	            assert constraint == known_constraints[joint_name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_action_space_min_max.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	    if type(x) == list:
+95	        assert is_close(x, y)
+96	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_action_space_min_max.py:97:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	    else:
+97	        assert math.isclose(x, y, rel_tol=1e-05)
+98	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_max_height.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	
+88	    assert (current_location[2] < max_height) or almost_equal(
+89	        current_location[2], max_height
+90	    ), "UAV ignored max height that was set!"
+91	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_max_height.py:109:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	
+109	    assert (current_location[2] < max_height) and not (
+110	        almost_equal(current_location[2], max_height)
+111	    ), "UAV did not fall from max height!"
+112	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_max_height.py:132:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+131	
+132	        assert (old_location[2] < current_location[2]) and not (
+133	            almost_equal(old_location[2], current_location[2])
+134	        ), "UAV stopped moving up despite no set max height!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_randomization.py:66:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	
+66	            assert is_different_3d_vector(cur_location, prev_location)
+67	            assert check_3d_vector_variance(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_randomization.py:67:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	            assert is_different_3d_vector(cur_location, prev_location)
+67	            assert check_3d_vector_variance(
+68	                cur_location, default_start_location, variance
+69	            )
+70	
+71	            prev_location = cur_location
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_randomization.py:95:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	
+95	            assert is_different_3d_vector(cur_rotation, prev_start_rotation)
+96	
+97	            prev_start_rotation = cur_rotation
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_set_physics_state.py:79:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+78	    # Check to see if the newly sensed loc and rot are what we wanted to set them too.
+79	    assert almost_equal(new_loc, sensed_loc), "The location was not set correctly!"
+80	    assert almost_equal(new_rot, sensed_rot), "The rotation was not set correctly!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_set_physics_state.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	    assert almost_equal(new_loc, sensed_loc), "The location was not set correctly!"
+80	    assert almost_equal(new_rot, sensed_rot), "The rotation was not set correctly!"
+81	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_set_physics_state.py:99:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+98	    # Check to see that the newly sensed vel is what we wanted to set it too.
+99	    assert almost_equal(
+100	        new_vel, sensed_vel, 0.0, 0.3
+101	    ), "The velocity was not set correctly!"
+102	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_set_physics_state.py:127:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	    # correctly the rotation should change.
+127	    assert not almost_equal(
+128	        start_rot, sensed_rot
+129	    ), "Angular Velocity was not set correctly!"
+130	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_set_physics_state.py:155:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+154	    # Checking the collision by validating that it did not teleport to the desire location.
+155	    assert not almost_equal(
+156	        start_loc, sensed_loc
+157	    ), "The location was not set correctly!"
+158	    assert not almost_equal(new_loc, sensed_loc), "The location was not set correctly!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\test_set_physics_state.py:158:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    ), "The location was not set correctly!"
+158	    assert not almost_equal(new_loc, sensed_loc), "The location was not set correctly!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\turtleagent\test_turtleagent_movement.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	
+15	    assert (
+16	        s_1[0]["LocationSensor"][2] - s_2[0]["LocationSensor"][2] >= 0.1
+17	    ), "The TurtleAgent didn't seem to fall!"
+18	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\agents\turtleagent\test_turtleagent_movement.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	
+38	    assert False, "The TurtleAgent did not make it to the end of the maze!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_loading_scenarios.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	
+29	    assert len(env.agents) == len(scenario["agents"]), "Length of agents did not match!"
+30	
+31	    for agent in scenario["agents"]:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_loading_scenarios.py:32:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    for agent in scenario["agents"]:
+32	        assert agent["agent_name"] in env.agents, "Agent is not in the environment!"
+33	
+34	        assert len(agent["sensors"]) == len(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_loading_scenarios.py:34:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	        assert len(agent["sensors"]) == len(
+35	            env.agents[agent["agent_name"]].sensors
+36	        ), "length of sensors did not match!"
+37	
+38	        for sensor in agent["sensors"]:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_loading_scenarios.py:39:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	        for sensor in agent["sensors"]:
+39	            assert (
+40	                sensor["sensor_type"] in env.agents[agent["agent_name"]].sensors
+41	            ), "Sensor is missing!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:67:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	
+67	        assert False, "No HolodeckException was thrown!"
+68	    except HolodeckException:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	    except HolodeckException:
+69	        assert True
+70	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:89:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	
+89	        assert True
+90	    except HolodeckException:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:91:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	    except HolodeckException:
+91	        assert False, "A HolodeckException was thrown when using reset()!"
+92	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:105:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	
+105	        assert False, "No HolodeckException was thrown when using tick()!"
+106	    except HolodeckException:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:107:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	    except HolodeckException:
+107	        assert True
+108	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:120:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+119	            set_max_tick_env.step(1)
+120	        assert False, "No HolodeckException was thrown when using step()!"
+121	    except HolodeckException:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:122:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	    except HolodeckException:
+122	        assert True
+123	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:141:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	            no_max_tick_env.tick(1)
+141	        assert True
+142	    except HolodeckException:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_max_ticks.py:143:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	    except HolodeckException:
+143	        assert False, "A HolodeckException was thrown with no max_tick set!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_prop_spawning.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	
+35	    assert almost_equal(
+36	        init_location, final_location
+37	    ), "Uav \
+38	        continued to fall despite spawning a platform underneath!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_prop_spawning.py:85:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	
+85	        assert not almost_equal(
+86	            init_location, final_location
+87	        ), "Uav \
+88	            wasn't hit by a spawned sphere!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_prop_spawning.py:141:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	        print(cum_reward)
+141	        assert cum_reward > 2, "Distance task did not get reference to tagged prop!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_reset.py:19:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	            print("--------------------------------")
+19	            assert is_close != close
+20	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_reset.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	        )
+69	        assert agent_count == len(env.agents)
+70	        assert sensor_count == sum(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_reset.py:70:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	        assert agent_count == len(env.agents)
+70	        assert sensor_count == sum(
+71	            [len(env.agents[agent].sensors) for agent in env.agents]
+72	        )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\scenarios\test_rgb_camera_not_null.py:36:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	        # ensure that the pixels aren't all close to zero
+36	        assert pixels.mean() > 1
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\tests\scenarios\test_using_make_with_custom_config.py:14:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+13	    # pick a random world from the installed packages
+14	    pkg = random.choice(list(holodeck.packagemanager._iter_packages()))
+15	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: holodeck\tests\scenarios\test_using_make_with_custom_config.py:16:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+15	
+16	    world = random.choice(pkg[0]["worlds"])["name"]
+17	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_abuse_sensor.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	
+11	    assert abused, "The abuse sensor didn't trigger from uav blade collision!"
+12	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_abuse_sensor.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	    abuse_world.tick(20)
+20	    assert (
+21	        abuse_world.tick()["turtle0"]["AbuseSensor"] == 1
+22	    ), "The abuse sensor didn't trigger from the turtle agent flipping over"
+23	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_abuse_sensor.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert abused, "Agent {} was not abused!".format(agent)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_ball_location_and_reward.py:56:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	                touched_cup = True
+56	        assert touched_cup and state["BallLocationSensor"] == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_clean_up_reward.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	        env.tick(100)
+58	        assert True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_collision_sensor.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	
+39	        assert (
+40	            not collided
+41	        ), "The UAV is in the air but reported it collided with something!"
+42	
+43	        for _ in range(80):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_collision_sensor.py:47:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	
+47	        assert collided, "The UAV never reported it hit the ground!"
+48	
+49	        # Make sure it stays colliding after it hits the ground
+50	
+51	        for _ in range(30):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_collision_sensor.py:52:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	        for _ in range(30):
+52	            assert env.tick()["CollisionSensor"][0], "The UAV stopped colliding!"
+53	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_collision_sensor.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	
+60	        assert not env.tick()["CollisionSensor"][0], "The UAV is still colliding?"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:63:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	    sensed_imu_data = new_state["IMUSensor"]
+63	    assert almost_equal(
+64	        at_rest_sensor_reading, sensed_imu_data, 0.5, 0.5
+65	    ), "The sensor did not read the agent at rest correctly!"
+66	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:75:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	    orig_sensor_val = imu_sensor_env.tick()["IMUSensor"]
+75	    assert almost_equal(orig_sensor_val[1][2], 0.0, 0.1, 0.1)
+76	
+77	    imu_sensor_env.step([0, 0, 15, 100])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:80:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	    new_sensor_reading = imu_sensor_env.tick()["IMUSensor"]
+80	    assert new_sensor_reading[1][2] > orig_sensor_val[1][2]
+81	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:91:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	    orig_sensor_val = imu_sensor_env.tick()["IMUSensor"]
+91	    assert almost_equal(orig_sensor_val[1][0], 0.0, 0.1, 0.1)
+92	
+93	    imu_sensor_env.step([0, 15, 0, 100])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:96:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	    new_sensor_reading = imu_sensor_env.tick()["IMUSensor"]
+96	    assert abs(new_sensor_reading[1][0]) > abs(orig_sensor_val[1][0])
+97	    assert abs(new_sensor_reading[0][1]) > abs(orig_sensor_val[0][1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:97:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	    assert abs(new_sensor_reading[1][0]) > abs(orig_sensor_val[1][0])
+97	    assert abs(new_sensor_reading[0][1]) > abs(orig_sensor_val[0][1])
+98	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:108:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	    orig_sensor_val = imu_sensor_env.tick()["IMUSensor"]
+108	    assert almost_equal(orig_sensor_val[1][1], 0.0, 0.1, 0.1)
+109	
+110	    imu_sensor_env.step([15, 0, 0, 100])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:113:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	    new_sensor_reading = imu_sensor_env.tick()["IMUSensor"]
+113	    assert abs(new_sensor_reading[1][1]) > abs(orig_sensor_val[1][1])
+114	    assert abs(new_sensor_reading[0][0]) > abs(orig_sensor_val[0][0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_imu_sensor.py:114:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	    assert abs(new_sensor_reading[1][1]) > abs(orig_sensor_val[1][1])
+114	    assert abs(new_sensor_reading[0][0]) > abs(orig_sensor_val[0][0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_joint_rotation_sensor.py:149:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+148	
+149	        assert len(failures) == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_location_sensor.py:49:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	
+49	        assert almost_equal(
+50	            loc, sensed_loc
+51	        ), "Sensed location did not match the expected location!"
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_location_sensor.py:94:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	            new_location = env.tick()["LocationSensor"]
+94	            assert (
+95	                new_location[2] < last_location[2]
+96	            ), "UAV's location sensor did not detect falling!"
+97	            last_location = new_location
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_location_sensor.py:107:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	
+107	        assert almost_equal(
+108	            last_location, new_location
+109	        ), "The UAV did not seem to settle!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_orientation_sensor.py:54:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	
+54	        assert almost_equal(
+55	            accurate_or, sensed_orientation
+56	        ), "Expected orientation did not match the expected orientation!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_range_finder_sensor.py:46:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	        ]
+46	        assert (
+47	            len(actual) == expected_count
+48	        ), "Sensed range size did not match the expected size!"
+49	
+50	        expected_dist = sphere_config["agents"][0]["sensors"][0]["configuration"][
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_range_finder_sensor.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        ]
+53	        assert all(x > 0 for x in actual), "Sensed range includes 0!"
+54	        assert all(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_range_finder_sensor.py:54:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	        assert all(x > 0 for x in actual), "Sensed range includes 0!"
+54	        assert all(
+55	            x <= expected_dist for x in actual
+56	        ), "Sensed range includes value greater than 1!"
+57	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_range_finder_sensor.py:96:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	            new_range = env.tick(4)["RangeFinderSensor"][0]
+96	            assert new_range < last_range, "UAV's range sensor did not detect falling!"
+97	            last_range = new_range
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_range_finder_sensor.py:106:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	
+106	        assert almost_equal(last_range, new_range), "The UAV did not seem to settle!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_rgb_camera.py:75:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	
+75	        assert err < 2000
+76	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_rgb_camera.py:141:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	
+141	    assert MAX_TRIES != tries, "Timed out waiting for the image to change!"
+142	
+143	    # On the last tick, intermediate changed. Now, it should take
+144	    # ticks_per_capture ticks for it to change again.
+145	    initial = intermediate
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_rgb_camera.py:149:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+148	        intermediate = ticks_per_capture_env.tick()["TestCamera"][:, :, 0:3]
+149	        assert (
+150	            mean_square_err(initial, intermediate) < 10
+151	        ), "The RGBCamera output changed unexpectedly!"
+152	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_rgb_camera.py:156:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	    final = ticks_per_capture_env.tick()["TestCamera"][:, :, 0:3]
+156	    assert (
+157	        mean_square_err(initial, final) > 10
+158	    ), "The RGBCamera output did not change when expected!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_rotation_sensor.py:49:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	
+49	        assert almost_equal(
+50	            rot_deg, rotation
+51	        ), "The agent rotated in an unexpected manner!"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_sensor_rotation.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	    err = mean_square_err(pixels, baseline)
+19	    assert err < 2000, "The sensor appeared to not rotate!"
+20	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_sensor_rotation.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	    err = mean_square_err(pixels_before, pixels_after)
+36	    assert err > 2000, "The images were too similar! Did the sensor not rotate back?"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_velocity_sensor.py:41:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	            new_z_velocity = env.tick()["VelocitySensor"][2]
+41	            assert new_z_velocity <= last_z_velocity, "The velocity didn't decrease!"
+42	            last_z_velocity = new_z_velocity
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_velocity_sensor.py:50:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	
+50	        assert last_z_velocity <= 1e-4, "The velocity wasn't close enough to zero!"
+51	
+52	        # Send it flying up into the air to make sure the z velocity increases
+53	        env.step([0, 0, 0, 100])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_velocity_sensor.py:58:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	            new_z_velocity = env.tick()["VelocitySensor"][2]
+58	            assert new_z_velocity >= last_z_velocity, "The velocity didn't increase!"
+59	            last_z_velocity = new_z_velocity
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_viewport_capture.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	
+58	        assert pixels.shape == (resolution, resolution, 3)
+59	        baseline = cv2.imread(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_viewport_capture.py:66:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	
+66	        assert (
+67	            err < 1000
+68	        ), "The expected screenshot did not match the actual screenshot!"
+69	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_viewport_capture.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	
+92	    assert err < 1000, "The captured viewport differed from the expected screenshot!"
+93	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\sensors\test_viewport_capture.py:126:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+125	
+126	    assert err < 1000, "The screenshots were not identical after disabling rendering"
+127	
+128	    # This is unreliable 👇 :/
+129	    # assert elapsed_without_viewport < elapsed_with_viewport, \
+130	    #     "Holodeck did not tick faster without rendering the viewport. Was it actually " \
+131	    #     "disabled?"
+132	
+133	    # cleanup environment
+134	    env_1024.should_render_viewport(True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_finishing_maze_gives_terminal.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	
+14	    assert False, "No terminal state found"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_mindistance_reward.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	
+22	    assert EXPECTED_REWARD * 0.90 <= total_reward <= EXPECTED_REWARD * 1.10, \
+23	        "The reward received was {} but we expected within 10% of {}".format(total_reward, EXPECTED_REWARD)
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_mindistance_reward.py:34:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    for _, reward, _, _ in complete_mazeworld_states:
+34	        assert reward == 0.0 or reward == 1.0, \
+35	            "Expected a 1 or a 0, instead got a {}".format(reward)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_programmatic.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    )
+42	    assert err < max_err
+43	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_programmatic.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	
+71	    assert err < max_err
+72	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_programmatic.py:116:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	
+116	    assert err_before < max_err_before
+117	    assert err_after < max_err_after
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_programmatic.py:117:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    assert err_before < max_err_before
+117	    assert err_after < max_err_after
+118	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_programmatic.py:146:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+145	
+146	    assert err < max_err
+147	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:66:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	        )
+66	        assert err < max_err
+67	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	        )
+95	        assert err < max_err
+96	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:141:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	
+141	        assert err_before < max_err_before
+142	        assert err_after < max_err_after
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:142:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	        assert err_before < max_err_before
+142	        assert err_after < max_err_after
+143	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:169:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+168	        )
+169	        assert err < max_err
+170	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:204:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+203	
+204	    assert err < max_err
+205	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:225:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+224	
+225	    assert err < max_err
+226	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: holodeck\tests\worlds\mazeworld\test_weather_scenario.py:246:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+245	
+246	    assert err < max_err
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 6320
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 113
+		Medium: 3
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 116
+Files skipped (0):

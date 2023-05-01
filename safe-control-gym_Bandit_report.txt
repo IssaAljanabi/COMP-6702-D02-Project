@@ -1,0 +1,1146 @@
+Run started:2023-04-23 06:08:37.189939
+
+Test results:
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\annual_reviews\figure7\safe_exp_plots.py:13:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+12	from copy import deepcopy
+13	import pickle
+14	import matplotlib.pyplot as plt
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+4	import os
+5	import pickle
+6	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	    """
+47	    assert config.restore is not None, "must specify --restore for policy evaluation."
+48	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	    assert config.restore is not None, "must specify --restore for policy evaluation."
+48	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+49	    # Evaluation setup.
+50	    set_device_from_config(config)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:118:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	    """
+118	    assert config.restore is not None, "must specify --restore for policy evaluation."
+119	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:119:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	    assert config.restore is not None, "must specify --restore for policy evaluation."
+119	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+120	    # Get all checkpoints
+121	    checkpoint_dir_full = os.path.join(config.restore, config.checkpoint_dir)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:122:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	    checkpoint_dir_full = os.path.join(config.restore, config.checkpoint_dir)
+122	    assert os.path.exists(checkpoint_dir_full), "checkpoint_dir does not exist in {}".format(config.restore)
+123	    checkpoint_re = re.compile("model_(.*)\.pt")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:178:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+177	            if k is not "ep_lengths":
+178	                assert len(v) == len(ep_lengths)
+179	                # don't use `v / ep_lengths`, in case v is more than 1 dim
+180	                normalized_v = np.asarray([v[i] / ep_lengths[i] for i in range(len(v))])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:214:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+213	    """
+214	    assert config.restore is not None, "must specify --restore for policy evaluation."
+215	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval.py:215:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+214	    assert config.restore is not None, "must specify --restore for policy evaluation."
+215	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+216	    # Evaluation setup.
+217	    set_device_from_config(config)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+4	import os
+5	import pickle
+6	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    """"""
+32	    assert init_state is not None, "Must provide an init_state dict for the env."
+33	    config = deepcopy(config_origin)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:90:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	        if done:
+90	            assert "episode" in info
+91	            ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:268:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+267	        if done:
+268	            assert "episode" in info
+269	            ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:500:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+499	    """Gets statistics for 1 scalar metric from a standalone evaluation folder."""
+500	    assert (eval_result_dir is not None) and (scalar_name is not None)
+501	    data = {}
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:515:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+514	                with open(os.path.join(seed_d, f_name), "rb") as f:
+515	                    result = pickle.load(f)
+516	                param_value = float(f_name.replace(".pkl", ""))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_performance\utils\eval_utils.py:520:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+519	                scalars = result[scalar_name]
+520	                assert len(lengths) == len(scalars)
+521	                # further process the scalar to our desired metric
+522	                if scalar_normalize_by_ep_length:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with shelve module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_robustness\utils\gpmpc_cartpole_input_white_noise_robustness.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+20	from functools import partial
+21	import shelve
+22	
+23	from safe_control_gym.utils.registration import make
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with shelve module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\cartpole_robustness\utils\gpmpc_cartpole_pole_length_robustness.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+20	from functools import partial
+21	import shelve
+22	
+23	from safe_control_gym.utils.registration import make
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+5	import os
+6	import pickle
+7	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    """
+45	    assert config.restore is not None, "must specify --restore for policy evaluation."
+46	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	    assert config.restore is not None, "must specify --restore for policy evaluation."
+46	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+47	    # Evaluation setup.
+48	    set_device_from_config(config)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:115:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+114	    """
+115	    assert config.restore is not None, "must specify --restore for policy evaluation."
+116	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:116:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    assert config.restore is not None, "must specify --restore for policy evaluation."
+116	    assert config.task_config.done_on_out_of_bound is False, "post-evaluation should disable early termination."
+117	    # Get all checkpoints
+118	    checkpoint_dir_full = os.path.join(config.restore, config.checkpoint_dir)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:119:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	    checkpoint_dir_full = os.path.join(config.restore, config.checkpoint_dir)
+119	    assert os.path.exists(checkpoint_dir_full), "checkpoint_dir does not exist in {}".format(config.restore)
+120	    checkpoint_re = re.compile("model_(.*)\.pt")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval.py:175:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+174	            if k is not "ep_lengths":
+175	                assert len(v) == len(ep_lengths)
+176	                # don't use `v / ep_lengths`, in case v is more than 1 dim
+177	                normalized_v = np.asarray([v[i] / ep_lengths[i] for i in range(len(v))])
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval_utils.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+4	import os
+5	import pickle
+6	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval_utils.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	    """"""
+29	    assert init_state is not None, "Must provide an init_state dict for the env."
+30	    config = deepcopy(config_origin)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\experiments\arxiv\quadrotor_performance\utils\eval_utils.py:85:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	        if done:
+85	            assert "episode" in info
+86	            ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\experiments\main.py:8:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+7	import os
+8	import pickle
+9	import sys
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\cbf\cbf_qp.py:70:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	        # Check if the dynamics are control affine
+70	        assert self.is_control_affine()
+71	
+72	        # Control barrier function
+73	        # TODO: Extend to other systems
+74	        self.cbf = cbf_cartpole(self.X, self.x_pos_max, self.x_vel_max, self.theta_max, self.theta_dot_max)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\cbf\cbf_qp_utils.py:124:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+123	        for k, info in self.scheme.items():
+124	            assert "vshape" in info, "Scheme must define vshape for {}".format(k)
+125	            vshape = info["vshape"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\ddpg\ddpg.py:234:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+233	            if done:
+234	                assert "episode" in info
+235	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: safe-control-gym\safe_control_gym\controllers\ddpg\ddpg_utils.py:236:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+235	    std_args = std_config.pop("args")
+236	    std = eval(std_func)(*std_args, **std_config)
+237	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: safe-control-gym\safe_control_gym\controllers\ddpg\ddpg_utils.py:238:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+237	
+238	    process = eval(process_func)(size=(act_space.shape[0],), std=std)     
+239	    return process
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\lqr\ilqr.py:241:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+240	                # Update iteration return and length lists.
+241	                assert "episode" in info
+242	                ite_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\lqr\lqr.py:299:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+298	                # Update iteration return and length lists.
+299	                assert "episode" in info
+300	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\mpc\gp_mpc.py:116:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	        else:
+116	            assert (type(inertial_prop) is dict) or (type(inertial_prop) == munch.Munch), '[Error]: GPMPC.__init__(): Intertial properties must be a list, dict, or munch.Munch'
+117	            inertial_prop.update((prop, val*prior_param_coeff) for prop, val in inertial_prop.items())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\mpc\gp_mpc.py:194:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+193	        self.n_ind_points = n_ind_points
+194	        assert inducing_point_selection_method in ['kmeans', 'random'], '[Error]: Inducing method choice is incorrect.'
+195	        self.inducing_point_selection_method = inducing_point_selection_method
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\mpc\gp_utils.py:422:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+421	            x2 = x1
+422	        assert x1.shape == x2.shape, ValueError("x1 and x2 need to have the same shape.")
+423	        k_list = self._kernel_list(x1, x2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\mpc\mpc.py:118:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	        for constraint in constraints:
+118	            assert constraint in self.constraints.constraints,\
+119	                ValueError("This constraint is not in the current list of constraints")
+120	            old_constraints_list.remove(constraint)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\ppo\ppo.py:230:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+229	            if done:
+230	                assert "episode" in info
+231	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\ppo\ppo_utils.py:346:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+345	        for k, info in self.scheme.items():
+346	            assert "vshape" in info, "Scheme must define vshape for {}".format(k)
+347	            vshape = info["vshape"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\ppo\ppo_utils.py:360:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+359	        for k, v in batch.items():
+360	            assert k in self.keys
+361	            shape = self.scheme[k]["vshape"][1:]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\rarl\rap.py:247:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+246	            if done:
+247	                assert "episode" in info
+248	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\rarl\rarl.py:241:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+240	            if done:
+241	                assert "episode" in info
+242	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\sac\sac.py:229:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+228	            if done:
+229	                assert "episode" in info
+230	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\sac\sac_utils.py:340:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+339	        for k, info in self.scheme.items():
+340	            assert "vshape" in info, "Scheme must define vshape for {}".format(k)
+341	            vshape = info["vshape"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\safe_explorer\safe_explorer_utils.py:54:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	        # Constraint slack variables/values.
+54	        assert slack is not None and isinstance(slack, (int, float, list))
+55	        if isinstance(slack, (int, float)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\safe_explorer\safe_explorer_utils.py:249:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+248	        for k, info in self.scheme.items():
+249	            assert "vshape" in info, "Scheme must define vshape for {}".format(
+250	                k)
+251	            vshape = info["vshape"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\safe_explorer\safe_ppo.py:101:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+100	                # Load safety layer for 2nd stage training.
+101	                assert self.pretrained, "Must provide a pre-trained model for adaptation."
+102	                if os.path.isdir(self.pretrained):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\controllers\safe_explorer\safe_ppo.py:263:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+262	            if done:
+263	                assert "episode" in info
+264	                ep_returns.append(info["episode"]["r"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\benchmark_env.py:309:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+308	            for mode, disturb_specs in self.DISTURBANCES.items():
+309	                assert mode in self.DISTURBANCE_MODES, "[ERROR] in BenchmarkEnv._setup_disturbances(), disturbance mode not available."
+310	                mode_shared_args = self.DISTURBANCE_MODES[mode]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\benchmark_env.py:314:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+313	        if self.adversary_disturbance is not None:
+314	            assert self.adversary_disturbance in self.DISTURBANCE_MODES, "[ERROR] in Cartpole._setup_disturbances()"
+315	            shared_args = self.DISTURBANCE_MODES[self.adversary_disturbance]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:69:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	                active_dims = [active_dims]
+69	            assert isinstance(active_dims, (list, np.ndarray)), '[ERROR] active_dims is not a list/array.'
+70	            assert (len(active_dims) <= self.dim), '[ERROR] more active_dim than constrainable self.dim'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:70:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	            assert isinstance(active_dims, (list, np.ndarray)), '[ERROR] active_dims is not a list/array.'
+70	            assert (len(active_dims) <= self.dim), '[ERROR] more active_dim than constrainable self.dim'
+71	            assert all(isinstance(n, int) for n in active_dims), '[ERROR] non-integer active_dim.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:71:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	            assert (len(active_dims) <= self.dim), '[ERROR] more active_dim than constrainable self.dim'
+71	            assert all(isinstance(n, int) for n in active_dims), '[ERROR] non-integer active_dim.'
+72	            assert all((n < self.dim) for n in active_dims), '[ERROR] active_dim not stricly smaller than self.dim.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:72:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	            assert all(isinstance(n, int) for n in active_dims), '[ERROR] non-integer active_dim.'
+72	            assert all((n < self.dim) for n in active_dims), '[ERROR] active_dim not stricly smaller than self.dim.'
+73	            assert (len(active_dims) == len(set(active_dims))), '[ERROR] duplicates in active_dim'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:73:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	            assert all((n < self.dim) for n in active_dims), '[ERROR] active_dim not stricly smaller than self.dim.'
+73	            assert (len(active_dims) == len(set(active_dims))), '[ERROR] duplicates in active_dim'
+74	            self.constraint_filter = np.eye(self.dim)[active_dims]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:205:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+204	        P = np.array(P, ndmin=1)
+205	        assert P.shape == (self.dim, self.dim), '[ERROR] P has the wrong dimension!'
+206	        self.P = P
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:207:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+206	        self.P = P
+207	        assert isinstance(b, float), '[ERROR] b is not a scalar!'
+208	        self.b = b
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:252:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+251	        b = np.array(b, ndmin=1)
+252	        assert A.shape[1] == self.dim, '[ERROR] A has the wrong dimension!'
+253	        self.A = A
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:254:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+253	        self.A = A
+254	        assert b.shape[0] == A.shape[0], '[ERROR] Dimension 0 of b does not match A!'
+255	        self.b = b
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:351:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+350	            upper_bounds = np.array(upper_bounds, ndmin=1)
+351	            assert len(upper_bounds) == default_constraint_space.shape[0],\
+352	                ValueError("[ERROR]: Upper bound must have length equal to space dimension.")
+353	        if lower_bounds is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:357:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+356	            lower_bounds = np.array(lower_bounds, ndmin=1)
+357	            assert len(lower_bounds) == default_constraint_space.shape[0],\
+358	                ValueError("[ERROR]: Lower bound must have length equal to space dimension.")
+359	        super().__init__(env,
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:387:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+386	        """
+387	        assert bound is not None
+388	        self.bound = np.array(bound, ndmin=1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:397:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+396	                         **kwrags)
+397	        assert (env.NAME == 'cartpole'), '[ERROR] SymmetricStateConstraint is meant for CartPole environments'
+398	        assert (env.COST == 'rl_reward'), '[ERROR] SymmetricStateConstraint is meant for RL environments'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:398:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+397	        assert (env.NAME == 'cartpole'), '[ERROR] SymmetricStateConstraint is meant for CartPole environments'
+398	        assert (env.COST == 'rl_reward'), '[ERROR] SymmetricStateConstraint is meant for RL environments'
+399	        self.num_constraints = self.bound.shape[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:601:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+600	    for constraint in constraint_specs:
+601	        assert isinstance(constraint, dict), "[ERROR]: Each constraint must be specified as a dict."
+602	        assert "constraint_form" in constraint.keys(),\
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:602:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+601	        assert isinstance(constraint, dict), "[ERROR]: Each constraint must be specified as a dict."
+602	        assert "constraint_form" in constraint.keys(),\
+603	            "[ERROR]: Each constraint must have a key 'constraint_form'"
+604	        con_form = constraint["constraint_form"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\constraints.py:605:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+604	        con_form = constraint["constraint_form"]
+605	        assert con_form in available_constraints, "[ERROR]. constraint not in list of available constraints"
+606	        con_class = available_constraints[con_form]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\disturbances.py:23:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	            self.mask = np.asarray(mask)
+23	            assert self.dim == len(self.mask)
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\disturbances.py:114:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	        # Specify shape of the impulse.
+114	        assert duration >= 1
+115	        assert decay_rate > 0 and decay_rate <= 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\disturbances.py:115:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+114	        assert duration >= 1
+115	        assert decay_rate > 0 and decay_rate <= 1
+116	        self.duration = duration
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\disturbances.py:235:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+234	            raise ValueError("[ERROR] WhiteNoise.__init__(): std must be specified as a float or list.")
+235	        assert self.dim == len(self.std), "std shape should be the same as dim."
+236	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\disturbances.py:326:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+325	    for disturb in disturbance_specs:
+326	        assert "disturbance_func" in disturb.keys(), "[ERROR]: Every distrubance must specify a disturbance_func."
+327	        disturb_func = disturb["disturbance_func"]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\disturbances.py:328:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+327	        disturb_func = disturb["disturbance_func"]
+328	        assert disturb_func in DISTURBANCE_TYPES, "[ERROR] in BenchmarkEnv._setup_disturbances(), disturbance type not available."
+329	        disturb_cls = DISTURBANCE_TYPES[disturb_func]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\dummy_vec_env.py:121:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	        target_envs = self._get_target_envs(indices)
+121	        assert len(target_envs) == len(values)
+122	        for env_i, val_i in zip(target_envs, values):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\dummy_vec_env.py:138:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	            method_kwargs = [{}] * len(target_envs)
+138	        assert len(target_envs) == len(method_args) and len(target_envs) == len(
+139	            method_kwargs)
+140	        return [
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\dummy_vec_env.py:151:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+150	        """
+151	        assert indices is None or sorted(
+152	            indices) == indices, "Indices must be ordered"
+153	        indices = self._get_indices(indices)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\subproc_vec_env.py:27:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	        self.n_workers = n_workers
+27	        assert nenvs % n_workers == 0, "Number of envs must be divisible by number of workers to run in series"
+28	        env_fns = np.array_split(env_fns, self.n_workers)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\subproc_vec_env.py:100:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+99	    def _assert_not_closed(self):
+100	        assert not self.closed, "Trying to operate on a SubprocVecEnv after calling close()"
+101	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\subproc_vec_env.py:182:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+181	        """
+182	        assert indices is None or sorted(
+183	            indices) == indices, "Indices must be ordered"
+184	        indices = self._get_indices(indices)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+18	    def __setstate__(self, ob):
+19	        import pickle
+20	        self.x = pickle.loads(ob)
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:20:17
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+19	        import pickle
+20	        self.x = pickle.loads(ob)
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:75:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	    """
+75	    assert isinstance(obs, (list, tuple))
+76	    assert len(obs) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:76:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	    assert isinstance(obs, (list, tuple))
+76	    assert len(obs) > 0
+77	
+78	    if isinstance(obs[0], dict):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:89:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	    """
+89	    assert isinstance(obs, (np.ndarray, dict))
+90	    def split_batch(data):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:106:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+105	    """
+106	    assert isinstance(l, (list, tuple))
+107	    assert len(l) > 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:107:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	    assert isinstance(l, (list, tuple))
+107	    assert len(l) > 0
+108	    assert all([len(l_) > 0 for l_ in l])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\envs\env_wrappers\vectorized_env\vec_env_utils.py:108:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	    assert len(l) > 0
+108	    assert all([len(l_) > 0 for l_ in l])
+109	    return [l__ for l_ in l for l__ in l_]
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\envs\gym_control\cartpole.py:13:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+12	import math
+13	import xml.etree.ElementTree as etxml
+14	from copy import deepcopy
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\envs\gym_control\cartpole.py:713:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+712	        """
+713	        URDF_TREE = (etxml.parse(file_name)).getroot()
+714	        EFFECTIVE_POLE_LENGTH = 0.5 * float(URDF_TREE[3][0][0][0].attrib["size"].split(" ")[-1])  # Note: HALF length of pole.
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\envs\gym_control\cartpole.py:731:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+730	        """
+731	        tree = etxml.parse(file_name)
+732	        root = tree.getroot()
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\envs\gym_pybullet_drones\base_aviary.py:15:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+14	from sys import platform
+15	import xml.etree.ElementTree as etxml
+16	from datetime import datetime
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\envs\gym_pybullet_drones\base_aviary.py:613:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+612	        """
+613	        URDF_TREE = etxml.parse(file_name).getroot()
+614	        M = float(URDF_TREE[1][0][1].attrib['value'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\math_and_models\normalization.py:230:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+229	        super().__init__()
+230	        assert isinstance(action_space, Box), "action space must be gym.spaces.Box"
+231	        low, high = action_space.low, action_space.high
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\math_and_models\symbolic_systems.py:45:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	            for name, func in funcs.items():
+45	                assert name not in self.__dict__
+46	                self.__dict__[name] = func
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: safe-control-gym\safe_control_gym\utils\configuration.py:85:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+84	                try:   
+85	                    v = eval(v)  # String as a python expression.
+86	                except:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\utils\configuration.py:86:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+85	                    v = eval(v)  # String as a python expression.
+86	                except:
+87	                    pass  # Normal python string.
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\utils\logging.py:222:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+221	        """
+222	        assert isinstance(data, dict)
+223	        for name, val in data.items():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\utils\plotting.py:303:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+302	    """
+303	    assert scalar_name is not None, "Must provide a scalar name to plot"
+304	    # Get all stats.
+305	    stats = defaultdict(list)
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\utils\registration.py:58:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+57	                with pkg_resources.open_text(mod_name, config_name) as f:
+58	                    config = yaml.load(f, Loader=yaml.FullLoader)
+59	            else:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: safe-control-gym\safe_control_gym\utils\utils.py:10:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+9	import random
+10	import subprocess
+11	import sys
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: safe-control-gym\safe_control_gym\utils\utils.py:54:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+53	    elif "yaml" in file_path:
+54	        data = yaml.load(f, Loader=yaml.FullLoader)
+55	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\utils\utils.py:114:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	    """
+114	    assert seed is not None, "Error in set_seed(...), provided seed not valid"
+115	    random.seed(seed)
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: safe-control-gym\safe_control_gym\utils\utils.py:133:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+132	    try:
+133	        commit_id = subprocess.check_output(
+134	            ["git", "describe", "--tags", "--always"]
+135	        ).decode("utf-8").strip()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: safe-control-gym\safe_control_gym\utils\utils.py:133:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+132	    try:
+133	        commit_id = subprocess.check_output(
+134	            ["git", "describe", "--tags", "--always"]
+135	        ).decode("utf-8").strip()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: safe-control-gym\safe_control_gym\utils\utils.py:177:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+176	    """
+177	    assert ".gif" in name or ".mp4" in name, "invalid video name"
+178	    vid_kwargs = {'fps': fps}
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: safe-control-gym\walkthroughs\tutorial.py:8:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+7	import os
+8	import pickle
+9	import sys
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 17471
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 100
+		Medium: 10
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 110
+Files skipped (0):

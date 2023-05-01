@@ -1,0 +1,1519 @@
+Run started:2023-04-23 06:01:25.295703
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\examples\module\imu\imu_dataset.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        self.seq_len = len(self.data.timestamps) - 1
+19	        assert mode in ['evaluate', 'train', 'test'], "{} mode is not supported.".format(mode)
+20	
+21	        self.dt = torch.tensor([datetime.timestamp(self.data.timestamps[i+1]) - datetime.timestamp(self.data.timestamps[i]) for i in range(self.seq_len)])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\examples\module\pgo\pgo_dataset.py:50:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	        self.infos = torch.stack(infos).to(self.dtype).to(device)
+50	        assert self.ids.size(0) == self.nodes.size(0) \
+51	               and self.edges.size(0) == self.poses.size(0) == self.infos.size(0)
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\__init__.py:22:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	min_torch = '2.0'
+22	assert version.parse(min_torch) <= version.parse(torch.__version__), \
+23	    f'PyTorch=={torch.__version__} is used but incompatible. ' \
+24	    f'Please install torch>={min_torch}.'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\basics\ops.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    L, v = input.shape[dim], input
+34	    assert dim != -1 or dim != v.shape[-1], "Invalid dim"
+35	    for i in torch.pow(2, torch.arange(math.log2(L)+1, device=v.device, dtype=torch.int64)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\geometry.py:116:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    '''
+116	    assert points.size(-1) == 3, "Points shape incorrect"
+117	    assert intrinsics.size(-1) == intrinsics.size(-2) == 3, "Intrinsics shape incorrect."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\geometry.py:117:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+116	    assert points.size(-1) == 3, "Points shape incorrect"
+117	    assert intrinsics.size(-1) == intrinsics.size(-2) == 3, "Intrinsics shape incorrect."
+118	    if extrinsics is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\geometry.py:121:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	    else:
+121	        assert is_lietensor(extrinsics) and extrinsics.shape[-1] == 7, "Type incorrect."
+122	        broadcast_shapes(points.shape[:-2], intrinsics.shape[:-2], extrinsics.shape[:-1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\geometry.py:158:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    broadcast_shapes(points.shape[:-2], pixels.shape[:-2], intrinsics.shape[:-2])
+158	    assert points.size(-1) == 3 and pixels.size(-1) == 2 and \
+159	           intrinsics.size(-1) == intrinsics.size(-2) == 3, "Shape not compatible."
+160	    img_repj = point2pixel(points, intrinsics, extrinsics)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\linalg.py:57:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	    '''
+57	    assert mat.ndim >= 2 and vec.ndim >= 1, 'Input arguments invalid'
+58	    assert mat.shape[-1] == vec.shape[-1], 'matrix-vector shape invalid'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\linalg.py:58:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    assert mat.ndim >= 2 and vec.ndim >= 1, 'Input arguments invalid'
+58	    assert mat.shape[-1] == vec.shape[-1], 'matrix-vector shape invalid'
+59	    mat = mat.tensor() if isinstance(mat, LieTensor) else mat
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\linalg.py:104:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+103	    '''
+104	    assert mat.ndim >= 2 and lvec.ndim >= 1 and rvec.ndim >= 1, 'Shape invalid'
+105	    assert lvec.shape[-1] == mat.shape[-2] and mat.shape[-1] == rvec.shape[-1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\function\linalg.py:105:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	    assert mat.ndim >= 2 and lvec.ndim >= 1 and rvec.ndim >= 1, 'Shape invalid'
+105	    assert lvec.shape[-1] == mat.shape[-2] and mat.shape[-1] == rvec.shape[-1]
+106	    lvec = lvec.tensor() if isinstance(lvec, LieTensor) else lvec
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\basics.py:37:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+36	    v = input.tensor() if hasattr(input, 'ltype') else input
+37	    assert v.shape[-1] == 3, "Last dim should be 3"
+38	    O = torch.zeros(v.shape[:-1], device=v.device, dtype=v.dtype, requires_grad=v.requires_grad)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\convert.py:599:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+598	def matrix(lietensor):
+599	    assert isinstance(lietensor, LieTensor)
+600	    return lietensor.matrix()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\convert.py:648:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+647	        euler = torch.tensor(euler)
+648	    assert euler.shape[-1] == 3
+649	    shape, euler = euler.shape, euler.view(-1, 3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:188:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+187	    def Act(self, X, p):
+188	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+189	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:189:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+188	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+189	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+190	        X = X.tensor() if hasattr(X, 'ltype') else X
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:304:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+303	    def randn(self, *size, sigma=1.0, requires_grad=False, **kwargs):
+304	        assert isinstance(sigma, numbers.Number), 'Only accepts sigma as a single number'
+305	        size = self.to_tuple(size)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:342:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+341	    def Act(self, X, p):
+342	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+343	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:343:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+342	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+343	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+344	        X = X.tensor() if hasattr(X, 'ltype') else X
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:458:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+457	        else:
+458	            assert len(sigma)==4, 'Only accepts a tuple of sigma in size 1, 2, or 4.'
+459	        size = self.to_tuple(size)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:477:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+476	    def Act(self, X, p):
+477	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+478	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:478:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+477	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+478	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+479	        X = X.tensor() if hasattr(X, 'ltype') else X
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:599:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+598	        else:
+599	            assert len(sigma)==5, 'Only accepts a tuple of sigma in size 1, 3, or 5.'
+600	        size = self.to_tuple(size)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:619:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+618	    def Act(self, X, p):
+619	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+620	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:620:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+619	        assert not self.on_manifold and isinstance(p, torch.Tensor)
+620	        assert p.shape[-1]==3 or p.shape[-1]==4, "Invalid Tensor Dimension"
+621	        X = X.tensor() if hasattr(X, 'ltype') else X
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:730:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+729	        else:
+730	            assert len(sigma)==2, 'Only accepts a tuple of sigma in size 1 or 2.'
+731	        size = self.to_tuple(size)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\lietensor.py:881:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+880	    def __init__(self, *data, ltype:LieType):
+881	        assert self.shape[-1:] == ltype.dimension, 'The last dimension of a LieTensor has to be ' \
+882	            'corresponding to their LieType. More details go to {}. If this error happens in an ' \
+883	            'optimization process, where LieType is not a necessary structure, we suggest to '    \
+884	            'call .tensor() to convert a LieTensor to Tensor before passing it to an optimizer. ' \
+885	            'If this still happens, create an issue on GitHub please.'.format(
+886	            'https://pypose.org/docs/main/generated/pypose.LieTensor')
+887	        self.ltype = ltype
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\lietensor\utils.py:1348:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1347	    def checker(*args, **kwargs):
+1348	        assert isinstance(args[0], LieTensor), "Invalid LieTensor Type."
+1349	        out = func(*args, **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\imu_preintegrator.py:262:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+261	        """
+262	        assert(0 < len(acc.shape) == len(dt.shape) == len(gyro.shape) <= 3)
+263	        acc = self._check(acc); gyro = self._check(gyro)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:155:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+154	
+155	        assert self.Q.shape[:-1] == self.p.shape, "Shape not compatible."
+156	        assert self.Q.size(-1) == self.Q.size(-2), "Shape not compatible."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:156:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	        assert self.Q.shape[:-1] == self.p.shape, "Shape not compatible."
+156	        assert self.Q.size(-1) == self.Q.size(-2), "Shape not compatible."
+157	        assert self.Q.ndim == 4 or self.p.ndim == 3, "Shape not compatible."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:157:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	        assert self.Q.size(-1) == self.Q.size(-2), "Shape not compatible."
+157	        assert self.Q.ndim == 4 or self.p.ndim == 3, "Shape not compatible."
+158	        assert self.Q.device == self.p.device, "device not compatible."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:158:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	        assert self.Q.ndim == 4 or self.p.ndim == 3, "Shape not compatible."
+158	        assert self.Q.device == self.p.device, "device not compatible."
+159	        assert self.Q.dtype == self.p.dtype, "tensor data type not compatible."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:159:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+158	        assert self.Q.device == self.p.device, "device not compatible."
+159	        assert self.Q.dtype == self.p.dtype, "tensor data type not compatible."
+160	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:211:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+210	
+211	        assert x_init.device == K.device == k.device
+212	        assert x_init.dtype == K.dtype == k.dtype
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:212:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+211	        assert x_init.device == K.device == k.device
+212	        assert x_init.dtype == K.dtype == k.dtype
+213	        assert x_init.ndim == 2, "Shape not compatible."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\lqr.py:213:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+212	        assert x_init.dtype == K.dtype == k.dtype
+213	        assert x_init.ndim == 2, "Shape not compatible."
+214	        B = self.p.shape[:-2]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\pnp.py:150:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+149	        '''
+150	        assert pixels.size(-2) == points.size(-2) >= 4, \
+151	            "Number of points/pixels cannot be smaller than 4."
+152	        intrinsics = self.intrinsics if intrinsics is None else intrinsics
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\module\ukf.py:219:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+218	        '''
+219	        assert x.size(-1) == P.size(-1) == P.size(-2), 'Invalid shape'
+220	        n, xe = x.size(-1), x.unsqueeze(-2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\functional.py:149:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+148	    if isinstance(J, tuple):
+149	        assert not torch.any(torch.stack([torch.any(torch.isnan(j)) for j in J])), \
+150	            'Jacobian contains Nan! Check your model and input!'
+151	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\functional.py:152:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	    else:
+152	        assert not torch.any(torch.isnan(J)), \
+153	            'Jacobian contains Nan! Check your model and input!'
+154	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	        super().__init__()
+39	        assert delta > 0, ValueError("delta has to be positive: {}".format(delta))
+40	        self.delta = delta
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:48:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	        '''
+48	        assert torch.all(input >= 0), 'input has to be non-negative.'
+49	        mask = input.sqrt() < self.delta
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:85:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	        super().__init__()
+85	        assert delta > 0, ValueError("delta has to be positive: {}".format(delta))
+86	        self.delta2 = delta**2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:93:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	        '''
+93	        assert torch.all(input >= 0), 'input has to be non-negative'
+94	        return 2 * self.delta2 * ((input/self.delta2 + 1).sqrt() - 1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	        super().__init__()
+125	        assert delta > 0, ValueError("delta has to be positive: {}".format(delta))
+126	        self.delta2 = delta**2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:133:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+132	        '''
+133	        assert torch.all(input >= 0), 'input has to be non-negative'
+134	        return self.delta2 * (input/self.delta2 + 1).log()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:165:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+164	        super().__init__()
+165	        assert delta > 0, ValueError("delta has to be positive: {}".format(delta))
+166	        self.delta1 = delta
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:174:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+173	        '''
+174	        assert torch.all(input >= 0), 'input has to be non-negative'
+175	        return 2 * (self.delta1 * (1 / self.delta2 + input).sqrt() - 1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:213:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+212	        '''
+213	        assert torch.all(input >= 0), 'input has to be non-negative'
+214	        return self.delta2 * (input / self.delta2).arctan()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:246:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+245	        super().__init__()
+246	        assert a > 0, ValueError("a has to be positive: {}".format(a))
+247	        assert b < 0, ValueError("b has to be negative: {}".format(b))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:247:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+246	        assert a > 0, ValueError("a has to be positive: {}".format(a))
+247	        assert b < 0, ValueError("b has to be negative: {}".format(b))
+248	        self.a = a
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:256:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+255	        '''
+256	        assert torch.all(input >= 0), 'input has to be non-negative'
+257	        part1 = (1 + ((input-self.a) / self.b).exp()).log()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\kernel.py:290:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+289	        super().__init__()
+290	        assert 0 < delta <= 1 , ValueError("delta has to be between 0 and 1: {}".format(delta))
+291	        self.delta = delta
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\optimizer.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        # eps is to prevent grad of sqrt() from being inf
+53	        assert torch.is_floating_point(output), "model output have to be float type."
+54	        eps = finfo(output.dtype).eps
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\optimizer.py:351:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+350	                       weight=None, reject=16, min=1e-6, max=1e32, vectorize=True):
+351	        assert min > 0, ValueError("min value has to be positive: {}".format(min))
+352	        assert max > 0, ValueError("max value has to be positive: {}".format(max))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\optimizer.py:352:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+351	        assert min > 0, ValueError("min value has to be positive: {}".format(min))
+352	        assert max > 0, ValueError("max value has to be positive: {}".format(max))
+353	        self.strategy = TrustRegion() if strategy is None else strategy
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\scheduler.py:127:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	        '''
+127	        assert self.optimizer.loss is not None, \
+128	            'scheduler.step() should be called after optimizer.step()'
+129	
+130	        if self.verbose:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\solver.py:146:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+145	        self.out = lstsq(A, b, rcond=self.rcond, driver=self.driver)
+146	        assert not torch.any(torch.isnan(self.out.solution)), \
+147	            'Linear Solver Failed Using LSTSQ. Using PINV() instead'
+148	        return self.out.solution
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\solver.py:210:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+209	        L, info = cholesky_ex(A, upper=self.upper)
+210	        assert not torch.any(torch.isnan(L)), \
+211	            'Cholesky decomposition failed. Check your matrix (may not be positive-definite)'
+212	        return b.cholesky_solve(L, upper=self.upper)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    def __init__(self, damping=1e-6):
+42	        assert damping > 0, ValueError("damping has to be positive: {}".format(damping))
+43	        self.defaults = {'damping': damping}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:135:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+134	    def __init__(self, damping=1e-6, high=0.5, low=1e-3, up=2., down=.5, min=1e-6, max=1e16):
+135	        assert damping > 0, ValueError("damping has to be positive: {}".format(damping))
+136	        assert high > 0, ValueError("high has to be positive: {}".format(high))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:136:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+135	        assert damping > 0, ValueError("damping has to be positive: {}".format(damping))
+136	        assert high > 0, ValueError("high has to be positive: {}".format(high))
+137	        assert low > 0, ValueError("low for decrease has to be positive: {}".format(low))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:137:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+136	        assert high > 0, ValueError("high has to be positive: {}".format(high))
+137	        assert low > 0, ValueError("low for decrease has to be positive: {}".format(low))
+138	        assert 0 < down < 1, ValueError("down factor has to be smaller than 1: {}".format(down))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:138:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	        assert low > 0, ValueError("low for decrease has to be positive: {}".format(low))
+138	        assert 0 < down < 1, ValueError("down factor has to be smaller than 1: {}".format(down))
+139	        assert 1 < up, ValueError("up factor has to be larger than 1: {}".format(up))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:139:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+138	        assert 0 < down < 1, ValueError("down factor has to be smaller than 1: {}".format(down))
+139	        assert 1 < up, ValueError("up factor has to be larger than 1: {}".format(up))
+140	        self.defaults = {'damping': damping, 'high': high, 'low': low, 'up': up, 'down': down}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:250:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+249	        super().__init__()
+250	        assert radius > 0, ValueError("trust region radius has to be positive: {}".format(radius))
+251	        assert high > 0, ValueError("high has to be positive: {}".format(high))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:251:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+250	        assert radius > 0, ValueError("trust region radius has to be positive: {}".format(radius))
+251	        assert high > 0, ValueError("high has to be positive: {}".format(high))
+252	        assert low > 0, ValueError("low for decrease has to be positive: {}".format(low))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:252:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+251	        assert high > 0, ValueError("high has to be positive: {}".format(high))
+252	        assert low > 0, ValueError("low for decrease has to be positive: {}".format(low))
+253	        assert 0 < down < 1, ValueError("down factor has to be smaller than 1: {}".format(down))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:253:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+252	        assert low > 0, ValueError("low for decrease has to be positive: {}".format(low))
+253	        assert 0 < down < 1, ValueError("down factor has to be smaller than 1: {}".format(down))
+254	        assert 1 < up, ValueError("up factor has to be larger than 1: {}".format(up))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:254:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+253	        assert 0 < down < 1, ValueError("down factor has to be smaller than 1: {}".format(down))
+254	        assert 1 < up, ValueError("up factor has to be larger than 1: {}".format(up))
+255	        assert 0 < factor < 1, ValueError("factor has to be smaller than 1: {}".format(factor))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\pypose\optim\strategy.py:255:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+254	        assert 1 < up, ValueError("up factor has to be larger than 1: {}".format(up))
+255	        assert 0 < factor < 1, ValueError("factor has to be smaller than 1: {}".format(factor))
+256	        self.min, self.max, damping, self.down = min, max, 1 / radius, down
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pypose\pypose\utils\collect_env.py:9:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+8	import re
+9	import subprocess
+10	import sys
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pypose\pypose\utils\collect_env.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+57	    p = subprocess.Popen(command, stdout=subprocess.PIPE,
+58	                         stderr=subprocess.PIPE, shell=True)
+59	    raw_output, raw_err = p.communicate()
+60	    rc = p.returncode
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\basics\test_func.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        y = pp.homo2cart(x)
+19	        assert torch.all(~torch.isnan(y)), 'values contain Nan!'
+20	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\basics\test_ops.py:13:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	            pm = torch.tensor([1, 1, -1], dtype=dtype, device=self.device)
+13	            assert torch.equal(x, pm), "Results incorrect."
+14	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	
+23	    assert y.is_leaf and x.is_leaf and a.is_leaf and b.is_leaf
+24	
+25	    (pp.Log(y.Exp())**2).sin().sum().backward()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	
+27	    assert not torch.any(torch.isnan(y.grad))
+28	
+29	    def count_parameters(model):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:55:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	
+55	    assert not torch.allclose(weight, net.weight)
+56	
+57	    SO3I = pp.identity_SO3(1, 3, device=device, dtype=torch.float64)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:128:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	    X = pp.randn_SE3(8, requires_grad=True, dtype=torch.double)
+128	    assert hasattr(X.view(2,4,7), 'ltype')
+129	    X.lview(2,4)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:137:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+136	    Z = torch.cat([X,Y], dim=0)
+137	    assert isinstance(Z, pp.LieTensor)
+138	    assert isinstance(torch.stack([X,Y], dim=0), pp.LieTensor)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:138:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	    assert isinstance(Z, pp.LieTensor)
+138	    assert isinstance(torch.stack([X,Y], dim=0), pp.LieTensor)
+139	
+140	    Z1, Z2 = Z.split([2,2], dim=0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:141:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	    Z1, Z2 = Z.split([2,2], dim=0)
+141	    assert isinstance(Z1, pp.LieTensor)
+142	    assert isinstance(Z2, pp.LieTensor)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:142:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	    assert isinstance(Z1, pp.LieTensor)
+142	    assert isinstance(Z2, pp.LieTensor)
+143	    assert not isinstance(torch.randn(4), pp.LieTensor)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:143:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	    assert isinstance(Z2, pp.LieTensor)
+143	    assert not isinstance(torch.randn(4), pp.LieTensor)
+144	
+145	    a, b = Z.tensor_split(2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:146:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+145	    a, b = Z.tensor_split(2)
+146	    assert isinstance(a, pp.LieTensor) and isinstance(b, pp.LieTensor)
+147	
+148	    x = pp.randn_SO3(4)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:183:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+182	    x.cumprod_(dim=0)
+183	    assert not torch.allclose(x, y)
+184	
+185	    generator = torch.Generator()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:205:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+204	    J = x.Jr()
+205	    assert J.requires_grad is True
+206	
+207	    class PoseTransform(torch.nn.Module):
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: pypose\test\lietensor\test_lietensor.py:224:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+223	    for lt in LT:
+224	        x = lt(random.randint(1, 10), dtype=torch.float64, device=device, requires_grad=True)
+225	        t = x.translation()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:230:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+229	        xx = pp.randn_like(x)
+230	        assert(r.device == t.device == s.device == x.device == m.device)
+231	        assert(r.dtype == t.dtype == s.dtype == x.dtype == m.dtype)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:231:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+230	        assert(r.device == t.device == s.device == x.device == m.device)
+231	        assert(r.dtype == t.dtype == s.dtype == x.dtype == m.dtype)
+232	        assert(r.lshape == t.shape[:-1] == s.shape[:-1] == x.lshape == m.shape[:-2])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:232:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+231	        assert(r.dtype == t.dtype == s.dtype == x.dtype == m.dtype)
+232	        assert(r.lshape == t.shape[:-1] == s.shape[:-1] == x.lshape == m.shape[:-2])
+233	        assert(r.requires_grad == t.requires_grad == s.requires_grad == x.requires_grad == m.requires_grad)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:233:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+232	        assert(r.lshape == t.shape[:-1] == s.shape[:-1] == x.lshape == m.shape[:-2])
+233	        assert(r.requires_grad == t.requires_grad == s.requires_grad == x.requires_grad == m.requires_grad)
+234	        assert(t.shape[-1]==3 and r.shape[-1]==4 and s.shape[-1]==1 and m.shape[-1] == m.shape[-2])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:234:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+233	        assert(r.requires_grad == t.requires_grad == s.requires_grad == x.requires_grad == m.requires_grad)
+234	        assert(t.shape[-1]==3 and r.shape[-1]==4 and s.shape[-1]==1 and m.shape[-1] == m.shape[-2])
+235	        assert(torch.all(torch.abs(torch.linalg.vector_norm(r, dim=1) - 1) < 1e-9))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:235:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+234	        assert(t.shape[-1]==3 and r.shape[-1]==4 and s.shape[-1]==1 and m.shape[-1] == m.shape[-2])
+235	        assert(torch.all(torch.abs(torch.linalg.vector_norm(r, dim=1) - 1) < 1e-9))
+236	        if m.shape[-1] == 4:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:237:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+236	        if m.shape[-1] == 4:
+237	            assert(torch.all(m[:, 0:3, 3:4].view(-1, 3) == t))
+238	        assert(torch.all(m[:, 0:3, 0:3] == s.view(-1, 1, 1) * r.matrix()))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\lietensor\test_lietensor.py:238:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+237	            assert(torch.all(m[:, 0:3, 3:4].view(-1, 3) == t))
+238	        assert(torch.all(m[:, 0:3, 0:3] == s.view(-1, 1, 1) * r.matrix()))
+239	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	
+85	    assert torch.allclose(state_ref, state_all[:5], rtol=1e-2)
+86	
+87	    # Jacobian computation - Find jacobians at the last step
+88	    jacob_state, jacob_input = state_all[-1], input[-1]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:91:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	
+91	    assert torch.allclose(A_ref, cartPoleSolver.A)
+92	    assert torch.allclose(B_ref, cartPoleSolver.B)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:92:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    assert torch.allclose(A_ref, cartPoleSolver.A)
+92	    assert torch.allclose(B_ref, cartPoleSolver.B)
+93	    assert torch.allclose(C_ref, cartPoleSolver.C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:93:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	    assert torch.allclose(B_ref, cartPoleSolver.B)
+93	    assert torch.allclose(C_ref, cartPoleSolver.C)
+94	    assert torch.allclose(D_ref, cartPoleSolver.D)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    assert torch.allclose(C_ref, cartPoleSolver.C)
+94	    assert torch.allclose(D_ref, cartPoleSolver.D)
+95	    assert torch.allclose(c1_ref, cartPoleSolver.c1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:95:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	    assert torch.allclose(D_ref, cartPoleSolver.D)
+95	    assert torch.allclose(c1_ref, cartPoleSolver.c1)
+96	    assert torch.allclose(c2_ref, cartPoleSolver.c2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:96:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	    assert torch.allclose(c1_ref, cartPoleSolver.c1)
+96	    assert torch.allclose(c2_ref, cartPoleSolver.c2)
+97	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:168:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+167	
+168	    assert torch.allclose(state_all, state_ref, atol=1e-5)
+169	    assert torch.allclose(obser_all, obser_ref)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:169:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+168	    assert torch.allclose(state_all, state_ref, atol=1e-5)
+169	    assert torch.allclose(obser_all, obser_ref)
+170	
+171	    # # For debugging
+172	    # import matplotlib.pyplot as plt
+173	    # f, ax = plt.subplots(nrows=4, sharex=True)
+174	    # for _i in range(2):
+175	    #     ax[_i].plot(time, state_all[:,_i], label='pp')
+176	    #     ax[_i].plot(time, state_ref[:,_i], label='np')
+177	    #     ax[_i].set_ylabel(f'State {_i}')
+178	    # for _i in range(2):
+179	    #     ax[_i+2].plot(time[:-1], obser_all[:,_i], label='pp')
+180	    #     ax[_i+2].plot(time[:-1], obser_ref[:,_i], label='np')
+181	    #     ax[_i+2].set_ylabel(f'Observation {_i}')
+182	    # ax[-1].set_xlabel('time')
+183	    # ax[-1].legend()
+184	    # plt.show()
+185	
+186	    # Jacobian computation - at the last step
+187	    # Note for c1, the values are supposed to be zero, but due to numerical
+188	    # errors the values can be ~ 1e-7, and hence we increase the atol
+189	    # Same story below
+190	    solver.set_refpoint()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:191:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+190	    solver.set_refpoint()
+191	    assert torch.allclose(A0_N, solver.A)
+192	    assert torch.allclose(B0_N, solver.B)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:192:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+191	    assert torch.allclose(A0_N, solver.A)
+192	    assert torch.allclose(B0_N, solver.B)
+193	    assert torch.allclose(C0, solver.C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:193:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+192	    assert torch.allclose(B0_N, solver.B)
+193	    assert torch.allclose(C0, solver.C)
+194	    assert torch.allclose(D0, solver.D)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:194:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+193	    assert torch.allclose(C0, solver.C)
+194	    assert torch.allclose(D0, solver.D)
+195	    assert torch.allclose(c1, solver.c1, atol=1e-6)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:195:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+194	    assert torch.allclose(D0, solver.D)
+195	    assert torch.allclose(c1, solver.c1, atol=1e-6)
+196	    assert torch.allclose(c2_N, solver.c2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:196:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+195	    assert torch.allclose(c1, solver.c1, atol=1e-6)
+196	    assert torch.allclose(c2_N, solver.c2)
+197	
+198	    # Jacobian computation - at the step idx
+199	    solver.set_refpoint(state=state_all[idx], input=input[idx], t=time[idx])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:200:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+199	    solver.set_refpoint(state=state_all[idx], input=input[idx], t=time[idx])
+200	    assert torch.allclose(A0_i, solver.A)
+201	    assert torch.allclose(B0_i, solver.B)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:201:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+200	    assert torch.allclose(A0_i, solver.A)
+201	    assert torch.allclose(B0_i, solver.B)
+202	    assert torch.allclose(C0, solver.C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:202:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+201	    assert torch.allclose(B0_i, solver.B)
+202	    assert torch.allclose(C0, solver.C)
+203	    assert torch.allclose(D0, solver.D)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:203:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+202	    assert torch.allclose(C0, solver.C)
+203	    assert torch.allclose(D0, solver.D)
+204	    assert torch.allclose(c1, solver.c1, atol=1e-6)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:204:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+203	    assert torch.allclose(D0, solver.D)
+204	    assert torch.allclose(c1, solver.c1, atol=1e-6)
+205	    assert torch.allclose(c2_i, solver.c2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:205:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+204	    assert torch.allclose(c1, solver.c1, atol=1e-6)
+205	    assert torch.allclose(c2_i, solver.c2)
+206	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:248:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+247	
+248	    assert torch.allclose(z_1, z_1_ref)
+249	    assert torch.allclose(y_1, y_1_ref)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:249:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+248	    assert torch.allclose(z_1, z_1_ref)
+249	    assert torch.allclose(y_1, y_1_ref)
+250	
+251	
+252	    #In this example, A, B, C, D, c1, c2 are single inputs, state and input are in a batch.
+253	
+254	    A_2 = torch.randn(4, 4, device=device)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:270:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+269	
+270	    assert torch.allclose(z_2, z_2_ref)
+271	    assert torch.allclose(y_2, y_2_ref)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:271:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+270	    assert torch.allclose(z_2, z_2_ref)
+271	    assert torch.allclose(y_2, y_2_ref)
+272	
+273	
+274	    # In this example, all parameters are single inputs.
+275	
+276	    A_3 = torch.randn(4, 4, device=device)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:292:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+291	
+292	    assert torch.allclose(z_3, z_3_ref)
+293	    assert torch.allclose(y_3, y_3_ref)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_dynamics.py:293:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+292	    assert torch.allclose(z_3, z_3_ref)
+293	    assert torch.allclose(y_3, y_3_ref)
+294	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_ekf.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	
+41	        assert torch.all(error[0] - error[-1] > 0), "Filter error last step too large."
+42	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_pf.py:40:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	
+40	        assert torch.all(error[0] - error[-1] > 0), "Filter error last step too large."
+41	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_pnp.py:21:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	        pose_batch = epnp(data['objPts'], data['imgPts'], data['camMat'])
+21	        assert pose_non_batch[0].shape == pose_batch.shape == torch.Size([2, 7])
+22	        assert torch.allclose(pose_non_batch, pose_batch[0])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_pnp.py:22:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	        assert pose_non_batch[0].shape == pose_batch.shape == torch.Size([2, 7])
+22	        assert torch.allclose(pose_non_batch, pose_batch[0])
+23	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_pnp.py:33:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	        solution_lowdim = epnp(data['objPts'], data['imgPts'], data['camMat'])
+33	        assert solution_highdim[0].shape == solution_lowdim.shape
+34	        assert torch.allclose(solution_highdim[0], solution_lowdim)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_pnp.py:34:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	        assert solution_highdim[0].shape == solution_lowdim.shape
+34	        assert torch.allclose(solution_highdim[0], solution_lowdim)
+35	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\module\test_ukf.py:40:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	
+40	        assert torch.all(error[0] - error[-1] > 0), "Filter error last step too large."
+41	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_jacobian.py:32:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	        for j1, j2 in zip(J1, J2):
+32	            assert not torch.any(torch.isnan(j1))
+33	            torch.testing.assert_close(j1, j2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_jacobian.py:98:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	        J = pp.optim.functional.modjac(model, input=None, flatten=True)
+98	        assert not torch.any(torch.isnan(J))
+99	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:81:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	        print('Done', timer.toc())
+81	        assert idx == 99, "Optimization shouldn't stop early."
+82	
+83	        posnet = PoseInv(2, 2).to(device)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:94:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	        print('Done')
+94	        assert idx < 9, "Optimization requires too many steps."
+95	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:122:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	        
+122	        assert idx < 9, "Optimization requires too many steps."
+123	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:152:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	
+152	        assert idx < 9, "Optimization requires too many steps."
+153	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:178:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+177	
+178	        assert idx < 9, "Optimization requires too many steps."
+179	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:204:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+203	
+204	        assert idx < 9, "Optimization requires too many steps."
+205	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:229:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+228	
+229	        assert idx < 9, "Optimization requires too many steps."
+230	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:255:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+254	
+255	        assert idx < 9, "Optimization requires too many steps."
+256	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_optimizer.py:283:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+282	        
+283	        assert idx < 9, "Optimization requires too many steps."
+284	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pypose\test\optim\test_scheduler.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	            runtime_error = True
+39	        assert runtime_error
+40	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 10655
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 143
+		Medium: 0
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 144
+Files skipped (0):

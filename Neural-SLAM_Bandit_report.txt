@@ -1,0 +1,252 @@
+Run started:2023-04-23 05:57:44.768937
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\arguments.py:185:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+184	            else:
+185	                assert False, "Unknown task config, please specify" + \
+186	                        " total_num_scenes"
+187	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\arguments.py:197:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+196	                if i==0:
+197	                    assert torch.cuda.get_device_properties(i).total_memory \
+198	                            /1024/1024/1024 > 10.0, "Insufficient GPU memory"
+199	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\arguments.py:238:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+237	
+238	    assert args.short_goal_dist >= 1, "args.short_goal_dist >= 1"
+239	
+240	    if args.use_deterministic_local:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\env\habitat\__init__.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    if len(scenes) > 0:
+43	        assert len(scenes) >= args.num_processes, (
+44	            "reduce the number of processes as there "
+45	            "aren't enough number of scenes"
+46	        )
+47	        scene_split_size = int(np.floor(len(scenes) / args.num_processes))
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\exploration_env.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+2	import os
+3	import pickle
+4	import sys
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\exploration_env.py:67:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+66	        self.sensor_noise_fwd = \
+67	                pickle.load(open("noise_models/sensor_noise_fwd.pkl", 'rb'))
+68	        self.sensor_noise_right = \
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\exploration_env.py:69:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+68	        self.sensor_noise_right = \
+69	                pickle.load(open("noise_models/sensor_noise_right.pkl", 'rb'))
+70	        self.sensor_noise_left = \
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\exploration_env.py:71:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+70	        self.sensor_noise_left = \
+71	                pickle.load(open("noise_models/sensor_noise_left.pkl", 'rb'))
+72	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\utils\noisy_actions.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	
+3	import attr
+4	import habitat
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\utils\noisy_actions.py:14:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+13	
+14	actuation_noise_fwd = pickle.load(open("noise_models/actuation_noise_fwd.pkl", 'rb'))
+15	actuation_noise_right = pickle.load(open("noise_models/actuation_noise_right.pkl", 'rb'))
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\utils\noisy_actions.py:15:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+14	actuation_noise_fwd = pickle.load(open("noise_models/actuation_noise_fwd.pkl", 'rb'))
+15	actuation_noise_right = pickle.load(open("noise_models/actuation_noise_right.pkl", 'rb'))
+16	actuation_noise_left = pickle.load(open("noise_models/actuation_noise_left.pkl", 'rb'))
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Neural-SLAM\env\habitat\utils\noisy_actions.py:16:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+15	actuation_noise_right = pickle.load(open("noise_models/actuation_noise_right.pkl", 'rb'))
+16	actuation_noise_left = pickle.load(open("noise_models/actuation_noise_left.pkl", 'rb'))
+17	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\env\utils\fmm_planner.py:73:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	
+73	        assert subset.shape[0] == 2 * self.du + 1 and \
+74	               subset.shape[1] == 2 * self.du + 1, \
+75	            "Planning error: unexpected subset shape {}".format(subset.shape)
+76	
+77	        subset *= mask
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\scripts\convert_datasets.py:34:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	assert os.path.exists(source_dataset_path), "Invalid dataset path"
+35	
+36	with gzip.open(source_dataset_path, "rt") as f:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\scripts\convert_val_mini.py:25:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	
+25	assert os.path.exists(source_dataset_path), "Invalid dataset path: {}".format(source_dataset_path)
+26	
+27	with gzip.open(source_dataset_path, "rt") as f:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\utils\optimization.py:19:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	            split = x.split('=')
+19	            assert len(split) == 2
+20	            assert re.match("^[+-]?(\d+(\.\d*)?|\.\d+)$", split[1]) is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\utils\optimization.py:20:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	            assert len(split) == 2
+20	            assert re.match("^[+-]?(\d+(\.\d*)?|\.\d+)$", split[1]) is not None
+21	            optim_params[split[0]] = float(split[1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\utils\optimization.py:45:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	        optim_fn = optim.SGD
+45	        assert 'lr' in optim_params
+46	    else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\utils\optimization.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    expected_args = inspect.getargspec(optim_fn.__init__)[0]
+51	    assert expected_args[:2] == ['self', 'params']
+52	    if not all(k in expected_args[2:] for k in optim_params.keys()):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\utils\storage.py:96:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	        mini_batch_size = batch_size // num_mini_batch
+96	        assert batch_size >= num_mini_batch, (
+97	            "PPO requires the number of processes ({}) "
+98	            "* number of steps ({}) = {} "
+99	            "to be greater than or equal to the number of PPO mini batches ({})."
+100	            "".format(num_processes, num_steps, num_processes * num_steps,
+101	                      num_mini_batch))
+102	
+103	        sampler = BatchSampler(SubsetRandomSampler(range(batch_size)),
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Neural-SLAM\utils\storage.py:124:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+123	        num_processes = self.rewards.size(1)
+124	        assert num_processes >= num_mini_batch, (
+125	            "PPO requires the number of processes ({}) "
+126	            "to be greater than or equal to the number of "
+127	            "PPO mini batches ({}).".format(num_processes, num_mini_batch))
+128	        num_envs_per_batch = num_processes // num_mini_batch
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 3026
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 15
+		Medium: 6
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 21
+Files skipped (0):

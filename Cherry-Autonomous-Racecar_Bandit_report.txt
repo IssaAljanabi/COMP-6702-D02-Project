@@ -1,0 +1,58 @@
+Run started:2023-04-23 05:40:39.489968
+
+Test results:
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: Cherry-Autonomous-Racecar\Tensorflow\car_cnn.py:38:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+37	import tensorflow as tf
+38	import pickle
+39	
+40	from car_models import cnn_cccccfffff
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: Cherry-Autonomous-Racecar\Tensorflow\car_cnn.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	def load_dataset(path, percent_testing=None):
+48	    assert percent_testing is None or (percent_testing >= 0.0 and percent_testing <= 1.0)
+49	    x, y, fnames = [], [], []
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: Cherry-Autonomous-Racecar\car\scripts\runModel.py:33:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+32	import cv2
+33	from subprocess import call
+34	from sensor_msgs.msg import Joy
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1518
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 3
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 3
+Files skipped (6):
+	Cherry-Autonomous-Racecar\car\scripts\SoundServer.py (syntax error while parsing AST from file)
+	Cherry-Autonomous-Racecar\car\scripts\cmdControl.py (syntax error while parsing AST from file)
+	Cherry-Autonomous-Racecar\car\scripts\dataRecorder.py (syntax error while parsing AST from file)
+	Cherry-Autonomous-Racecar\car\scripts\gCamera.py (syntax error while parsing AST from file)
+	Cherry-Autonomous-Racecar\car\scripts\lidarEvasion.py (syntax error while parsing AST from file)
+	Cherry-Autonomous-Racecar\car\scripts\pyfestival.py (syntax error while parsing AST from file)

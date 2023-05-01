@@ -1,0 +1,599 @@
+Run started:2023-04-23 06:11:42.182347
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\eval.py:49:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	if FLAGS.use_cls_nms:
+49	    assert(FLAGS.use_3d_nms)
+50	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\eval.py:56:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+55	CHECKPOINT_PATH = FLAGS.checkpoint_path
+56	assert(CHECKPOINT_PATH is not None)
+57	FLAGS.DUMP_DIR = DUMP_DIR
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\eval.py:152:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	        for key in batch_data_label:
+152	            assert(key not in end_points)
+153	            end_points[key] = batch_data_label[key]
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: votenet\eval.py:194:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+193	if __name__=='__main__':
+194	    eval()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\models\ap_helper.py:122:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	                config_dict['nms_iou'], config_dict['use_old_type_nms'])
+122	            assert(len(pick)>0)
+123	            pred_mask[i, nonempty_box_inds[pick]] = 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\models\ap_helper.py:142:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	                config_dict['nms_iou'], config_dict['use_old_type_nms'])
+142	            assert(len(pick)>0)
+143	            pred_mask[i, nonempty_box_inds[pick]] = 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\models\ap_helper.py:163:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+162	                config_dict['nms_iou'], config_dict['use_old_type_nms'])
+163	            assert(len(pick)>0)
+164	            pred_mask[i, nonempty_box_inds[pick]] = 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\models\ap_helper.py:250:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+249	        bsize = len(batch_pred_map_cls)
+250	        assert(bsize == len(batch_gt_map_cls))
+251	        for i in range(bsize):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\models\boxnet.py:47:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	        self.mean_size_arr = mean_size_arr
+47	        assert(mean_size_arr.shape[0] == self.num_size_cluster)
+48	        self.input_feature_dim = input_feature_dim
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: votenet\models\dump_helper.py:35:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+34	    if not os.path.exists(dump_dir):
+35	        os.system('mkdir %s'%(dump_dir))
+36	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\models\votenet.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        self.mean_size_arr = mean_size_arr
+53	        assert(mean_size_arr.shape[0] == self.num_size_cluster)
+54	        self.input_feature_dim = input_feature_dim
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_modules.py:108:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	
+108	        assert len(radii) == len(nsamples) == len(mlps)
+109	
+110	        self.npoint = npoint
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_modules.py:237:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+236	        else:
+237	            assert(inds.shape[1] == self.npoint)
+238	        new_xyz = pointnet2_utils.gather_operation(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_modules.py:291:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+290	
+291	        assert(len(mlps) == len(nsamples) == len(radii))
+292	
+293	        self.npoint = npoint
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_modules.py:435:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+434	
+435	        assert(len(mlps) == len(nsamples) == len(radii))
+436	        
+437	        self.post_mlp = pt_utils.SharedMLP(post_mlp, bn=bn)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_test.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	    
+30	    assert (gradcheck(interpolate_func, feats, atol=1e-1, rtol=1e-1))
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_utils.py:315:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+314	        if self.ret_unique_cnt:
+315	            assert(self.sample_uniformly)
+316	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\pointnet2\pointnet2_utils.py:363:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+362	        else:
+363	            assert (
+364	                self.use_xyz
+365	            ), "Cannot have not features and not use xyz as a feature!"
+366	            new_features = grouped_xyz
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\scannet\load_scannet_data.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	def read_aggregation(filename):
+27	    assert os.path.isfile(filename)
+28	    object_id_to_segs = {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\scannet\load_scannet_data.py:46:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	def read_segmentation(filename):
+46	    assert os.path.isfile(filename)
+47	    seg_to_verts = {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\scannet\model_util_scannet.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	        '''
+43	        assert(False)
+44	    
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\scannet\scannet_utils.py:35:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	def read_label_mapping(filename, label_from='raw_category', label_to='nyu40id'):
+35	    assert os.path.isfile(filename)
+36	    mapping = dict()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\scannet\scannet_utils.py:48:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	    """
+48	    assert os.path.isfile(filename)
+49	    with open(filename, 'rb') as f:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\scannet\scannet_utils.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	    """
+62	    assert os.path.isfile(filename)
+63	    with open(filename, 'rb') as f:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\sunrgbd\model_util_sunrgbd.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	        angle = angle%(2*np.pi)
+60	        assert(angle>=0 and angle<=2*np.pi)
+61	        angle_per_class = 2*np.pi/float(num_class)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\sunrgbd\sunrgbd_data.py:36:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	        self.split = split
+36	        assert(self.split=='training') 
+37	        self.split_dir = os.path.join(root_dir)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with cPickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: votenet\sunrgbd\sunrgbd_data.py:286:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+285	
+286	    import cPickle as pickle
+287	    if save_path is not None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\sunrgbd\sunrgbd_detection_dataset.py:45:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	
+45	        assert(num_points<=50000)
+46	        self.use_v1 = use_v1 
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: votenet\sunrgbd\sunrgbd_utils.py:317:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+316	
+317	import pickle
+318	import gzip
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: votenet\sunrgbd\sunrgbd_utils.py:326:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+325	    with gzip.open(filename, 'rb') as f:
+326	        loaded_object = pickle.load(f)
+327	        return loaded_object
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\train.py:77:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	LR_DECAY_RATES = [float(x) for x in FLAGS.lr_decay_rates.split(',')]
+77	assert(len(LR_DECAY_STEPS)==len(LR_DECAY_RATES))
+78	LOG_DIR = FLAGS.log_dir
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: votenet\train.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+94	        print('Overwrite the files in the log and dump folers...')
+95	        os.system('rm -r %s %s'%(LOG_DIR, DUMP_DIR))
+96	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\train.py:234:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+233	        for key in batch_data_label:
+234	            assert(key not in end_points)
+235	            end_points[key] = batch_data_label[key]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\train.py:273:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+272	        for key in batch_data_label:
+273	            assert(key not in end_points)
+274	            end_points[key] = batch_data_label[key]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\box_util.py:140:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+139	    """
+140	    assert bb1['x1'] < bb1['x2']
+141	    assert bb1['y1'] < bb1['y2']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\box_util.py:141:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	    assert bb1['x1'] < bb1['x2']
+141	    assert bb1['y1'] < bb1['y2']
+142	    assert bb2['x1'] < bb2['x2']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\box_util.py:142:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	    assert bb1['y1'] < bb1['y2']
+142	    assert bb2['x1'] < bb2['x2']
+143	    assert bb2['y1'] < bb2['y2']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\box_util.py:143:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	    assert bb2['x1'] < bb2['x2']
+143	    assert bb2['y1'] < bb2['y2']
+144	
+145	    # determine the coordinates of the intersection rectangle
+146	    x_left = max(bb1['x1'], bb2['x1'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\box_util.py:166:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+165	    iou = intersection_area / float(bb1_area + bb2_area - intersection_area)
+166	    assert iou >= 0.0
+167	    assert iou <= 1.0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\box_util.py:167:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+166	    assert iou >= 0.0
+167	    assert iou <= 1.0
+168	    return iou
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:41:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	    # of True/False array as in numpy
+41	    assert(not torch.is_tensor(label_mask))
+42	    assert(not torch.is_tensor(pred_mask))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    assert(not torch.is_tensor(label_mask))
+42	    assert(not torch.is_tensor(pred_mask))
+43	    TP, FP, FN = 0, 0, 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:136:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+135	    pred_iou = calc_iou(box_a, box_b)
+136	    assert expected_iou == pred_iou, 'function returned wrong IoU'
+137	    
+138	    box_a = np.array([0,0,0,1,1,1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:142:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	    pred_iou = calc_iou(box_a, box_b)
+142	    assert expected_iou == pred_iou, 'function returned wrong IoU'
+143	    
+144	    print('IoU test -- PASSED')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:152:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	    TP, FP, FN = single_scene_precision_recall(gt_boxes, detected_boxes, 0.5, 0.5)
+152	    assert TP == 2 and FP == 0 and FN == 0
+153	    assert precision_recall(TP, FP, FN) == (1, 1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:153:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	    assert TP == 2 and FP == 0 and FN == 0
+153	    assert precision_recall(TP, FP, FN) == (1, 1)
+154	    
+155	    detected_boxes = np.array([[0,0,0,1,1,1, 1.0]])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:157:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	    TP, FP, FN = single_scene_precision_recall(gt_boxes, detected_boxes, 0.5, 0.5)
+157	    assert TP == 1 and FP == 0 and FN == 1
+158	    assert precision_recall(TP, FP, FN) == (1, 0.5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:158:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    assert TP == 1 and FP == 0 and FN == 1
+158	    assert precision_recall(TP, FP, FN) == (1, 0.5)
+159	    
+160	    detected_boxes = np.array([[0,0,0,1,1,1, 1.0], [-1,-1,0,0.1,0.1,1, 1.0]])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:162:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+161	    TP, FP, FN = single_scene_precision_recall(gt_boxes, detected_boxes, 0.5, 0.5)
+162	    assert TP == 1 and FP == 1 and FN == 1
+163	    assert precision_recall(TP, FP, FN) == (0.5, 0.5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:163:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+162	    assert TP == 1 and FP == 1 and FN == 1
+163	    assert precision_recall(TP, FP, FN) == (0.5, 0.5)
+164	    
+165	    # wrong box has low confidence
+166	    detected_boxes = np.array([[0,0,0,1,1,1, 1.0], [-1,-1,0,0.1,0.1,1, 0.1]])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:168:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+167	    TP, FP, FN = single_scene_precision_recall(gt_boxes, detected_boxes, 0.5, 0.5)
+168	    assert TP == 1 and FP == 0 and FN == 1
+169	    assert precision_recall(TP, FP, FN) == (1, 0.5)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\metric_util.py:169:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+168	    assert TP == 1 and FP == 0 and FN == 1
+169	    assert precision_recall(TP, FP, FN) == (1, 0.5)
+170	    
+171	    print('Precition Recall test -- PASSED')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\pc_util.py:83:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	    vsize = vol.shape[0]
+83	    assert(vol.shape[1] == vsize and vol.shape[1] == vsize)
+84	    points = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\pc_util.py:215:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+214	    else:
+215	        assert(num_classes>np.max(labels))
+216	    
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\pc_util.py:509:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+508	    pcl_bbox = point_cloud_to_bbox(pcl)
+509	    assert pcl_bbox.shape == (32, 6)
+510	    
+511	    pcl = np.random.rand(16, 3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: votenet\utils\pc_util.py:513:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+512	    pcl_bbox = point_cloud_to_bbox(pcl)    
+513	    assert pcl_bbox.shape == (6,)
+514	    
+515	    ############
+516	    ## Test corner distance
+517	    ############
+518	    crnr1 = np.array([[2.59038660e+00, 8.96107932e-01, 4.73305349e+00],
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 5226
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 52
+		Medium: 2
+		High: 2
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 56
+Files skipped (0):

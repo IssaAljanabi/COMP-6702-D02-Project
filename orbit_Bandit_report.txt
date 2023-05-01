@@ -1,0 +1,283 @@
+Run started:2023-04-23 05:58:45.039756
+
+Test results:
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\actuators\group\actuator_group.py:106:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+105	        if self.model_type == "explicit":
+106	            actuator_model_cls = eval(self.cfg.model_cfg.cls_name)
+107	            self.model = actuator_model_cls(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\actuators\group\actuator_group.py:329:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+328	            # assert that model is created
+329	            assert self.model is not None, "Actuator model is not created."
+330	            # update state and command
+331	            self.model.set_command(dof_pos=group_des_dof_pos, dof_vel=group_des_dof_vel, torque_ff=group_des_dof_torque)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\actuators\group\actuator_group.py:433:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+432	            # assert that model is created
+433	            assert self.model is not None, "Actuator model is not created."
+434	            # set values into the explicit models
+435	            self.model.set_command(p_gains=stiffness, d_gains=damping)
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\actuators\model\actuator_physics.py:286:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+285	        if isinstance(self.cfg.gear_ratio, str):
+286	            self._gear_ratio_fn = eval(self.cfg.gear_ratio)
+287	        else:
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\robots\robot_base.py:444:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+443	            # create actuator group
+444	            actuator_group_cls = eval(group_cfg.cls_name)
+445	            actuator_group: ActuatorGroup = actuator_group_cls(cfg=group_cfg, view=self.articulations)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\utils\io\pkl.py:10:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+9	import os
+10	import pickle
+11	from typing import Any
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\omni\isaac\orbit\utils\io\pkl.py:29:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+28	    with open(filename, "rb") as f:
+29	        data = pickle.load(f)
+30	    return data
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_camera.py:483:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+482	            # create prim
+483	            prim_type = random.choice(["Cube", "Sphere", "Cylinder"])
+484	            _ = prim_utils.create_prim(
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_camera.py:496:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+495	            # set random color
+496	            color = Gf.Vec3f(random.random(), random.random(), random.random())
+497	            geom_prim.CreateDisplayColorAttr()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_camera.py:496:46
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+495	            # set random color
+496	            color = Gf.Vec3f(random.random(), random.random(), random.random())
+497	            geom_prim.CreateDisplayColorAttr()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_camera.py:496:63
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+495	            # set random color
+496	            color = Gf.Vec3f(random.random(), random.random(), random.random())
+497	            geom_prim.CreateDisplayColorAttr()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_height_scanner.py:291:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+290	            position = np.matmul(rotm, np.asarray([0.25, 0.25, 0.1 + 0.05 * i]))
+291	            color = np.array([random.random(), random.random(), random.random()])
+292	            # create prim
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_height_scanner.py:291:47
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+290	            position = np.matmul(rotm, np.asarray([0.25, 0.25, 0.1 + 0.05 * i]))
+291	            color = np.array([random.random(), random.random(), random.random()])
+292	            # create prim
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\extensions\omni.isaac.orbit\test\test_height_scanner.py:291:64
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+290	            position = np.matmul(rotm, np.asarray([0.25, 0.25, 0.1 + 0.05 * i]))
+291	            color = np.array([random.random(), random.random(), random.random()])
+292	            # create prim
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\standalone\demo\play_camera.py:82:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+81	        # create prim
+82	        prim_type = random.choice(["Cube", "Sphere", "Cylinder"])
+83	        _ = prim_utils.create_prim(
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\standalone\demo\play_camera.py:95:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+94	        # set random color
+95	        color = Gf.Vec3f(random.random(), random.random(), random.random())
+96	        geom_prim.CreateDisplayColorAttr()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\standalone\demo\play_camera.py:95:42
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+94	        # set random color
+95	        color = Gf.Vec3f(random.random(), random.random(), random.random())
+96	        geom_prim.CreateDisplayColorAttr()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: orbit\source\standalone\demo\play_camera.py:95:59
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+94	        # set random color
+95	        color = Gf.Vec3f(random.random(), random.random(), random.random())
+96	        geom_prim.CreateDisplayColorAttr()
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: orbit\source\standalone\workflows\rl_games\config.py:45:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+44	    with open(config_file, encoding="utf-8") as f:
+45	        cfg = yaml.load(f, Loader=yaml.Loader)
+46	
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: orbit\source\standalone\workflows\rsl_rl\config.py:46:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+45	    with open(config_file, encoding="utf-8") as f:
+46	        cfg = yaml.load(f, Loader=yaml.FullLoader)
+47	
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: orbit\source\standalone\workflows\sb3\config.py:44:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+43	    with open(config_file, encoding="utf-8") as f:
+44	        cfg = yaml.load(f, Loader=yaml.FullLoader)
+45	    # check config is valid
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\standalone\workflows\sb3\config.py:53:30
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+52	        if kwargs_key in cfg and isinstance(cfg[kwargs_key], str):
+53	            cfg[kwargs_key] = eval(cfg[kwargs_key])
+54	
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: orbit\source\standalone\workflows\skrl\config.py:52:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+51	    with open(config_file, encoding="utf-8") as f:
+52	        cfg = yaml.load(f, Loader=yaml.Loader)
+53	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\standalone\workflows\skrl\config.py:86:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+85	                if key in _direct_eval:
+86	                    d[key] = eval(value)
+87	                elif key.endswith("_kwargs"):
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\tools\process_meshes_to_obj.py:12:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+11	import shutil
+12	import subprocess
+13	from typing import List
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: orbit\source\tools\process_meshes_to_obj.py:59:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+58	    # run command
+59	    subprocess.run(command_exe_list)
+60	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 15996
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 16
+		Medium: 10
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 26
+Files skipped (0):

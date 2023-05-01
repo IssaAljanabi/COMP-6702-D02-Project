@@ -1,0 +1,2047 @@
+Run started:2023-04-23 05:50:32.925390
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\config\cfgnode.py:499:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+498	        logger.debug(msg)
+499	    assert cond, msg
+500	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:281:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+280	        )
+281	    assert (
+282	        trans1.shape == trans2.shape
+283	    ), "Both input transformations must have the same shape."
+284	
+285	    # Unpack into rmat, tvec
+286	    rmat1: torch.Tensor = trans1[..., :3, :3]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:514:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+513	
+514	    assert type(height) == int, "Height must be an integer."
+515	    assert type(width) == int, "Width must be an integer."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:515:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+514	    assert type(height) == int, "Height must be an integer."
+515	    assert type(width) == int, "Width must be an integer."
+516	
+517	    dtype = pixel_coords.dtype
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:560:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+559	
+560	    assert type(height) == int, "Height must be an integer."
+561	    assert type(width) == int, "Width must be an integer."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:561:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+560	    assert type(height) == int, "Height must be an integer."
+561	    assert type(width) == int, "Width must be an integer."
+562	
+563	    dtype = pixel_coords_norm.dtype
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:632:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+631	    """
+632	    assert torch.is_tensor(
+633	        cam_coords_src
+634	    ), "cam_coords_src must be of type torch.Tensor."
+635	    assert cam_coords_src.dim() in (3, 4), "cam_coords_src must have 3 or 4 dimensions."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:635:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+634	    ), "cam_coords_src must be of type torch.Tensor."
+635	    assert cam_coords_src.dim() in (3, 4), "cam_coords_src must have 3 or 4 dimensions."
+636	    assert cam_coords_src.shape[-1] == 3
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:636:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+635	    assert cam_coords_src.dim() in (3, 4), "cam_coords_src must have 3 or 4 dimensions."
+636	    assert cam_coords_src.shape[-1] == 3
+637	    assert torch.is_tensor(dst_proj_src), "dst_proj_src must be of type torch.Tensor."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:637:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+636	    assert cam_coords_src.shape[-1] == 3
+637	    assert torch.is_tensor(dst_proj_src), "dst_proj_src must be of type torch.Tensor."
+638	    assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:638:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+637	    assert torch.is_tensor(dst_proj_src), "dst_proj_src must be of type torch.Tensor."
+638	    assert (
+639	        dst_proj_src.dim() == 2
+640	        and dst_proj_src.shape[0] == 4
+641	        and dst_proj_src.shape[0] == 4
+642	    )
+643	
+644	    _, h, w, _ = cam_coords_src.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:690:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+689	        )
+690	    assert (
+691	        intrinsics_inv.shape[0] == 4
+692	        and intrinsics_inv.shape[1] == 4
+693	        and intrinsics_inv.dim() == 2
+694	    )
+695	
+696	    cam_coords: torch.Tensor = transform_pts_3d(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:719:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+718	    """
+719	    assert torch.is_tensor(
+720	        cam_coords_src
+721	    ), "cam_coords_src must be of type torch.Tensor."
+722	    # assert cam_coords_src.dim() > 3, 'cam_coords_src must have > 3 dimensions.'
+723	    assert cam_coords_src.shape[-1] == 3
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:723:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+722	    # assert cam_coords_src.dim() > 3, 'cam_coords_src must have > 3 dimensions.'
+723	    assert cam_coords_src.shape[-1] == 3
+724	    assert torch.is_tensor(P), "dst_proj_src must be of type torch.Tensor."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:724:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+723	    assert cam_coords_src.shape[-1] == 3
+724	    assert torch.is_tensor(P), "dst_proj_src must be of type torch.Tensor."
+725	    assert P.dim() >= 2 and P.shape[-1] == 4 and P.shape[-2] == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\geometryutils.py:725:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+724	    assert torch.is_tensor(P), "dst_proj_src must be of type torch.Tensor."
+725	    assert P.dim() >= 2 and P.shape[-1] == 4 and P.shape[-2] == 4
+726	
+727	    pts: torch.Tensor = transform_pts_nd_KF(cam_coords_src, P)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\se3utils.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    """
+16	    assert torch.is_tensor(omega), "Input must be of type torch.tensor."
+17	
+18	    omega_hat = torch.zeros(3, 3).type(omega.dtype).to(omega.device)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\se3utils.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	
+34	    assert torch.is_tensor(xi), "Input must be of type torch.tensor."
+35	
+36	    v = xi[:3]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\se3utils.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	
+53	    assert torch.is_tensor(omega), "Input must be of type torch.Tensor."
+54	
+55	    omega_hat = so3_hat(omega)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\geometry\se3utils.py:83:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	
+83	    assert torch.is_tensor(xi), "Input must be of type torch.tensor."
+84	
+85	    v = xi[:3]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\gradslam\structures\rgbdimages.py:636:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+635	            return None
+636	        assert torch.is_tensor(tensor)
+637	        return (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\common.py:21:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	def load_test_data(channels_first=False, batch_size=2):
+21	    assert isinstance(batch_size, int) and batch_size < 3 and batch_size > 0
+22	    data_dir_files = os.listdir(DATA_DIR)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\common.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    data_dir_files = os.listdir(DATA_DIR)
+23	    assert 'colors.npy' in data_dir_files, f"'colors.npy' not found (DATA_DIR='{DATA_DIR}')\n{data_dir_files}\n"
+24	    colors = torch.from_numpy(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	            a.bar = 1
+60	        assert a.is_frozen()
+61	        assert a.foo == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:61:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+60	        assert a.is_frozen()
+61	        assert a.foo == 0
+62	        a.defrost()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:63:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	        a.defrost()
+63	        assert not a.is_frozen()
+64	        a.foo = 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	        a.foo = 1
+65	        assert a.foo == 1
+66	
+67	        # Recursively immutable
+68	        a.level1 = CN()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:73:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	        a.freeze()
+73	        assert a.is_frozen()
+74	        with pytest.raises(AttributeError):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:77:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	            a.level1.bar = 1
+77	        assert a.level1.level2.foo == 0
+78	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:86:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	        cfg2.MODEL.TYPE = "a_foo_model"
+86	        assert cfg.MODEL.TYPE == s
+87	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:95:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	        cfg.merge_from_other_cfg(cfg2)
+95	        assert cfg.MODEL.TYPE == s
+96	
+97	        # Test: merge from yaml
+98	        s = "dummy1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	        cfg.merge_from_other_cfg(cfg2)
+109	        assert cfg.MODEL.TYPE == s
+110	
+111	        # Test: merge with an invalid key
+112	        s = "dummy3"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:124:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+123	        cfg.merge_from_other_cfg(cfg2)
+124	        assert type(cfg.TRAIN.SCALES) is tuple
+125	        assert cfg.TRAIN.SCALES[0] == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:125:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+124	        assert type(cfg.TRAIN.SCALES) is tuple
+125	        assert cfg.TRAIN.SCALES[0] == 1
+126	
+127	        # Test: merge with invalid type
+128	        cfg2 = CN()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:141:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+140	            cfg.MODEL.TYPE = "dummy"
+141	            assert cfg.MODEL.TYPE != s
+142	            cfg.merge_from_file(f.name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:143:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	            cfg.merge_from_file(f.name)
+143	            assert cfg.MODEL.TYPE == s
+144	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:148:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+147	        opts = ["TRAIN.SCALES", "(100, )", "MODEL.TYPE", "foobar", "NUM_GPUS", 2]
+148	        assert len(cfg.TRAIN.SCALES) > 0
+149	        assert cfg.TRAIN.SCALES[0] != 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:149:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+148	        assert len(cfg.TRAIN.SCALES) > 0
+149	        assert cfg.TRAIN.SCALES[0] != 100
+150	        assert cfg.MODEL.TYPE != "foobar"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:150:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+149	        assert cfg.TRAIN.SCALES[0] != 100
+150	        assert cfg.MODEL.TYPE != "foobar"
+151	        assert cfg.NUM_GPUS != 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:151:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+150	        assert cfg.MODEL.TYPE != "foobar"
+151	        assert cfg.NUM_GPUS != 2
+152	        cfg.merge_from_list(opts)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:153:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	        cfg.merge_from_list(opts)
+153	        assert type(cfg.TRAIN.SCALES) is tuple
+154	        assert len(cfg.TRAIN.SCALES) == 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:154:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+153	        assert type(cfg.TRAIN.SCALES) is tuple
+154	        assert len(cfg.TRAIN.SCALES) == 1
+155	        assert cfg.TRAIN.SCALES[0] == 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:155:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+154	        assert len(cfg.TRAIN.SCALES) == 1
+155	        assert cfg.TRAIN.SCALES[0] == 100
+156	        assert cfg.MODEL.TYPE == "foobar"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:156:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	        assert cfg.TRAIN.SCALES[0] == 100
+156	        assert cfg.MODEL.TYPE == "foobar"
+157	        assert cfg.NUM_GPUS == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:157:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	        assert cfg.MODEL.TYPE == "foobar"
+157	        assert cfg.NUM_GPUS == 2
+158	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:232:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+231	        cfg.merge_from_file("tests/data/samplecfg.py")
+232	        assert cfg.TRAIN.HYPERPARAM_1 == 0.9
+233	        # Case 2: exports dict
+234	        cfg = get_cfg()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:236:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+235	        cfg.merge_from_file("tests/data/samplecfg_dict.py")
+236	        assert cfg.TRAIN.HYPERPARAM_1 == 0.9
+237	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:266:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+265	        cfg = get_cfg()
+266	        assert str(cfg) == expected_str
+267	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:271:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+270	        cfg.merge_from_file("tests/data/cfg_new_allowed.yaml")
+271	        assert cfg.KWARGS.a == 1
+272	        assert cfg.KWARGS.B.c == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:272:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+271	        assert cfg.KWARGS.a == 1
+272	        assert cfg.KWARGS.B.c == 2
+273	        assert cfg.KWARGS.B.D.e == "3"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\config\test_cfgnode.py:273:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+272	        assert cfg.KWARGS.B.c == 2
+273	        assert cfg.KWARGS.B.D.e == "3"
+274	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:30:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	        norm_img = normalize_image(img)
+30	        assert norm_img.dtype == np.float
+31	        assert np.max(norm_img) < 1.000000001
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:31:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	        assert norm_img.dtype == np.float
+31	        assert np.max(norm_img) < 1.000000001
+32	        assert np.min(norm_img) > -1e-10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:32:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	        assert np.max(norm_img) < 1.000000001
+32	        assert np.min(norm_img) > -1e-10
+33	        assert np.sum(norm_img > 0.5) > 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:33:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	        assert np.min(norm_img) > -1e-10
+33	        assert np.sum(norm_img > 0.5) > 100
+34	        assert np.sum(norm_img < 0.5) > 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:34:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	        assert np.sum(norm_img > 0.5) > 100
+34	        assert np.sum(norm_img < 0.5) > 100
+35	
+36	        # torch
+37	        img = (torch.rand(*imsize) * 255).to(torch.uint8)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	        norm_img = normalize_image(img)
+39	        assert norm_img.dtype == torch.float
+40	        assert torch.max(norm_img) < 1.000000001
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:40:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	        assert norm_img.dtype == torch.float
+40	        assert torch.max(norm_img) < 1.000000001
+41	        assert torch.min(norm_img) > -1e-10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	        assert torch.max(norm_img) < 1.000000001
+41	        assert torch.min(norm_img) > -1e-10
+42	        assert torch.sum(norm_img > 0.5) > 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	        assert torch.min(norm_img) > -1e-10
+42	        assert torch.sum(norm_img > 0.5) > 100
+43	        assert torch.sum(norm_img < 0.5) > 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	        assert torch.sum(norm_img > 0.5) > 100
+43	        assert torch.sum(norm_img < 0.5) > 100
+44	
+45	        # type errors
+46	        with pytest.raises(TypeError):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:62:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	        chw_img = channels_first(hwc_img)
+62	        assert hwc_img.dtype == chw_img.dtype
+63	        assert hwc_img.shape == (H, W, C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:63:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	        assert hwc_img.dtype == chw_img.dtype
+63	        assert hwc_img.shape == (H, W, C)
+64	        assert chw_img.shape == (C, H, W)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:64:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	        assert hwc_img.shape == (H, W, C)
+64	        assert chw_img.shape == (C, H, W)
+65	
+66	        hwc_img = np.random.uniform(0, 255, imsize2).astype(np.uint8)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:68:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	        chw_img = channels_first(hwc_img)
+68	        assert hwc_img.dtype == chw_img.dtype
+69	        assert hwc_img.shape == (N, L, H, W, C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	        assert hwc_img.dtype == chw_img.dtype
+69	        assert hwc_img.shape == (N, L, H, W, C)
+70	        assert chw_img.shape == (N, L, C, H, W)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:70:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	        assert hwc_img.shape == (N, L, H, W, C)
+70	        assert chw_img.shape == (N, L, C, H, W)
+71	
+72	        # torch
+73	        hwc_img = (torch.rand(*imsize1) * 255).to(torch.uint8)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:75:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	        chw_img = channels_first(hwc_img)
+75	        assert hwc_img.dtype == chw_img.dtype
+76	        assert hwc_img.shape == (H, W, C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:76:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+75	        assert hwc_img.dtype == chw_img.dtype
+76	        assert hwc_img.shape == (H, W, C)
+77	        assert chw_img.shape == (C, H, W)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:77:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+76	        assert hwc_img.shape == (H, W, C)
+77	        assert chw_img.shape == (C, H, W)
+78	
+79	        hwc_img = (torch.rand(*imsize2) * 255).to(torch.uint8)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:81:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	        chw_img = channels_first(hwc_img)
+81	        assert hwc_img.dtype == chw_img.dtype
+82	        assert hwc_img.shape == (N, L, H, W, C)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:82:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+81	        assert hwc_img.dtype == chw_img.dtype
+82	        assert hwc_img.shape == (N, L, H, W, C)
+83	        assert chw_img.shape == (N, L, C, H, W)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:83:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	        assert hwc_img.shape == (N, L, H, W, C)
+83	        assert chw_img.shape == (N, L, C, H, W)
+84	
+85	        # type errors
+86	        with pytest.raises(TypeError):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:98:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	            chw_img = channels_first(hwc_img)
+98	        assert hwc_img.dtype == chw_img.dtype
+99	        assert hwc_img.shape == (2, 10, 3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:99:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+98	        assert hwc_img.dtype == chw_img.dtype
+99	        assert hwc_img.shape == (2, 10, 3)
+100	        assert chw_img.shape == (3, 2, 10)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\datasets\test_datautils.py:100:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+99	        assert hwc_img.shape == (2, 10, 3)
+100	        assert chw_img.shape == (3, 2, 10)
+101	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:104:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+103	        pixel_coords = gs.project_points(cam_coords, proj_mat)
+104	        assert pixel_coords.shape == (10, 2)
+105	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:113:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+112	        pixel_coords = gs.project_points(cam_coords, proj_mat)
+113	        assert pixel_coords.shape == (2, 10, 2)
+114	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:122:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	        pixel_coords = gs.project_points(cam_coords, proj_mat)
+122	        assert pixel_coords.shape == (2, 10, 2)
+123	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:206:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+205	        cam_coords = gs.unproject_points(pixel_coords, intrinsics_inv, depths)
+206	        assert cam_coords.shape == (10, 3)
+207	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:216:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+215	        cam_coords = gs.unproject_points(pixel_coords, intrinsics_inv, depths)
+216	        assert cam_coords.shape == (2, 10, 3)
+217	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:226:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+225	        cam_coords = gs.unproject_points(pixel_coords, intrinsics_inv, depths)
+226	        assert cam_coords.shape == (2, 10, 3)
+227	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:286:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+285	
+286	        assert test_res.shape == intrinsics.shape
+287	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:303:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+302	
+303	        assert test_res.shape == intrinsics.shape
+304	        assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:304:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+303	        assert test_res.shape == intrinsics.shape
+304	        assert (
+305	            (test_res - correct_res).abs().sum() / correct_res.abs().sum()
+306	        ).item() < 1e-2
+307	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:327:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+326	
+327	        assert test_res.shape == intrinsics.shape
+328	        assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\geometry\test_projutils.py:328:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+327	        assert test_res.shape == intrinsics.shape
+328	        assert (
+329	            (test_res - correct_res).abs().sum() / correct_res.abs().sum()
+330	        ).item() < 1e-2
+331	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_gradicp.py:59:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	
+59	        assert odom_transform.shape == transform.shape
+60	        assert_allclose(odom_transform, transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_groundtruth.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	
+60	        assert odom_transform.shape == rgbdimages[:, t + 1].poses.shape
+61	        assert_allclose(new_pose.squeeze(), rgbdimages[:, t + 1].poses.squeeze())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icp.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	
+51	        assert odom_transform.shape == transform.shape
+52	        assert_allclose(odom_transform, transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:48:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+47	        res = A @ x
+48	        assert res.shape == b.shape
+49	        assert_allclose(res, b)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:339:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+338	
+339	        assert t.shape == transform.shape
+340	        assert_allclose(t, transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:386:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+385	
+386	        assert t.shape == transform.shape
+387	        assert_allclose(t, transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:592:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+591	
+592	        assert t.shape == transform.shape
+593	        assert_allclose(t, transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:639:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+638	
+639	        assert t.shape == transform.shape
+640	        assert_allclose(t, transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:848:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+847	
+848	        assert ds_pointclouds.points_padded.shape == groundtruth_points.shape
+849	        assert ds_pointclouds.normals_padded.shape == groundtruth_normals.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:849:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+848	        assert ds_pointclouds.points_padded.shape == groundtruth_points.shape
+849	        assert ds_pointclouds.normals_padded.shape == groundtruth_normals.shape
+850	        assert ds_pointclouds.colors_padded.shape == groundtruth_colors.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:850:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+849	        assert ds_pointclouds.normals_padded.shape == groundtruth_normals.shape
+850	        assert ds_pointclouds.colors_padded.shape == groundtruth_colors.shape
+851	        assert_allclose(ds_pointclouds.points_padded, groundtruth_points)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:865:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+864	
+865	        assert ds_pointclouds.points_padded.shape == groundtruth_points.shape
+866	        assert ds_pointclouds.normals_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:866:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+865	        assert ds_pointclouds.points_padded.shape == groundtruth_points.shape
+866	        assert ds_pointclouds.normals_padded is None
+867	        assert_allclose(ds_pointclouds.points_padded, groundtruth_points)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:1008:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1007	
+1008	        assert ds_pointclouds.points_padded.shape == groundtruth_points.shape
+1009	        assert ds_pointclouds.colors_padded.shape == groundtruth_colors.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:1009:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1008	        assert ds_pointclouds.points_padded.shape == groundtruth_points.shape
+1009	        assert ds_pointclouds.colors_padded.shape == groundtruth_colors.shape
+1010	        assert ds_pointclouds.normals_padded.shape == groundtruth_normals.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\odometry\test_icputils.py:1010:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1009	        assert ds_pointclouds.colors_padded.shape == groundtruth_colors.shape
+1010	        assert ds_pointclouds.normals_padded.shape == groundtruth_normals.shape
+1011	        assert_allclose(ds_pointclouds.points_padded, groundtruth_points)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:51:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	
+51	        assert alpha.shape == groundtruth.shape
+52	        assert_allclose(alpha, groundtruth)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:53:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	        assert_allclose(alpha, groundtruth)
+53	        assert alpha.gt(0).all().item()
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:75:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	        sigma = sigma.requires_grad_().type(torch.float64)
+75	        assert gradcheck(fusionutils.get_alpha, (pts, sigma), raise_exception=True)
+76	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:325:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+324	
+325	        assert pc2im_bnhw.shape[0] == rgbdimages.valid_depth_mask[:, 0].sum()
+326	        projected_colors = torch.zeros_like(colors.to(device))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:474:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+473	
+474	        assert frame_normals.abs().max() == 0
+475	        assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:475:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+474	        assert frame_normals.abs().max() == 0
+475	        assert (
+476	            pc2im_bnhw_active.shape[0] - pc2im_bnhw_similar.shape[0]
+477	            == (
+478	                pointclouds.normals_list[0].eq(0).all(-1).sum()
+479	                + pointclouds.normals_list[1].eq(0).all(-1).sum()
+480	            ).item()
+481	        )
+482	        assert pointclouds.points_list[0].eq(0).all(-1).sum().item() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:482:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+481	        )
+482	        assert pointclouds.points_list[0].eq(0).all(-1).sum().item() == 0
+483	        assert pointclouds.points_list[1].eq(0).all(-1).sum().item() == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:483:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+482	        assert pointclouds.points_list[0].eq(0).all(-1).sum().item() == 0
+483	        assert pointclouds.points_list[1].eq(0).all(-1).sum().item() == 0
+484	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:781:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+780	
+781	        assert pc2im_bnhw_unique.shape[0] == pc2im_bnhw_similar.shape[0]
+782	        assert_allclose(pc2im_bnhw_unique, pc2im_bnhw_similar)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:907:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+906	        )
+907	        assert valid_zero_normals.abs().sum() == valid_zero_normals.sum()
+908	        assert (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:908:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+907	        assert valid_zero_normals.abs().sum() == valid_zero_normals.sum()
+908	        assert (
+909	            rgbdimages.vertex_map[:, 0].eq(0).all(-1).int()
+910	            - (rgbdimages.valid_depth_mask[:, 0] == False).squeeze(-1).int()
+911	        ).abs().sum() == 0
+912	        num_valid_zero_normals = valid_zero_normals.sum()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:913:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+912	        num_valid_zero_normals = valid_zero_normals.sum()
+913	        assert pc2im_bnhw.shape[0] == num_valid_points - num_valid_zero_normals
+914	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:1162:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1161	        updated_num_points = pointclouds.num_points_per_pointcloud
+1162	        assert updated_num_points.gt(init_num_points).all()
+1163	
+1164	        # change params s.t. more points get fused
+1165	        dist_th = 0.4 ** 0.5
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:1175:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1174	        updated_num_points2 = pointclouds2.num_points_per_pointcloud
+1175	        assert updated_num_points2.gt(init_num_points2).all()
+1176	        assert updated_num_points.gt(updated_num_points2).all()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\slam\test_fusionutils.py:1176:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1175	        assert updated_num_points2.gt(init_num_points2).all()
+1176	        assert updated_num_points.gt(updated_num_points2).all()
+1177	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1058:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1057	        o3d_single = pointclouds.open3d(2)
+1058	        assert isinstance(o3d_single, o3d.geometry.PointCloud)
+1059	
+1060	        # pointcloud with attributes
+1061	        B = 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1070:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1069	        o3d_single = pointclouds.open3d(2)
+1070	        assert isinstance(o3d_single, o3d.geometry.PointCloud)
+1071	        colors = np.asarray(o3d_single.colors)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1072:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1071	        colors = np.asarray(o3d_single.colors)
+1072	        assert np.max(colors) < 1.01
+1073	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1108	        pointclouds.points_list = pointclouds2.points_list
+1109	        assert pointclouds._points_padded is None
+1110	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1129:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1128	        pointclouds.normals_list = pointclouds2.normals_list
+1129	        assert pointclouds._normals_padded is None
+1130	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1149:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1148	        pointclouds.colors_list = pointclouds2.colors_list
+1149	        assert pointclouds._colors_padded is None
+1150	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1169:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1168	        pointclouds.features_list = pointclouds2.features_list
+1169	        assert pointclouds._features_padded is None
+1170	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1189:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1188	        pointclouds.points_padded = pointclouds2.points_padded
+1189	        assert pointclouds._points_list is None
+1190	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1209:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1208	        pointclouds.normals_padded = pointclouds2.normals_padded
+1209	        assert pointclouds._normals_list is None
+1210	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1229:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1228	        pointclouds.colors_padded = pointclouds2.colors_padded
+1229	        assert pointclouds._colors_list is None
+1230	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1249:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1248	        pointclouds.features_padded = pointclouds2.features_padded
+1249	        assert pointclouds._features_list is None
+1250	        for b in range(B):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1272:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1271	
+1272	        assert pointclouds.points_list is None
+1273	        assert pointclouds.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1273:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1272	        assert pointclouds.points_list is None
+1273	        assert pointclouds.points_padded is None
+1274	
+1275	        # indexing
+1276	        with self.assertRaises(IndexError):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1281:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1280	        pointclouds2 = pointclouds + 5
+1281	        assert pointclouds2.points_list is None
+1282	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1282:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1281	        assert pointclouds2.points_list is None
+1282	        assert pointclouds2.points_padded is None
+1283	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1283:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1282	        assert pointclouds2.points_padded is None
+1283	        assert not pointclouds2.has_points
+1284	
+1285	        pointclouds2 = pointclouds * 5
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1286:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1285	        pointclouds2 = pointclouds * 5
+1286	        assert pointclouds2.points_list is None
+1287	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1287:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1286	        assert pointclouds2.points_list is None
+1287	        assert pointclouds2.points_padded is None
+1288	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1288:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1287	        assert pointclouds2.points_padded is None
+1288	        assert not pointclouds2.has_points
+1289	
+1290	        pointclouds2 = pointclouds / 5
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1291:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1290	        pointclouds2 = pointclouds / 5
+1291	        assert pointclouds2.points_list is None
+1292	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1292:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1291	        assert pointclouds2.points_list is None
+1292	        assert pointclouds2.points_padded is None
+1293	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1293:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1292	        assert pointclouds2.points_padded is None
+1293	        assert not pointclouds2.has_points
+1294	
+1295	        transform = torch.Tensor(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1314:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1313	        pointclouds2 = pointclouds.rotate(rmat)
+1314	        assert pointclouds2.points_list is None
+1315	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1315:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1314	        assert pointclouds2.points_list is None
+1315	        assert pointclouds2.points_padded is None
+1316	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1316:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1315	        assert pointclouds2.points_padded is None
+1316	        assert not pointclouds2.has_points
+1317	
+1318	        pointclouds2 = pointclouds.offset_(tvec)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1319:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1318	        pointclouds2 = pointclouds.offset_(tvec)
+1319	        assert pointclouds2.points_list is None
+1320	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1320:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1319	        assert pointclouds2.points_list is None
+1320	        assert pointclouds2.points_padded is None
+1321	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1321:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1320	        assert pointclouds2.points_padded is None
+1321	        assert not pointclouds2.has_points
+1322	
+1323	        pointclouds2 = pointclouds.transform(transform)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1324:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1323	        pointclouds2 = pointclouds.transform(transform)
+1324	        assert pointclouds2.points_list is None
+1325	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1325:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1324	        assert pointclouds2.points_list is None
+1325	        assert pointclouds2.points_padded is None
+1326	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1326:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1325	        assert pointclouds2.points_padded is None
+1326	        assert not pointclouds2.has_points
+1327	
+1328	        pointclouds2 = pointclouds.pinhole_projection(intrinsics0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1329:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1328	        pointclouds2 = pointclouds.pinhole_projection(intrinsics0)
+1329	        assert pointclouds2.points_list is None
+1330	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1330:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1329	        assert pointclouds2.points_list is None
+1330	        assert pointclouds2.points_padded is None
+1331	        assert not pointclouds2.has_points
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1331:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1330	        assert pointclouds2.points_padded is None
+1331	        assert not pointclouds2.has_points
+1332	
+1333	        # properties
+1334	        assert len(pointclouds) == 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1334:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1333	        # properties
+1334	        assert len(pointclouds) == 0
+1335	        assert pointclouds.points_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1335:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1334	        assert len(pointclouds) == 0
+1335	        assert pointclouds.points_list is None
+1336	        assert pointclouds.normals_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1336:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1335	        assert pointclouds.points_list is None
+1336	        assert pointclouds.normals_list is None
+1337	        assert pointclouds.colors_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1337:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1336	        assert pointclouds.normals_list is None
+1337	        assert pointclouds.colors_list is None
+1338	        assert pointclouds.features_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1338:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1337	        assert pointclouds.colors_list is None
+1338	        assert pointclouds.features_list is None
+1339	        assert pointclouds.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1339:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1338	        assert pointclouds.features_list is None
+1339	        assert pointclouds.points_padded is None
+1340	        assert pointclouds.normals_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1340:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1339	        assert pointclouds.points_padded is None
+1340	        assert pointclouds.normals_padded is None
+1341	        assert pointclouds.colors_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1341:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1340	        assert pointclouds.normals_padded is None
+1341	        assert pointclouds.colors_padded is None
+1342	        assert pointclouds.features_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1342:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1341	        assert pointclouds.colors_padded is None
+1342	        assert pointclouds.features_padded is None
+1343	        assert pointclouds.nonpad_mask is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1343:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1342	        assert pointclouds.features_padded is None
+1343	        assert pointclouds.nonpad_mask is None
+1344	        assert pointclouds.num_points_per_pointcloud == torch.tensor([0], device=device)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1344:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1343	        assert pointclouds.nonpad_mask is None
+1344	        assert pointclouds.num_points_per_pointcloud == torch.tensor([0], device=device)
+1345	
+1346	        # property setters
+1347	
+1348	        # clone/detach/to
+1349	        pointclouds2 = pointclouds.clone()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1350:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1349	        pointclouds2 = pointclouds.clone()
+1350	        assert pointclouds2.points_list is None
+1351	        assert pointclouds2.normals_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1351:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1350	        assert pointclouds2.points_list is None
+1351	        assert pointclouds2.normals_list is None
+1352	        assert pointclouds2.colors_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1352:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1351	        assert pointclouds2.normals_list is None
+1352	        assert pointclouds2.colors_list is None
+1353	        assert pointclouds2.features_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1353:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1352	        assert pointclouds2.colors_list is None
+1353	        assert pointclouds2.features_list is None
+1354	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1354:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1353	        assert pointclouds2.features_list is None
+1354	        assert pointclouds2.points_padded is None
+1355	        assert pointclouds2.normals_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1355:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1354	        assert pointclouds2.points_padded is None
+1355	        assert pointclouds2.normals_padded is None
+1356	        assert pointclouds2.colors_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1356:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1355	        assert pointclouds2.normals_padded is None
+1356	        assert pointclouds2.colors_padded is None
+1357	        assert pointclouds2.features_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1357:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1356	        assert pointclouds2.colors_padded is None
+1357	        assert pointclouds2.features_padded is None
+1358	        assert pointclouds2.nonpad_mask is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1358:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1357	        assert pointclouds2.features_padded is None
+1358	        assert pointclouds2.nonpad_mask is None
+1359	        assert pointclouds2.device == pointclouds.device
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1359:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1358	        assert pointclouds2.nonpad_mask is None
+1359	        assert pointclouds2.device == pointclouds.device
+1360	
+1361	        pointclouds2 = pointclouds.detach()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1362:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1361	        pointclouds2 = pointclouds.detach()
+1362	        assert pointclouds2.points_list is None
+1363	        assert pointclouds2.normals_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1363:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1362	        assert pointclouds2.points_list is None
+1363	        assert pointclouds2.normals_list is None
+1364	        assert pointclouds2.colors_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1364:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1363	        assert pointclouds2.normals_list is None
+1364	        assert pointclouds2.colors_list is None
+1365	        assert pointclouds2.features_list is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1365:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1364	        assert pointclouds2.colors_list is None
+1365	        assert pointclouds2.features_list is None
+1366	        assert pointclouds2.points_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1366:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1365	        assert pointclouds2.features_list is None
+1366	        assert pointclouds2.points_padded is None
+1367	        assert pointclouds2.normals_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1367:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1366	        assert pointclouds2.points_padded is None
+1367	        assert pointclouds2.normals_padded is None
+1368	        assert pointclouds2.colors_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1368:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1367	        assert pointclouds2.normals_padded is None
+1368	        assert pointclouds2.colors_padded is None
+1369	        assert pointclouds2.features_padded is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1369:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1368	        assert pointclouds2.colors_padded is None
+1369	        assert pointclouds2.features_padded is None
+1370	        assert pointclouds2.nonpad_mask is None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1370:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1369	        assert pointclouds2.features_padded is None
+1370	        assert pointclouds2.nonpad_mask is None
+1371	        assert pointclouds2.device == pointclouds.device
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1371:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1370	        assert pointclouds2.nonpad_mask is None
+1371	        assert pointclouds2.device == pointclouds.device
+1372	
+1373	        assert pointclouds.to("cpu").device == torch.device("cpu")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1373:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1372	
+1373	        assert pointclouds.to("cpu").device == torch.device("cpu")
+1374	
+1375	        # append points
+1376	        B = 10
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_pointclouds.py:1392:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+1391	            N2_b = pointclouds2.num_points_per_pointcloud[b]
+1392	            assert N1_b == N2_b
+1393	
+1394	            # points_list
+1395	            self.assertTrue(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:103:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	                        # self.assertClose() fails here, probably because not close enough?
+103	                        assert (test_unproj_res - correct_unproj_res).abs().max() < 1e-4
+104	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:105:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104	
+105	                assert ((gt_vmap - vertex_map.cpu().numpy()) ** 2).sum() < 1e-2
+106	                if use_poses:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:107:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	                if use_poses:
+107	                    assert (
+108	                        (gt_global_vmap - global_vertex_map.cpu().numpy()) ** 2
+109	                    ).sum() < 1e-2
+110	                else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:111:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	                else:
+111	                    assert (
+112	                        (gt_vmap - global_vertex_map.cpu().numpy()) ** 2
+113	                    ).sum() < 1e-2
+114	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:140:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+139	                )
+140	                assert ((global_normal_map - remove_missing) ** 2).sum().item() < 1e-5
+141	                if channels_first:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:152:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	
+152	                assert diff(gt_nmap, nmap)
+153	                if use_poses:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:163:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+162	
+163	                    assert diff(gt_global_nmap, global_nmap)
+164	                else:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_rgbdimages.py:165:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+164	                else:
+165	                    assert diff(gt_nmap, global_nmap)
+166	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gradslam\tests\structures\test_utils.py:64:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	                    m += 1
+64	                assert ((filtered_points[n] - unfiltered_points[m]) ** 2).sum() < 1e-12
+65	                m += 1
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 13928
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 194
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 194
+Files skipped (0):

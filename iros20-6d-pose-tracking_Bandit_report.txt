@@ -1,0 +1,274 @@
+Run started:2023-04-23 05:55:21.803469
+
+Test results:
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: iros20-6d-pose-tracking\Utils.py:401:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+400	
+401	  theta = random.uniform(0, 1) * math.pi * 2
+402	  phi = math.acos((2 * (random.uniform(0, 1))) - 1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: iros20-6d-pose-tracking\Utils.py:402:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+401	  theta = random.uniform(0, 1) * math.pi * 2
+402	  phi = math.acos((2 * (random.uniform(0, 1))) - 1)
+403	  return sph2cart(phi, theta, 1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: iros20-6d-pose-tracking\Utils.py:407:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+406	  eye = random_direction()
+407	  distance = random.uniform(0, 1) * (max_radius - min_radius) + min_radius
+408	  eye *= distance
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: iros20-6d-pose-tracking\Utils.py:430:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+429	
+430	  angle = random.uniform(0, 1) * math.pi * 2
+431	  cosa = math.cos(angle)
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: iros20-6d-pose-tracking\blender_main.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+51	    print(render_cmd)
+52	    os.system(render_cmd)
+53	  except:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: iros20-6d-pose-tracking\data_augmentation.py:79:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+78			rgbA, depthA, rgbB, depthB, maskA, maskB, poseA = data
+79			rgbB = rgbB*random.uniform(self.mag[0],self.mag[1])
+80			rgbB = np.clip(rgbB,0,255).astype(np.uint8)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\data_augmentation.py:143:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142			depth[invalid_mask] = 2000
+143			assert (depth<=2000).all()
+144			return depth
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\datasets.py:105:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+104				maskB = (depthB>100).astype(np.uint8)
+105			assert np.sum(maskB)>0, 'index={}'.format(index)
+106	
+107			data, target, rgbA, rgbB, maskA, maskB = self.processData(rgbA,depthA,A_in_cam,rgbB,depthB,B_in_cam,maskB)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\datasets.py:153:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152			if self.mode=='train':
+153				assert (trans_label<=1).all() and (trans_label>=-1).all()
+154				assert (rot_label>=-1).all() and (rot_label<=1).all(),'root:\n{}\nrot_label\n{}\n A2B_in_cam_rot{}\n'.format(self.root,rot_label,A2B_in_cam_rot)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\datasets.py:154:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+153				assert (trans_label<=1).all() and (trans_label>=-1).all()
+154				assert (rot_label>=-1).all() and (rot_label<=1).all(),'root:\n{}\nrot_label\n{}\n A2B_in_cam_rot{}\n'.format(self.root,rot_label,A2B_in_cam_rot)
+155	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\eval_ycb.py:69:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	  pose_files = sorted(glob.glob(args.res_dir+'**/*.txt',recursive=True))
+69	  assert len(pose_files)>0,'args.res_dir is\n{}'.format(args.res_dir)
+70	  class_names = sorted(os.listdir('{}/CADmodels/'.format(args.ycb_dir)))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\eval_ycb.py:112:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+111	
+112	  assert len(adi_errs)>0
+113	  add_aps = VOCap(add_errs) * 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\eval_ycb.py:139:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+138	
+139	  assert len(res_dirs)==len(class_ids),'len(res_dirs)={}'.format(len(res_dirs))
+140	  adi_errs = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\eval_ycb.py:154:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+153	  n = len(adi_errs)
+154	  assert(n==14025)
+155	
+156	  add_aps = VOCap(add_errs) * 100
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\eval_ycbineoat.py:86:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	        break
+86	    assert len(pred_files)==len(gt_files),'#pred_files:{}, #gt_files:{}'.format(len(pred_files),len(gt_files))
+87	    for i in range(len(pred_files)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\offscreen_renderer.py:78:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77		def render(self,ob_in_cvcams):
+78			assert isinstance(ob_in_cvcams, list)
+79			for i,ob_in_cvcam in enumerate(ob_in_cvcams):
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: iros20-6d-pose-tracking\predict.py:38:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+37	import sys,math,random
+38	import os,subprocess
+39	import re
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: iros20-6d-pose-tracking\produce_train_pair_data.py:39:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+38	import open3d as o3d
+39	import sys,shutil,pickle,trimesh
+40	import os
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: iros20-6d-pose-tracking\produce_train_pair_data.py:151:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+150	  data_folder = f'{code_dir}/generated_data_pair/'
+151	  os.system(f'rm -rf {data_folder} && mkdir -p {data_folder}')
+152	
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: iros20-6d-pose-tracking\produce_train_pair_data.py:181:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+180	  out_val_path = data_folder+'validation_data_blender_DR/'
+181	  os.system('rm -rf '+out_train_path+' '+out_val_path)
+182	  os.makedirs(out_train_path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\produce_train_pair_data.py:188:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+187	  rgb_files = sorted(glob.glob(f'{code_dir}/generated_data/*rgb.png'))
+188	  assert len(rgb_files)>0
+189	  print('len(rgb_files): ',len(rgb_files))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\train.py:144:1
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+143									   )
+144		assert len(train_loader)>0
+145		val_loader = torch.utils.data.DataLoader(valid_dataset,
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: iros20-6d-pose-tracking\vispy_renderer.py:43:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+42	from PIL import Image
+43	import cv2,argparse,pickle,time
+44	from plyfile import PlyData, PlyElement
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\vispy_renderer.py:108:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107				vertices = np.stack((ply['vertex']['x'].reshape(-1), ply['vertex']['y'].reshape(-1), ply['vertex']['z'].reshape(-1)), axis=-1)
+108				assert vertices.shape[1]==3
+109				face_indices = ply['face']['vertex_indices']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: iros20-6d-pose-tracking\vispy_renderer.py:111:3
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110				face_indices = np.stack(face_indices, axis=0)
+111				assert face_indices.shape[1]==3
+112				vertex_color = np.stack((ply['vertex']['red'].reshape(-1), ply['vertex']['green'].reshape(-1), ply['vertex']['blue'].reshape(-1)), axis=-1)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2462
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 22
+		Medium: 0
+		High: 3
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 25
+Files skipped (1):
+	iros20-6d-pose-tracking\blender_dataset_generator.py (syntax error while parsing AST from file)

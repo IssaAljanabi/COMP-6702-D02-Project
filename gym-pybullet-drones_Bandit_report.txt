@@ -1,0 +1,220 @@
+Run started:2023-04-23 05:52:15.318170
+
+Test results:
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-pybullet-drones\experiments\learning\multiagent.py:23:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+22	from sys import platform
+23	import subprocess
+24	import pdb
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gym-pybullet-drones\experiments\learning\multiagent.py:28:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+27	import pybullet as p
+28	import pickle
+29	import matplotlib.pyplot as plt
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-pybullet-drones\experiments\learning\multiagent.py:159:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+158	    if platform == "linux" or platform == "darwin":
+159	        git_commit = subprocess.check_output(["git", "describe", "--tags"]).strip()
+160	        with open(filename+'/git_commit.txt', 'w+') as f:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-pybullet-drones\experiments\learning\multiagent.py:159:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+158	    if platform == "linux" or platform == "darwin":
+159	        git_commit = subprocess.check_output(["git", "describe", "--tags"]).strip()
+160	        with open(filename+'/git_commit.txt', 'w+') as f:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-pybullet-drones\experiments\learning\singleagent.py:27:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+26	import argparse
+27	import subprocess
+28	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-pybullet-drones\experiments\learning\singleagent.py:84:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+83	    if (platform == "linux" or platform == "darwin") and ('GITHUB_ACTIONS' not in os.environ.keys()):
+84	        git_commit = subprocess.check_output(["git", "describe", "--tags"]).strip()
+85	        with open(filename+'/git_commit.txt', 'w+') as f:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: gym-pybullet-drones\experiments\learning\singleagent.py:84:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+83	    if (platform == "linux" or platform == "darwin") and ('GITHUB_ACTIONS' not in os.environ.keys()):
+84	        git_commit = subprocess.check_output(["git", "describe", "--tags"]).strip()
+85	        with open(filename+'/git_commit.txt', 'w+') as f:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gym-pybullet-drones\experiments\learning\test_multiagent.py:20:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+19	import pybullet as p
+20	import pickle
+21	import matplotlib.pyplot as plt
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: gym-pybullet-drones\gym_pybullet_drones\control\BaseControl.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+2	import numpy as np
+3	import xml.etree.ElementTree as etxml
+4	import pkg_resources
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: gym-pybullet-drones\gym_pybullet_drones\control\BaseControl.py:203:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+202	        path = pkg_resources.resource_filename('gym_pybullet_drones', 'assets/'+URDF)
+203	        URDF_TREE = etxml.parse(path).getroot()
+204	        #### Find and return the desired parameter #################
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: gym-pybullet-drones\gym_pybullet_drones\envs\BaseAviary.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+5	from datetime import datetime
+6	import xml.etree.ElementTree as etxml
+7	import pkg_resources
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.parse to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.parse with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: gym-pybullet-drones\gym_pybullet_drones\envs\BaseAviary.py:973:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+972	        """
+973	        URDF_TREE = etxml.parse(pkg_resources.resource_filename('gym_pybullet_drones', 'assets/'+self.URDF)).getroot()
+974	        M = float(URDF_TREE[1][0][1].attrib['value'])
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gym-pybullet-drones\gym_pybullet_drones\examples\compare.py:18:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+17	import argparse
+18	import pickle
+19	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: gym-pybullet-drones\gym_pybullet_drones\examples\compare.py:46:70
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+45	    with open(trace_file, 'rb') as in_file:
+46	        TRACE_TIMESTAMPS, TRACE_DATA, TRACE_CTRL_REFERENCE, _, _, _ = pickle.load(in_file)
+47	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-pybullet-drones\ros2\src\ros2_gym_pybullet_drones\ros2_gym_pybullet_drones\random_control.py:45:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+44	        self.action_cb_count += 1
+45	        random_rpm13 = random.uniform(.9, 1.1)*self.env.HOVER_RPM
+46	        random_rpm24 = random.uniform(.9, 1.1)*self.env.HOVER_RPM
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: gym-pybullet-drones\ros2\src\ros2_gym_pybullet_drones\ros2_gym_pybullet_drones\random_control.py:46:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+45	        random_rpm13 = random.uniform(.9, 1.1)*self.env.HOVER_RPM
+46	        random_rpm24 = random.uniform(.9, 1.1)*self.env.HOVER_RPM
+47	        msg = Float32MultiArray()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-pybullet-drones\ros2\src\ros2_gym_pybullet_drones\test\test_copyright.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    rc = main(argv=['.', 'test'])
+23	    assert rc == 0, 'Found errors'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-pybullet-drones\ros2\src\ros2_gym_pybullet_drones\test\test_flake8.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    rc, errors = main_with_errors(argv=[])
+23	    assert rc == 0, \
+24	        'Found %d code style errors / warnings:\n' % len(errors) + \
+25	        '\n'.join(errors)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-pybullet-drones\ros2\src\ros2_gym_pybullet_drones\test\test_pep257.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    rc = main(argv=['.', 'test'])
+23	    assert rc == 0, 'Found code style errors / warnings'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: gym-pybullet-drones\tests\test_experiments.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    test_model = new_models - initial_models
+13	    assert len(test_model) > 0, initial_models
+14	    path = '/'.join(next(iter(test_model)).split('/')[:-1])
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 6767
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 17
+		Medium: 3
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 20
+Files skipped (0):

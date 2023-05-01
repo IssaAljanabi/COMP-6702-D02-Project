@@ -1,0 +1,371 @@
+Run started:2023-04-23 05:47:16.940641
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\agent.py:95:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	    for name in config.grad_heads:
+95	      assert name in self.heads, name
+96	    self.model_opt = common.Optimizer('model', **config.model_opt)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\agent.py:111:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	    kl_loss, kl_value = self.rssm.kl_loss(post, prior, **self.config.kl)
+111	    assert len(kl_loss.shape) == 0
+112	    likes = {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\config.py:158:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    for key in mapping:
+158	      assert not self.IS_PATTERN.match(key), key
+159	    return mapping
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\config.py:187:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+186	    if isinstance(value, (list, tuple)):
+187	      assert len(value) > 0, value
+188	      return self._format_type(value[0]) + 's'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\driver.py:46:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	          for i in range(len(self._envs))]
+46	      assert len(actions) == len(self._envs)
+47	      obs = [e.step(a) for e, a in zip(self._envs, actions)]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\envs.py:131:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+130	  def step(self, action):
+131	    assert np.isfinite(action['action']).all(), action['action']
+132	    reward = 0.0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\envs.py:138:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	        break
+138	    assert time_step.discount in (0, 1)
+139	    obs = {
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\envs.py:173:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+172	      life_done=False, sticky=True, all_actions=False):
+173	    assert size[0] == size[1]
+174	    import gym.wrappers
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\envs.py:355:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+354	  def step(self, action):
+355	    assert self._step is not None, 'Must reset environment.'
+356	    obs = self._env.step(action)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\envs.py:402:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+401	  def __init__(self, env, key='action'):
+402	    assert hasattr(env.act_space[key], 'n')
+403	    self._env = env
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\flags.py:47:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	          raise ValueError(f"Flag '{flag}' did not match any config keys.")
+47	      assert not remaining, remaining
+48	      return parsed
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\flags.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	      return tuple(self._parse_flag_value(default[0], [x], key) for x in value)
+81	    assert len(value) == 1, value
+82	    value = str(value[0])
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamerv2\dreamerv2\common\logger.py:147:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+146	def encode_gif(frames, fps):
+147	  from subprocess import Popen, PIPE
+148	  h, w, c = frames[0].shape
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamerv2\dreamerv2\common\logger.py:155:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+154	      f'-r {fps:.02f} -f gif -'])
+155	  proc = Popen(cmd.split(' '), stdin=PIPE, stdout=PIPE, stderr=PIPE)
+156	  for image in frames:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\nets.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	      state = self.initial(tf.shape(action)[0])
+62	    assert isinstance(state, dict), state
+63	    action = swap(action)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\other.py:81:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	  # Setting lambda=0 gives a fixed 1-step return.
+81	  assert reward.shape.ndims == value.shape.ndims, (reward.shape, value.shape)
+82	  if isinstance(pcont, (int, float)):
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:10:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+9	import re
+10	import subprocess
+11	import warnings
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:242:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+241	def plot(task, ax, runs, methods, args):
+242	  assert runs
+243	  try:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:370:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+369	def baseline(index, method, ax, runs, args):
+370	  assert all(run.xs is None for run in runs)
+371	  ys = np.array([run.ys for run in runs])
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:407:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+406	  try:
+407	    subprocess.call(['pdfcrop', str(filename), str(filename)])
+408	  except FileNotFoundError:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:407:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+406	  try:
+407	    subprocess.call(['pdfcrop', str(filename), str(filename)])
+408	  except FileNotFoundError:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:435:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+434	  for xs, ys in zip(multiple_xs, multiple_ys):
+435	    assert (longest_xs[:len(xs)] == xs).all(), (list(xs), list(longest_xs))
+436	    value = {'nan': np.nan, 'last': ys[-1]}[fill]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:549:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+548	  if args.labels:
+549	    assert len(args.labels) % 2 == 0
+550	    args.labels = {k: v for k, v in zip(args.labels[:-1], args.labels[1:])}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\plot.py:552:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+551	  if args.colors:
+552	    assert len(args.colors) % 2 == 0
+553	    args.colors = {k: v for k, v in zip(args.colors[:-1], args.colors[1:])}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\replay.py:116:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    if self._maxlen:
+116	      assert self._minlen <= len(sequence['action']) <= self._maxlen
+117	    return sequence
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: dreamerv2\dreamerv2\common\tfutils.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pathlib
+2	import pickle
+3	import re
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: dreamerv2\dreamerv2\common\tfutils.py:50:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+49	    with pathlib.Path(filename).open('rb') as f:
+50	      values = pickle.load(f)
+51	    amount = len(tf.nest.flatten(values))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\tfutils.py:70:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	      opt='adam', wd_pattern=r'.*'):
+70	    assert 0 <= wd < 1
+71	    assert not clip or 1 <= clip
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\tfutils.py:71:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+70	    assert 0 <= wd < 1
+71	    assert not clip or 1 <= clip
+72	    self._name = name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\tfutils.py:93:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	  def __call__(self, tape, loss, modules):
+93	    assert loss.dtype is tf.float32, (self._name, loss.dtype)
+94	    assert len(loss.shape) == 0, (self._name, loss.shape)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\common\tfutils.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    assert loss.dtype is tf.float32, (self._name, loss.dtype)
+94	    assert len(loss.shape) == 0, (self._name, loss.shape)
+95	    metrics = {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\train.py:49:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	  message = 'No GPU found. To actually train on CPU remove this assert.'
+49	  assert tf.config.experimental.list_physical_devices('GPU'), message
+50	  for gpu in tf.config.experimental.list_physical_devices('GPU'):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\train.py:52:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    tf.config.experimental.set_memory_growth(gpu, True)
+52	  assert config.precision in (16, 32), config.precision
+53	  if config.precision == 16:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\train.py:89:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	    elif suite == 'crafter':
+89	      assert config.action_repeat == 1
+90	      outdir = logdir / 'crafter' if mode == 'train' else None
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: dreamerv2\dreamerv2\train.py:191:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+190	      env.close()
+191	    except Exception:
+192	      pass
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 3171
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 34
+		Medium: 1
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 35
+Files skipped (0):

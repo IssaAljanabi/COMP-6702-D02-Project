@@ -1,0 +1,1623 @@
+Run started:2023-04-23 05:39:31.445302
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\geometry\math_test.py:74:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	  # We can alternatively use scipy.optimize with non-linear constraints here.
+74	  assert lb.shape == ub.shape, 'bounds need to have the same shape'
+75	  np.random.seed(seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\geometry\mesh.py:59:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+58	  """Calculates face normals given vertices and face indexes."""
+59	  assert len(vert.shape) == 2 and len(face.shape) == 2, (
+60	      f'vert and face should have dim of 2, got {len(vert.shape)} and '
+61	      f'{len(face.shape)}'
+62	  )
+63	  face_vert = jp.take(vert, face, axis=0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\geometry\mesh.py:110:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+109	  """Creates face and vert from a box geometry."""
+110	  assert b.halfsize.shape == (
+111	      3,
+112	  ), f'Box halfsize should have shape (3,), got {b.halfsize.shape}'
+113	  box_corners = jp.array(_BOX_CORNERS)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\geometry\mesh.py:165:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+164	  hull_point_idx = c.vertices[::order_]
+165	  assert (axis_points - c.points).sum() == 0
+166	
+167	  return hull_point_idx
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\geometry\mesh.py:200:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+199	  max_len = max(f.shape[0] for f in facets) if facets else faces.shape[1]
+200	  assert max_len <= _MAX_HULL_FACE_VERTICES
+201	  for i, f in enumerate(facets):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\geometry\mesh.py:207:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+206	  if not faces.shape[0]:
+207	    assert facets
+208	    return np.array(facets)  # no faces, return facets
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\io\mjcf.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+20	import warnings
+21	from xml.etree import ElementTree
+22	
+23	from brax import math
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\io\mjcf.py:109:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+108	    asset = (path / fname).read_text()
+109	    asset_xml = ElementTree.fromstring(asset)
+110	    _fuse_bodies(asset_xml)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\io\mjcf.py:492:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+491	  """Fuses together parent child bodies that have no joint."""
+492	  xml = ElementTree.fromstring(xml)
+493	  _fuse_bodies(xml)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\io\mjcf.py:499:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+498	  """Loads a brax system from a MuJoCo mjcf xml string."""
+499	  elem = ElementTree.fromstring(xml)
+500	  _fuse_bodies(elem)
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\io\mjcf.py:514:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+513	  """Loads a brax system from a MuJoCo mjcf file path."""
+514	  elem = ElementTree.fromstring(epath.Path(path).read_text())
+515	  _fuse_bodies(elem)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\io\model.py:17:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+16	
+17	import pickle
+18	from typing import Any
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\io\model.py:25:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+24	    buf = fin.read()
+25	  return pickle.loads(buf)
+26	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\acme\running_statistics.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	    expected_shape = batch_dims + reference_sample.shape
+85	    assert batch.shape == expected_shape, f'{batch.shape} != {expected_shape}'
+86	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\acme\running_statistics.py:126:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+125	  # batch and state have different order of elements.
+126	  assert jax.tree_util.tree_structure(batch) == jax.tree_util.tree_structure(state.mean)
+127	  batch_shape = jax.tree_util.tree_leaves(batch)[0].shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\acme\running_statistics.py:152:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	      batch: jnp.ndarray) -> Tuple[jnp.ndarray, jnp.ndarray]:
+152	    assert isinstance(mean, jnp.ndarray), type(mean)
+153	    assert isinstance(summed_variance, jnp.ndarray), type(summed_variance)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\acme\running_statistics.py:153:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	    assert isinstance(mean, jnp.ndarray), type(mean)
+153	    assert isinstance(summed_variance, jnp.ndarray), type(summed_variance)
+154	    # The mean and the sum of past variances are updated with Welford's
+155	    # algorithm using batches (see https://stackoverflow.com/q/56402955).
+156	    diff_to_old_mean = batch - mean
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\acme\running_statistics.py:185:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+184	                  std: jnp.ndarray) -> jnp.ndarray:
+185	    assert isinstance(summed_variance, jnp.ndarray)
+186	    # Summed variance can get negative due to rounding errors.
+187	    summed_variance = jnp.maximum(summed_variance, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\apg\train.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	  if truncation_length is not None:
+88	    assert truncation_length > 0
+89	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\apg\train.py:92:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	
+92	  assert num_envs % device_count == 0
+93	  env = environment
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\apg\train_test.py:16:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+15	"""Analytic policy gradient tests."""
+16	import pickle
+17	
+18	from absl.testing import absltest
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\apg\train_test.py:62:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+61	    byte_encoding = pickle.dumps(params)
+62	    decoded_params = pickle.loads(byte_encoding)
+63	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\ars\train.py:90:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	
+90	  assert num_envs % local_devices_to_use == 0
+91	  env = environment
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\ars\train.py:279:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+278	  total_steps = training_state.num_env_steps
+279	  assert total_steps >= num_timesteps
+280	
+281	  logging.info('total steps: %s', total_steps)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\ars\train_test.py:16:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+15	"""Augmented Random Search training tests."""
+16	import pickle
+17	
+18	from absl.testing import absltest
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\ars\train_test.py:47:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+46	    byte_encoding = pickle.dumps(params)
+47	    decoded_params = pickle.loads(byte_encoding)
+48	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\es\train.py:118:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+117	
+118	  assert num_envs % local_devices_to_use == 0
+119	  env = environment
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\es\train.py:349:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+348	  total_steps = training_state.num_env_steps
+349	  assert total_steps >= num_timesteps
+350	
+351	  logging.info('total steps: %s', total_steps)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\es\train_test.py:16:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+15	"""Evolution Strategy training tests."""
+16	import pickle
+17	
+18	from absl.testing import absltest
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\es\train_test.py:54:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+53	    byte_encoding = pickle.dumps(params)
+54	    decoded_params = pickle.loads(byte_encoding)
+55	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\ppo\train.py:98:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	  """PPO training."""
+98	  assert batch_size * num_minibatches % num_envs == 0
+99	  xt = time.time()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\ppo\train.py:132:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+131	
+132	  assert num_envs % device_count == 0
+133	  env = environment
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\ppo\train.py:232:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+231	                                  data)
+232	    assert data.discount.shape[1:] == (unroll_length,)
+233	
+234	    # Update normalization params and normalize observations.
+235	    normalizer_params = running_statistics.update(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\ppo\train.py:349:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+348	  total_steps = current_step
+349	  assert total_steps >= num_timesteps
+350	
+351	  # If there was no mistakes the training_state should still be identical on all
+352	  # devices.
+353	  pmap.assert_is_replicated(training_state)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\ppo\train_test.py:16:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+15	"""PPO tests."""
+16	import pickle
+17	
+18	from absl.testing import absltest
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\ppo\train_test.py:90:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+89	    byte_encoding = pickle.dumps(params)
+90	    decoded_params = pickle.loads(byte_encoding)
+91	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\sac\train.py:151:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+150	  num_prefill_env_steps = num_prefill_actor_steps * env_steps_per_actor_step
+151	  assert num_timesteps - num_prefill_env_steps >= 0
+152	  num_evals_after_init = max(num_evals - 1, 1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\sac\train.py:161:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	
+161	  assert num_envs % device_count == 0
+162	  env = environment
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\sac\train.py:446:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+445	  logging.info('replay size after prefill %s', replay_size)
+446	  assert replay_size >= min_replay_size
+447	  training_walltime = time.time() - t
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\agents\sac\train.py:479:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+478	  total_steps = current_step
+479	  assert total_steps >= num_timesteps
+480	
+481	  params = _unpmap(
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\sac\train_test.py:17:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+16	
+17	import pickle
+18	
+19	from absl.testing import absltest
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\training\agents\sac\train_test.py:69:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+68	    byte_encoding = pickle.dumps(params)
+69	    decoded_params = pickle.loads(byte_encoding)
+70	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\distribution.py:42:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	    self._reparametrizable = reparametrizable
+42	    assert event_ndims in [0, 1]
+43	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\pmap.py:36:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	  x = jax.device_get(jax.pmap(lambda x: jax.lax.psum(x, 'i'), 'i')(x))
+36	  assert x[0] == jax.device_count()
+37	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\pmap.py:70:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+69	  f = functools.partial(is_replicated, axis_name='i')
+70	  assert jax.pmap(f, axis_name='i')(x)[0], debug
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\replay_buffers.py:119:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+118	    """Checks whether insert operation can be performed."""
+119	    assert isinstance(shards, int), "This method should not be JITed."
+120	    insert_size = jax.tree_flatten(samples)[0][0].shape[0] // shards
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\training\replay_buffers.py:181:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+180	    """Checks whether sampling can be performed. Do not JIT this method."""
+181	    assert isinstance(shards, int), "This method should not be JITed."
+182	    if self._size < self._sample_batch_size:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:69:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	  else:
+69	    assert not env_params, env_params
+70	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:87:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+86	    closest = difflib.get_close_matches(env_name, list_env(), n=3)
+87	    assert 0, f'{env_name} not found. Closest={closest}'
+88	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:129:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+128	
+129	  assert (optional or registry_name not in REGISTRIES
+130	         ), f'non-optional register() conflicts: {registry_name}'
+131	  if registry_name in REGISTRIES:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:138:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+137	    for attr in ('AUTHORS', 'CONTACTS', 'AFFILIATIONS', 'DESCRIPTIONS'):
+138	      assert hasattr(lib, attr), f'{attr} must be defined as a tuple of strs'
+139	      values = getattr(lib, attr)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:140:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+139	      values = getattr(lib, attr)
+140	      assert isinstance(
+141	          values, tuple), f'{attr}={values} must be defined as a tuple of strs'
+142	      assert all(isinstance(v, str) for v in values
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:142:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	          values, tuple), f'{attr}={values} must be defined as a tuple of strs'
+142	      assert all(isinstance(v, str) for v in values
+143	                ), f'{attr}={values} must be defined as a tuple of strs'
+144	      metadata[attr] = values
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:158:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    if assert_override:
+158	      assert not exists(env_name), f'{list_env()} contains {env_name}'
+159	    assert 'module' in env_info, env_info
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:159:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+158	      assert not exists(env_name), f'{list_env()} contains {env_name}'
+159	    assert 'module' in env_info, env_info
+160	    env_module = env_info['module']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:174:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+173	    for track in tracks:
+174	      assert track in OPEN_ENDED_TRACKS, f'{track} not in {OPEN_ENDED_TRACKS}'
+175	      ENVS_BY_TRACKS['open_ended'][track] += (env_name,)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:184:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+183	    if assert_override:
+184	      assert not composer_components.exists(
+185	          comp_name
+186	      ), f'{composer_components.list_components()} contains {comp_name}'
+187	    comp_module = comp_info['module']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:194:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+193	    for track in comp_info.get('tracks', []):
+194	      assert (track
+195	              in GOAL_ORIENTED_TRACKS), f'{track} not in {GOAL_ORIENTED_TRACKS}'
+196	      track_env_name = tasks.get_task_env_name(track, comp_name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:198:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+197	      if assert_override:
+198	        assert not exists(
+199	            track_env_name), f'{list_env()} contains {track_env_name}'
+200	      track_env_module = functools.partial(tasks.TASKS[track], comp_name,
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:209:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+208	
+209	  assert envs or task_envs, 'no envs registered'
+210	  REGISTRIES[registry_name] = (sorted(envs), sorted(components),
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\biggym\__init__.py:223:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+222	  if assert_override:
+223	    assert not exists(track_env_name), f'{list_env()} contains {track_env_name}'
+224	  track_env_module = functools.partial(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\config_utils.py:49:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	  """Generate a compressed name from keys wrt config."""
+49	  assert not isinstance(config, list), config
+50	  name = ''
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\config_utils.py:69:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	        i += 1
+69	      assert i < 10, 'too many conflicts'
+70	      pre_keys_str = f'{pre_keys_str}{i}'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\config_utils.py:91:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	  elif (not root and isinstance(config, list)) or callable(config):
+91	    assert pre_keys
+92	    return (pre_keys,)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\config_utils.py:108:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	  elif callable(config):
+108	    assert num_samples_per_dist > 0, ('callable not allowed in config with '
+109	                                      'num_samples_per_dist < 1')
+110	    count *= num_samples_per_dist
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\config_utils.py:142:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	        i += 1
+142	      assert i < len(config) and index_ >= 0 and index_ <= count[
+143	          i], f'invalid index={index} wrt count={count}'
+144	      c, i = index_configuration(config[i], index=index_, root=False)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\config_utils.py:153:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	  else:
+153	    assert not root
+154	    return config, index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\dist_utils.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	  if clip_range:
+26	    assert clip_range > 0.0, clip_range
+27	    logits -= jnp.max(logits, axis=-1, keepdims=True)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\dist_utils.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	  if clip_range:
+34	    assert clip_range > 0.0, clip_range
+35	    logits = jnp.clip(logits, a_min=-clip_range, a_max=clip_range)
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: brax\brax\v1\experimental\braxlines\common\logger_utils.py:50:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b307-eval
+49	    config_str = f.read()
+50	  config = eval(config_str)
+51	  if verbose:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\logger_utils.py:153:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+152	      if key not in self._history_values:
+153	        assert not self._finalized, ('Cannot add a new key {} once tabulator is'
+154	                                     ' finalized.').format(key)
+155	        self._history_values[key] = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\common\logger_utils.py:243:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+242	  global _timers, _record_time
+243	  assert name in _timers
+244	  dt = time.time() - _timers[name]
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: brax\brax\v1\experimental\braxlines\experiments\__init__.py:43:38
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+42	def run_experiment(experiment_name: str = None,
+43	                   output_path: str = '/tmp/sweep',
+44	                   start_count: int = 0,
+45	                   end_count: int = int(1e6),
+46	                   ignore_errors: bool = False,
+47	                   agent_module: str = None,
+48	                   config: Dict[str, Any] = None):
+49	  """Run experiments defined by `config` serially."""
+50	  if not agent_module and not config:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\experiments\__init__.py:270:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+269	    for key, v in metrics.items():
+270	      assert not np.isnan(v), f'{key} {num_steps} NaN'
+271	      plotdata[key] = plotdata.get(key, dict(x=[], y=[]))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\train.py:72:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+71	  ppo_params.update(config.pop('ppo_params', {}))
+72	  assert not config, f'unused config: {config}'
+73	
+74	  # generate target data
+75	  rng = jax.random.PRNGKey(seed=seed)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:66:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+65	  ):
+66	    assert obs_scale is not None
+67	    self.env_obs_size = env.observation_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:92:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+91	    if self.reward_type == "mle":
+92	      assert self.target_dist_fn
+93	    self.logits_clip_range = logits_clip_range
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:108:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	      else:
+108	        assert self.logits_clip_range
+109	    if gradient_penalty_weight:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:147:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+146	           params: Dict[str, Dict[str, jnp.ndarray]] = None):
+147	    assert self.initialized, "init_model() must be called"
+148	    param = params[self.param_name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:187:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+186	    elif self.reward_type == "mle":  # for debugging
+187	      assert not self.normalize_obs
+188	      target_dist = self.target_dist_fn()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:198:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+197	    """Convert obs and actions into data."""
+198	    assert obs.shape[:-1] == act.shape[:-1], f"obs={obs.shape}, act={act.shape}"
+199	    data = obs
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\irl_smm\utils.py:310:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+309	  if gradient_penalty_weight > 0.:
+310	    assert (
+311	        d.shape == target_d.shape
+312	    ), f"d shape {d.shape} does not match target_d shape {target_d.shape}!"
+313	    rng, sub_key = jax.random.split(rng)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\training\ppo.py:188:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+187	  """PPO training."""
+188	  assert batch_size * num_minibatches % num_envs == 0
+189	  xt = time.time()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\training\ppo.py:491:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+490	    x = jax.device_get(jax.pmap(lambda x: jax.lax.psum(x, 'i'), 'i')(x))
+491	    assert x[0] == jax.device_count()
+492	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\evaluators.py:74:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	  """Compute latent-goal reaching metric."""
+74	  assert not disc.normalize_obs
+75	  assert goals.shape[
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\evaluators.py:75:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	  assert not disc.normalize_obs
+75	  assert goals.shape[
+76	      -1] == disc.indexed_obs_size, f'{goals.shape}[-1] != {disc.indexed_obs_size}'
+77	  _, I = goals.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\evaluators.py:261:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+260	  labels = disc.obs_labels
+261	  assert env_vars.shape[-1] == len(
+262	      labels), f'{env_vars.shape}[-1] != {len(labels)}'
+263	  if env_vars.shape[-1] % 2:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\train.py:68:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+67	  ppo_params.update(config.pop('ppo_params', {}))
+68	  assert not config, f'unused config: {config}'
+69	
+70	  # @title Visualizing Brax environments
+71	  # Create baseline environment to get observation specs
+72	  base_env_fn = composer.create_fn(env_name=env_name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	               spectral_norm: bool = True):
+62	    assert obs_scale is not None
+63	    self.z_size = z_size
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:86:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	    q_scale = jnp.array(q_scale) * jnp.ones(self.z_size)
+86	    assert z_size
+87	    if dist_q == 'FixedSigma':
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:103:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	      raise NotImplementedError(dist_q)
+103	    assert not dist_q_params, f'unused dist_q_params: {dist_q_params}'
+104	
+105	    # define dist for p_z
+106	    dist_p_params = copy.deepcopy(dist_p_params) or {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:120:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+119	      raise NotImplementedError(dist_p)
+120	    assert not dist_p_params, f'unused dist_p_params: {dist_p_params}'
+121	
+122	    self.initialized = False
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:171:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+170	                 params: Dict[str, Dict[str, jnp.ndarray]] = None):
+171	    assert self.initialized, 'init_model() must be called'
+172	    param = params.get(self.param_name, {})
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:282:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+281	    else:
+282	      assert z.shape[-1] == self.z_size, f'{z.shape}[-1] != {self.z_size}'
+283	    return self.concat(state, z, replace_reward=False)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\braxlines\vgcrl\utils.py:394:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+393	  }.get(algo_name, None)
+394	  assert disc_fn, f'invalid algo_name: {algo_name}'
+395	  disc_fn = functools.partial(disc_fn, obs_scale=scale, **kwargs)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\agent_utils.py:89:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	    for reward_name in reward_names:
+89	      assert reward_name in reward_tuple_dict, (
+90	          f'{reward_name} not in {reward_tuple_dict.keys()}')
+91	      r, s, d = reward_tuple_dict[reward_name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\agent_utils.py:96:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+95	    all_reward_names += reward_names
+96	  assert set(all_reward_names) == set(reward_tuple_dict.keys()), (
+97	      f'{set(all_reward_names)} != {set(reward_tuple_dict.keys())}')
+98	  done = jnp.any(done, axis=-1)  # ensure done is a scalar
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\agent_utils.py:121:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	  names = v.get(f'{var}_names', ())
+121	  assert all(isinstance(v, tuple)
+122	             for v in names), f'{names} must be a Sequence of Tuples'
+123	  names = tuple(ce.concat_name(*v) for v in names)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\agent_utils.py:127:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	    agent_args = (agent,) if isinstance(agent, str) else agent
+127	    assert isinstance(agent_args, (tuple, list)), agent_args
+128	    names += tuple(k for k in all_names if ce.match_name(k, *agent_args))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\component_editor.py:129:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+128	  comp_name = concat_comps(*comp_names)
+129	  assert comp_name
+130	  return name.startswith(f'{comp_name}{SPLITTER}')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\component_editor.py:179:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+178	                     parents[-1] in NAME_FIELDS.get(parents[-2], ())):
+179	      assert isinstance(config_dict, str), config_dict
+180	      if config_dict not in excludes:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\component_editor.py:195:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+194	  collide_include = config_dict.get('collideInclude', None)
+195	  assert collide_include, f'missing collideInclude?: {sorted(config_dict)}'
+196	  collide_include = [
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\component_editor.py:202:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+201	  bodies = config_dict.get('bodies', None)
+202	  assert bodies, f'missing bodies?: {sorted(config_dict)}'
+203	  bodies = [c for c in bodies if c['name'] != ground_name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\components\singleton.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	  if collider_type == 'sphere':
+26	    assert isinstance(size, (float, int)), size
+27	    collider = dict(sphere=dict(radius=size))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\components\singleton.py:30:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	  elif collider_type == 'capsule':
+30	    assert len(size) == 2, size
+31	    collider = dict(capsule=dict(radius=size[0], length=size[1]))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:187:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+186	        name = component_editor.concat_name(name, comp_name)
+187	        assert name not in reward_fns, f'duplicate reward_fns {name}'
+188	        reward_fn, unwrapped_reward_fn = reward_functions.get_reward_fns(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:200:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+199	
+200	      assert all(kk in ('term_fn', 'observers', 'collide')
+201	                 for kk in v), f'unused kwargs in components[{k}]: {v}'
+202	      new_v.update(v)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:219:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+218	        name = component_editor.concat_name(name, edge_name)
+219	        assert name not in reward_fns, f'duplicate reward_fns {name}'
+220	        reward_fn, unwrapped_reward_fn = reward_functions.get_reward_fns(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:246:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+245	      else:
+246	        assert not collide_type, collide_type
+247	      # [end config editing]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:254:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+253	      new_v['json'] = v_json
+254	      assert not v, f'unused kwargs in edges[{edge_name}]: {v}'
+255	      edges_[edge_name] = new_v
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:256:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+255	      edges_[edge_name] = new_v
+256	    assert not edges, f'unused edges: {edges}'
+257	    edge_keys = sorted(edges_.keys())
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:336:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+335	        self.metadata.agent_groups),) if self.metadata.agent_groups else ()
+336	    assert self.observation_size  # ensure self.observer_shapes is set
+337	    self.group_action_shapes = agent_utils.set_agent_groups(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:457:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+456	  if isinstance(env, ComponentEnv):
+457	    assert env.observation_size  # ensure env.observer_shapes is set
+458	    return env.observer_shapes
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:473:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+472	  """Creates an Env with a specified brax system."""
+473	  assert env_name or env_desc, 'env_name or env_desc must be supplied'
+474	  env_desc = env_desc or {}
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:481:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+480	    else:
+481	      assert not kwargs, f'unused kwargs: {kwargs}'
+482	    env_desc = dict(**env_desc, **desc)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer.py:490:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+489	    else:
+490	      assert not kwargs, f'unused kwargs: {kwargs}'
+491	    env_desc = composer_utils.edit_desc(env_desc, desc_edits)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer_utils.py:35:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	  """
+35	  assert isinstance(desc1, dict), desc1
+36	  assert isinstance(desc2, dict), desc2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer_utils.py:36:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	  assert isinstance(desc1, dict), desc1
+36	  assert isinstance(desc2, dict), desc2
+37	  for k, v in desc2.items():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer_utils.py:42:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	      v1 = desc1[k]
+42	      assert type(v1) is type(v), f'type mismatch {k}: {v1} {v}'
+43	      if isinstance(v, dict):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\composer_utils.py:65:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    for _, key in enumerate(keys[:-1]):
+65	      assert key in d, f'{key} not in {list(d.keys())}'
+66	      d = d[key]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:34:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	      raise NotImplementedError(s)
+34	  assert np.prod(s['shape']) == s['size'], s
+35	  assert len(indices) == s['size'], s
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:35:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	  assert np.prod(s['shape']) == s['size'], s
+35	  assert len(indices) == s['size'], s
+36	  return indices
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:42:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	  s = shape
+42	  assert arr.shape[-len(s['shape']
+43	                       ):] == s['shape'], f'{arr.shape} incompat {s["shape"]}'
+44	  arr = arr.reshape(arr.shape[:-len(s['shape'])] + (s['size'],))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	  for k, s in array_shapes.items():
+53	    assert k in array_dict, f'{k} not in {list(array_dict.keys())}'
+54	    arr = array_dict[k]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:58:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	    else:
+58	      assert leading_dims == arr.shape[:-len(
+59	          s['shape'])], f'{k}: {leading_dims} incompat {arr.shape}'
+60	    assert arr.shape[-len(s['shape']
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	          s['shape'])], f'{k}: {leading_dims} incompat {arr.shape}'
+60	    assert arr.shape[-len(s['shape']
+61	                         ):] == s['shape'], f'{k}: {arr.shape} != {s["shape"]}'
+62	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:90:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+89	  if assert_once:
+90	    assert array.shape[-1] == sum([s['size'] for s in array_shapes.values()
+91	                                  ]), f'{array.shape} incompat {array_shapes}'
+92	    assigned = jnp.zeros(array.shape[-1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\data_utils.py:102:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+101	  if assert_once:
+102	    assert jnp.all(jnp.equal(assigned, 1)), assigned
+103	  return array
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\envs\__init__.py:101:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+100	    desc = ENV_DESCS[desc]
+101	  assert callable(desc) or isinstance(desc, dict), desc
+102	  if not callable(desc):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\envs\__init__.py:111:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+110	  """Assert env_params are valid parameters for env_name."""
+111	  assert isinstance(env_params, dict), env_params
+112	  supported_params, support_kwargs = inspect_env(env_name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\envs\__init__.py:116:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+115	    return
+116	  assert all(
+117	      k in supported_params
+118	      for k in env_params), f'invalid {env_params} for {supported_params}'
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	  def __init__(self, name: str = None, indices: Tuple[int] = None):
+47	    assert name
+48	    self.name = name
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:152:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	    if self.sdtype == 'body':
+152	      assert self.sdcomp in ('pos', 'rot', 'ang', 'vel'), self.sdcomp
+153	      obs = getattr(qp, self.sdcomp)[self.sim_indices]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:158:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+157	    elif self.sdtype == 'contact':
+158	      assert self.sdcomp in ('vel', 'ang'), self.sdcomp
+159	      v = getattr(info.contact, self.sdcomp)[self.sim_indices]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:178:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+177	    elif isinstance(index, tuple):
+178	      assert len(index) == 2, 'tuple indexing is of form: (obs_dict_key, index)'
+179	      key, i = index
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:180:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+179	      key, i = index
+180	      assert isinstance(env, composer.ComponentEnv), env
+181	      assert env.observation_size  # ensure env.observer_shapes is set
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:181:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+180	      assert isinstance(env, composer.ComponentEnv), env
+181	      assert env.observation_size  # ensure env.observer_shapes is set
+182	      obs_shape = env.observer_shapes
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\observers.py:183:6
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+182	      obs_shape = env.observer_shapes
+183	      assert key in obs_shape, f'{key} not in {tuple(obs_shape.keys())}'
+184	      int_indices += [obs_shape[key]['start'] + i]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\reward_functions.py:75:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	  if isinstance(obs, Observer):
+75	    assert obs.name in obs_dict, f'{obs.name} not in {obs_dict.keys()}'
+76	    obs = obs_dict[obs.name]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\reward_functions.py:197:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+196	  if reward_type == 'root_goal':
+197	    assert len(components) == 1, components
+198	    sdtype = reward_kwargs.pop('sdtype', 'body')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\reward_functions.py:209:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+208	  elif reward_type == 'root_dist':
+209	    assert len(components) == 2, components
+210	    reward_fn = functools.partial(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\tests\composer_test.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    state = env.reset(rng=jax.random.PRNGKey(0))
+39	    assert state.reward.ndim > 0, state.reward
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\tests\composer_test.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	    env_params, support_kwargs = composer.inspect_env('pro_ant_run')
+43	    assert tuple(sorted(env_params)) == ('num_legs',), env_params
+44	    assert not support_kwargs, support_kwargs
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\tests\composer_test.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    assert tuple(sorted(env_params)) == ('num_legs',), env_params
+44	    assert not support_kwargs, support_kwargs
+45	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\tests\composer_test.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	    actions2 = data_utils.concat_array(actions_dict, action_shapes)
+53	    assert actions.shape == actions2.shape, f'{actions.shape} != {actions2.shape}'
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\train.py:51:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	  ppo_params.update(config.pop('ppo_params', {}))
+51	  assert not config, f'unused config: {config}'
+52	
+53	  env_fn = composer.create_fn(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\training\mappo.py:203:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+202	  """PPO training."""
+203	  assert batch_size * num_minibatches % num_envs == 0
+204	  xt = time.time()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\composer\training\mappo.py:552:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+551	    x = jax.device_get(jax.pmap(lambda x: jax.lax.psum(x, 'i'), 'i')(x))
+552	    assert x[0] == jax.device_count()
+553	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: brax\brax\v1\experimental\normalization.py:30:2
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+29	  """Observation normalization based on running statistics."""
+30	  assert num_leading_batch_dims == 1 or num_leading_batch_dims == 2
+31	  if normalize_observations:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\v1\io\model.py:17:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+16	
+17	import pickle
+18	from typing import Any
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: brax\brax\v1\io\model.py:26:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+25	    buf = fin.read()
+26	  return pickle.loads(buf)
+27	
+
+--------------------------------------------------
+>> Issue: [B405:blacklist] Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.
+   Severity: Low   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\v1\tools\urdf.py:20:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b405-import-xml-etree
+19	import warnings
+20	import xml.etree.ElementTree as ET
+21	
+22	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B314:blacklist] Using xml.etree.ElementTree.fromstring to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree.fromstring with its defusedxml equivalent function or make sure defusedxml.defuse_stdlib() is called
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: brax\brax\v1\tools\urdf.py:141:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b313-b320-xml-bad-elementtree
+140	  def __init__(self, xml_string: AnyStr, add_collision_pairs: bool = False):
+141	    ghum_xml = ET.fromstring(xml_string)
+142	    self.body_tree = {}
+
+--------------------------------------------------
+>> Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
+   Severity: High   Confidence: Medium
+   CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
+   Location: brax\brax\visualizer\visualizer.py:157:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b201_flask_debug_true.html
+156	    flask_app.run(
+157	        host='localhost', port=PORT.value, use_reloader=True, debug=True
+158	    )
+159	    return
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 40385
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 139
+		Medium: 14
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 2
+		High: 152
+Files skipped (0):

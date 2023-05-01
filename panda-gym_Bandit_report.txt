@@ -1,0 +1,420 @@
+Run started:2023-04-23 05:58:58.566406
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\panda_gym\envs\core.py:227:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+226	    ) -> None:
+227	        assert robot.sim == task.sim, "The robot and the task must belong to the same simulation."
+228	        self.sim = robot.sim
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\panda_gym\utils.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    """
+14	    assert a.shape == b.shape
+15	    return np.linalg.norm(a - b, axis=-1)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\panda_gym\utils.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    """
+28	    assert a.shape == b.shape
+29	    dist = 1 - np.inner(a, b) ** 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    pybullet = PyBullet()
+34	    assert pybullet.dt == 0.04
+35	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:53:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+52	    pybullet.close()
+53	    assert np.allclose(base_position, np.zeros(3), atol=1e-7)
+54	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:64:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+63	    pybullet.close()
+64	    assert np.allclose(base_velocity, [0.0, 0.0, -0.392], atol=1e-3)
+65	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    pybullet.close()
+74	    assert np.allclose(base_orientation, [0.0, 0.0, 0.0, 1.0], atol=1e-3)
+75	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:84:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	    pybullet.close()
+84	    assert np.allclose(base_rotation, [0.0, 0.0, 0.0], atol=1e-3)
+85	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:94:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+93	    pybullet.close()
+94	    assert np.allclose(base_angular_velocity, [0.0, 0.0, 0.0], atol=1e-3)
+95	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:135:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+134	    link_position = pybullet.get_link_position("panda", 1)
+135	    assert np.allclose(link_position, [0.000, 0.060, 0.373], atol=1e-3)
+136	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:152:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+151	    link_orientation = pybullet.get_link_orientation("panda", 5)
+152	    assert np.allclose(link_orientation, [0.707, -0.02, 0.02, 0.707], atol=1e-3)
+153	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:169:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+168	    link_velocity = pybullet.get_link_velocity("panda", 5)
+169	    assert np.allclose(link_velocity, [-0.0068, 0.0000, 0.1186], atol=1e-3)
+170	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:186:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+185	    link_angular_velocity = pybullet.get_link_angular_velocity("panda", 5)
+186	    assert np.allclose(link_angular_velocity, [0.000, -2.969, 0.000], atol=1e-3)
+187	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:203:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+202	    joint_angle = pybullet.get_joint_angle("panda", 5)
+203	    assert np.allclose(joint_angle, 0.063, atol=1e-3)
+204	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:216:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+215	    pybullet.close()
+216	    assert np.allclose(base_position, [1.0, 1.0, 1.0], atol=1e-3)
+217	    assert np.allclose(base_orientation, [0.707, -0.02, 0.02, 0.707], atol=1e-3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:217:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+216	    assert np.allclose(base_position, [1.0, 1.0, 1.0], atol=1e-3)
+217	    assert np.allclose(base_orientation, [0.707, -0.02, 0.02, 0.707], atol=1e-3)
+218	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:232:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+231	    joint_angle = pybullet.get_joint_angle("panda", 3)
+232	    assert np.allclose(joint_angle, 0.4, atol=1e-3)
+233	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:249:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+248	    joint_angle4 = pybullet.get_joint_angle("panda", 4)
+249	    assert np.allclose(joint_angle3, 0.4, atol=1e-3)
+250	    assert np.allclose(joint_angle4, 0.5, atol=1e-3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:250:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+249	    assert np.allclose(joint_angle3, 0.4, atol=1e-3)
+250	    assert np.allclose(joint_angle4, 0.5, atol=1e-3)
+251	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\pybullet_test.py:265:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+264	    joint_angles = pybullet.inverse_kinematics("panda", 6, [0.4, 0.5, 0.6], [0.707, -0.02, 0.02, 0.707])
+265	    assert np.allclose(joint_angles, [1.000, 1.223, -1.113, -0.021, -0.917, 0.666, -0.499, 0.0, 0.0], atol=1e-3)
+266	    pybullet.close()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\render_test.py:13:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	        img = env.render()
+13	        assert img.shape == (480, 720, 3)
+14	        if terminated or truncated:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\render_test.py:27:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	        image = env.render()
+27	        assert image.shape == (48, 84, 3)
+28	        if terminated or truncated:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\save_and_restore_test.py:25:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	    # The observations in both cases should be equals
+25	    assert np.all(observation1["achieved_goal"] == observation2["achieved_goal"])
+26	    assert np.all(observation1["observation"] == observation2["observation"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\save_and_restore_test.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    assert np.all(observation1["achieved_goal"] == observation2["achieved_goal"])
+26	    assert np.all(observation1["observation"] == observation2["observation"])
+27	    assert np.all(observation1["desired_goal"] == observation2["desired_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\save_and_restore_test.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert np.all(observation1["observation"] == observation2["observation"])
+27	    assert np.all(observation1["desired_goal"] == observation2["desired_goal"])
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	
+26	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+27	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+27	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+28	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:28:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+28	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+29	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:50:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+49	
+50	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+51	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+51	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+52	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+52	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+53	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:73:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+72	        final_observations.append(observation)
+73	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+74	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+74	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+75	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:75:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+75	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+76	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:97:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	
+97	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+98	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:98:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+98	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+99	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:99:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+98	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+99	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+100	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:120:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+119	        final_observations.append(observation)
+120	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+121	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:121:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+120	    assert np.allclose(final_observations[0]["observation"], final_observations[1]["observation"])
+121	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+122	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: panda-gym\test\seed_test.py:122:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	    assert np.allclose(final_observations[0]["achieved_goal"], final_observations[1]["achieved_goal"])
+122	    assert np.allclose(final_observations[0]["desired_goal"], final_observations[1]["desired_goal"])
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2389
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 40
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 40
+Files skipped (0):

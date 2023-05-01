@@ -1,0 +1,1840 @@
+Run started:2023-04-23 06:06:31.161096
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\change_to_relative_pos.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    args = parser.parse_args()
+15	    assert args.data_src is not None
+16	    assert args.data_dst is not None
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\change_to_relative_pos.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    assert args.data_src is not None
+16	    assert args.data_dst is not None
+17	    ground_truth = np.load(join(args.data_src, 'ground_truth.npz'))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_fusioner.py:25:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+24	        # let make sure everything is in order
+25	        assert os.path.exists(args.merge[0]), "Error: dataset '{}' could not be found".format(args.merge[0])
+26	        assert (not os.path.exists(args.merge[2])), \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_fusioner.py:26:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	        assert os.path.exists(args.merge[0]), "Error: dataset '{}' could not be found".format(args.merge[0])
+26	        assert (not os.path.exists(args.merge[2])), \
+27	            "Error: dataset '{}' already exists, cannot rename '{}' to '{}'".format(args.merge[2], args.merge[0],
+28	                                                                                    args.merge[2])
+29	        # create the output
+30	        os.mkdir(args.merge[2])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_generator.py:154:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+153	
+154	    assert (args.num_cpu > 0), "Error: number of cpu must be positive and non zero"
+155	    assert (args.max_distance > 0), "Error: max distance must be positive and non zero"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_generator.py:155:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+154	    assert (args.num_cpu > 0), "Error: number of cpu must be positive and non zero"
+155	    assert (args.max_distance > 0), "Error: max distance must be positive and non zero"
+156	    assert (args.num_episode > 0), "Error: number of episodes must be positive and non zero"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_generator.py:156:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	    assert (args.max_distance > 0), "Error: max distance must be positive and non zero"
+156	    assert (args.num_episode > 0), "Error: number of episodes must be positive and non zero"
+157	    assert not args.reward_dist or not args.shape_reward, \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_generator.py:157:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+156	    assert (args.num_episode > 0), "Error: number of episodes must be positive and non zero"
+157	    assert not args.reward_dist or not args.shape_reward, \
+158	        "Error: cannot display the reward distribution for continuous reward"
+159	    assert not(registered_env[args.env][3] is ThreadingType.NONE and args.num_cpu != 1), \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_generator.py:159:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+158	        "Error: cannot display the reward distribution for continuous reward"
+159	    assert not(registered_env[args.env][3] is ThreadingType.NONE and args.num_cpu != 1), \
+160	        "Error: cannot have more than 1 CPU for the environment {}".format(args.env)
+161	    if args.num_cpu > args.num_episode:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\dataset_generator.py:170:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+169	    if not args.no_record_data and os.path.exists(args.save_path + args.name):
+170	        assert args.force, "Error: save directory '{}' already exists".format(args.save_path + args.name)
+171	
+172	        shutil.rmtree(args.save_path + args.name)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\gym_baxter\baxter_env.py:147:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+146	        """
+147	        assert self.action_space.contains(action)
+148	        # Convert int action to action in (x,y,z) space
+149	        self.action = action_dict[action]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\omnirobot_gym\omnirobot_env.py:182:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+181	            action = np.array(action)
+182	        assert self.action_space.contains(action)
+183	
+184	        # Convert int action to action in (x,y,z) space
+185	        # serialize the action
+186	        if isinstance(action, np.ndarray):
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-rl-srl\environments\omnirobot_gym\omnirobot_env.py:340:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+339	            try:
+340	                contents = yaml.load(stream)
+341	                camera_matrix = np.array(contents['camera_matrix']['data']).reshape((3, 3))
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\environments\registry.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import subprocess
+2	
+3	import gym
+4	from gym.envs import registry
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\environments\registry.py:33:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+32	    try:
+33	        p = subprocess.Popen(["xset", "-q"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+34	        p.communicate()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\environments\registry.py:33:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+32	    try:
+33	        p = subprocess.Popen(["xset", "-q"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+34	        p.communicate()
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\registry.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b110_try_except_pass.html
+61	        registered_env["CarRacingGymEnv-v0"] = (CarRacingEnv, SRLGymEnv, PlottingType.PLOT_2D, ThreadingType.NONE)
+62	    except:
+63	        pass
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\robobo_gym\robobo_env.py:134:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+133	        """
+134	        assert self.action_space.contains(action)
+135	        # Convert int action to action in (x,y,z) space
+136	        self.action = action
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\environments\utils.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    # Keeping the checks and safe guards of the old code
+74	    assert spec._entry_point is not None, 'Attempting to make deprecated env {}. ' \
+75	                                          '(HINT: is there a newer registered version of this env?)'.format(spec.id_)
+76	
+77	    if callable(spec._entry_point):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\constants.py:15:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	USING_OMNIROBOT_SIMULATOR = True
+15	assert sum([USING_REAL_BAXTER, USING_ROBOBO, USING_OMNIROBOT, USING_OMNIROBOT_SIMULATOR]) <= 1, \
+16	    "You can only use one real robot at a time"
+17	# For compatibility with teleop_client
+18	Move = None
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\gazebo_server.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+3	
+4	import subprocess
+5	
+6	import arm_scenario_simulator as arm_sim
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\gazebo_server.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	
+21	assert not USING_REAL_BAXTER, "Please set USING_REAL_BAXTER to False in real_robots/constants.py"
+22	
+23	bridge = CvBridge()
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\gazebo_server.py:85:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+84	# Init robot pose
+85	subprocess.call(["rosrun", "arm_scenario_experiments", "button_init_pose"])
+86	print("Init Robot pose over")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\gazebo_server.py:85:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+84	# Init robot pose
+85	subprocess.call(["rosrun", "arm_scenario_experiments", "button_init_pose"])
+86	print("Init Robot pose over")
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\gazebo_server.py:109:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+108	        if command == 'reset':
+109	            subprocess.call(["rosrun", "arm_scenario_experiments", "button_init_pose"])
+110	            end_point_position = baxter_utils.get_ee_position(left_arm)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\gazebo_server.py:109:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+108	        if command == 'reset':
+109	            subprocess.call(["rosrun", "arm_scenario_experiments", "button_init_pose"])
+110	            end_point_position = baxter_utils.get_ee_position(left_arm)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:27:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	from real_robots.omnirobot_utils.omnirobot_manager_base import OmnirobotManagerBase
+27	assert USING_OMNIROBOT, "Please set USING_OMNIROBOT to True in real_robots/constants.py"
+28	
+29	NO_TARGET_MODE = False
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:122:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+121	        """
+122	        assert self.enabled_pos_controller and self.enabled_velocity_controller, \
+123	            "pos_controller and velocity_controller should be both enabled to execute positional command"
+124	        msg = Vector3(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:287:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+286	        """
+287	        assert self.enabled_pos_controller == False and self.enabled_velocity_controller == False,\
+288	            "you should disable pos_controller and velocity controller before controlling wheel speed directly"
+289	        wheel_speed_msg = WheelSpeeds()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:312:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+311	        """
+312	        assert self.enabled_pos_controller == False and self.enabled_velocity_controller == True, \
+313	            "you should disable pos_controller but enable velocity controller before controlling robot velocity directly"
+314	        velocity_command_msg = Twist()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:418:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+417	        if self.second_cam_topic is not None:
+418	            assert NotImplementedError
+419	            episode_folder = "record_{:03d}".format(episode_idx)
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:450:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+449	        try:
+450	            contents = yaml.load(stream)
+451	            camera_matrix = np.array(contents['camera_matrix']['data']).reshape((3,3))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_server.py:468:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+467	    if SECOND_CAM_TOPIC is not None:
+468	        assert NotImplementedError
+469	        image_cb_wrapper_2 = ImageCallback(camera_matrix, distortion_coefficients)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:15:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	
+15	assert USING_OMNIROBOT_SIMULATOR, "Please set USING_OMNIROBOT_SIMULATOR to True in real_robots/constants.py"
+16	NOISE_VAR_ROBOT_POS = 0.01  # meter
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:96:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+95	            try:
+96	                contents = yaml.load(stream)
+97	                camera_matrix = np.array(contents['camera_matrix']['data'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:193:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+192	    def findMarkers(self):
+193	        assert NotImplementedError
+194	        # this is not tested
+195	        tags_trans_coord_cam, tags_rot_coord_cam = self.marker_finder.getMarkerPose(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:387:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+386	
+387	        assert len(self.new_args['robot_marker_margin']) == 4
+388	        assert len(self.new_args['target_marker_margin']) == 4
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:388:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+387	        assert len(self.new_args['robot_marker_margin']) == 4
+388	        assert len(self.new_args['target_marker_margin']) == 4
+389	        assert len(self.new_args['output_size']) == 2
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:389:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+388	        assert len(self.new_args['target_marker_margin']) == 4
+389	        assert len(self.new_args['output_size']) == 2
+390	
+391	        self.robot = OmniRobotEnvRender(**self.new_args)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_simulator_server.py:403:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+402	        if self.second_cam_topic is not None:
+403	            assert NotImplementedError
+404	        # Env reset
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\marker_finder.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    """
+26	    assert len(string_1) == len(string_2)
+27	    return sum(ch1 != ch2 for ch1, ch2 in zip(string_1, string_2))
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\marker_finder.py:43:27
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+42	            try:
+43	                contents = yaml.load(stream)
+44	                camera_matrix = np.array(contents['camera_matrix']['data'])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\marker_finder.py:353:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+352	    args, unknown = parser.parse_known_args()
+353	    assert args.camera_info_path is not None and args.path_to_data is not None, \
+354	        "You should specify both the camera config file and dataset path to find marker position !"
+355	
+356	    # example, find the markers in the observation image, and get it's position in the ground
+357	    # Originally:
+358	    #  camera_info_path =
+359	    #       "/home/gaspard/Documents/ros_omnirobot/catkin_ws/src/omnirobot-dream/omnirobot_remote/cam_calib_info.yaml"
+360	    #  path = "/home/gaspard/Documents/ros_omnirobot/robotics-rl-srl-omnirobot/data/omnirobot_real_20190125_155902/"
+361	    camera_info_path = args.camera_info_path
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\marker_render.py:44:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	            
+44	        assert len(margin) == 4, "margin should be a list of 4 numbers"
+45	        self.marker_image_with_margin = marker_image_with_margin
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\omnirobot_manager_base.py:98:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+97	        if self.second_cam_topic is not None:
+98	            assert NotImplementedError
+99	        # Env reset
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\utils.py:32:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	        """
+32	        assert pos_coord_cam.shape == (3, 1)
+33	        homo_pos = np.ones((4, 1), np.float32)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\utils.py:45:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	
+45	        assert pos_coord_ground.shape == (
+46	            3, 1) or pos_coord_ground.shape == (2, 1)
+47	
+48	        homo_pos = np.ones((4, 1), np.float32)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\utils.py:80:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+79	        if shape is None:
+80	            assert positive_low.shape == positive_high.shape == negative_low.shape == negative_high.shape
+81	            shape = positive_low.shape
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\omnirobot_utils\utils.py:83:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+82	        else:
+83	            assert np.isscalar(positive_low) and np.isscalar(
+84	                positive_high) and np.isscalar(negative_low) and np.isscalar(negative_high)
+85	            positive_low = positive_low + np.zeros(shape)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_debug.py:4:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+3	
+4	import subprocess
+5	import signal
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_debug.py:22:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	
+22	assert USING_REAL_BAXTER, "Please set USING_REAL_BAXTER to True in real_robots/constants.py"
+23	
+24	should_exit = [False]
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_debug.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+42	        # Untuck arms
+43	        subprocess.call(['rosrun', 'baxter_tools', 'tuck_arms.py', '-u'])
+44	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_debug.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+42	        # Untuck arms
+43	        subprocess.call(['rosrun', 'baxter_tools', 'tuck_arms.py', '-u'])
+44	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_server.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import os
+5	import subprocess
+6	import signal
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_server.py:20:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	
+20	assert USING_REAL_BAXTER, "Please set USING_REAL_BAXTER to True in real_robots/constants.py"
+21	
+22	bridge = CvBridge()
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_server.py:45:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+44	        # Untuck arms
+45	        subprocess.call(['rosrun', 'baxter_tools', 'tuck_arms.py', '-u'])
+46	    print("Moving left arm to init")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\real_robots\real_baxter_server.py:45:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+44	        # Untuck arms
+45	        subprocess.call(['rosrun', 'baxter_tools', 'tuck_arms.py', '-u'])
+46	    print("Moving left arm to init")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\real_robobo_server.py:21:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+20	
+21	assert USING_ROBOBO, "Please set USING_ROBOBO to True in real_robots/constants.py"
+22	
+23	bridge = CvBridge()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\real_robobo_server.py:142:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	        turn_time = self.computeTime('left')
+142	        assert self.current_face_idx > 0
+143	        self.current_face_idx -= 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\real_robobo_server.py:150:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+149	        turn_time = self.computeTime('right')
+150	        assert self.current_face_idx < len(self.faces)
+151	        self.current_face_idx += 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\real_robots\utils.py:58:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	
+58	    assert len(actions) == n_actions, "Wrong number of actions: {}".format(len(actions))
+59	
+60	    return np.array(actions)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\replay\enjoy_baselines.py:114:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	            # Check that the srl saved model exists on the disk
+114	            assert os.path.isfile(env_globals['srl_model_path']), "{} does not exist".format(env_globals['srl_model_path'])
+115	            srl_model_path = env_globals['srl_model_path']
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robotics-rl-srl\replay\enjoy_baselines.py:121:80
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+120	
+121	def createEnv(load_args, train_args, algo_name, algo_class, env_kwargs, log_dir="/tmp/gym/test/"):
+122	    """
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\replay\enjoy_baselines.py:156:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+155	
+156	    assert (not load_args.plotting and not load_args.action_proba)\
+157	        or load_args.num_cpu == 1, "Error: cannot run plotting with more than 1 CPU"
+158	
+159	    tf.reset_default_graph()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\replay\gather_results.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	
+67	    assert os.path.isdir(args.log_dir), "--log-dir must be a path to a valid folder"
+68	
+69	    log_dir = args.log_dir
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\base_classes.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import os
+2	import pickle
+3	
+4	from stable_baselines.common.policies import CnnPolicy, CnnLstmPolicy, CnnLnLstmPolicy, MlpPolicy, MlpLstmPolicy, \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\base_classes.py:127:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+126	        """
+127	        assert self.model is not None, "Error: must train or load model before use"
+128	        model_save_name = self.name + ".pkl"
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\base_classes.py:158:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+157	        with open(load_path, "rb") as f:
+158	            save_param = pickle.load(f)
+159	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\base_classes.py:189:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+188	        """
+189	        assert self.model is not None, "Error: must train or load model before use"
+190	        return self.model.action_probability(observation, self.states, dones)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\base_classes.py:199:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+198	        """
+199	        assert self.model is not None, "Error: must train or load model before use"
+200	        actions, self.states = self.model.predict(observation, self.states, dones)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import time
+2	import pickle
+3	
+4	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:34:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	    def save(self, save_path, _locals=None):
+34	        assert self.M is not None, "Error: must train or load model before use"
+35	        with open(save_path, "wb") as f:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:41:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+40	        with open(load_path, "rb") as f:
+41	            class_dict = pickle.load(f)
+42	        loaded_model = ARSModel()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	        """
+69	        assert self.M is not None, "Error: must train or load model before use"
+70	        action = np.dot(observation, self.M + delta)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:84:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	        """
+84	        assert self.M is not None, "Error: must train or load model before use"
+85	        action = np.dot(observation, self.M + delta)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:109:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+108	
+109	        assert not (registered_env[args.env][3] is ThreadingType.NONE and args.num_cpu != 1), \
+110	            "Error: cannot have more than 1 CPU for the environment {}".format(args.env)
+111	        if env_kwargs is not None and env_kwargs.get("use_srl", False):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:126:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+125	    def train(self, args, callback, env_kwargs=None, train_kwargs=None):
+126	        assert args.top_population <= args.num_population, \
+127	            "Cannot select top %d, from population of %d." % (args.top_population, args.num_population)
+128	        assert args.num_population > 1, "The population cannot be less than 2."
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:127:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b608_hardcoded_sql_expressions.html
+126	        assert args.top_population <= args.num_population, \
+127	            "Cannot select top %d, from population of %d." % (args.top_population, args.num_population)
+128	        assert args.num_population > 1, "The population cannot be less than 2."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\ars.py:128:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	            "Cannot select top %d, from population of %d." % (args.top_population, args.num_population)
+128	        assert args.num_population > 1, "The population cannot be less than 2."
+129	
+130	        env = self.makeEnv(args, env_kwargs)
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\cma_es.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import time
+2	import pickle
+3	
+4	import cma
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\cma_es.py:40:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    def save(self, save_path, _locals=None):
+40	        assert self.policy is not None, "Error: must train or load model before use"
+41	        with open(save_path, "wb") as f:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\cma_es.py:47:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+46	        with open(load_path, "rb") as f:
+47	            class_dict = pickle.load(f)
+48	        loaded_model = CMAESModel()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\cma_es.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	    def getActionProba(self, observation, dones=None):
+65	        assert self.policy is not None, "Error: must train or load model before use"
+66	        return self.policy.getActionProba(observation)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\evolution_strategies\cma_es.py:69:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	    def getAction(self, observation, dones=None):
+69	        assert self.policy is not None, "Error: must train or load model before use"
+70	        return self.policy.getAction(observation)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\rl_baselines\hyperparam_search.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import argparse
+2	import subprocess
+3	import os
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\rl_baselines\hyperparam_search.py:218:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+217	        # call the training
+218	        ok = subprocess.call(['python', '-m', 'rl_baselines.train'] + train_args + loop_args, stdout=stdout)
+219	        if ok != 0:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\hyperparam_search.py:225:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+224	        folders = glob.glob("{}/{}/{}/{}/*".format(args.log_dir, args.env, args.srl_model, args.algo))
+225	        assert len(folders) != 0, "Error: Could not find generated directory, halting {} search.".format(args.optimizer)
+226	        rewards = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\hyperparam_search.py:262:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+261	        opt_param = registered_rl[args.algo][0].getOptParam()
+262	        assert opt_param is not None
+263	    except AttributeError or AssertionError:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+5	import argparse
+6	import subprocess
+7	
+8	import yaml
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:44:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	    # Sanity check
+44	    assert args.num_timesteps >= 1, "Error: --num-timesteps cannot be less than 1"
+45	    assert args.num_iteration >= 1, "Error: --num-iteration cannot be less than 1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    assert args.num_timesteps >= 1, "Error: --num-timesteps cannot be less than 1"
+45	    assert args.num_iteration >= 1, "Error: --num-iteration cannot be less than 1"
+46	
+47	    # Removing duplicates and sort
+48	    srl_models = list(set(args.srl_model))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:54:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+53	    # LOAD SRL models list
+54	    assert os.path.exists(args.srl_config_file), \
+55	        "Error: cannot load \"--srl-config-file {}\", file not found!".format(args.srl_config_file)
+56	    with open(args.srl_config_file, 'rb') as f:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:57:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+56	    with open(args.srl_config_file, 'rb') as f:
+57	        all_models = yaml.load(f)
+58	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	
+88	    assert valid, "Errors occured due to malformed 'srl_models.yaml', cannot continue."
+89	
+90	    # check that all the SRL_models can be run on all the environments
+91	    valid = True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:103:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+102	                    printRed("Error: srl_model {}, is not compatible with the {} environment.".format(model, env))
+103	    assert valid, "Errors occured due to an incompatible combination of srl_model and environment, cannot continue."
+104	
+105	    # the seeds used in training the baseline.
+106	    seeds = list(np.arange(args.num_iteration) + args.seed)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\rl_baselines\pipeline.py:130:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+129	
+130	                ok = subprocess.call(['python', '-m', 'rl_baselines.train'] + train_args + loop_args, stdout=stdout)
+131	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\registry.py:34:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+33	for _, val in registered_rl.items():
+34	    assert issubclass(val[0], BaseRLObject), "Error: tried to load {} as a BaseRLObject".format(val[0])
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\ddpg.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import os
+3	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\ddpg.py:48:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+47	        with open(load_path, "rb") as f:
+48	            save_param = pickle.load(f)
+49	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\deepq.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import pickle
+2	import os
+3	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\deepq.py:35:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+34	        with open(load_path, "rb") as f:
+35	            save_param = pickle.load(f)
+36	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\ppo2.py:42:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+41	
+42	        assert not (self.policy in ['lstm', 'lnlstm', 'cnnlstm', 'cnnlnlstm'] and args.num_cpu % 4 != 0), \
+43	            "Error: Reccurent policies must have num cpu at a multiple of 4."
+44	
+45	        if "lstm" in args.policy:
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\sac.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import os
+2	import pickle
+3	
+4	from stable_baselines import SAC
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\rl_baselines\rl_algorithm\sac.py:35:25
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+34	        with open(load_path, "rb") as f:
+35	            save_param = pickle.load(f)
+36	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:95:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+94	        else:
+95	            assert path is not None, "Error: SRL path not defined for {} in {}".format(args.srl_model,
+96	                                                                                       args.srl_config_file)
+97	            # Path depending on whether to load the latest model or not
+98	            srl_model_path = models['log_folder'] + path
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:184:45
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+183	                        help='Episode window for moving average plot (default: 40)')
+184	    parser.add_argument('--log-dir', default='/tmp/gym/', type=str,
+185	                        help='directory to save agent logs and model (default: /tmp/gym)')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:216:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+215	    # LOAD SRL models list
+216	    assert os.path.exists(args.srl_config_file), \
+217	        "Error: cannot load \"--srl-config-file {}\", file not found!".format(args.srl_config_file)
+218	    with open(args.srl_config_file, 'rb') as f:
+
+--------------------------------------------------
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:219:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b506_yaml_load.html
+218	    with open(args.srl_config_file, 'rb') as f:
+219	        all_models = yaml.load(f)
+220	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:222:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+221	    # Sanity check
+222	    assert args.episode_window >= 1, "Error: --episode_window cannot be less than 1"
+223	    assert args.num_timesteps >= 1, "Error: --num-timesteps cannot be less than 1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:223:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+222	    assert args.episode_window >= 1, "Error: --episode_window cannot be less than 1"
+223	    assert args.num_timesteps >= 1, "Error: --num-timesteps cannot be less than 1"
+224	    assert args.num_stack >= 1, "Error: --num-stack cannot be less than 1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:224:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+223	    assert args.num_timesteps >= 1, "Error: --num-timesteps cannot be less than 1"
+224	    assert args.num_stack >= 1, "Error: --num-stack cannot be less than 1"
+225	    assert args.action_repeat >= 1, "Error: --action-repeat cannot be less than 1"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:225:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+224	    assert args.num_stack >= 1, "Error: --num-stack cannot be less than 1"
+225	    assert args.action_repeat >= 1, "Error: --action-repeat cannot be less than 1"
+226	    assert 0 <= args.port < 65535, "Error: invalid visdom port number {}, ".format(args.port) + \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:226:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+225	    assert args.action_repeat >= 1, "Error: --action-repeat cannot be less than 1"
+226	    assert 0 <= args.port < 65535, "Error: invalid visdom port number {}, ".format(args.port) + \
+227	                                   "port number must be an unsigned 16bit number [0,65535]."
+228	    assert registered_srl[args.srl_model][0] == SRLType.ENVIRONMENT or args.env in all_models, \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:228:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+227	                                   "port number must be an unsigned 16bit number [0,65535]."
+228	    assert registered_srl[args.srl_model][0] == SRLType.ENVIRONMENT or args.env in all_models, \
+229	        "Error: the environment {} has no srl_model defined in 'srl_models.yaml'. Cannot continue.".format(args.env)
+230	    # check that all the SRL_model can be run on the environment
+231	    if registered_srl[args.srl_model][1] is not None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:237:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+236	                break
+237	        assert found, "Error: srl_model {}, is not compatible with the {} environment.".format(args.srl_model, args.env)
+238	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\train.py:298:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+297	    while super_class != SRLGymEnv:
+298	        assert super_class in rec_super_class_lookup, "Error: could not find super class of {}".format(super_class) + \
+299	                                                      ", are you sure \"registered_env\" is correctly defined?"
+300	        super_env_kwargs = {k: v.default
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\utils.py:85:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	        """
+85	        assert len(env_fns) == 1, "This dummy class does not support multiprocessing"
+86	        self.envs = [fn() for fn in env_fns]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\rl_baselines\utils.py:206:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+205	
+206	    assert not (registered_env[args.env][3] is ThreadingType.NONE and args.num_cpu != 1), \
+207	        "Error: cannot have more than 1 CPU for the environment {}".format(args.env)
+208	
+209	    if env_kwargs is not None and registered_srl[args.srl_model][0] == SRLType.SRL:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\client.py:39:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	        msg = self.socket.recv_json()
+39	        assert Command(msg['command']) == Command.HELLO
+40	        self.path_to_srl_server = msg.get('path')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:143:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	        # Sanity checks
+143	        assert len(self.actions) == len(self.rewards)
+144	        assert len(self.actions) == len(self.episode_starts)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:144:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+143	        assert len(self.actions) == len(self.rewards)
+144	        assert len(self.actions) == len(self.episode_starts)
+145	        assert len(self.actions) == len(self.images_path)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:145:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+144	        assert len(self.actions) == len(self.episode_starts)
+145	        assert len(self.actions) == len(self.images_path)
+146	        assert len(self.actions) == len(self.ground_truth_states)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:146:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+145	        assert len(self.actions) == len(self.images_path)
+146	        assert len(self.actions) == len(self.ground_truth_states)
+147	        assert len(self.target_positions) == self.episode_idx + 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:147:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+146	        assert len(self.actions) == len(self.ground_truth_states)
+147	        assert len(self.target_positions) == self.episode_idx + 1
+148	
+149	        data = {
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:219:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+218	        # Sanity checks
+219	        assert len(self.actions) == len(self.rewards)
+220	        assert len(self.actions) == len(self.normalized_states)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:220:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+219	        assert len(self.actions) == len(self.rewards)
+220	        assert len(self.actions) == len(self.normalized_states)
+221	        assert len(self.actions) == len(self.states)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\episode_saver.py:221:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+220	        assert len(self.actions) == len(self.normalized_states)
+221	        assert len(self.actions) == len(self.states)
+222	
+223	        data = {
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\state_representation\models.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+1	import json
+2	import pickle as pkl
+3	from collections import OrderedDict
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\models.py:65:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+64	
+65	        assert state_dim is not None, \
+66	            "Please make sure you are loading an up to date model with a conform exp_config file."
+67	
+68	        split_dimensions = exp_config.get('split-dimensions')
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\models.py:75:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+74	    else:
+75	        assert env_object is not None or state_dim > 0, \
+76	            "When learning states, state_dim must be > 0. Otherwise, set SRL_MODEL_PATH \
+77	            to a srl_model.pth file with learned states."
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\models.py:85:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+84	
+85	    assert model_type is not None or model is not None, \
+86	        "Model type not supported. In order to use loadSRLModel, a path to an SRL model must be given."
+87	    assert not (losses is None and not model_type == 'pca'), \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\models.py:87:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+86	        "Model type not supported. In order to use loadSRLModel, a path to an SRL model must be given."
+87	    assert not (losses is None and not model_type == 'pca'), \
+88	        "Please make sure you are loading an up to date model with a conform exp_config file."
+89	    assert not (n_actions is None and not (model_type == 'pca' or 'supervised' in losses)), \
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\state_representation\models.py:89:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+88	        "Please make sure you are loading an up to date model with a conform exp_config file."
+89	    assert not (n_actions is None and not (model_type == 'pca' or 'supervised' in losses)), \
+90	        "Please make sure you are loading an up to date model with a conform exp_config file."
+91	
+92	    if model is None:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\state_representation\models.py:205:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+204	            with open(path, "rb") as f:
+205	                self.model = pkl.load(f)
+206	        except UnicodeDecodeError:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: robotics-rl-srl\state_representation\models.py:209:29
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+208	            with open(path, "rb") as f:
+209	                self.model = pkl.load(f, encoding='latin1')
+210	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:1:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import subprocess
+2	import pytest
+3	import os
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	def assertEq(left, right):
+14	    assert left == right, "{} != {}".format(left, right)
+15	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:22:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+21	
+22	    ok = subprocess.call(['python', '-m', 'environments.dataset_generator'] + args_1)
+23	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:28:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+27	
+28	    ok = subprocess.call(['python', '-m', 'environments.dataset_generator'] + args_2)
+29	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:34:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+33	
+34	    ok = subprocess.call(['python', '-m', 'environments.dataset_fusioner'] + args_3)
+35	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:38:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+37	    # Checking inexistance of original datasets to be merged
+38	    assert not os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_1)
+39	    assert not os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	    assert not os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_1)
+39	    assert not os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_2)
+40	    assert os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_3)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_dataset_manipulation.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    assert not os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_2)
+40	    assert os.path.isdir(PATH_SRL + DATA_FOLDER_NAME_3)
+41	
+42	    # Removing fusionned test dataset
+43	    shutil.rmtree(PATH_SRL + DATA_FOLDER_NAME_3)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+2	
+3	import subprocess
+4	import os
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:51:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+50	def assertEq(left, right):
+51	    assert left == right, "{} != {}".format(left, right)
+52	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:55:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+54	def assertNeq(left, right):
+55	    assert left != right, "{} == {}".format(left, right)
+56	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:69:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+68	
+69	    ok = subprocess.call(['python', '-m', 'environments.dataset_generator'] + args)
+70	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:85:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+84	
+85	        ok = subprocess.call(['python', '-m', 'srl_baselines.supervised'] + args, cwd=os.getcwd() + "/srl_zoo")
+86	        assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:108:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+107	            json.dump(exp_config, f)
+108	        ok = subprocess.call(['python', 'train.py'] + args, cwd=os.getcwd() + "/srl_zoo")
+109	        assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:143:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+142	        json.dump(exp_config, f)
+143	    ok = subprocess.call(['python', 'train.py'] + args, cwd=os.getcwd() + "/srl_zoo")
+144	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:166:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+165	        json.dump(exp_config, f)
+166	    ok = subprocess.call(['python', 'train.py'] + args, cwd=os.getcwd() + "/srl_zoo")
+167	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:181:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+180	
+181	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+182	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_end_to_end.py:204:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+203	
+204	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+205	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+2	
+3	import subprocess
+4	import glob
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:30:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+29	    try:
+30	        p = subprocess.Popen(["xset", "-q"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+31	        p.communicate()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:30:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+29	    try:
+30	        p = subprocess.Popen(["xset", "-q"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+31	        p.communicate()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:39:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	def assertEq(left, right):
+39	    assert left == right, "{} != {}".format(left, right)
+40	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:43:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	def assertNeq(left, right):
+43	    assert left != right, "{} == {}".format(left, right)
+44	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:69:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+68	
+69	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+70	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_enjoy.py:87:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+86	
+87	        ok = subprocess.call(['python', '-m', 'replay.enjoy_baselines'] + args)
+88	        assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_hyperparam_search.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+2	
+3	import subprocess
+4	
+5	import pytest
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_hyperparam_search.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	def assertEq(left, right):
+18	    assert left == right, "{} != {}".format(left, right)
+19	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_hyperparam_search.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	def assertNeq(left, right):
+22	    assert left != right, "{} == {}".format(left, right)
+23	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_hyperparam_search.py:37:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+36	
+37	    ok = subprocess.call(['python', '-m', 'rl_baselines.hyperparam_search'] + args)
+38	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_hyperparam_search.py:62:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+61	
+62	    ok = subprocess.call(['python', '-m', 'rl_baselines.hyperparam_search'] + args)
+63	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:3:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+2	
+3	import subprocess
+4	
+5	import pytest
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:23:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+22	    """
+23	    p = subprocess.Popen(["xset", "-q"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+24	    p.communicate()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:23:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+22	    """
+23	    p = subprocess.Popen(["xset", "-q"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+24	    p.communicate()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	def assertEq(left, right):
+29	    assert left == right, "{} != {}".format(left, right)
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	def assertNeq(left, right):
+33	    assert left != right, "{} == {}".format(left, right)
+34	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:62:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+61	
+62	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+63	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:91:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+90	
+91	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+92	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:110:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+109	
+110	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+111	    assertEq(ok, 0)
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: robotics-rl-srl\tests\test_pipeline.py:138:9
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+137	
+138	    ok = subprocess.call(['python', '-m', 'rl_baselines.pipeline'] + args)
+139	    assertEq(ok, 0)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 9500
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 157
+		Medium: 17
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 1
+		Medium: 2
+		High: 171
+Files skipped (0):

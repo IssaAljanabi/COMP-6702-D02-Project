@@ -1,0 +1,598 @@
+Run started:2023-04-23 06:01:03.958710
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\examples\plotter\__init__.py:142:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+141	
+142	        assert -1 <= speed_a <= 1
+143	        assert -1 <= speed_b <= 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\examples\plotter\__init__.py:143:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+142	        assert -1 <= speed_a <= 1
+143	        assert -1 <= speed_b <= 1
+144	
+145	        return length, speed_a, speed_b
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\examples\plotter\__init__.py:168:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+167	
+168	        assert 0 <= spd_a <= 1
+169	        assert 0 <= spd_b <= 1
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\examples\plotter\__init__.py:169:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+168	        assert 0 <= spd_a <= 1
+169	        assert 0 <= spd_b <= 1
+170	
+171	        spd_a *= (movx / amovx) if amovx else 0
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\examples\plotter\try.py:128:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+127	
+128	    assert len(vals) == len(a) / 2 - 1
+129	
+130	    vals = [(x[0] / float(maxval), x[1] / float(maxval)) for x in vals]
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pylgbst\examples\vernie\__init__.py:5:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+4	import re
+5	import subprocess
+6	import time
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD4, MD5, or SHA1 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   Location: pylgbst\examples\vernie\__init__.py:19:14
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b324_hashlib.html
+18	            text = text.decode("utf-8")
+19	        md5 = hashlib.md5(text.encode('utf-8')).hexdigest()
+20	        fname = "/tmp/%s.mp3" % md5
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: pylgbst\examples\vernie\__init__.py:20:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+19	        md5 = hashlib.md5(text.encode('utf-8')).hexdigest()
+20	        fname = "/tmp/%s.mp3" % md5
+21	        if not os.path.exists(fname):
+
+--------------------------------------------------
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: pylgbst\examples\vernie\__init__.py:30:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b602_subprocess_popen_with_shell_equals_true.html
+29	        with open(os.devnull, 'w') as fnull:
+30	            subprocess.call("mplayer %s" % fname, shell=True, stderr=fnull, stdout=fnull)
+31	except BaseException:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\comms\__init__.py:49:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+48	    def _is_device_matched(self, address, dev_name, hub_mac, find_name):
+49	        assert hub_mac or find_name, 'You have to provide either hub_mac or hub_name in connection options'
+50	        log.debug("Checking device: %s, MAC: %s", dev_name, address)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:93:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	            with self._sync_lock:
+93	                assert not self._sync_request, "Pending request %r while trying to put %r" % (self._sync_request, msg)
+94	                self._sync_request = msg
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:132:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+131	                break
+132	        assert msg
+133	        return msg
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:162:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+161	
+162	        assert msg.event in (msg.EVENT_ATTACHED, msg.EVENT_ATTACHED_VIRTUAL)
+163	        port = msg.port
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:186:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+185	    def _handle_output_feedback(self, msg):
+186	        assert isinstance(msg, MsgPortOutputFeedback)
+187	        if msg.port not in self.peripherals:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:200:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+199	    def _handle_sensor_data(self, msg):
+200	        assert isinstance(msg, (MsgPortValueSingle, MsgPortValueCombined))
+201	        if msg.port not in self.peripherals:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:292:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+291	        voltage = self.send(MsgHubProperties(MsgHubProperties.VOLTAGE_PERC, MsgHubProperties.UPD_REQUEST))
+292	        assert isinstance(voltage, MsgHubProperties)
+293	        log.info("Voltage: %s%%", usbyte(voltage.parameters, 0))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\hub.py:296:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+295	        voltage = self.send(MsgHubAlert(MsgHubAlert.LOW_VOLTAGE, MsgHubAlert.UPD_REQUEST))
+296	        assert isinstance(voltage, MsgHubAlert)
+297	        if not voltage.is_ok():
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:22:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	        msglen = len(self.payload) + 3
+22	        assert msglen < 127, "TODO: handle longer messages with 2-byte len"
+23	        return pack("<B", msglen) + pack("<B", self.hub_id) + pack("<B", self.TYPE) + self.payload
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:58:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+57	        msglen = msg._byte()
+58	        assert msglen < 127, "TODO: handle longer messages with 2-byte len"
+59	        hub_id = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:60:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	        hub_id = msg._byte()
+60	        assert hub_id == 0
+61	        msg_type = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:62:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	        msg_type = msg._byte()
+62	        assert cls.TYPE == msg_type, "Message type does not match: %x!=%x" % (cls.TYPE, msg_type)
+63	        assert isinstance(msg.payload, (bytes, bytearray))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:63:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+62	        assert cls.TYPE == msg_type, "Message type does not match: %x!=%x" % (cls.TYPE, msg_type)
+63	        assert isinstance(msg.payload, (bytes, bytearray))
+64	        return msg
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:139:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+138	        msg = super().decode(data)
+139	        assert isinstance(msg, MsgHubProperties)
+140	        msg.property = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:193:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+192	        msg = super().decode(data)
+193	        assert isinstance(msg, MsgHubAction)
+194	        msg.action = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:237:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+236	        msg = super().decode(data)
+237	        assert isinstance(msg, MsgHubAlert)
+238	        msg.atype = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:242:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+241	
+242	        assert msg.operation == cls.UPSTREAM_UPDATE
+243	        return msg
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:328:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+327	        msg = super().decode(data)
+328	        assert isinstance(msg, MsgHubAttachedIO)
+329	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:369:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+368	        msg = super().decode(data)
+369	        assert isinstance(msg, MsgGenericError)
+370	        msg.cmd = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:525:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+524	        msg = super().decode(data)
+525	        assert isinstance(msg, MsgPortInfo)
+526	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:543:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+542	    def is_output(self):
+543	        assert self.info_type == MsgPortInfoRequest.INFO_MODE_INFO
+544	        return bool(self.capabilities & self.CAP_OUTPUT)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:547:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+546	    def is_input(self):
+547	        assert self.info_type == MsgPortInfoRequest.INFO_MODE_INFO
+548	        return bool(self.capabilities & self.CAP_INPUT)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:551:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+550	    def is_combinable(self):
+551	        assert self.info_type == MsgPortInfoRequest.INFO_MODE_INFO
+552	        return bool(self.capabilities & self.CAP_COMBINABLE)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:555:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+554	    def is_synchronizable(self):
+555	        assert self.info_type == MsgPortInfoRequest.INFO_MODE_INFO
+556	        return bool(self.capabilities & self.CAP_SYNCHRONIZABLE)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:594:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+593	        msg = super().decode(data)
+594	        assert isinstance(msg, MsgPortModeInfo)
+595	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:643:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+642	        msg = super().decode(data)
+643	        assert isinstance(msg, MsgPortValueSingle)
+644	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:662:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+661	        msg = super().decode(data)
+662	        assert isinstance(msg, MsgPortValueCombined)
+663	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:684:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+683	        msg = super().decode(data)
+684	        assert isinstance(msg, MsgPortInputFmtSingle)
+685	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:709:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+708	        msg = super().decode(data)
+709	        assert isinstance(msg, MsgPortInputFmtSingle)
+710	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:728:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+727	        if cmd == self.CMD_DISCONNECT:
+728	            assert isinstance(port, int)
+729	            self.payload += pack("<B", port)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:731:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+730	        else:
+731	            assert isinstance(port, (list, tuple))
+732	            self.payload += pack("<B", port[0]) + pack("<B", port[1])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:795:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+794	        msg = super().decode(data)
+795	        assert isinstance(msg, MsgPortOutputFeedback)
+796	        assert len(msg.payload) == 2, "TODO: implement multi-port feedback message"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\messages.py:796:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+795	        assert isinstance(msg, MsgPortOutputFeedback)
+796	        assert len(msg.payload) == 2, "TODO: implement multi-port feedback message"
+797	        msg.port = msg._byte()
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:88:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	    def set_port_mode(self, mode, send_updates=None, update_delta=None):
+88	        assert not self.virtual_ports, "TODO: support combined mode for sensors"
+89	
+90	        if send_updates is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:108:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+107	            resp = self.hub.send(msg)
+108	            assert isinstance(resp, MsgPortInputFmtSingle)
+109	            self._port_mode = resp
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:112:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+111	    def _send_output(self, msg):
+112	        assert isinstance(msg, MsgPortOutput)
+113	        msg.is_buffered = self.is_buffered  # TODO: support buffering
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:164:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+163	        decoded = self._decode_port_data(msg)
+164	        assert isinstance(decoded, (tuple, list)), "Unexpected data type: %s" % type(decoded)
+165	        self._notify_subscribers(*decoded)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:178:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+177	        mode_info = self.hub.send(MsgPortInfoRequest(self.port, MsgPortInfoRequest.INFO_MODE_INFO))
+178	        assert isinstance(mode_info, MsgPortInfo)
+179	        info = {
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:195:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+194	            )
+195	            assert isinstance(mode_combinations, MsgPortInfo)
+196	            info['possible_mode_combinations'] = mode_combinations.possible_mode_combinations
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:216:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+215	                resp = self.hub.send(MsgPortModeInfoRequest(self.port, mode, info))
+216	                assert isinstance(resp, MsgPortModeInfo)
+217	                descr[MsgPortModeInfoRequest.INFO_TYPES[info]] = resp.value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:245:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+244	        if isinstance(color, (list, tuple)):
+245	            assert len(color) == 3, "RGB color has to have 3 values"
+246	            self.set_port_mode(self.MODE_RGB)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:727:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+726	    def set_ir_tx(self, level=1.0):
+727	        assert 0 <= level <= 1.0
+728	        self.set_port_mode(self.SET_IR_TX)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\peripherals.py:907:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+906	        if decoded is not None:
+907	            assert isinstance(decoded, (tuple, list)), "Unexpected data type: %s" % type(decoded)
+908	            self._notify_subscribers(*decoded)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\pylgbst\utilities.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    data = seq[index: index + size]
+24	    assert len(data) == size, "Unexpected data len %d, expected %d" % (len(data), size)
+25	    return unpack(pattern, data)[0]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\setup.py:6:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+5	tag = os.getenv("TRAVIS_TAG")
+6	assert not tag or tag == version, "Travis tag has to match version: %r!=%r" % (tag, version)
+7	
+8	setup(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\tests\test_hub.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	        resp = hub.send(msg)
+19	        assert isinstance(resp, MsgHubProperties)
+20	        self.assertEqual(1, len(resp.parameters))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\tests\test_hub.py:26:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	        resp = hub.send(msg)
+26	        assert isinstance(resp, MsgHubProperties)
+27	        self.assertEqual(b"LEGO Move Hub", resp.parameters)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: pylgbst\tests\test_hub.py:97:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+96	        dev = hub.peripherals[0x02]
+97	        assert isinstance(dev, VisionSensor)
+98	
+99	        conn.notification_delayed("0a004702080000000000", 0.1)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 4755
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 54
+		Medium: 1
+		High: 2
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 56
+Files skipped (1):
+	pylgbst\examples\bb8joystick\bb8.py (syntax error while parsing AST from file)

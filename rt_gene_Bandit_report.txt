@@ -1,0 +1,268 @@
+Run started:2023-04-23 06:08:13.494053
+
+Test results:
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_bene_model_training\pytorch\rtbene_dataset.py:18:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	
+18	        assert subject_list is not None, "Must pass a list of subjects to load the data for"
+19	
+20	        if self._transform is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_bene_model_training\pytorch\rtbene_dataset.py:35:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	
+35	                        assert len(left_dataset) == len(
+36	                            right_datset), "Weird: Dataset left/right images aren't equal length"
+37	                        for _i in range(len(left_dataset)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_bene_model_training\pytorch\train_model.py:32:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	        super(TrainRTBENE, self).__init__()
+32	        assert class_weights is not None, "Class Weights can't be None"
+33	
+34	        self.model = MODELS[hparams.model_base]()
+
+--------------------------------------------------
+>> Issue: [B108:hardcoded_tmp_directory] Probable insecure usage of temp file/directory.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-377 (https://cwe.mitre.org/data/definitions/377.html)
+   Location: rt_gene\rt_bene_model_training\pytorch\train_model.py:112:60
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b108_hardcoded_tmp_directory.html
+111	    root_parser.add_argument('--gpu', type=int, default=-1, help='gpu to use, 1 for a single GPU, 3 for 3 GPUs, -1 for all (default: -1)')
+112	    root_parser.add_argument('--dataset', type=str, default="/tmp/rtbene_dataset.hdf5")
+113	    root_parser.add_argument('--dataset_name', type=str, choices=["rt_bene"], default="rt_bene")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_bene_model_training\tensorflow\dataset_manager.py:12:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+11	def read_rgb_image(img_path, size, flip):
+12	    assert type(size) is tuple, "size parameter must be a tuple, (96, 96) for instance"
+13	    img = cv2.imread(img_path, cv2.IMREAD_COLOR)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene\scripts\extract_landmarks_node.py:210:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+209	    def publish_subject_list(self, timestamp, subjects):
+210	        assert (subjects is not None)
+211	        subject_list_message = self.__subject_bridge.images_to_msg(subjects, timestamp)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene\src\rt_bene\estimate_blink_pytorch.py:28:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	
+28	        assert model_type in MODELS.keys(), f"PyTorch backend only supports the following backends: [{','.join(MODELS.keys())}]"
+29	
+30	        # check md5 hashes
+31	        model_hashes = [md5(model) for model in model_files]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene\src\rt_bene\estimate_blink_tensorflow.py:19:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	
+19	        assert model_type == "densenet121", "Tensorflow backend only supports DenseNet-121"
+20	
+21	        tf.compat.v1.disable_eager_execution()
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with pickle module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rt_gene\rt_gene\src\rt_gene\ThreeDDFA\io.py:29:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b403-import-pickle
+28	import torch
+29	import pickle
+30	import scipy.io as sio
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: rt_gene\rt_gene\src\rt_gene\ThreeDDFA\io.py:36:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html
+35	    if not os.path.isdir(d) and not os.path.exists(d):
+36	        os.system('mkdir -p {}'.format(d))
+37	
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   Location: rt_gene\rt_gene\src\rt_gene\ThreeDDFA\io.py:52:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b301-pickle
+51	    elif suffix == 'pkl':
+52	        return pickle.load(open(fp, 'rb'))
+53	
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD4, MD5, or SHA1 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   Location: rt_gene\rt_gene\src\rt_gene\download_tools.py:9:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b324_hashlib.html
+8	def md5(file_name):
+9	    hash_md5 = hashlib.md5()
+10	    with open(file_name, "rb") as f:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene\src\rt_gene\download_tools.py:28:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+27	            print("Checking md5 for {}".format(os.path.basename(file_name)))
+28	            assert md5sum == md5(
+29	                file_name), "MD5Sums do not match for {}. Please) delete the same file name to re-download".format(
+30	                file_name)
+31	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene\src\rt_gene\kalman_stabilizer.py:44:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+43	        # Currently we only support scalar and point, so check user input first.
+44	        assert state_num == 4 or state_num == 2, "Only scalar and point supported, Check state_num please."
+45	
+46	        # Store the parameters.
+47	        self.state_num = state_num
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\evaluate_model.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	def test_fold(d_loader, model_list, fold_idx, model_idx="Ensemble"):
+19	    assert type(model_list) is list, "model_list should be a list of models"
+20	    angle_criterion_acc = []
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\rtgene_dataset.py:17:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	
+17	        assert subject_list is not None, "Must pass a list of subjects to load the data for"
+18	
+19	        if self._transform is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\rtgene_dataset.py:32:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	
+32	                    assert len(left_dataset) == len(right_datset), "Dataset left/right images aren't equal length"
+33	                    for _i in range(len(left_dataset)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\rtgene_dataset.py:41:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+40	        _sample = self._subject_labels[index]
+41	        assert type(_sample[0]) == str, "Sample not found at index {}".format(index)
+42	        _left_img = self._h5_file[_sample[0] + "/left"][_sample[1]][()]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\rtgene_dataset.py:62:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	
+62	        assert subject_list is not None, "Must pass a list of subjects to load the data for"
+63	
+64	        if self._transform is None:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\utils\CombineGazeH5Datasets.py:13:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	
+13	assert len(params.hdf5_file) >= 2, "Need at least two datasets to combine"
+14	
+15	files = [h5py.File(path, mode="r") for path in params.hdf5_file]
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\pytorch\utils\PinballLoss.py:16:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	        }
+16	        assert reduction in _reduction_strategies.keys(), "Reduction method unknown, possibilities include 'mean', 'sum' and 'none'"
+17	
+18	        self._reduction_strategy = _reduction_strategies.get(reduction)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\tensorflow\evaluate_model.py:69:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+68	
+69	assert len(model_prefixes) == len(model_suffixes)
+70	
+71	all_models_exist = True
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: rt_gene\rt_gene_model_training\tensorflow\evaluate_model.py:84:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+83	
+84	assert all_models_exist == True and model_evaluated == False
+85	
+86	
+87	scores_list = []
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 5098
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 19
+		Medium: 2
+		High: 2
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 22
+Files skipped (0):

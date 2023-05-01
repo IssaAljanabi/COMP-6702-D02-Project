@@ -1,0 +1,1472 @@
+Run started:2023-04-23 06:02:23.150847
+
+Test results:
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\n_joint_arm_3d\random_forward_kinematics.py:11:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+10	def random_val(min_val, max_val):
+11	    return min_val + random.random() * (max_val - min_val)
+12	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\n_joint_arm_3d\random_inverse_kinematics.py:11:21
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+10	def random_val(min_val, max_val):
+11	    return min_val + random.random() * (max_val - min_val)
+12	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\n_joint_arm_to_point_control\n_joint_arm_to_point_control.py:85:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+84	    SAREA = 15.0
+85	    return [SAREA * random() - SAREA / 2.0,
+86	            SAREA * random() - SAREA / 2.0]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\n_joint_arm_to_point_control\n_joint_arm_to_point_control.py:86:20
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+85	    return [SAREA * random() - SAREA / 2.0,
+86	            SAREA * random() - SAREA / 2.0]
+87	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\rrt_star_seven_joint_arm_control\rrt_star_seven_joint_arm_control.py:232:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+231	    def get_random_node(self):
+232	        if random.randint(0, 100) > self.goal_sample_rate:
+233	            rnd = self.Node(np.random.uniform(self.min_rand,
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\two_joint_arm_to_point_control\two_joint_arm_to_point_control.py:126:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+125	    for i in range(5):
+126	        x = 2.0 * random() - 1.0
+127	        y = 2.0 * random() - 1.0
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\ArmNavigation\two_joint_arm_to_point_control\two_joint_arm_to_point_control.py:127:18
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+126	        x = 2.0 * random() - 1.0
+127	        y = 2.0 * random() - 1.0
+128	        theta1, theta2 = two_joint_arm(
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Control\move_to_pose\move_to_pose.py:176:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+175	    for i in range(5):
+176	        x_start = 20 * random()
+177	        y_start = 20 * random()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Control\move_to_pose\move_to_pose.py:177:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+176	        x_start = 20 * random()
+177	        y_start = 20 * random()
+178	        theta_start = 2 * np.pi * random() - np.pi
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Control\move_to_pose\move_to_pose.py:178:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+177	        y_start = 20 * random()
+178	        theta_start = 2 * np.pi * random() - np.pi
+179	        x_goal = 20 * random()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Control\move_to_pose\move_to_pose.py:179:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+178	        theta_start = 2 * np.pi * random() - np.pi
+179	        x_goal = 20 * random()
+180	        y_goal = 20 * random()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Control\move_to_pose\move_to_pose.py:180:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+179	        x_goal = 20 * random()
+180	        y_goal = 20 * random()
+181	        theta_goal = 2 * np.pi * random() - np.pi
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Control\move_to_pose\move_to_pose.py:181:33
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+180	        y_goal = 20 * random()
+181	        theta_goal = 2 * np.pi * random() - np.pi
+182	        print("Initial x: %.2f m\nInitial y: %.2f m\nInitial theta: %.2f rad\n" %
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Mapping\circle_fitting\circle_fitting.py:60:34
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+59	        nangle = math.atan2(ny, nx)
+60	        nr = math.hypot(nx, ny) * random.uniform(0.95, 1.05)
+61	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Mapping\kmeans_clustering\kmeans_clustering.py:44:23
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+43	        self.n_label = n_label
+44	        self.labels = [random.randint(0, n_label - 1)
+45	                       for _ in range(self.n_data)]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Mapping\kmeans_clustering\kmeans_clustering.py:90:38
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+89	        for _ in range(n_points):
+90	            rx.append(icx + rand_d * (random.random() - 0.5))
+91	            ry.append(icy + rand_d * (random.random() - 0.5))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Mapping\kmeans_clustering\kmeans_clustering.py:91:38
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+90	            rx.append(icx + rand_d * (random.random() - 0.5))
+91	            ry.append(icy + rand_d * (random.random() - 0.5))
+92	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\Mapping\rectangle_fitting\simulator.py:109:40
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+108	                v_angle = math.atan2(vy, vx)
+109	                vr = np.hypot(vx, vy) * random.uniform(1.0 - self.range_noise,
+110	                                                       1.0 + self.range_noise)
+111	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\BatchInformedRRTStar\batch_informed_rrtstar.py:420:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+419	    def sample_unit_ball():
+420	        a = random.random()
+421	        b = random.random()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\BatchInformedRRTStar\batch_informed_rrtstar.py:421:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+420	        a = random.random()
+421	        b = random.random()
+422	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\BatchInformedRRTStar\batch_informed_rrtstar.py:431:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+430	    def sample_free_space(self):
+431	        rnd = [random.uniform(self.min_rand, self.max_rand),
+432	               random.uniform(self.min_rand, self.max_rand)]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\BatchInformedRRTStar\batch_informed_rrtstar.py:432:15
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+431	        rnd = [random.uniform(self.min_rand, self.max_rand),
+432	               random.uniform(self.min_rand, self.max_rand)]
+433	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:161:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+160	
+161	    assert path.T[0][0] == start_x, "path is invalid"
+162	    assert path.T[1][0] == start_y, "path is invalid"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:162:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+161	    assert path.T[0][0] == start_x, "path is invalid"
+162	    assert path.T[1][0] == start_y, "path is invalid"
+163	    assert path.T[0][-1] == end_x, "path is invalid"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:163:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+162	    assert path.T[1][0] == start_y, "path is invalid"
+163	    assert path.T[0][-1] == end_x, "path is invalid"
+164	    assert path.T[1][-1] == end_y, "path is invalid"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:164:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+163	    assert path.T[0][-1] == end_x, "path is invalid"
+164	    assert path.T[1][-1] == end_y, "path is invalid"
+165	
+166	    if show_animation:  # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:196:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+195	            start_x, start_y, start_yaw, end_x, end_y, end_yaw, offset)
+196	        assert path.T[0][0] == start_x, "path is invalid"
+197	        assert path.T[1][0] == start_y, "path is invalid"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:197:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+196	        assert path.T[0][0] == start_x, "path is invalid"
+197	        assert path.T[1][0] == start_y, "path is invalid"
+198	        assert path.T[0][-1] == end_x, "path is invalid"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:198:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+197	        assert path.T[1][0] == start_y, "path is invalid"
+198	        assert path.T[0][-1] == end_x, "path is invalid"
+199	        assert path.T[1][-1] == end_y, "path is invalid"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\BezierPath\bezier_path.py:199:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+198	        assert path.T[0][-1] == end_x, "path is invalid"
+199	        assert path.T[1][-1] == end_y, "path is invalid"
+200	
+201	        if show_animation:  # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\DStarLite\d_star_lite.py:236:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+235	        random.seed()
+236	        if random.random() > 1 - p_create_random_obstacle:
+237	            x = random.randint(0, self.x_max - 1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\DStarLite\d_star_lite.py:237:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+236	        if random.random() > 1 - p_create_random_obstacle:
+237	            x = random.randint(0, self.x_max - 1)
+238	            y = random.randint(0, self.y_max - 1)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\DStarLite\d_star_lite.py:238:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+237	            x = random.randint(0, self.x_max - 1)
+238	            y = random.randint(0, self.y_max - 1)
+239	            new_obs = Node(x, y)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:35:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+34	        # ensure input has the correct form
+35	        assert(isinstance(segments, list) and isinstance(
+36	            segments[0], Eta3PathSegment))
+37	        # ensure that each segment begins from the previous segment's end (continuity)
+38	        for r, s in zip(segments[:-1], segments[1:]):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:39:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+38	        for r, s in zip(segments[:-1], segments[1:]):
+39	            assert(np.array_equal(r.end_pose, s.start_pose))
+40	        self.segments = segments
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:52:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	
+52	        assert(0 <= u <= len(self.segments))
+53	        if np.isclose(u, len(self.segments)):
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:78:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+77	        # make sure inputs are of the correct size
+78	        assert(len(start_pose) == 3 and len(start_pose) == len(end_pose))
+79	        self.start_pose = start_pose
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:86:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+85	            # make sure that eta has correct size
+86	            assert(len(eta) == 6)
+87	        # if no kappa is passed, initialize to array of zeros
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:91:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+90	        else:
+91	            assert(len(kappa) == 4)
+92	        # set up angle cosines and sines for simpler computations below
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:200:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+199	        """
+200	        assert(0 <= u <= 1)
+201	        return self.coeffs.dot(np.array([1, u, u**2, u**3, u**4, u**5, u**6, u**7]))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:213:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+212	
+213	        assert(0 <= u <= 1)
+214	        assert(0 < order <= 2)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplinePath\eta3_spline_path.py:214:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+213	        assert(0 <= u <= 1)
+214	        assert(0 < order <= 2)
+215	        if order == 1:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplineTrajectory\eta3_spline_trajectory.py:43:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+42	        # ensure that all inputs obey the assumptions of the model
+43	        assert max_vel > 0 and v0 >= 0 and a0 >= 0 and max_accel > 0 and max_jerk > 0 \
+44	            and a0 <= max_accel and v0 <= max_vel
+45	        super(eta3_trajectory, self).__init__(segments=segments)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplineTrajectory\eta3_spline_trajectory.py:167:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+166	        try:
+167	            assert np.isclose(self.vels[index], 0)
+168	        except AssertionError as e:
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\Eta3SplineTrajectory\eta3_spline_trajectory.py:186:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+185	        # chosen cannot be enforced on the path
+186	        assert(np.all(self.times >= 0))
+187	        self.total_time = self.times.sum()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\InformedRRTStar\informed_rrt_star.py:160:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+159	    def sample_unit_ball():
+160	        a = random.random()
+161	        b = random.random()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\InformedRRTStar\informed_rrt_star.py:161:12
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+160	        a = random.random()
+161	        b = random.random()
+162	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\InformedRRTStar\informed_rrt_star.py:171:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+170	    def sample_free_space(self):
+171	        if random.randint(0, 100) > self.goal_sample_rate:
+172	            rnd = [random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\InformedRRTStar\informed_rrt_star.py:172:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+171	        if random.randint(0, 100) > self.goal_sample_rate:
+172	            rnd = [random.uniform(self.min_rand, self.max_rand),
+173	                   random.uniform(self.min_rand, self.max_rand)]
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\InformedRRTStar\informed_rrt_star.py:173:19
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+172	            rnd = [random.uniform(self.min_rand, self.max_rand),
+173	                   random.uniform(self.min_rand, self.max_rand)]
+174	        else:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\LQRPlanner\lqr_planner.py:132:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+131	        sy = 6.0
+132	        gx = random.uniform(-area, area)
+133	        gy = random.uniform(-area, area)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\LQRPlanner\lqr_planner.py:133:13
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+132	        gx = random.uniform(-area, area)
+133	        gy = random.uniform(-area, area)
+134	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\LQRRRTStar\lqr_rrt_star.py:149:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+148	
+149	        if random.randint(0, 100) > self.goal_sample_rate:
+150	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\LQRRRTStar\lqr_rrt_star.py:150:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+149	        if random.randint(0, 100) > self.goal_sample_rate:
+150	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+151	                            random.uniform(self.min_rand, self.max_rand)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\LQRRRTStar\lqr_rrt_star.py:151:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+150	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+151	                            random.uniform(self.min_rand, self.max_rand)
+152	                            )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\ProbabilisticRoadMap\probabilistic_road_map.py:303:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+302	
+303	    assert rx, 'Cannot found path'
+304	
+305	    if show_animation:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTDubins\rrt_dubins.py:163:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+162	
+163	        if random.randint(0, 100) > self.goal_sample_rate:
+164	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTDubins\rrt_dubins.py:164:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+163	        if random.randint(0, 100) > self.goal_sample_rate:
+164	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+165	                            random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTDubins\rrt_dubins.py:165:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+164	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+165	                            random.uniform(self.min_rand, self.max_rand),
+166	                            random.uniform(-math.pi, math.pi)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTDubins\rrt_dubins.py:166:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+165	                            random.uniform(self.min_rand, self.max_rand),
+166	                            random.uniform(-math.pi, math.pi)
+167	                            )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarDubins\rrt_star_dubins.py:170:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+169	
+170	        if random.randint(0, 100) > self.goal_sample_rate:
+171	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarDubins\rrt_star_dubins.py:171:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+170	        if random.randint(0, 100) > self.goal_sample_rate:
+171	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+172	                            random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarDubins\rrt_star_dubins.py:172:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+171	            rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+172	                            random.uniform(self.min_rand, self.max_rand),
+173	                            random.uniform(-math.pi, math.pi)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarDubins\rrt_star_dubins.py:173:28
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+172	                            random.uniform(self.min_rand, self.max_rand),
+173	                            random.uniform(-math.pi, math.pi)
+174	                            )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarReedsShepp\rrt_star_reeds_shepp.py:181:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+180	
+181	        rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+182	                        random.uniform(self.min_rand, self.max_rand),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarReedsShepp\rrt_star_reeds_shepp.py:182:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+181	        rnd = self.Node(random.uniform(self.min_rand, self.max_rand),
+182	                        random.uniform(self.min_rand, self.max_rand),
+183	                        random.uniform(-math.pi, math.pi)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRTStarReedsShepp\rrt_star_reeds_shepp.py:183:24
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+182	                        random.uniform(self.min_rand, self.max_rand),
+183	                        random.uniform(-math.pi, math.pi)
+184	                        )
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRT\rrt.py:165:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+164	    def get_random_node(self):
+165	        if random.randint(0, 100) > self.goal_sample_rate:
+166	            rnd = self.Node(
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRT\rrt.py:167:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+166	            rnd = self.Node(
+167	                random.uniform(self.min_rand, self.max_rand),
+168	                random.uniform(self.min_rand, self.max_rand))
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRT\rrt.py:168:16
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+167	                random.uniform(self.min_rand, self.max_rand),
+168	                random.uniform(self.min_rand, self.max_rand))
+169	        else:  # goal point sampling
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRT\rrt_with_pathsmoothing.py:82:22
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+81	        # Sample two points
+82	        pickPoints = [random.uniform(0, le), random.uniform(0, le)]
+83	        pickPoints.sort()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRT\rrt_with_pathsmoothing.py:82:45
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+81	        # Sample two points
+82	        pickPoints = [random.uniform(0, le), random.uniform(0, le)]
+83	        pickPoints.sort()
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   Location: PythonRobotics\PathPlanning\RRT\rrt_with_sobol_sampler.py:171:11
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_calls.html#b311-random
+170	    def get_random_node(self):
+171	        if random.randint(0, 100) > self.goal_sample_rate:
+172	            rand_coordinates, n = sobol_quasirand(2, self.sobol_inter_)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\ReedsSheppPath\reeds_shepp_path_planning.py:376:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+375	    if not xs:
+376	        assert False, "No path"
+377	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathPlanning\VoronoiRoadMap\voronoi_road_map.py:177:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+176	
+177	    assert rx, 'Cannot found path'
+178	
+179	    if show_animation:  # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathTracking\pure_pursuit\pure_pursuit.py:193:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+192	    # Test
+193	    assert lastIndex >= target_ind, "Cannot goal"
+194	
+195	    if show_animation:  # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathTracking\rear_wheel_feedback\rear_wheel_feedback.py:205:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+204	    # Test
+205	    assert goal_flag, "Cannot goal"
+206	
+207	    if show_animation:  # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\PathTracking\stanley_controller\stanley_controller.py:197:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+196	    # Test
+197	    assert last_idx >= target_idx, "Cannot reach goal"
+198	
+199	    if show_animation:  # pragma: no cover
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	
+15	    assert len(rax) == len(ray) == len(heading) == len(curvature)
+16	
+17	    rix, riy, heading, curvature = bspline_path.interpolate_b_spline_path(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:20:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+19	
+20	    assert len(rix) == len(riy) == len(heading) == len(curvature)
+21	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:31:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+30	
+31	    assert len(rax) == len(ray) == len(heading) == len(curvature)
+32	
+33	    rix, riy, heading, curvature = bspline_path.interpolate_b_spline_path(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:36:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+35	
+36	    assert len(rix) == len(riy) == len(heading) == len(curvature)
+37	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	
+47	    assert len(rax) == len(ray) == len(heading) == len(curvature)
+48	
+49	    rix, riy, heading, curvature = bspline_path.interpolate_b_spline_path(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:52:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+51	
+52	    assert len(rix) == len(riy) == len(heading) == len(curvature)
+53	
+54	    rax, ray, heading, curvature = bspline_path.approximate_b_spline_path(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:57:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+56	
+57	    assert len(rax) == len(ray) == len(heading) == len(curvature)
+58	
+59	    rix, riy, heading, curvature = bspline_path.interpolate_b_spline_path(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_bspline_path.py:62:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+61	
+62	    assert len(rix) == len(riy) == len(heading) == len(curvature)
+63	
+64	    with pytest.raises(ValueError):
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:41:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+40	import os
+41	import subprocess
+42	
+43	
+44	CONFIG = os.path.join(
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:56:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+55	    args = ['--fix'] if fix else []
+56	    res = subprocess.run(
+57	        ['ruff', f'--config={CONFIG}'] + args + files,
+58	        stdout=subprocess.PIPE,
+59	        encoding='utf-8'
+60	    )
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:68:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+67	    """
+68	    res = subprocess.run(
+69	        [
+70	            'git',
+71	            'rev-list',
+72	            '--max-count',
+73	            f'{num_commits}',
+74	            '--first-parent',
+75	            branch
+76	        ],
+77	        stdout=subprocess.PIPE,
+78	        encoding='utf-8',
+79	    )
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:68:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+67	    """
+68	    res = subprocess.run(
+69	        [
+70	            'git',
+71	            'rev-list',
+72	            '--max-count',
+73	            f'{num_commits}',
+74	            '--first-parent',
+75	            branch
+76	        ],
+77	        stdout=subprocess.PIPE,
+78	        encoding='utf-8',
+79	    )
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:104:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+103	    files = ['*.py']
+104	    res = subprocess.run(
+105	        ['git', 'diff', '--unified=0', sha, '--'] + files,
+106	        stdout=subprocess.PIPE,
+107	        encoding='utf-8'
+108	    )
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:115:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+114	    """Find the diff since the given SHA."""
+115	    res = subprocess.run(
+116	        ['git', 'diff', '--name-only', '--diff-filter=ACMR', '-z', sha, '--',
+117	         '*.py', '*.pyx', '*.pxd', '*.pxi'],
+118	        stdout=subprocess.PIPE,
+119	        encoding='utf-8'
+120	    )
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_codestyle.py:115:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+114	    """Find the diff since the given SHA."""
+115	    res = subprocess.run(
+116	        ['git', 'diff', '--name-only', '--diff-filter=ACMR', '-z', sha, '--',
+117	         '*.py', '*.pyx', '*.pxd', '*.pxi'],
+118	        stdout=subprocess.PIPE,
+119	        encoding='utf-8'
+120	    )
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_codestyle.py:134:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+133	        print("No lint errors found.")
+134	    assert rc == 0
+135	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	                         end_y, end_yaw):
+11	    assert (abs(px[0] - start_x) <= 0.01)
+12	    assert (abs(py[0] - start_y) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:12:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+11	    assert (abs(px[0] - start_x) <= 0.01)
+12	    assert (abs(py[0] - start_y) <= 0.01)
+13	    assert (abs(pyaw[0] - start_yaw) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    assert (abs(py[0] - start_y) <= 0.01)
+13	    assert (abs(pyaw[0] - start_yaw) <= 0.01)
+14	    assert (abs(px[-1] - end_x) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    assert (abs(pyaw[0] - start_yaw) <= 0.01)
+14	    assert (abs(px[-1] - end_x) <= 0.01)
+15	    assert (abs(py[-1] - end_y) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    assert (abs(px[-1] - end_x) <= 0.01)
+15	    assert (abs(py[-1] - end_y) <= 0.01)
+16	    assert (abs(pyaw[-1] - end_yaw) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:16:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+15	    assert (abs(py[-1] - end_y) <= 0.01)
+16	    assert (abs(pyaw[-1] - end_yaw) <= 0.01)
+17	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:22:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+21	        [np.hypot(dx, dy) for (dx, dy) in zip(np.diff(px), np.diff(py))])
+22	    assert (abs(path_len - sum(lengths)) <= 0.1)
+23	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dubins_path_planning.py:88:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+87	
+88	    assert mode == ["R", "S", "L"]
+89	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dynamic_movement_primitives.py:29:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+28	
+29	    assert(path.shape[0] == DMP_controller.timesteps)
+30	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_dynamic_movement_primitives.py:45:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+44	    diff = abs(pos[:, 1] - noisy_sin_t)
+45	    assert(max(diff) < 5*A_noise)
+46	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:26:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+25	    )
+26	    assert len(px) >= 5
+27	
+28	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:33:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+32	    )
+33	    assert len(px) >= 5
+34	
+35	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:40:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+39	    )
+40	    assert len(px) >= 5
+41	
+42	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:47:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+46	    )
+47	    assert len(px) >= 5
+48	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:60:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+59	    )
+60	    assert len(px) >= 5
+61	
+62	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:67:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+66	    )
+67	    assert len(px) >= 5
+68	
+69	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:74:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+73	    )
+74	    assert len(px) >= 5
+75	
+76	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:81:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+80	    )
+81	    assert len(px) >= 5
+82	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:93:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+92	    )
+93	    assert len(px) >= 5
+94	
+95	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:100:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+99	    )
+100	    assert len(px) >= 5
+101	
+102	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:107:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+106	    )
+107	    assert len(px) >= 5
+108	
+109	    px, py = grid_based_sweep_coverage_path_planner.planning(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_grid_based_sweep_coverage_path_planner.py:114:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+113	    )
+114	    assert len(px) >= 5
+115	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_mypy_type_check.py:2:0
+   More Info: https://bandit.readthedocs.io/en/1.7.4/blacklists/blacklist_imports.html#b404-import-subprocess
+1	import os
+2	import subprocess
+3	
+4	import conftest
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_mypy_type_check.py:20:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b607_start_process_with_partial_path.html
+19	def run_mypy(dir_name, project_path, config_path):
+20	    res = subprocess.run(
+21	        ['mypy',
+22	         '--config-file',
+23	         config_path,
+24	         '-p',
+25	         dir_name],
+26	        cwd=project_path,
+27	        stdout=subprocess.PIPE,
+28	        encoding='utf-8')
+29	    return res.returncode, res.stdout
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   Location: PythonRobotics\tests\test_mypy_type_check.py:20:10
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b603_subprocess_without_shell_equals_true.html
+19	def run_mypy(dir_name, project_path, config_path):
+20	    res = subprocess.run(
+21	        ['mypy',
+22	         '--config-file',
+23	         config_path,
+24	         '-p',
+25	         dir_name],
+26	        cwd=project_path,
+27	        stdout=subprocess.PIPE,
+28	        encoding='utf-8')
+29	    return res.returncode, res.stdout
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_mypy_type_check.py:46:8
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+45	            print("No lint errors found.")
+46	        assert rc == 0
+47	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_point_cloud_sampling.py:9:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+8	    captured = capsys.readouterr()
+9	    assert "voxel_sampling_points.shape=(27, 3)" in captured.out
+10	    assert "farthest_sampling_points.shape=(20, 3)" in captured.out
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_point_cloud_sampling.py:10:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+9	    assert "voxel_sampling_points.shape=(27, 3)" in captured.out
+10	    assert "farthest_sampling_points.shape=(20, 3)" in captured.out
+11	    assert "poisson_disk_points.shape=(20, 3)" in captured.out
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_point_cloud_sampling.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	    assert "farthest_sampling_points.shape=(20, 3)" in captured.out
+11	    assert "poisson_disk_points.shape=(20, 3)" in captured.out
+12	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:9:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+8	                         end_y, end_yaw):
+9	    assert (abs(px[0] - start_x) <= 0.01)
+10	    assert (abs(py[0] - start_y) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:10:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+9	    assert (abs(px[0] - start_x) <= 0.01)
+10	    assert (abs(py[0] - start_y) <= 0.01)
+11	    assert (abs(pyaw[0] - start_yaw) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:11:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+10	    assert (abs(py[0] - start_y) <= 0.01)
+11	    assert (abs(pyaw[0] - start_yaw) <= 0.01)
+12	    assert (abs(px[-1] - end_x) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:12:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+11	    assert (abs(pyaw[0] - start_yaw) <= 0.01)
+12	    assert (abs(px[-1] - end_x) <= 0.01)
+13	    assert (abs(py[-1] - end_y) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:13:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+12	    assert (abs(px[-1] - end_x) <= 0.01)
+13	    assert (abs(py[-1] - end_y) <= 0.01)
+14	    assert (abs(pyaw[-1] - end_yaw) <= 0.01)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:14:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+13	    assert (abs(py[-1] - end_y) <= 0.01)
+14	    assert (abs(pyaw[-1] - end_yaw) <= 0.01)
+15	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_reeds_shepp_path_planning.py:24:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+23	    diff_len = sum_len - actual_len
+24	    assert (diff_len <= 0.01)
+25	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_rrt_star.py:19:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+18	    path = rrt_star.planning(animation=False)
+19	    assert path is not None
+20	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_rrt_star.py:32:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+31	    path = rrt_star.planning(animation=False)
+32	    assert path is not None
+33	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_spiral_spanning_tree_coverage_path_planner.py:27:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+26	    # assert complete coverage
+27	    assert len(covered_nodes) == num_free / 4
+28	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_utils.py:15:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+14	    assert_allclose(angle.angle_mod(-4.0), 2.28318531)
+15	    assert(isinstance(angle.angle_mod(-4.0), float))
+16	    assert_allclose(angle.angle_mod([-4.0]), [2.28318531])
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_utils.py:17:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+16	    assert_allclose(angle.angle_mod([-4.0]), [2.28318531])
+17	    assert(isinstance(angle.angle_mod([-4.0]), np.ndarray))
+18	
+19	    assert_allclose(angle.angle_mod([-150.0, 190.0, 350], degree=True),
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_wavefront_coverage_path_planner.py:18:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+17	    DT_path = wavefront_coverage_path_planner.wavefront(DT, start, goal)
+18	    assert len(DT_path) == num_free  # assert complete coverage
+19	
+20	    PT = wavefront_coverage_path_planner.transform(
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   Location: PythonRobotics\tests\test_wavefront_coverage_path_planner.py:23:4
+   More Info: https://bandit.readthedocs.io/en/1.7.4/plugins/b101_assert_used.html
+22	    PT_path = wavefront_coverage_path_planner.wavefront(PT, start, goal)
+23	    assert len(PT_path) == num_free  # assert complete coverage
+24	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 21829
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 137
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 137
+Files skipped (0):
